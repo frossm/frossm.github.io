@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>RPNCalc: The Command Line RPN Calculator</title>
+        <title>RPN Calc User Guide</title>
         <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -76,7 +76,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="HighLevelUsage.html"><strong aria-hidden="true">2.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="Stacks.html"><strong aria-hidden="true">3.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="CommandLineOptions.html"><strong aria-hidden="true">4.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="Operands.html"><strong aria-hidden="true">5.</strong> Operands</a></li><li class="chapter-item expanded "><a href="CalculatorCommands.html"><strong aria-hidden="true">6.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="Conversions.html"><strong aria-hidden="true">7.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="TrigFunctions.html"><strong aria-hidden="true">8.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="MemoryCommands.html"><strong aria-hidden="true">9.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="Constants.html"><strong aria-hidden="true">10.</strong> Constants</a></li><li class="chapter-item expanded "><a href="UserDefinedFunctions.html"><strong aria-hidden="true">11.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="OperationalCommands.html"><strong aria-hidden="true">12.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="SNAP.html"><strong aria-hidden="true">13.</strong> SNAP Usage</a></li><li class="chapter-item expanded "><a href="Wrapup.html"><strong aria-hidden="true">14.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="License.html"><strong aria-hidden="true">15.</strong> License</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="Chapters/Installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="Chapters/HighLevelUsage.html"><strong aria-hidden="true">3.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="Chapters/CommandLineOptions.html"><strong aria-hidden="true">5.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="Chapters/Operands.html"><strong aria-hidden="true">6.</strong> Operands</a></li><li class="chapter-item expanded "><a href="Chapters/CalculatorCommands.html"><strong aria-hidden="true">7.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="Chapters/Conversions.html"><strong aria-hidden="true">8.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="Chapters/TrigFunctions.html"><strong aria-hidden="true">9.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="Chapters/MemoryCommands.html"><strong aria-hidden="true">10.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="Chapters/Constants.html"><strong aria-hidden="true">11.</strong> Constants</a></li><li class="chapter-item expanded "><a href="Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">12.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="Chapters/OperationalCommands.html"><strong aria-hidden="true">13.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">14.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="Chapters/SNAP.html"><strong aria-hidden="true">15.</strong> SNAP Usage</a></li><li class="chapter-item expanded "><a href="Chapters/Wrapup.html"><strong aria-hidden="true">16.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="Chapters/License.html"><strong aria-hidden="true">17.</strong> License</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -105,7 +105,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">RPNCalc: The Command Line RPN Calculator</h1>
+                    <h1 class="menu-title">RPN Calc User Guide</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -137,9 +137,9 @@
                     <main>
                         <p align="center"> <img width="1024" src ="https://github.com/frossm/rpncalc/raw/master/graphics/ReadmeHeader.jpg"> </p> 
 <h1 id="introduction"><a class="header" href="#introduction">INTRODUCTION</a></h1>
-<p><img align="right" width="50%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot.jpg">RPNCalc is the command-line based Reverse Polish Notation (RPN) calculator.  RPN calculators make it very simple to do complex calculations, especially if there are parentheses involved.  For a quick easy example, consider solving for X with the following:</p>
+<p>RPNCalc is the command-line based Reverse Polish Notation (RPN) calculator.  RPN calculators make it very simple to do complex calculations, especially if there are parentheses involved.  For a quick example, consider solving for x with the following:</p>
 <p><code>x = SQRT((((5+3) * 8)/2) ^ 6)</code></p>
-<p>With a RPN Calculator, to solve for x you would start on the inner calculation and work outwards by entering the following:</p>
+<p>This can be tricky with a traditional calculator.  However, with a RPN Calculator, to solve for x you would start on the inner calculation and work outwards by entering the following:</p>
 <ul>
 <li><code>5</code></li>
 <li><code>3</code></li>
@@ -152,28 +152,58 @@
 <li><code>^</code></li>
 <li><code>SQRT</code></li>
 </ul>
-<p>RPN is based on a Last In First Out (LIFO) stack framework and really makes intuitive sense when you use one.  On a RPN calculator, there is no equal sign, but the there is an enter key to put a value onto the stack.</p>
-<p>Over the years I've used various RPN calculators, but I failed to find a simple command line version that I liked.  Therefore, I decided to write one.  It is a fun project to write, easily extensible, and since it's in Java, should run wherever I need it to run. And, while this calculator doesn't have <strong>every</strong> function a complex calculator would have, I've been using it exclusively and have been successful.  I am continually adding capabilities to it and I think it is fairly full featured now.  I will, however, continue to add new capabilities based on my ideas and those that I receive.</p>
-<p>If you have not heard of reverse Polish notation, or just have a passion for various calculator notations (and who doesn't?), you can read more about it here: <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a>.</p>
-<p>As for this calculator, there is a .jar file bundled with the release.  I have embedded all of the dependencies into this one file and it is directly executable.  You do not need to install anything, just be able to execute a java program.  You will need a java runtime (JRE) installed in your path. </p>
-<p>To Execute:</p>
-<p><code>java -jar rpncalc.jar</code></p>
-<p>If you've installed via SNAP, simply run the command name:</p>
+<p>(This can also be dramatically shortened using the <code>NumOps</code> shortcut - see the <code>Operands</code> chapter)</p>
+<p>RPN is based on a Last In First Out (LIFO) stack framework which sounds complicated, but makes intuitive sense when you use it.  On a RPN calculator, there is no equal sign, but there is an enter key to put a value onto the stack.</p>
+<p>So, in the above example, when you enter <strong><code>5 [ENTER]</code></strong> , 5 is put on top of the stack.  You then enter <strong><code>3 [ENTER]</code></strong> which add that to the top.  5 is pushed down to 2nd.  When <strong><code>+</code></strong> is entered, the top two stack items are removed from the stack, added, and the result is placed on the top.  I'll talk more about stacks and how RPNCalc uses them in future chapters.</p>
+<p>If you have not heard of reverse Polish notation, or just have a passion for various calculator notations (and seriously, who doesn't?), you can read more about RPN on <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a>.</p>
+<h2 id="a-brief-history-of-rpncalc"><a class="header" href="#a-brief-history-of-rpncalc">A Brief History of RPNCalc</a></h2>
+<p>Over the years I've used various RPN calculators, but I failed to find a simple command line version that I liked.  Therefore, I decided to write one back in 2011.  One key goal was to make it extensible so I could easily add new features, constants, and capabilities.  A second goal was to allow it to run everywhere I needed it to run, which is mostly Windows and Linux.  Therefore it's written in Java, it should run just about anywhere Java is supported.  And, while this calculator doesn't have <strong>every</strong> function a complex calculator would have, it has the basics covered.</p>
+<p>If there are ideas, suggestions, or complaints, drop me an email at RPNCalc@fross.org or leave a comment in the GitHub issues tracker.  I am continually adding new capabilities to it when the need arises.</p>
+<h2 id="the-current-help-page-from-rpncalc"><a class="header" href="#the-current-help-page-from-rpncalc">The Current Help Page from RPNCalc</a></h2>
+<p>This can be achieved by entered <code>h</code> or <code>help</code> from within the program or running <code>rpncalc -h</code> from the command line.</p>
+<br>
+<img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot.jpg"><div style="break-before: page; page-break-before: always;"></div><h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
+<img align="right" width="20%" src="Chapters/../Images/InstallIcon.png">
+There are two ways to install RPNCalc.  The first is simply download `rpncalc.jar` file from the latest release on [GitHub](https://github.com/frossm/rpncalc).  I have embedded all of the dependencies into this one file and it is directly executable.  You do not need to install anything.  Of course, you will need a java runtime (JRE) installed in your path. 
+<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>.  There are many advantages to using it as a snap and I'll get into that in the SNAP secion of this user guide.  My personal preference is install it via Snap.  No Java to worry about, I'm protected as it runs in a sandbox, no aliases needed, always kept up to date, etc.</p>
+<h2 id="standard-installation"><a class="header" href="#standard-installation">Standard Installation</a></h2>
+<p>Please note that I only have the ability to test it in Windows and Linux (Ubuntu). While I don't think there would be issues on other platforms, it's something to keep in mind.</p>
+<p>To run RPNCalc use the following command:</p>
+<p><code>java -jar /path/to/rpncalc.jar</code></p>
+<p>This is much too long to type every time you need to run it, so I simply create an alias.  Here is example from the Bash shell:</p>
+<p><code>alias rpncalc='java -jar /path/to/rpncalc.jar</code></p>
+<h4 id="standard-uninstall"><a class="header" href="#standard-uninstall">Standard Uninstall</a></h4>
+<p>If you wish to uninstall RPNCalc, just delete the file.  Easy and simple.</p>
+<p>However, RPNCalc does use the Java preferences to store data.  It's located in different places depending on the OS:</p>
+<ul>
+<li>Windows keeps it in the registry <code>(HKCU\Software\JavaSoft\Prefs)</code></li>
+<li>Linux in a hidden directory in your home folder <code>(~/.java/userPrefs)</code></li>
+</ul>
+<p>It is very small and removing it is not really necessary, but if you like to keep things tidy, delete the <code>org.fross.rpn</code> entry in the preference system.</p>
+<h2 id="snap-installation"><a class="header" href="#snap-installation">Snap Installation</a></h2>
+<p>If you are on a Linux system and have Snap installed (it's comes default on most Ubuntu based distributions, but can be installed by most others), you can install RPNCalc as a snap.  It does not require any special snap permissions.  To install via snap use:</p>
+<p><code>sudo snap install rpncalc</code></p>
+<p>To run it after installation, simply execute:</p>
 <p><code>rpncalc</code></p>
-<p>As I've stated above, this is a java program and uses maven.  If you download/clone the source, along with my <a href="https://github.com/frossm/library">library package</a>, and have maven installed, it shouldn't be difficult to build from source if desired.  However, this is not needed as the binary single file executable is included with each release and using the SNAP package is much easier and will always be up to date.</p>
-<p><code>mvn package</code> from the root of the project (the one containing the <strong>pom.xml</strong> file)</p>
-<p>To Install the library, you would be the the main library directory (the one containing the <strong>pom.xml</strong> file) and execute `mvn instal</p>
+<h4 id="snap-uninstall"><a class="header" href="#snap-uninstall">Snap Uninstall</a></h4>
+<p>To uninstall, execute the following command:</p>
+<p><code>sudo snap remove rpncalc</code></p>
+<p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" /></a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="high-level-usage"><a class="header" href="#high-level-usage">High Level Usage</a></h1>
-<p>RPNCalc is a command line application that must be run from a console.  Executing it with a <code>-h</code> (or <code>-?</code>) switch, or starting the program and entering the <code>h</code> command will display the program help page.  This lists all of the commands and operands that can be used, but it is fairly terse.  The screen shot above shows the help screen.  This document is meant as a more comprehensive guide.</p>
-<p>There are various command line switches that can be used when starting the program.  They generally exist so that aliases can be used to control several key parameters.  Once inside the program, you'll be presented a prompt where numbers and commands may be entered.  Numbers will then be added to the stack which you can think of a stack of plates.  The top stack item (represented at the bottom or line1) is the most important item in this Last In First Out (LIFO) approach. For example, you could enter <code>2 [ENTER]</code> and then <code>3 [ENTER]</code> and they would sit in the stack.  2 would be in the line2 position as it was added first.  3 would be at the top of the stack in line1.  You can then enter in an operand, such as <code>+ [ENTER]</code> to perform the action on the items at the end of the stack.  To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack.  I'll go into a bit more detail below on using stacks, but I'm not going to in depth as that's Wikipedia's job, but it's fairly easy.  Once I got the hang of it, you'll regret having to use a standard one.</p>
+<img align="right" width="25%" src="Chapters/../Images/CalcIcon.png">
+<p>RPNCalc is a command line application that must be run from a console / command prompt.  Executing it with a <code>-h</code> (or <code>-?</code>) switch, or starting the program and entering the <code>h</code> command will display the in-program help page.  This page lists all of the commands and operands that can be used, but it is fairly terse  This can be viewed at the bottom of the <code>Introduction</code> page of this guide. This document is meant as a more comprehensive guide.</p>
+<p>There are various command line switches that can be used when starting the program as are detailed in the <code>Command Line Options</code> page.  They generally exist so that aliases can be used to control several key parameters.</p>
+<p>Once inside the program, you'll be presented a prompt where numbers, operands, and commands may be entered.  Numbers will be added to the stack which you can think of a stack of plates.  The top stack item (represented by <code>line1</code> in the program).  You can think of this stack of plates as a Last In First Out (LIFO) arrangement.</p>
+<p>For example, you could enter <code>2 [ENTER]</code> it would be in the <code>line1</code> position and would be on the top of the stack.  If you then enter <code>3 [ENTER]</code> the <code>2</code> would move up and the <code>3</code> would then be on <code>line1</code> and be on the top of the stack.  You can then enter in an operand, such as <code>+</code> to perform the action on the items opn the top of the stack.  To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack.</p>
+<p>I'll go into a bit more detail below on using stacks, but it's fairly easy and intutive.  Once you get the hang of it, you'll regret having to use a standard calculator in the future.</p>
 <h3 id="decimals--fractions"><a class="header" href="#decimals--fractions">Decimals &amp; Fractions</a></h3>
-<p>In RPNCalc, the stacks always store numbers as decimals.  You can, however, enter in fractions and they will be instantly converted to a decimal equivalent and added to the stack.</p>
+<p>In RPNCalc, the stacks always store numbers as decimals.  You can, however, enter in fractions and they will be instantly converted to a decimal equivalent and added to the stack.  The original fraction you entered is lost in the conversion.</p>
 <p><strong>Example:</strong></p>
 <p><code>1 5/16 [ENTER]</code> </p>
-<p>will add <code>1.3125</code> to the stack</p>
+<p>will add <code>1.3125</code> to the top of the stack (<code>line1</code>)</p>
 <p><code>14/8 [ENTER]</code> </p>
 <p>will add <code>1.75</code> to the stack</p>
-<p>While you can never directly convert a decimal number on the stack back to a fraction, you can display what the last stack item would be as a fraction.  You do have to decide on the smallest denominator that will be used (called the base.)  The default base is <code>64</code> which is the equivalent of <code>1/64</code> and will be used if none is specified.  Use the <code>frac [base]</code> command to display the approximate fractional equivalent.  RPNCalc will simplify the fraction as much as it can so you won't see <code>2/4</code> as a fraction, you'd see <code>1/2</code>.</p>
+<p>While you can never directly convert a decimal number on the stack back to a fraction, you can display an approximation of what the last stack item would be as a fraction.  You do have to decide on the smallest denominator that will be used (called the base.)  The default base is <code>64</code> which is the equivalent of <code>1/64</code> and will be used if none is specified.  Use the <code>frac [base]</code> command to display the approximate fractional equivalent.  RPNCalc will simplify the fraction as much as it can so you won't see <code>2/4</code> as a fraction, you'd see <code>1/2</code>.</p>
 <p><strong>Example:</strong>
 <code>12.3456 [Enter]</code>
 <code>frac [Enter]</code></p>
@@ -184,45 +214,89 @@
 <p><code>1 3/64 [ENTER]</code>
 <code>frac 100000</code></p>
 <p>will display <code>1 293/6250</code>.  This is a closer approximation than using base 16.</p>
+<h2 id="operands-numbers-and-commands"><a class="header" href="#operands-numbers-and-commands">Operands, Numbers, and Commands</a></h2>
+<p>Numbers, whether decimal or fractions, can be entered on the command line and they get added to the stack.  That's fairly self explanatory.</p>
+<p>Operands perform basic match functions on those numbers.</p>
+<p>Commands do the more exciting things.  You can add the speed of light constant to the stack (<code>sol</code>) or PI (<code>pi</code>), take the sine of the number, add it to a memory slot, and then save that as a user defined function.  Most of the rest of this guide will be talking about the various RPNCalc commands.</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="stacks"><a class="header" href="#stacks">Stacks</a></h2>
-<p>The entire concept of a RPN calculator is based on stacks, which can be thoughts of as numbers stacked on top of each other.  You add numbers to the stack and they are normally processed Last In First Out (LIFO). With RPNCalc, when you leave the program, the current (and secondary) stacks are saved.  If you didn't specify a named stack,  the <code>default</code> stack is used.  When you start the program you can specify which stack to load with the <code>-l</code> command.  If none is entered, the <code>default</code> stack is loaded.  You may also load / create a new stack inside of the program with the <code>load</code> command.</p>
-<p>When you perform calculations or commands, they generally work from the top of the stack down.  In RPNCalc, the top of the stack is <code>line 1</code> and it's actually at the bottom.  When you perform calculations, you are working on your command line and the line above you (line 1).  This makes a lot of sense when you actually use the calculator.  Trust me.</p>
-<p>For example, if you want to take the square root of 25, you enter <code>25 [ENTER]</code> and it will be added to the stack.  Then execute <code>SQRT [ENTER]</code>.  This will remove 25 from the stack on Line 1, perform the square root, then place the result <code>5</code> back onto the stack.  Some operations require more than one stack item.  The math <code>add</code> function, for example, will take the last two numbers off the stack, add them and then place the result on the stack.  Subtraction, division, power, and other commands care about what order the numbers are on the stack hold.  For example:</p>
-<p><code>3</code>  <code>2</code>  <code>-</code>  will execute 3 - 2 and will yield <code>1</code></p>
-<p><code>2</code>  <code>3</code>  <code>-</code> will execute 2 - 3 and will yield <code>-1</code></p>
+<img align="right" width="200" src="Chapters/../Images/Plates.png">
+The entire concept of a RPN calculator is based on a stack, which can be thoughts of as numbers stacked on top of each other.  You add numbers to the stack and they are normally processed Last In First Out (LIFO). 
+<p>With RPNCalc, when you leave the program, the current (and secondary) stacks are saved.  If you didn't specify a named stack,  the <code>default</code> stack is used.  When you start the program you can specify which stack to load with the <code>-l</code> command.  If none is entered, the <code>default</code> stack is loaded.  You may also load / create a new stack inside of the program with the <code>load</code> command.</p>
+<p>When you perform calculations or commands, they generally work from the top of the stack down.  In RPNCalc, the top of the stack is <code>line1</code> and it's actually at the bottom of the display.  When you perform calculations, you are working on your command line and the lines above you.  This might be a bit hard to visualize, but makes a lot of sense when you actually use the calculator.  Trust me.</p>
+<p>For example, if you want to take the square root of 25, you enter <code>25 [ENTER]</code> and it will be added to the top of the stack at <code>line1</code>.  Then execute the command <code>SQRT [ENTER]</code>.  This will remove 25 from the stack on <code>line1</code>, perform the square root, then place the result <code>5</code> back onto the stack.  Some operations require more than one stack item.  The math <code>add</code> function, for example, will take the last two numbers off the stack, add them together, and then place the result on the stack.</p>
+<p>The order of the numbers on the stack is important for some of the operands.  This is detailed out in the <code>Operand</code> chapter.</p>
 <h3 id="stack-management"><a class="header" href="#stack-management">Stack Management</a></h3>
-<p>Saving and loading stacks is fundamental to RPNCalc.  You can have as many named stacks as you like.  They are stored in the Java Preferences location which varies by OS.  Windows stores them in the registry <em>(HKCU\Software\JavaSoft\Prefs\org\fross\rpn)</em>.  Linux uses the .java directory in your home directory.  It is safe to delete these if you wish to stay tidy, but of course you'll lose the data.</p>
-<p><img align="right" width="120" height = "120" src ="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-200x200.jpg">Each stack you load (default or a named stack) actually has 2 internal stacks defined; a primary and secondary.  You can quickly swap stacks using the swap stack <code>ss</code> command.  For example, you are working on something and need to do a few calculations that you wish to keep separate from your main work.  You can swap stacks, do the work, then swap back.  They do not communicate in any way and are distinctly separate.  The primary and secondadry stack data is saved and restored upon loading the stack.</p>
-<p>When you start up RPNCalc, you can load a named stack with the <code>-l name</code> command.  If the stack <code>name</code> exists, it will be loaded.  If it does not exist, the stack will be created and when you leave the program it will be saved.  You can always view what stack you are using in the lower right of the dashed bar. The <code>:1</code> or <code>:2</code> after the stack name will tell you if you are on the primary or &quot;swapped&quot; stack.</p>
-<p>As a side note, both stacks and memory slots are saved during shutdown.  While the data in a stack is specific to that stack, memory slots are global.  The default stack items are restored at startup (or whatever stack you choose to load.)  Memory slots are also restored at startup.  <code>list mem</code> will show the values in current memory, and <code>list stacks</code> will show the saved stacks available to load.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="command-line-options"><a class="header" href="#command-line-options">Command Line Options</a></h1>
-<p>Currently there are several command line options, and all are optional.  The overall goal is to set the operating parameters of the program.  Some settings, like <code>-D</code> Debug, <code>-a</code> alignment and <code>-l</code> load can also be used from within the program.  But they exist here so that aliases can be used to run them by default.</p>
-<div class="table-wrapper"><table><thead><tr><th>Option</th><th>Description</th></tr></thead><tbody>
-<tr><td>-D</td><td><strong>DEBUG ON:</strong> Run program in debug mode.  This will display quite a bit of information on the program as it's running.  I usually use this as I debug the program, but if you wish to get a bit more insight into what's going on, go for it.  I could certainly add a lot more if needed, but it's useful today.  You can also toggle debug mode on/off by entering in the command <code>debug</code> while within the program - you don't have to restart RPNCalc</td></tr>
-<tr><td>-l name</td><td><strong>LOAD STACK:</strong> Load a saved stack.  This essentially will &quot;name&quot; your session and store the stack upon exit in the Java preferences system.  You can load the stack with the <code>-l</code> command line option, or from within the program by using the <code>load</code> command.  Please note the name field is whatever you want to call the instance and you can have as many of them as you like.  I'm not aware of a limit.  If the name to load does not exist, it will be created.  All of RPNCalc's saved information is stored as a java preference.  This location will vary by OS - see above</td></tr>
-<tr><td>-a l <br> -a d <br> -a r</td><td><strong>ALIGNMENT:</strong> The display alignment of the numbers on the stack.  Alignment can either be an <code>-a l</code> for LEFT alignment, a <code>-a r</code> for RIGHT alignment, or a <code>-a d</code> to align to the decimal point.  This is a display choice only and doesn't impact the calculations.  For example, when I load my saved stack <code>-l checkbook</code>, I align by decimal which makes it a bit easier to read a stack with only two decimal place numbers.  Alignments can also be changed within the program itself using the <code>a</code> command</td></tr>
-<tr><td>-m [slots]</td><td><strong>MEMORY SLOTS:</strong> Override the default of ten available memory slots.  If you need 25 memory slots, just use <code>-m 25</code> when starting the program.  Please note that if you have 25 slots, the slot numbers within the program will be 0 - 24.  Slots are saved and restored between sessions, but if you run the program again and do not specify <code>-m 25</code>, it will default to 10 and you'll lose the memory slots greater than that</td></tr>
-<tr><td>-w width</td><td><strong>WIDTH:</strong> Set the width of the program header and status line.  Default is 80 characters. Useful if you are using a very small terminal.  The minimum width of the console is currently 46 characters and RPNCalc will adjust to that if a lesser number is provided</td></tr>
-<tr><td>-z</td><td><strong>DISABLE COLOR:</strong> Disable colorized output.  Useful if your current terminal doesn't support ANSI color sequences</td></tr>
-<tr><td>-v</td><td><strong>VERSION:</strong> Simply display the version information and exit.  <code>-v</code> will also query GitHub and display the latest official release</td></tr>
-<tr><td>-h or -?</td><td><strong>HELP:</strong> Display the program help and exit</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
-<p>The following is the list of operands supported by RPNCalc.  These are also supported by the NumOps shortcut described below.</p>
-<div class="table-wrapper"><table><thead><tr><th>Operand</th><th>Description</th></tr></thead><tbody>
-<tr><td>+</td><td>Add the last two items on the stack</td></tr>
-<tr><td>-</td><td>Subtract line1 from line2</td></tr>
-<tr><td>*</td><td>Multiply line1 and line2</td></tr>
-<tr><td>/</td><td>Divide line2 by line1</td></tr>
-<tr><td>^</td><td>Take line2 to the power of line1</td></tr>
+<p>Saving and loading stacks is fundamental to RPNCalc.  You can have as many named stacks as you like.  They are stored in the Java Preferences location which varies by OS:</p>
+<div class="table-wrapper"><table><thead><tr><th>OS</th><th>Location</th></tr></thead><tbody>
+<tr><td>Windows</td><td>Stored in the current user hive of the registry at<code>(HKCU\Software\JavaSoft\Prefs\org\fross\rpn)</code></td></tr>
+<tr><td>Linux</td><td>Linux uses the .java directory in your home directory</td></tr>
+<tr><td>Mac</td><td>The preferences files are named <code>com.apple.java.util.prefs</code> are are stored in their home directory at <code>~/Library/Preferences</code>.  I don't have a Mac and this was sources from the internet.</td></tr>
 </tbody></table>
 </div>
-<h2 id="numops-shortcut"><a class="header" href="#numops-shortcut">NumOps Shortcut</a></h2>
-<p>There is an important shortcut that you can use.  You can append one of the above operands at the end of an entered number and the program will, behind the scenes, place the number on the stack and then execute the operand.  For example:</p>
-<p><code>2 [ENTER]</code>
-<code>3+ [ENTER]</code></p>
-<p>When the second enter is pressed,  the two stack items will be removed, added together, and the result, <code>5</code>, will be added back.  It's the same as entering this the following  three commands:  <code>2 [ENTER]</code> <code>3 [ENTER]</code> <code>+ [ENTER]</code></p>
+<p>It is safe to delete these if you wish to stay tidy, but of course you'll lose any saved stacks, memory slots, and user defined functions which are stored there.  They will be recreated again when RPNCalc is started.</p>
+<p>Each stack you load (default or a named stack) actually has 2 internal stacks defined; a primary and secondary.  You can quickly swap stacks using the swap stack <code>ss</code> command.  For example, you are working on something and need to do a few calculations that you wish to keep separate from your main work.  You can swap stacks, do the work, then swap back.  They do not communicate in any way and are distinctly separate.  The primary and secondadry stack data is saved and restored upon loading the stack.</p>
+<p>When you start up RPNCalc, you can load a named stack with the <code>-l name</code> command.  If the stack <code>name</code> exists, it will be loaded.  If it does not exist, the stack will be created and when you leave the program it will be saved.  You can always view what stack you are using in the lower right of the dashed bar. The <code>:1</code> or <code>:2</code> after the stack name will tell you if you are on the primary or secondary stack.</p>
+<p>As a side note, both stacks and memory slots are saved during shutdown.  While the data in a stack is specific to that stack, memory slots are global.  The default stack items are restored at startup (or whatever stack you choose to load with <code>-l name</code>.)  Memory slots are also restored at startup.  <code>list mem</code> will show the values in current memory, and <code>list stacks</code> will show the saved stacks available to load.</p>
+<hr>
+<p><em><strong><code>Please note that the undo functionality is shared (and shouldn't be) so you could undo on one stack and restore the other.  I'm looking into correcting this or perhaps removing the secondary stack as I'm not sure how much it's being used</code></strong></em></p>
+<hr>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="command-line-options"><a class="header" href="#command-line-options">Command Line Options</a></h1>
+<img align="right" width="150" src="Chapters/../Images/CalcIcon.png">
+<p>Currently there are several command line options, and all are optional.  Normally, one would simply run the program and you would enter in numbers, operands, and commands.</p>
+<p>However, there are several options that can be set when the program is executed.  If you always want to run RPNCalc with a specific command line option, you should create an alias in your shell to do so.  Then ever time you run rpncalc, it would run with those options.</p>
+<p>You can set the number of memory slots, decimal alignment, debug mode, and others via these options.  The below table lists all of the allowed command line options and their functions.</p>
+<div class="table-wrapper"><table><thead><tr><th>Option</th><th>Name</th><th>Description</th></tr></thead><tbody>
+<tr><td>-D</td><td><code>DEBUG MODE</code></td><td>Runs the program in debug mode.  This will display quite a bit of information in RED as you use the program.  This is mostly used by the developer and clutters everythign up, but you may find it useful if you are trying to debug something.  I could certainly add a lot more if needed, but it's useful today.  You can also toggle debug mode on/off by entering in the command <code>debug</code> while within the program - you don't have to restart RPNCalc</td></tr>
+<tr><td>-l name</td><td><code>LOAD STACK</code></td><td>Load a saved stack.  This essentially will &quot;name&quot; your session and store the stack upon exit in the Java preferences system.  You can load the stack with the <code>-l name</code> command line option, or from within the program by using the <code>load name</code> command.  Please note the name field is whatever you want to call the instance but avoid spaces in the name.  I'm not aware of a limit to the number of saved stacks You can have.  If the name to load does not exist, the stack will be created and saved when you exit.</td></tr>
+<tr><td>-a l <br> -a d <br> -a r</td><td><code>ALIGNMENT</code></td><td>This option sets the display alignment of the numbers on the stack. Alignment can either be an <code>-a l</code> for LEFT alignment, an <code>-a r</code> for RIGHT alignment, or a <code>-a d</code> to align to the decimal point.  This impacts the display only and doesn't impact the calculations.  For example, when I load my saved stack <code>-l checkbook</code>, I align by decimal which makes it a bit easier to read a stack with only two decimal place numbers.  Alignments can also be changed within the program itself using the <code>a</code> command</td></tr>
+<tr><td>-m [slots]</td><td><code>MEMORY SLOTS</code></td><td>Override the default of ten available memory slots.  If you need 25 memory slots, just use <code>-m 25</code> when starting the program.  Please note that if you have 25 slots, the slot numbers within the program will be 0 - 24.  Slots are saved and restored between sessions, but if you run the program again and do not specify <code>-m 25</code>, it will default to 10 and you'll lose the memory slots greater than that.  If this is important, define an alias</td></tr>
+<tr><td>-w width</td><td><code>WIDTH</code></td><td>Set the width of the program header and status line.  Default is 80 characters. Useful if you are using a very small terminal.  The minimum width of the console is currently 46 characters and RPNCalc will adjust to that if a lesser number is provided</td></tr>
+<tr><td>-z</td><td><code>DISABLE COLOR</code></td><td>Disable colorized output.  Useful if your current terminal doesn't support ANSI color sequences</td></tr>
+<tr><td>-v</td><td><code>VERSION</code></td><td>This will display the current program version, but will also check GitHub for the leatest release.  It is possible, especially if you are using RPNCalc as a Snap, to have a later version than the latest GitHub release.</td></tr>
+<tr><td>-h or -?</td><td><code>HELP</code></td><td>Display the program help page and exit.  This is the same as the <code>h</code> or <code>help</code> command within RPNCalc</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
+<img align="right" width="20%" src="Chapters/../Images/Operands.png">
+<p>Operands are the standard symbols used for basic mathematics on numbers.  The following is the list of operands supported by RPNCalc.  These are also supported by the NumOps shortcut described below.</p>
+<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operand the order is important.  It's faily intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
+<div class="table-wrapper"><table><thead><tr><th>Operand</th><th>Math</th><th>Description</th></tr></thead><tbody>
+<tr><td>+</td><td><code>ADDITION</code></td><td>Add <code>line2</code> and <code>line</code></td></tr>
+<tr><td>-</td><td><code>SUBTRACTION</code></td><td>Subtract <code>line1</code> from <code>line2</code></td></tr>
+<tr><td>*</td><td><code>MULTIPLICATION</code></td><td>Multiply <code>line1</code> and <code>line2</code></td></tr>
+<tr><td>/</td><td><code>DIVISION</code></td><td>Divide <code>line2</code> by <code>line1</code></td></tr>
+<tr><td>^</td><td><code>POWER</code></td><td>Take <code>line2</code> to the power of <code>line1</code></td></tr>
+</tbody></table>
+</div>
+<p>For example:</p>
+<p><code>3</code> <code>[Enter]</code> <code>2</code> <code>[Enter]</code> <code>-</code>  will execute 3 - 2 and will yield <code>1</code></p>
+<p><code>2</code> <code>[Enter]</code> <code>3</code> <code>[Enter]</code> <code>-</code> will execute 2 - 3 and will yield <code>-1</code></p>
+<p>Hint: We'll discuss commands in later chapters, but the Swap command <code>s</code> will swap the top two items in the stack (<code>line1</code> and <code>line2</code>).  Swap will also swap any to line numbers provided.  Jump to the <code>Calculator Commands</code> chapter for more information.</p>
+<h2 id="the-numops-shortcut"><a class="header" href="#the-numops-shortcut">The NumOps Shortcut</a></h2>
+<p>RPNCalc has an important shortcut that can speed up your calculations.  You can append one of the above operands at the end of an entered number and the program will, behind the scenes, place the number on top of the stack (<code>line1</code>) and then execute the operand.  For example:</p>
+<p><code>2 [ENTER]</code></p>
+<p><code>3+ [ENTER]</code></p>
+<p>When the second enter is pressed,  the two stack items will be removed, added together, and the result, <code>5</code>, will be added back.  It's the same as entering this the following  three commands:</p>
+<p><code>2 [ENTER]</code></p>
+<p><code>3 [ENTER]</code></p>
+<p><code>+ [ENTER]</code></p>
+<p>As an example of this NumOps shortcut, lets revisit our example from the introduction.</p>
+<p><code>x = SQRT((((5+3) * 8)/2) ^ 6)</code></p>
+<p>Leveraging the shortcut, this would become:</p>
+<ul>
+<li><code>5</code></li>
+<li><code>3+</code></li>
+<li><code>8*</code></li>
+<li><code>2/</code></li>
+<li><code>6^</code></li>
+<li><code>SQRT</code></li>
+</ul>
+<p>By the way, if you were wondering the answer is 32,768.</p>
+<p><em><strong>Please note that you can not use this NumOps shortcut with a fractional number entry</strong></em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="calculator-commands"><a class="header" href="#calculator-commands">Calculator Commands</a></h1>
+<img align="right" width="175" src="Chapters/../Images/SquareRoot.png">
+<p>We've discussed numbers, both fractional and decimal as well as operands that perform basic mathematical functions.  This chapter starts discussing commands which are the heart and soul of RPNCalc.</p>
+<p>In Calculator commands, these are the basic commands that operations on the numbers on the stack.  Most are fairly simple and intutitive, but there are a few that are a bit odd.  I'm looking at you <code>dice</code>.</p>
+<p>These commands, like the others you'll read about later, are executed by typing the command name, and any needed arguments into RPNCalc.  Often there are several different names and abreviations for the same command.  This is just to make it easier to remember.</p>
 <div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
 <tr><td>u [#]<br> undo [#]</td><td><strong>UNDO:</strong> By default, undo the last operation.  However, if an undo stack line number is given, as displayed in the <code>list undo</code> command, undo will restore the stack back to that step.  Please keep in mind that if you restore back to a previous undo state, later undo states will be discarded.  Typically, however, <code>u</code> undo is used to undo the previous step</td></tr>
 <tr><td>f <br> flip</td><td><strong>FLIP SIGN:</strong> Flip the sign on the top stack item / line1</td></tr>
@@ -234,7 +308,7 @@
 <tr><td>sqrt</td><td><strong>SQUARE ROOT:</strong> Perform a <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> of the top stack item / line1</td></tr>
 <tr><td>round [n]</td><td><strong>ROUND:</strong> Round the top stack item to [n] decimal places.  If [n] is not given, round to the nearest integer (zero decimal places).  Example1: <code>3.14159</code> <code>round</code> would round to <code>3</code>.  Example2: <code>3.14159</code> <code>round 4</code> would round to <code>3.1416</code></td></tr>
 <tr><td>aa [keep]</td><td><strong>ADD ALL:</strong> Add all stack items together and return the result to the stack.  If the optional <code>keep</code> parameter is sent, the elements added will be retained on the stack and the total will be added to the top of the stack.  The entire <code>keep</code> command is not necessary, anything that starts with <code>k</code> will work</td></tr>
-<tr><td>mod</td><td><strong>MODULUS:</strong> <a href="en.wikipedia.org/wiki/Modular_arithmetic">Modulus</a> is the remainder after a division.  This command will perform a division of the top two stack items and return the remainder only back to the stack</td></tr>
+<tr><td>mod</td><td><strong>MODULUS:</strong> <a href="Chapters/en.wikipedia.org/wiki/Modular_arithmetic">Modulus</a> is the remainder after a division.  This command will perform a division of the top two stack items and return the remainder only back to the stack</td></tr>
 <tr><td>avg [keep]</td><td><strong>AVERAGE:</strong> Calculate the average of the numbers on the stack.  The stack will be replaced with the average value.  If <code>keep</code> is provided, the stack will be retained and the average will be added on top. <code>average</code> or <code>mean</code> can also be used</td></tr>
 <tr><td>sd [keep]</td><td><strong>STANDARD DEVIATION:</strong> Calculate the <a href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> of the items in the stack.  The stack items will be replaced by the result. If <code>keep</code> is provided, the the standard deviation will simple be added to the top of the stack in line1</td></tr>
 <tr><td>copy [#] <br> dup [#]</td><td><strong>COPY:</strong> With no number provided, copy will duplicate the top stack item / line1 and place it on the stack.  If the optional line number is given, the value at the line will be duplicated to the top of the stack</td></tr>
@@ -332,13 +406,47 @@
 <tr><td>cx</td><td><code>cx</code> will clear the stack before exiting</td></tr>
 <tr><td>x <br> exit</td><td><code>x</code> or <code>q</code> will exit the program.  The primary stack, secondary stack, and memory slots will be saved</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="snap"><a class="header" href="#snap">SNAP</a></h1>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="building-rpncalc-from-the-source"><a class="header" href="#building-rpncalc-from-the-source">Building RPNCalc from the source</a></h1>
+<p>RPNCalc is written in Java and uses <a href="https://maven.apache.org/what-is-maven.html">Maven</a> as it's build tool.  To build, you'll need the Java Development Kit (JDK).  Not the Java Runtime Environment (JRE) which most people would have on their machines.  At the time of this writing, you'll need Java 11 or newer.</p>
+<p>Secondly you'll need to install Maven.  Then download/clone of the source code from Github along with my <a href="https://github.com/frossm/library">library package</a>.  This library contains many methods that I use across my applications.</p>
+<p>To install the library, execute the following from the top level library directory (the one with the <code>pom.xml</code> file in it):</p>
+<p><code>mvn install</code></p>
+<p>That should install the library into the Maven cache on your computer.</p>
+<p>Secondly, you'll need to build the executable jar file.  From the top level directory of RPNCalc, execute:</p>
+<p><code>mvn package</code></p>
+<p>Assuming all goes well, you'll have a new shiny rpncalc.jar file in the <strong>target</strong> directory.</p>
+<p>I'll discuss this more in the SNAP chapter, but if you are on a Linux system that supports snaps, I would encourage that you leverage it. Not only are the applications &quot;sandboxed&quot; so it's secure, all of the dependencies are bundled in so you don't need to have java installed on the machine. It is also automatically updated so you'll always have the latest. You can force this with sudo snap refresh Just a suggestion.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="snap"><a class="header" href="#snap">SNAP</a></h1>
 <p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io//rpncalc/badge.svg" alt="rpncalc" /></a></p>
-<p>I would encourage anyone with a supported Linux platform to use the Snap package.  See <a href="https://snapcraft.io">Snapcraft Homepage</a> for more information. You can download, install, and keep RPNCalc up to date automatically by installing the snap.  You don't even have to have java as it's bundled within the snap virtual machine.  Install via:</p>
-<p><code>sudo snap install rpncalc</code>  (Assuming snapd is installed)</p>
-<p>This will install the application into a 'sandbox' where it is separate from other applications.</p>
+<p>I would encourage anyone with a supported Linux platform to use the Snap package of RPNCalc.  You can learn more about Snap from the <a href="https://snapcraft.io">Snapcraft Homepage</a>.</p>
+<p>At a high level, a Snap is a fully contained container with your application and it's dependencies bundled in.  It runs in a <code>sandbox</code> so it can't interfere with other parts of your system until it's given access.  Snaps are automatically kept up to date and are easily removed leaving no trace on the system.  There is even a nice <a href="https://snapcraft.io/store">App Store</a> where you can find software. </p>
+<p>As an example, RPNCalc uses Java, but you don't have to have Java installed on your machine as it's bundled in with the Snap.</p>
 <p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" /></a></p>
+<p>As a shameless plug, you can <a href="https://snapcraft.io/search?q=fross">Search for 'Fross'</a> to see all of my Snap packages.</p>
+<p>While I'm a fan of Snaps, there are positives and negatives to using them.</p>
+<h2 id="snap-the-good-and-the-bad"><a class="header" href="#snap-the-good-and-the-bad">Snap: The Good and the Bad</a></h2>
+<p><em><strong><center>-- Thanks to the good folks at MakeUseOf.com for this! --</center></strong></em></p>
+<p><a href="https://www.makeuseof.com/everything-you-need-to-know-about-snap-and-snap-store/">MakeUseOf.com</a> has a good breakdown of everything that's good and bad about Snap.</p>
+<p>Ever since Canonical announced Snap, there's been a stir in the Linux community about whether Snap is the right approach to improve package distribution on Linux. This has given rise to two opposing camps: one in favor of Snap and the other critical of its approach in the long run.</p>
+<p>Here's a breakdown of everything that's good and bad about Snap.</p>
+<h3 id="advantages-of-using-snap"><a class="header" href="#advantages-of-using-snap">Advantages of Using Snap</a></h3>
+<ul>
+<li>Snaps come bundled with dependencies (libraries) that facilitate instant access to a program, as you no longer have to manually install the missing dependencies to make it work on your system.</li>
+<li>Each snap runs in its own containerized sandbox to avoid interference with other system packages. As a result, when you remove a snap, the system removes all of its data, including dependencies, without affecting other packages. Needless to say, this also offers a more secure environment since one package can't access the information of another.</li>
+<li>Snap updates snaps automatically at set intervals. Hence, you always run the latest version of a program on your system.</li>
+<li>Snap makes it easier for developers to distribute their software directly to users, so they don't have to wait for their Linux distribution to roll them out.</li>
+<li>Adding to the previous point, another advantage of putting developers in charge of packaging and distributing their software is that they don't have to create distro-specific packages, as it comes bundled with the required dependencies.</li>
+</ul>
+<h3 id="disadvantages-of-snap"><a class="header" href="#disadvantages-of-snap">Disadvantages of Snap</a></h3>
+<ul>
+<li>Since snaps come bundled with dependencies, they're larger in size and occupy more disk space than their counterparts from other package managers.</li>
+<li>As a result of the bundled dependencies, snaps are distributed as compressed filesystem images and you need to mount them first before installing. Because of this, snaps are slower to run than traditional packages.</li>
+<li>Although Snap enables developers to distribute their snaps directly to users, the distribution pipeline requires them to set up an account with Canonical and host their snaps on it. This goes against the true nature of the open-source methodology because even though the software is still open source, the package management system is controlled by an entity.</li>
+<li>Another downside to allowing developers to distribute packages is that the packages don't go through stringent checks and reviews by the community and therefore carry the risk of containing malware---as seen a few years back.</li>
+<li>Due to the fact that Snap's back-end is still closed-source and controlled by Canonical, many major Linux distros aren't on board with the idea of putting Snap as the default package manager on their system.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="wrapup"><a class="header" href="#wrapup">Wrapup</a></h1>
+<img align="right" width="200" src ="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-200x200.jpg">
 <p>I'm making this available in the hope that others may find this useful.  Please let me know if you have any issues, thoughts or suggestions for enhancements by sending an email to rpncalc@fross.org.  </p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="license"><a class="header" href="#license">License</a></h1>
 <p><a href="https://opensource.org/licenses/MIT">The MIT License</a></p>

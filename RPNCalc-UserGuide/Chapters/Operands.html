@@ -1,0 +1,213 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Operands - RPN Calc User Guide</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../Chapters/Installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../Chapters/HighLevelUsage.html"><strong aria-hidden="true">3.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="../Chapters/CommandLineOptions.html"><strong aria-hidden="true">5.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="../Chapters/Operands.html" class="active"><strong aria-hidden="true">6.</strong> Operands</a></li><li class="chapter-item expanded "><a href="../Chapters/CalculatorCommands.html"><strong aria-hidden="true">7.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Conversions.html"><strong aria-hidden="true">8.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="../Chapters/TrigFunctions.html"><strong aria-hidden="true">9.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/MemoryCommands.html"><strong aria-hidden="true">10.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Constants.html"><strong aria-hidden="true">11.</strong> Constants</a></li><li class="chapter-item expanded "><a href="../Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">12.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/OperationalCommands.html"><strong aria-hidden="true">13.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">14.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="../Chapters/SNAP.html"><strong aria-hidden="true">15.</strong> SNAP Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Wrapup.html"><strong aria-hidden="true">16.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="../Chapters/License.html"><strong aria-hidden="true">17.</strong> License</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">RPN Calc User Guide</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
+<img align="right" width="20%" src="../Images/Operands.png">
+<p>Operands are the standard symbols used for basic mathematics on numbers.  The following is the list of operands supported by RPNCalc.  These are also supported by the NumOps shortcut described below.</p>
+<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operand the order is important.  It's faily intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
+<div class="table-wrapper"><table><thead><tr><th>Operand</th><th>Math</th><th>Description</th></tr></thead><tbody>
+<tr><td>+</td><td><code>ADDITION</code></td><td>Add <code>line2</code> and <code>line</code></td></tr>
+<tr><td>-</td><td><code>SUBTRACTION</code></td><td>Subtract <code>line1</code> from <code>line2</code></td></tr>
+<tr><td>*</td><td><code>MULTIPLICATION</code></td><td>Multiply <code>line1</code> and <code>line2</code></td></tr>
+<tr><td>/</td><td><code>DIVISION</code></td><td>Divide <code>line2</code> by <code>line1</code></td></tr>
+<tr><td>^</td><td><code>POWER</code></td><td>Take <code>line2</code> to the power of <code>line1</code></td></tr>
+</tbody></table>
+</div>
+<p>For example:</p>
+<p><code>3</code> <code>[Enter]</code> <code>2</code> <code>[Enter]</code> <code>-</code>  will execute 3 - 2 and will yield <code>1</code></p>
+<p><code>2</code> <code>[Enter]</code> <code>3</code> <code>[Enter]</code> <code>-</code> will execute 2 - 3 and will yield <code>-1</code></p>
+<p>Hint: We'll discuss commands in later chapters, but the Swap command <code>s</code> will swap the top two items in the stack (<code>line1</code> and <code>line2</code>).  Swap will also swap any to line numbers provided.  Jump to the <code>Calculator Commands</code> chapter for more information.</p>
+<h2 id="the-numops-shortcut"><a class="header" href="#the-numops-shortcut">The NumOps Shortcut</a></h2>
+<p>RPNCalc has an important shortcut that can speed up your calculations.  You can append one of the above operands at the end of an entered number and the program will, behind the scenes, place the number on top of the stack (<code>line1</code>) and then execute the operand.  For example:</p>
+<p><code>2 [ENTER]</code></p>
+<p><code>3+ [ENTER]</code></p>
+<p>When the second enter is pressed,  the two stack items will be removed, added together, and the result, <code>5</code>, will be added back.  It's the same as entering this the following  three commands:</p>
+<p><code>2 [ENTER]</code></p>
+<p><code>3 [ENTER]</code></p>
+<p><code>+ [ENTER]</code></p>
+<p>As an example of this NumOps shortcut, lets revisit our example from the introduction.</p>
+<p><code>x = SQRT((((5+3) * 8)/2) ^ 6)</code></p>
+<p>Leveraging the shortcut, this would become:</p>
+<ul>
+<li><code>5</code></li>
+<li><code>3+</code></li>
+<li><code>8*</code></li>
+<li><code>2/</code></li>
+<li><code>6^</code></li>
+<li><code>SQRT</code></li>
+</ul>
+<p>By the way, if you were wondering the answer is 32,768.</p>
+<p><em><strong>Please note that you can not use this NumOps shortcut with a fractional number entry</strong></em></p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Chapters/CommandLineOptions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../Chapters/CalculatorCommands.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Chapters/CommandLineOptions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../Chapters/CalculatorCommands.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
