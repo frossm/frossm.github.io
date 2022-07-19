@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js light">
+<html lang="en" class="sidebar-visible no-js ayu">
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Operands - RPN Calc User Guide</title>
+        <title>Operands - RPNCalc User Guide</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="">
+        <meta name="description" content="The RPNCalc User Guide">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
@@ -30,7 +30,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "../";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -56,7 +56,7 @@
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
-            html.classList.remove('light')
+            html.classList.remove('ayu')
             html.classList.add(theme);
             html.classList.add('js');
         </script>
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../Chapters/Installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../Chapters/HighLevelUsage.html"><strong aria-hidden="true">3.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="../Chapters/CommandLineOptions.html"><strong aria-hidden="true">5.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="../Chapters/Operands.html" class="active"><strong aria-hidden="true">6.</strong> Operands</a></li><li class="chapter-item expanded "><a href="../Chapters/CalculatorCommands.html"><strong aria-hidden="true">7.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Conversions.html"><strong aria-hidden="true">8.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="../Chapters/TrigFunctions.html"><strong aria-hidden="true">9.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/MemoryCommands.html"><strong aria-hidden="true">10.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Constants.html"><strong aria-hidden="true">11.</strong> Constants</a></li><li class="chapter-item expanded "><a href="../Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">12.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/OperationalCommands.html"><strong aria-hidden="true">13.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">14.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="../Chapters/SNAP.html"><strong aria-hidden="true">15.</strong> SNAP Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Wrapup.html"><strong aria-hidden="true">16.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="../Chapters/License.html"><strong aria-hidden="true">17.</strong> License</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../Chapters/Installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../Chapters/HighLevelUsage.html"><strong aria-hidden="true">3.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="../Chapters/CommandLineOptions.html"><strong aria-hidden="true">5.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="../Chapters/Operands.html" class="active"><strong aria-hidden="true">6.</strong> Operands</a></li><li class="chapter-item expanded "><a href="../Chapters/CalculatorCommands.html"><strong aria-hidden="true">7.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Conversions.html"><strong aria-hidden="true">8.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="../Chapters/TrigFunctions.html"><strong aria-hidden="true">9.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/MemoryCommands.html"><strong aria-hidden="true">10.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Constants.html"><strong aria-hidden="true">11.</strong> Constants</a></li><li class="chapter-item expanded "><a href="../Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">12.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/OperationalCommands.html"><strong aria-hidden="true">13.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">14.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="../Chapters/Snap.html"><strong aria-hidden="true">15.</strong> Snap Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Wrapup.html"><strong aria-hidden="true">16.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="../Chapters/License.html"><strong aria-hidden="true">17.</strong> License</a></li><li class="chapter-item expanded "><a href="../Chapters/Acknowledgements.html"><strong aria-hidden="true">18.</strong> Acknowlegements</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -93,18 +93,18 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
                         </ul>
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
 
-                    <h1 class="menu-title">RPN Calc User Guide</h1>
+                    <h1 class="menu-title">RPNCalc User Guide</h1>
 
                     <div class="right-buttons">
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
@@ -134,8 +134,8 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
-<img align="right" width="20%" src="../Images/Operands.png">
+                        <img align="right" width="20%" src="../Images/Operands.png">
+<h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
 <p>Operands are the standard symbols used for basic mathematics on numbers.  The following is the list of operands supported by RPNCalc.  These are also supported by the NumOps shortcut described below.</p>
 <p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operand the order is important.  It's faily intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
 <div class="table-wrapper"><table><thead><tr><th>Operand</th><th>Math</th><th>Description</th></tr></thead><tbody>

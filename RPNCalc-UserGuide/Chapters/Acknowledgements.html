@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Memory Commands - RPNCalc User Guide</title>
+        <title>Acknowlegements - RPNCalc User Guide</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The RPNCalc User Guide">
@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../Chapters/Installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../Chapters/HighLevelUsage.html"><strong aria-hidden="true">3.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="../Chapters/CommandLineOptions.html"><strong aria-hidden="true">5.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="../Chapters/Operands.html"><strong aria-hidden="true">6.</strong> Operands</a></li><li class="chapter-item expanded "><a href="../Chapters/CalculatorCommands.html"><strong aria-hidden="true">7.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Conversions.html"><strong aria-hidden="true">8.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="../Chapters/TrigFunctions.html"><strong aria-hidden="true">9.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/MemoryCommands.html" class="active"><strong aria-hidden="true">10.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Constants.html"><strong aria-hidden="true">11.</strong> Constants</a></li><li class="chapter-item expanded "><a href="../Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">12.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/OperationalCommands.html"><strong aria-hidden="true">13.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">14.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="../Chapters/Snap.html"><strong aria-hidden="true">15.</strong> Snap Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Wrapup.html"><strong aria-hidden="true">16.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="../Chapters/License.html"><strong aria-hidden="true">17.</strong> License</a></li><li class="chapter-item expanded "><a href="../Chapters/Acknowledgements.html"><strong aria-hidden="true">18.</strong> Acknowlegements</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../Chapters/Installation.html"><strong aria-hidden="true">2.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../Chapters/HighLevelUsage.html"><strong aria-hidden="true">3.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="../Chapters/CommandLineOptions.html"><strong aria-hidden="true">5.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="../Chapters/Operands.html"><strong aria-hidden="true">6.</strong> Operands</a></li><li class="chapter-item expanded "><a href="../Chapters/CalculatorCommands.html"><strong aria-hidden="true">7.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Conversions.html"><strong aria-hidden="true">8.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="../Chapters/TrigFunctions.html"><strong aria-hidden="true">9.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/MemoryCommands.html"><strong aria-hidden="true">10.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Constants.html"><strong aria-hidden="true">11.</strong> Constants</a></li><li class="chapter-item expanded "><a href="../Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">12.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/OperationalCommands.html"><strong aria-hidden="true">13.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">14.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="../Chapters/Snap.html"><strong aria-hidden="true">15.</strong> Snap Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Wrapup.html"><strong aria-hidden="true">16.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="../Chapters/License.html"><strong aria-hidden="true">17.</strong> License</a></li><li class="chapter-item expanded "><a href="../Chapters/Acknowledgements.html" class="active"><strong aria-hidden="true">18.</strong> Acknowlegements</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -134,28 +134,58 @@
 
                 <div id="content" class="content">
                     <main>
-                        <img align="right" width="125" src="../Images/Memory.png">
-<h1 id="memory-commands"><a class="header" href="#memory-commands">Memory Commands</a></h1>
-<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (numbers 0 - 9).  This amount can be increased with the <code>-m NumSlots</code> command.  But be aware, that if you use the <code>-m</code> command, it only applies for that instance.</p>
-<p>The basic need to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It's saved in the Java preferences system as discussed earlier.</p>
-<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
-<tr><td>mem [slot] add</td><td>Add the top stack item / <code>line1</code> into the memory slot provided.  By default, there are 10 slots; 0 through 9.  If you do not provide a slot number it will default to slot 0.  Example:  <code>mem add</code>   will add the contents of <code>line1</code> memory slot0</td></tr>
-<tr><td>mem [slot] copy<br>mem [slot] recall</td><td>Copies the contents of memory slot provided back onto the stack.  Defaults to Slot0 if no slot number is provided</td></tr>
-<tr><td>mem [slot] clr</td><td>Clear the contents of the memory slot provided.  Defaults to Slot0 if no slot is provided.  Example: <code>mem 2 clr</code>  The command <code>clear</code> can also be used instead of <code>clr</code></td></tr>
-<tr><td>mem clearall</td><td>Clears the contents of all memory slots.  There is no need to include a SlotNumber as they will all be erased.  Note <code>mem clrall</code> will also work</td></tr>
-<tr><td>mem copyall</td><td>Copy all items from the memory slots onto the stack.  These will be ordered via memory slot number. i.e. Memory slot 0 will be at the top of the stack / <code>line1</code>. <code>recallall</code> will also work</td></tr>
-<tr><td>mem addall</td><td>Add all items in the stack to a memory slot.  The order will be the same as the stack with memory slot0 being the top of the stack.  The command will fail if there are more stack items than there are memory slots - which default to 10.  It may simply be easier to save the stack with a name using the load <code>-l</code> command.  Also, any values currently in a needed memory slot will be silently overwritten</td></tr>
-</tbody></table>
-</div>
+                        <img align="right" width="175" src="../Images/Acknowlegement.png">
+<h1 id="acknowlegements"><a class="header" href="#acknowlegements">Acknowlegements</a></h1>
+<p>This is a simple user guide for a tiny piece of software.  But I have used other people's art and applications to create RPNCalc and I want to ensure I recognize them and give them thanks.</p>
+<h2 id="graphics"><a class="header" href="#graphics">Graphics</a></h2>
+<p>I'd like to thank FlatIcon.com for their non-commercial use license for the top right icons used in this guide as well as IconFinder.</p>
+<ul>
+<li>
+<p>Install: <a href="https://www.flaticon.com/free-icons/easy-installation" title="easy installation icons">Easy installation icons created by Freepik - Flaticon</a></p>
+</li>
+<li>
+<p>High Level Usage: <a href="https://www.flaticon.com/free-icons/calculator" title="calculator icons">Calculator icons created by srip - Flaticon</a></p>
+</li>
+<li>
+<p>Stacks: <a href="https://www.flaticon.com/free-icons/maguro" title="maguro icons">Maguro icons created by Kanyanee Watanajitkasem - Flaticon</a></p>
+</li>
+<li>
+<p>Operands: <a href="https://www.flaticon.com/free-icons/calculator" title="calculator icons">Calculator icons created by Freepik - Flaticon</a></p>
+</li>
+<li>
+<p>Calculator Commands: <a href="https://www.flaticon.com/free-icons/maths" title="maths icons">Maths icons created by Freepik - Flaticon</a></p>
+</li>
+<li>
+<p>Conversion: <a href="https://www.flaticon.com/free-icons/data-transfer" title="data transfer icons">Data transfer icons created by Freepik - Flaticon</a></p>
+</li>
+<li>
+<p>Trigonometry Functions: <a href="https://www.flaticon.com/free-icons/trigonometry" title="trigonometry icons">Trigonometry icons created by Freepik - Flaticon</a></p>
+</li>
+<li>
+<p>Memory: <a href="https://www.flaticon.com/free-icons/memory" title="memory icons">Memory icons created by Victoruler - Flaticon</a></p>
+</li>
+<li>
+<p>Constants: <a href="https://www.flaticon.com/free-icons/pi" title="Pi icons">Pi icons created by Freepik - Flaticon</a></p>
+</li>
+<li>
+<p>User Defined Functions: <a href="https://www.flaticon.com/free-icons/path" title="path icons">Path icons created by Freepik - Flaticon</a></p>
+</li>
+<li>
+<p>Acknowlegement: <a href="https://www.flaticon.com/free-icons/agreement" title="agreement icons">Agreement icons created by Freepik - Flaticon</a></p>
+</li>
+<li>
+<p>Other icons were sourced from <a href="https://iconfinder.com">IconFinder</a> and/or were licensed via the <a href="https://creativecommons.org/licenses/">Creative Commons License</a></p>
+</li>
+</ul>
+<h2 id="mdbook"><a class="header" href="#mdbook">mdBook</a></h2>
+<p>This book was generated using <a href="https://github.com/rust-lang/mdBook">mdBook</a>.  mdBook is a utility to create modern online books from Markdown files and it is fantastic.  If you need to do something like this, mdBook is where you shoud look first in my humble opinion.</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../Chapters/TrigFunctions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../Chapters/License.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
-                            </a>
-                            <a rel="next" href="../Chapters/Constants.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
                             </a>
                         <div style="clear: both"></div>
                     </nav>
@@ -163,11 +193,8 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../Chapters/TrigFunctions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../Chapters/License.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a>
-                    <a rel="next" href="../Chapters/Constants.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
