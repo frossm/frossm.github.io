@@ -137,15 +137,16 @@
                         <img align="right" width="125" src="../Images/Install.png">
 <h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
 <p>There are two ways to install RPNCalc.  The first is simply download <code>rpncalc.jar</code> file from the latest release on <a href="https://github.com/frossm/rpncalc">GitHub</a>.  I have embedded all of the dependencies into this one file and it is directly executable.  You do not need to install anything.  Of course, you will need a java runtime (JRE) installed in your path. </p>
-<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>.  There are many advantages to using it as a snap and I'll get into that in the SNAP secion of this user guide.  My personal preference is install it via Snap.  No Java to worry about, I'm protected as it runs in a sandbox, no aliases needed, always kept up to date, etc.</p>
-<h2 id="standard-installation"><a class="header" href="#standard-installation">Standard Installation</a></h2>
+<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>.  There are many advantages to using it as a snap and I'll get into that in the SNAP secion of this user guide.  My personal preference is install it via Snap.  No Java to worry about, I'm protected as it runs in a sandbox, no aliases needed, always kept up to date, etc.  You can read more about this in in the Snap chapter.</p>
 <p>Please note that I only have the ability to test it in Windows and Linux (Ubuntu). While I don't think there would be issues on other platforms, it's something to keep in mind.</p>
+<h2 id="standard-usage"><a class="header" href="#standard-usage">Standard Usage</a></h2>
 <p>To run RPNCalc use the following command:</p>
 <p><code>java -jar /path/to/rpncalc.jar</code></p>
 <p>This is much too long to type every time you need to run it, so I simply create an alias.  Here is example from the Bash shell:</p>
 <p><code>alias rpncalc='java -jar /path/to/rpncalc.jar</code></p>
-<h4 id="standard-uninstall"><a class="header" href="#standard-uninstall">Standard Uninstall</a></h4>
-<p>If you wish to uninstall RPNCalc, just delete the file.  Easy and simple.</p>
+<p>Now, I just need to type RPNCalc to run it.</p>
+<h2 id="standard-uninstall"><a class="header" href="#standard-uninstall">Standard Uninstall</a></h2>
+<p>If you wish to uninstall RPNCalc, just delete the file and, if you created an alias, remove that as well.  Easy and simple.</p>
 <p>However, RPNCalc does use the Java preferences to store data.  It's located in different places depending on the OS:</p>
 <ul>
 <li>Windows keeps it in the registry <code>(HKCU\Software\JavaSoft\Prefs)</code></li>
@@ -153,11 +154,11 @@
 </ul>
 <p>It is very small and removing it is not really necessary, but if you like to keep things tidy, delete the <code>org.fross.rpn</code> entry in the preference system.</p>
 <h2 id="snap-installation"><a class="header" href="#snap-installation">Snap Installation</a></h2>
-<p>If you are on a Linux system and have Snap installed (it's comes default on most Ubuntu based distributions, but can be installed by most others), you can install RPNCalc as a snap.  It does not require any special snap permissions.  To install via snap use:</p>
+<p>If you are on a Linux system and have Snap installed (it's comes default on most Ubuntu based distributions, but can be installed by most others if not already there), you can install RPNCalc as a snap.  It does not require any special snap permissions.  To install via snap use:</p>
 <p><code>sudo snap install rpncalc</code></p>
 <p>To run it after installation, simply execute:</p>
 <p><code>rpncalc</code></p>
-<h4 id="snap-uninstall"><a class="header" href="#snap-uninstall">Snap Uninstall</a></h4>
+<h2 id="snap-uninstall"><a class="header" href="#snap-uninstall">Snap Uninstall</a></h2>
 <p>To uninstall, execute the following command:</p>
 <p><code>sudo snap remove rpncalc</code></p>
 <p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" /></a></p>

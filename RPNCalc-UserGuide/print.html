@@ -158,8 +158,8 @@
 <p>If you have not heard of reverse Polish notation, or just have a passion for various calculator notations (and seriously, who doesn't?), you can read more about RPN on <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a>.</p>
 <h2 id="a-brief-history-of-rpncalc"><a class="header" href="#a-brief-history-of-rpncalc">A Brief History of RPNCalc</a></h2>
 <img align="right" width="150" src ="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-200x200.jpg">
-<p>Over the years I've used various RPN calculators, but I failed to find a simple command line version that I liked.  Therefore, I decided to write one back in 2011.  One key goal was to make it extensible so I could easily add new features, constants, and capabilities.  A second goal was to allow it to run everywhere I needed it to run, which is mostly Windows and Linux.  Therefore it's written in Java, it should run just about anywhere Java is supported.  And, while this calculator doesn't have <em><strong>every</strong></em> function a complex calculator would have, it has the basics covered.</p>
-<p>If there are ideas, suggestions, or complaints, drop me an email at RPNCalc@fross.org or leave a comment in the GitHub issues tracker.  I am continually adding new capabilities to it when the need arises.</p>
+<p>I studied Engineering in college and used the HP15C calculator (yes, I'm old.) I grew to love RPN and over the years I've used various RPN calculators, but I failed to find a simple command line version that I liked.  Therefore, I decided to write one back in 2011.</p>
+<p>One key goal was to make it extensible so I could easily add new features, constants, and capabilities.  A second goal was to allow it to run everywhere I needed it to run, which is mostly Windows and Linux.  Therefore it's written in Java, it should run just about anywhere Java is supported.  And, while this calculator doesn't have <em><strong>every</strong></em> function a complex calculator would have, it has the basics covered.</p>
 <h2 id="contact-options--links"><a class="header" href="#contact-options--links">Contact Options &amp; Links</a></h2>
 <p>The home page for RPNCalc is located on <a href="https://github.com/frossm/rpncalc">GitHub</a></p>
 <ul>
@@ -174,15 +174,16 @@
 <img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot.jpg"><div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/Install.png">
 <h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
 <p>There are two ways to install RPNCalc.  The first is simply download <code>rpncalc.jar</code> file from the latest release on <a href="https://github.com/frossm/rpncalc">GitHub</a>.  I have embedded all of the dependencies into this one file and it is directly executable.  You do not need to install anything.  Of course, you will need a java runtime (JRE) installed in your path. </p>
-<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>.  There are many advantages to using it as a snap and I'll get into that in the SNAP secion of this user guide.  My personal preference is install it via Snap.  No Java to worry about, I'm protected as it runs in a sandbox, no aliases needed, always kept up to date, etc.</p>
-<h2 id="standard-installation"><a class="header" href="#standard-installation">Standard Installation</a></h2>
+<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>.  There are many advantages to using it as a snap and I'll get into that in the SNAP secion of this user guide.  My personal preference is install it via Snap.  No Java to worry about, I'm protected as it runs in a sandbox, no aliases needed, always kept up to date, etc.  You can read more about this in in the Snap chapter.</p>
 <p>Please note that I only have the ability to test it in Windows and Linux (Ubuntu). While I don't think there would be issues on other platforms, it's something to keep in mind.</p>
+<h2 id="standard-usage"><a class="header" href="#standard-usage">Standard Usage</a></h2>
 <p>To run RPNCalc use the following command:</p>
 <p><code>java -jar /path/to/rpncalc.jar</code></p>
 <p>This is much too long to type every time you need to run it, so I simply create an alias.  Here is example from the Bash shell:</p>
 <p><code>alias rpncalc='java -jar /path/to/rpncalc.jar</code></p>
-<h4 id="standard-uninstall"><a class="header" href="#standard-uninstall">Standard Uninstall</a></h4>
-<p>If you wish to uninstall RPNCalc, just delete the file.  Easy and simple.</p>
+<p>Now, I just need to type RPNCalc to run it.</p>
+<h2 id="standard-uninstall"><a class="header" href="#standard-uninstall">Standard Uninstall</a></h2>
+<p>If you wish to uninstall RPNCalc, just delete the file and, if you created an alias, remove that as well.  Easy and simple.</p>
 <p>However, RPNCalc does use the Java preferences to store data.  It's located in different places depending on the OS:</p>
 <ul>
 <li>Windows keeps it in the registry <code>(HKCU\Software\JavaSoft\Prefs)</code></li>
@@ -190,11 +191,11 @@
 </ul>
 <p>It is very small and removing it is not really necessary, but if you like to keep things tidy, delete the <code>org.fross.rpn</code> entry in the preference system.</p>
 <h2 id="snap-installation"><a class="header" href="#snap-installation">Snap Installation</a></h2>
-<p>If you are on a Linux system and have Snap installed (it's comes default on most Ubuntu based distributions, but can be installed by most others), you can install RPNCalc as a snap.  It does not require any special snap permissions.  To install via snap use:</p>
+<p>If you are on a Linux system and have Snap installed (it's comes default on most Ubuntu based distributions, but can be installed by most others if not already there), you can install RPNCalc as a snap.  It does not require any special snap permissions.  To install via snap use:</p>
 <p><code>sudo snap install rpncalc</code></p>
 <p>To run it after installation, simply execute:</p>
 <p><code>rpncalc</code></p>
-<h4 id="snap-uninstall"><a class="header" href="#snap-uninstall">Snap Uninstall</a></h4>
+<h2 id="snap-uninstall"><a class="header" href="#snap-uninstall">Snap Uninstall</a></h2>
 <p>To uninstall, execute the following command:</p>
 <p><code>sudo snap remove rpncalc</code></p>
 <p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" /></a></p>
@@ -202,9 +203,11 @@
 <h1 id="high-level-usage"><a class="header" href="#high-level-usage">High Level Usage</a></h1>
 <p>RPNCalc is a command line application that must be run from a console / command prompt.  Executing it with a <code>-h</code> (or <code>-?</code>) switch, or starting the program and entering the <code>h</code> command will display the in-program help page.  This page lists all of the commands and operands that can be used, but it is fairly terse  This can be viewed at the bottom of the <code>Introduction</code> page of this guide. This document is meant as a more comprehensive guide.</p>
 <p>There are various command line switches that can be used when starting the program as are detailed in the <code>Command Line Options</code> page.  They generally exist so that aliases can be used to control several key parameters.</p>
-<p>Once inside the program, you'll be presented a prompt where numbers, operands, and commands may be entered.  Numbers will be added to the stack which you can think of a stack of plates.  The top stack item (represented by <code>line1</code> in the program).  You can think of this stack of plates as a Last In First Out (LIFO) arrangement.</p>
-<p>For example, you could enter <code>2 [ENTER]</code> it would be in the <code>line1</code> position and would be on the top of the stack.  If you then enter <code>3 [ENTER]</code> the <code>2</code> would move up and the <code>3</code> would then be on <code>line1</code> and be on the top of the stack.  You can then enter in an operand, such as <code>+</code> to perform the action on the items opn the top of the stack.  To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack.</p>
+<p>Once inside the program, you'll be presented a prompt where numbers, operands, and commands may be entered.  Numbers will be added to the stack which you can think of as an upside down stack of plates.  The top stack item (represented by <code>line1</code> in the program) is on the bottom.  You can think of this stack of plates as a Last In First Out (LIFO) arrangement.</p>
+<p>For example, you could enter <code>2 [ENTER]</code> it would be in the <code>line1</code> position and would be on the top of the stack.  If you then enter <code>3 [ENTER]</code> the <code>2</code> would move up go <code>line2</code> and the <code>3</code> would then be on <code>line1</code> and be on the top of the stack.  You can then enter in an operand, such as <code>+</code> to perform the action on the items opn the top of the stack. To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack (<code>line1</code>).</p>
 <p>I'll go into a bit more detail below on using stacks, but it's fairly easy and intutive.  Once you get the hang of it, you'll regret having to use a standard calculator in the future.</p>
+<h4 id="why-is-the-stack-upside-down"><a class="header" href="#why-is-the-stack-upside-down">Why is the stack &quot;upside down?&quot;</a></h4>
+<p>One question I get with RPNCalc is why is the top of the stack on the bottom?  The reason is that it's simply more intutitive.  The command line is on the bottom.  You are usually dealing with the top of the stack so having <code>line1</code> directly above makes sense.  Also, for some operations, the order is important (think subtraction or division).  Having <code>line1</code> &quot;underneath&quot; <code>line2</code> is easy to understand as that's how we learned to do subtraction.  <code>line1</code> is subtracted from <code>line2</code>.</p>
 <h3 id="decimals--fractions"><a class="header" href="#decimals--fractions">Decimals &amp; Fractions</a></h3>
 <p>In RPNCalc, the stacks always store numbers as decimals.  You can, however, enter in fractions and they will be instantly converted to a decimal equivalent and added to the stack.  The original fraction you entered is lost in the conversion.</p>
 <p><strong>Example:</strong></p>
