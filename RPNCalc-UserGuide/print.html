@@ -230,7 +230,7 @@
 <p>Numbers, whether decimal or fractions, can be entered on the command line and they get added to the stack.  That's fairly self explanatory.</p>
 <p>Operands perform basic match functions on those numbers.</p>
 <p>Commands do the more exciting things.  You can add the speed of light constant to the stack (<code>sol</code>) or PI (<code>pi</code>), take the sine of the number, add it to a memory slot, and then save that as a user defined function.  Most of the rest of this guide will be talking about the various RPNCalc commands.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="200" src="Chapters/../Images/Plates.png">
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/Plates.png">
 <h1 id="stacks"><a class="header" href="#stacks">Stacks</a></h1>
 <p>The entire concept of a RPN calculator is based on a stack, which can be thoughts of as numbers stacked on top of each other.  You add numbers to the stack and they are normally processed Last In First Out (LIFO). </p>
 <p>With RPNCalc, when you leave the program, the current (and secondary) stacks are saved.  If you didn't specify a named stack,  the <code>default</code> stack is used.  When you start the program you can specify which stack to load with the <code>-l</code> command.  If none is entered, the <code>default</code> stack is loaded.  You may also load / create a new stack inside of the program with the <code>load</code> command.</p>
@@ -370,7 +370,7 @@
 <tr><td>mem copyall</td><td>Copy all items from the memory slots onto the stack.  These will be ordered via memory slot number. i.e. Memory slot 0 will be at the top of the stack / <code>line1</code>. <code>recallall</code> will also work</td></tr>
 <tr><td>mem addall</td><td>Add all items in the stack to a memory slot.  The order will be the same as the stack with memory slot0 being the top of the stack.  The command will fail if there are more stack items than there are memory slots - which default to 10.  It may simply be easier to save the stack with a name using the load <code>-l</code> command.  Also, any values currently in a needed memory slot will be silently overwritten</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/Constants.png">
+</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/Constants.png">
 <h1 id="constants"><a class="header" href="#constants">Constants</a></h1>
 <p>These commands simply take a defined constant and add that number to the top of the stack (<code>line1</code>).  There are not that many constants defined, but if there is a desire to add additional ones please me know.</p>
 <p>There is a limitation currently.  RPNCalc does not understand scientific notation.  Running a quick check, On my system, Java Double has the following limits as defined by Double.MAX_VALUE and Double.MIN_VALUE.</p>
