@@ -142,7 +142,7 @@
 <p>Then you can run your function whever you like on the stack currently available.  To run the function, simply type the name of your function as a standard command. To see a list of the saved functions, execute <code>list func</code> and it will display the name and the steps you recorded.</p>
 <p>User defined functions can be deleted with the <code>func del NAME</code> command or you can delete all of the functions with <code>func delall</code></p>
 <p>Functions are global and can work across any stack.  They are saved in the preferences system and will be reloaded when RPNCalc starts.  They are saved immediatly after you give a new recording a name and press enter.</p>
-<p>When you execute a function, the steps of that function are executed one after the other.  Therefore when you execute <code>undo</code> you will undo back through your function step by step. You do not <code>undo</code> the entire function in one command.  Of course you can always run <code>undo NUM</code> where num is the steps to undo.</p>
+<p>When you execute a function, the steps of that function are executed one after the other.  Therefore when you execute <code>undo</code> you will undo back through your function step by step. You do not <code>undo</code> the entire function in one command.  Of course you can always run <code>undo NUM</code> where <code>NUM</code> is the steps to undo.</p>
 <p>The following commands can be entered during a recording, but are not recorded.</p>
 <ul>
 <li>frac</li>
@@ -157,7 +157,7 @@
 <div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
 <tr><td>record on<br>rec on</td><td>Turn on recording.  Most commands and numbers entered after record is enabled will be saved.  There are some that are excluded from being recorded as detailed above</td></tr>
 <tr><td>record off<br>rec off</td><td>Turn off recording.  The user will be prompted to enter in a name for this function and that name will be used to run it in the future.  If you do not enter in a name the recording is canceled and  nothing will be saved</td></tr>
-<tr><td>func del NAME</td><td>Delete a saved function.  The name must match the one given when saved.  A list of functions can be viewed with <code>list func</code>.  Undo will not recover a deleted function</td></tr>
+<tr><td>func del <code>NAME</code></td><td>Delete a saved function.  The name must match the one given when saved.  A list of functions can be viewed with <code>list func</code>.  Undo will not recover a deleted function</td></tr>
 <tr><td>func delall</td><td>Delete all saved user defined functions. Please note that undo will not recover deleted functions</td></tr>
 </tbody></table>
 </div>

@@ -136,7 +136,9 @@
                     <main>
                         <img align="right" width="125" src="../Images/Memory.png">
 <h1 id="memory-commands"><a class="header" href="#memory-commands">Memory Commands</a></h1>
-<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (numbers 0 - 9).  This amount can be increased with the <code>-m NumSlots</code> command.  But be aware, that if you use the <code>-m</code> command, it only applies for that instance.</p>
+<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (numbers 0 - 9).  This amount can be increased with the <code>set memslots</code> command.  If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions.  You can change it as will, but if you decrease the number of slots, anything held in the &quot;no longer there&quot; slots will be discarded.</p>
+<p>For example, say you <code>set memslots 20</code> and store values in all of them.  If you later <code>set memslots 10</code>, the values in the upper 10 slots will be gone.</p>
+<p>The operational command <code>reset</code> will set the number of memory slots back to the default of 10.</p>
 <p>The basic need to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It's saved in the Java preferences system as discussed earlier.</p>
 <div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
 <tr><td>mem [slot] add</td><td>Add the top stack item / <code>line1</code> into the memory slot provided.  By default, there are 10 slots; 0 through 9.  If you do not provide a slot number it will default to slot 0.  Example:  <code>mem add</code>   will add the contents of <code>line1</code> memory slot0</td></tr>
