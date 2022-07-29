@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js ayu">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>What is an RPN Calculator - RPNCalc User Guide</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="The RPNCalc User Guide">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../Chapters/WhatIsRPN.html" class="active"><strong aria-hidden="true">2.</strong> What is an RPN Calculator</a></li><li class="chapter-item expanded "><a href="../Chapters/Installation.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="../Chapters/HighLevelUsage.html"><strong aria-hidden="true">5.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/CommandLineOptions.html"><strong aria-hidden="true">6.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="../Chapters/Operands.html"><strong aria-hidden="true">7.</strong> Operands</a></li><li class="chapter-item expanded "><a href="../Chapters/CalculatorCommands.html"><strong aria-hidden="true">8.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Conversions.html"><strong aria-hidden="true">9.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="../Chapters/TrigFunctions.html"><strong aria-hidden="true">10.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/MemoryCommands.html"><strong aria-hidden="true">11.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Constants.html"><strong aria-hidden="true">12.</strong> Constants</a></li><li class="chapter-item expanded "><a href="../Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">13.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/OperationalCommands.html"><strong aria-hidden="true">14.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">15.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="../Chapters/Snap.html"><strong aria-hidden="true">16.</strong> Snap Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Wrapup.html"><strong aria-hidden="true">17.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="../Chapters/License.html"><strong aria-hidden="true">18.</strong> License</a></li><li class="chapter-item expanded "><a href="../Chapters/Acknowledgements.html"><strong aria-hidden="true">19.</strong> Acknowlegements</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu (default)</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">RPNCalc User Guide</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <img align="right" width="175" src="../Images/WhatIsRPN.jpg">
+<h1 id="what-is-an-rpn-calculator"><a class="header" href="#what-is-an-rpn-calculator">What is an RPN Calculator?</a></h1>
+<p>For me, the way I learned to use RPN back in the early 1990s was to <code>start on the inside and work your way out</code>.  Just look at the inner most calculations, and start working yourself back out.  It also helps if you also understand the order of operations for match operands.</p>
+<h3 id="order-of-operations---pemdas"><a class="header" href="#order-of-operations---pemdas">Order of Operations - <em>PEMDAS</em></a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Order</th><th></th><th>Description</th></tr></thead><tbody>
+<tr><td>1</td><td>P</td><td>Parentheses First</td></tr>
+<tr><td>2</td><td>E</td><td>Exponents - Powers and Square Roots, etc.</td></tr>
+<tr><td>3</td><td>MD</td><td>Multiplication and Division (left-to-right)</td></tr>
+<tr><td>4</td><td>AS</td><td>Addition and Subtraction (left-to-right)</td></tr>
+</tbody></table>
+</div>
+<h3 id="walkthrough-of-the-example-from-the-introduction-page"><a class="header" href="#walkthrough-of-the-example-from-the-introduction-page">Walkthrough of the Example from the Introduction Page</a></h3>
+<p><code>x = SQRT( ((((5+3) * 8)/2) * (2+1)) ^ 2 )</code></p>
+<p>This can be tricky with a traditional calculator.  However, with a RPN Calculator, to solve for x you would start on the inner calculation and work outwards.  Looking at the equation, <code>5 + 3</code> is about the lowest so lets start there.  We'll walk through each step and explain what's happening.  Go ahead and start RPNCalc and follow along - it's much easier to do it and see the stack rather than just reading it here.</p>
+<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Explanation</th></tr></thead><tbody>
+<tr><td><code>c [Enter]</code></td><td>Clear the stack if there is anything on it</td></tr>
+<tr><td><code>5 [Enter]</code></td><td>The top of the stack (<code>line1</code>) contains a 5</td></tr>
+<tr><td><code>3 [Enter]</code></td><td>3 has been added to the top of the stack (<code>line1</code>) pushing 5 to <code>line2</code></td></tr>
+<tr><td><code>+ [Enter]</code></td><td>3 and 5 have been removed from the stack, added, and 8 pushed to <code>line1</code></td></tr>
+<tr><td><code>8 [Enter]</code></td><td>8 is added to <code>line1</code>, pushing the other 8 to <code>line2</code></td></tr>
+<tr><td><code>* [Enter]</code></td><td>Remove 8 and 8 from the stack, multiply, and push the result to <code>line1</code></td></tr>
+<tr><td><code>2 [Enter]</code></td><td>Add 2 to the stack pushing down 64</td></tr>
+<tr><td><code>/ [Enter]</code></td><td>Divide 64 (<code>line2</code>) by 8 (<code>line1</code>)</td></tr>
+<tr><td><code>2 [Enter]</code></td><td>Add 2 to the stack</td></tr>
+<tr><td><code>1 [Enter]</code></td><td>Add 1 to the stack</td></tr>
+<tr><td><code>+ [Enter]</code></td><td>Add 2 and 1.  They will be removed and 3 will be pushed</td></tr>
+<tr><td><code>* [Enter]</code></td><td>Multiply the 3 to the 64 you had in <code>line1</code></td></tr>
+<tr><td><code>2 [Enter]</code></td><td>Add 2 to the stack</td></tr>
+<tr><td><code>^ [Enter]</code></td><td>Take <code>line2</code> to the power of <code>line1</code></td></tr>
+<tr><td><code>SQRT [Enter]</code></td><td>Takes the square root of <code>line1</code> pushing the result to the stack</td></tr>
+</tbody></table>
+</div>
+<p>The result is 96 which ends up on the top (<code>line1</code>) of an empty stack.  I'll talk more about stacks and how RPNCalc uses them in future chapters.</p>
+<p><em>By the way, this can also be dramatically shortened using the <code>NumOps</code> shortcut - see the <code>Operands</code> chapter for more information.</em></p>
+<h3 id="traditional-rpn-notation-limitations-in-rpncalc"><a class="header" href="#traditional-rpn-notation-limitations-in-rpncalc">Traditional RPN Notation Limitations in RPNCalc</a></h3>
+<p>Please note that RPNCalc doesn't implement every RPN convention and there are a few as of yet unimplemented items.</p>
+<p>For example, this won't work in RPNCalc:</p>
+<p><code>10 + 10 + 10</code> can't be solved by entering <code>10 [Enter] 10 [Enter] 10 [Enter] + + [Enter]</code> as RPNCalc only allows one operand per command entry.  You'll need an <code>[Enter]</code> between the last two <code>+</code> signs.  Using the <code>NumOp</code> shortcut, this is an efficient way to solve that equation:</p>
+<p><code>10 [Enter] 10+ [Enter] 10+ [Enter]</code></p>
+<hr> 
+<h2 id="wikipedia"><a class="header" href="#wikipedia">Wikipedia:</a></h2>
+<p>The following is directly from <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a>.  There is a lot more information there, but here are a few highlights.</p>
+<h3 id="explanation"><a class="header" href="#explanation">Explanation</a></h3>
+<p>In reverse Polish notation, the operators follow their operands; for instance, to add 3 and 4 together, one would write <code>3 4 +</code> rather than <code>3 + 4</code>. If there are multiple operations, operators are given immediately after their final operands (often an operator takes two operands, in which case the operator is written after the second operand); so the expression written <code>3 − 4 + 5</code> in conventional notation would be written <code>3 4 − 5 +</code> in reverse Polish notation: 4 is first subtracted from 3, then 5 is added to it. An advantage of reverse Polish notation is that it removes the need for parentheses that are required by infix notation. While <code>3 − 4 × 5</code> can also be written <code>3 − (4 × 5)</code>, that means something quite different from <code>(3 − 4) × 5</code>. In reverse Polish notation, the former could be written <code>3 4 5 × −</code>, which unambiguously means <code>3 (4 5 ×) −</code> which reduces to <code>3 20 −</code> (which can further be reduced to -17); the latter could be written <code>3 4 − 5 ×</code> (or <code>5 3 4 − ×</code>, if keeping similar formatting), which unambiguously means <code>(3 4 −) 5 ×</code>.</p>
+<h3 id="practical-implications"><a class="header" href="#practical-implications">Practical implications</a></h3>
+<p>In comparison, testing of reverse Polish notation with algebraic notation, reverse Polish has been found to lead to faster calculations, for two reasons. The first reason is that reverse Polish calculators do not need expressions to be parenthesized, so fewer operations need to be entered to perform typical calculations. Additionally, users of reverse Polish calculators made fewer mistakes than for other types of calculators. Later research clarified that the increased speed from reverse Polish notation may be attributed to the smaller number of keystrokes needed to enter this notation, rather than to a smaller cognitive load on its users. However, anecdotal evidence suggests that reverse Polish notation is more difficult for users to learn than algebraic notation.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../Chapters/Introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../Chapters/Installation.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../Chapters/Introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../Chapters/Installation.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
