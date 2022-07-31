@@ -75,7 +75,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../Chapters/WhatIsRPN.html"><strong aria-hidden="true">2.</strong> What is an RPN Calculator</a></li><li class="chapter-item expanded "><a href="../Chapters/Installation.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="../Chapters/HighLevelUsage.html"><strong aria-hidden="true">5.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/CommandLineOptions.html"><strong aria-hidden="true">6.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="../Chapters/Operands.html"><strong aria-hidden="true">7.</strong> Operands</a></li><li class="chapter-item expanded "><a href="../Chapters/CalculatorCommands.html"><strong aria-hidden="true">8.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Conversions.html"><strong aria-hidden="true">9.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="../Chapters/TrigFunctions.html"><strong aria-hidden="true">10.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/MemoryCommands.html"><strong aria-hidden="true">11.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Constants.html"><strong aria-hidden="true">12.</strong> Constants</a></li><li class="chapter-item expanded "><a href="../Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">13.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/OperationalCommands.html"><strong aria-hidden="true">14.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">15.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="../Chapters/Snap.html"><strong aria-hidden="true">16.</strong> Snap Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Wrapup.html"><strong aria-hidden="true">17.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="../Chapters/License.html"><strong aria-hidden="true">18.</strong> License</a></li><li class="chapter-item expanded "><a href="../Chapters/Acknowledgements.html" class="active"><strong aria-hidden="true">19.</strong> Acknowlegements</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../Chapters/Introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../Chapters/WhatIsRPN.html"><strong aria-hidden="true">2.</strong> What is an RPN Calculator</a></li><li class="chapter-item expanded "><a href="../Chapters/Installation.html"><strong aria-hidden="true">3.</strong> Installation</a></li><li class="chapter-item expanded "><a href="../Chapters/Stacks.html"><strong aria-hidden="true">4.</strong> Stacks</a></li><li class="chapter-item expanded "><a href="../Chapters/HighLevelUsage.html"><strong aria-hidden="true">5.</strong> High Level Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/CommandLineOptions.html"><strong aria-hidden="true">6.</strong> Command Line Options</a></li><li class="chapter-item expanded "><a href="../Chapters/Operands.html"><strong aria-hidden="true">7.</strong> Operands</a></li><li class="chapter-item expanded "><a href="../Chapters/CalculatorCommands.html"><strong aria-hidden="true">8.</strong> Calculator Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Conversions.html"><strong aria-hidden="true">9.</strong> Conversions</a></li><li class="chapter-item expanded "><a href="../Chapters/TrigFunctions.html"><strong aria-hidden="true">10.</strong> Trigonometry Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/MemoryCommands.html"><strong aria-hidden="true">11.</strong> Memory Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/Constants.html"><strong aria-hidden="true">12.</strong> Constants</a></li><li class="chapter-item expanded "><a href="../Chapters/UserDefinedFunctions.html"><strong aria-hidden="true">13.</strong> User Defined Functions</a></li><li class="chapter-item expanded "><a href="../Chapters/OperationalCommands.html"><strong aria-hidden="true">14.</strong> Operational Commands</a></li><li class="chapter-item expanded "><a href="../Chapters/BuildingRPNCalc.html"><strong aria-hidden="true">15.</strong> Building RPNCalc</a></li><li class="chapter-item expanded "><a href="../Chapters/Snap.html"><strong aria-hidden="true">16.</strong> Snap Usage</a></li><li class="chapter-item expanded "><a href="../Chapters/Wrapup.html"><strong aria-hidden="true">17.</strong> Wrapup</a></li><li class="chapter-item expanded "><a href="../Chapters/License.html"><strong aria-hidden="true">18.</strong> Licenses</a></li><li class="chapter-item expanded "><a href="../Chapters/Acknowledgements.html" class="active"><strong aria-hidden="true">19.</strong> Acknowlegements</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -137,8 +137,27 @@
                         <img align="right" width="175" src="../Images/Acknowlegement.png">
 <h1 id="acknowledgments"><a class="header" href="#acknowledgments">Acknowledgments</a></h1>
 <p>This is a simple user guide for a tiny piece of software.  But I have used other people's art and applications to create RPNCalc and I want to ensure I recognize them and give them thanks.</p>
+<h2 id="libraries"><a class="header" href="#libraries">Libraries</a></h2>
+<p>Extensive use of several libraries were used in RPNCalc.  I'd like to publicly thank the authors and give them credit for their hard work. The licenses for these libraries is detailed in the <code>Licenses</code> chapter.</p>
+<ul>
+<li>
+<p><a href="ttps://jcommander.org">JCommander</a> is used to parse the command line for options and parameters</p>
+</li>
+<li>
+<p><a href="https://github.com/fusesource/jansi">jAnsi</a> allows for colorized output in the consoles</p>
+</li>
+<li>
+<p><a href="https://github.com/junit-team/junit5">jUnit5</a> is used for automated unit testing</p>
+</li>
+<li>
+<p><a href="https://maven.apache.org/">Maven</a> build tool is used extensively in RPNCalc</p>
+</li>
+<li>
+<p><a href="https://adoptium.net">OpenJDK</a> is the engine that runs Java on my systems.  You may be running another Java Development Kit (JDK) or Java Runtime Environment (JRE)</p>
+</li>
+</ul>
 <h2 id="graphics"><a class="header" href="#graphics">Graphics</a></h2>
-<p>I'd like to thank FlatIcon.com for their non-commercial use license for the top right icons used in this guide as well as IconFinder.</p>
+<p>I'd like to give recognition and attribution to the authors of the icons used in this guide.</p>
 <ul>
 <li>
 <p>Install: <a href="https://www.flaticon.com/free-icons/easy-installation" title="easy installation icons">Easy installation icons created by Freepik - Flaticon</a></p>
@@ -174,7 +193,7 @@
 <p>Acknowledgment: <a href="https://www.flaticon.com/free-icons/agreement" title="agreement icons">Agreement icons created by Freepik - Flaticon</a></p>
 </li>
 <li>
-<p>Other icons were sourced from <a href="https://iconfinder.com">IconFinder</a> and/or were licensed via the <a href="https://creativecommons.org/licenses/">Creative Commons License</a></p>
+<p>Other icons were sourced from <a href="https://iconfinder.com">IconFinder</a> and were licensed via the <a href="https://creativecommons.org/licenses/">Creative Commons License</a></p>
 </li>
 </ul>
 <h2 id="mdbook"><a class="header" href="#mdbook">mdBook</a></h2>
