@@ -4,7 +4,10 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Operands - RPNCalc User Guide</title>
+
+
         <!-- Custom HTML head -->
+        
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The RPNCalc User Guide">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,15 +19,18 @@
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -83,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -110,6 +116,7 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -123,6 +130,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -137,19 +145,32 @@
                         <img align="right" width="20%" src="../Images/Operands.png">
 <h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
 <p>Operands are the standard symbols used for basic mathematics on numbers.  The following is the list of operands supported by RPNCalc.  These are also supported by the NumOps shortcut described below.</p>
-<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operand the order is important.  It's fairly intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
-<div class="table-wrapper"><table><thead><tr><th>Operand</th><th>Math</th><th>Description</th></tr></thead><tbody>
-<tr><td>+</td><td><code>ADDITION</code></td><td>Add <code>line2</code> and <code>line</code></td></tr>
-<tr><td>-</td><td><code>SUBTRACTION</code></td><td>Subtract <code>line1</code> from <code>line2</code></td></tr>
-<tr><td>*</td><td><code>MULTIPLICATION</code></td><td>Multiply <code>line1</code> and <code>line2</code></td></tr>
-<tr><td>/</td><td><code>DIVISION</code></td><td>Divide <code>line2</code> by <code>line1</code></td></tr>
-<tr><td>^</td><td><code>POWER</code></td><td>Take <code>line2</code> to the power of <code>line1</code></td></tr>
+<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operand the order of the items in the stack is important.  It's fairly intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Operand</th><th style="text-align: center">Math</th><th>Description</th></tr></thead><tbody>
+<tr><td style="text-align: center">+</td><td style="text-align: center"><code>Addition</code></td><td>Add <code>line2</code> and <code>line</code></td></tr>
+<tr><td style="text-align: center">-</td><td style="text-align: center"><code>Subtraction</code></td><td>Subtract <code>line1</code> from <code>line2</code></td></tr>
+<tr><td style="text-align: center">*</td><td style="text-align: center"><code>Multiplication</code></td><td>Multiply<code>line1</code> and <code>line2</code></td></tr>
+<tr><td style="text-align: center">/</td><td style="text-align: center"><code>Division</code></td><td>Divide <code>line2</code> by <code>line1</code></td></tr>
+<tr><td style="text-align: center">^</td><td style="text-align: center"><code>Exponent</code></td><td>Take <code>line2</code> to the power of <code>line1</code></td></tr>
 </tbody></table>
 </div>
-<p>For example:</p>
-<p><code>3</code> <code>[Enter]</code> <code>2</code> <code>[Enter]</code> <code>-</code>  will execute 3 - 2 and will yield <code>1</code></p>
-<p><code>2</code> <code>[Enter]</code> <code>3</code> <code>[Enter]</code> <code>-</code> will execute 2 - 3 and will yield <code>-1</code></p>
-<p>Hint: We'll discuss commands in later chapters, but the Swap command <code>s</code> will swap the top two items in the stack (<code>line1</code> and <code>line2</code>).  Swap will also swap any to line numbers provided.  Jump to the <code>Calculator Commands</code> chapter for more information.</p>
+<p>Below are two very simple examples that show the order is important</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Line Num</th><th style="text-align: center">Stack</th></tr></thead><tbody>
+<tr><td style="text-align: center"><code>line2</code></td><td style="text-align: center">3</td></tr>
+<tr><td style="text-align: center"><code>line1</code></td><td style="text-align: center">2</td></tr>
+</tbody></table>
+</div>
+<p>Example: Minus <code>-</code>  will execute 3 - 2 and will yield <code>1</code></p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Line Num</th><th style="text-align: center">Stack</th></tr></thead><tbody>
+<tr><td style="text-align: center"><code>line2</code></td><td style="text-align: center">2</td></tr>
+<tr><td style="text-align: center"><code>line1</code></td><td style="text-align: center">3</td></tr>
+</tbody></table>
+</div>
+<p>Example: Minus <code>-</code> will execute 2 - 3 and will yield <code>-1</code></p>
+<br>
+<hr>
+<br>
+<p><code>Hint:</code> We'll discuss commands in later chapters, but the <code>swap</code> command <code>s</code> will swap the top two items in the stack (<code>line1</code> and <code>line2</code>).  Swap will also swap any two line numbers provided.  See the <code>Calculator Commands Chapter</code> for more information.</p>
 <h2 id="the-numops-shortcut"><a class="header" href="#the-numops-shortcut">The NumOps Shortcut</a></h2>
 <p>RPNCalc has an important shortcut that can speed up your calculations.  You can append one of the above operands at the end of an entered number and the program will, behind the scenes, place the number on top of the stack (<code>line1</code>) and then execute the operand.  For example:</p>
 <p><code>2 [ENTER]</code></p>
@@ -158,7 +179,7 @@
 <p><code>2 [ENTER]</code></p>
 <p><code>3 [ENTER]</code></p>
 <p><code>+ [ENTER]</code></p>
-<p>As an example of this NumOps shortcut, lets revisit our example from the introduction.</p>
+<p>As an example of this NumOps shortcut, see the following example:</p>
 <p><code>x = SQRT((((5+3) * 8)/2) ^ 6)</code></p>
 <p>Leveraging the shortcut, this would become:</p>
 <ul>
@@ -179,9 +200,11 @@
                             <a rel="prev" href="../Chapters/CommandLineOptions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+
                             <a rel="next" href="../Chapters/CalculatorCommands.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -191,6 +214,7 @@
                     <a rel="prev" href="../Chapters/CommandLineOptions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+
                     <a rel="next" href="../Chapters/CalculatorCommands.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -198,16 +222,24 @@
 
         </div>
 
+
+
+
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
+
+
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+
+
     </body>
 </html>

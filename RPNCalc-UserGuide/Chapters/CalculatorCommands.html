@@ -4,7 +4,10 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Calculator Commands - RPNCalc User Guide</title>
+
+
         <!-- Custom HTML head -->
+        
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The RPNCalc User Guide">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,15 +19,18 @@
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -83,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -110,6 +116,7 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -123,6 +130,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -137,31 +145,31 @@
                         <img align="right" width="175" src="../Images/CalcCommands.png">
 <h1 id="calculator-commands"><a class="header" href="#calculator-commands">Calculator Commands</a></h1>
 <p>We've discussed numbers, both fractional and decimal as well as operands that perform basic mathematical functions.  This chapter starts discussing commands which are the heart and soul of RPNCalc.</p>
-<p>In Calculator commands, these are the basic commands that operations on the numbers on the stack.  Most are fairly simple and intutitive, but there are a few that are a bit odd.  I'm looking at you <code>dice</code>.</p>
-<p>These commands, like the others you'll read about later, are executed by typing the command name, and any needed arguments into RPNCalc.  Often there are several different names and abreviations for the same command.  This is just to make it easier to remember.</p>
+<p>In Calculator Commands, these are the basic commands that operations on the numbers on the stack.  Most are fairly simple and intuitive, but there are a few that are a bit odd.  I'm looking at you <code>dice</code>.</p>
+<p>These commands, like the others you'll read about later, are executed by typing the command name, and any needed arguments into RPNCalc.  Often there are several different names and abreviations for the same command.  This is just to make it easier to remember.  Brackets, <code>[]</code> around an option denotes it is optional.</p>
 <div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
-<tr><td>u [#]<br> undo [#]</td><td><strong>UNDO:</strong> By default, undo the last operation.  However, if an undo stack line number is given, as displayed in the <code>list undo</code> command, undo will restore the stack back to that step.  Please keep in mind that if you restore back to a previous undo state, later undo states will be discarded.  Typically, however, <code>u</code> undo is used to simply undo the previous action</td></tr>
-<tr><td>f <br> flip</td><td><strong>FLIP SIGN:</strong> Flip the sign on the top stack item <code>line1</code>. This is effectively multiplying <code>line1</code> by -1</td></tr>
-<tr><td>c <br> clear</td><td><strong>CLEAR:</strong> Clear the screen, and empty the current stack.  Memory data is retained and you can undo the clear with the <code>u</code> undo command</td></tr>
-<tr><td>cl <br> clean</td><td><strong>CLEAN SCREEN:</strong> Clear the current screen, but keep the stack.  After cleaning, the stack will be displayed at the top of the screen.  Used to remove the clutter</td></tr>
-<tr><td>d [#] <br> del [#] <br> drop [#]</td><td><strong>DELETE:</strong> Delete the number on the top of the stack (<code>line1</code>) or, optionally, deletes the line number provided</td></tr>
-<tr><td>s [#] [#] <br> swap [#] [#]</td><td><strong>SWAP LINES:</strong> Without an argument, swap the top two stack items (<code>line1 &amp; line2</code>).  You can swap any two line numbers in your stack by providing the two line numbers</td></tr>
-<tr><td>%</td><td><strong>PERCENT:</strong> Assumes <code>line1</code> contains a percent.  This converts that into a number by simply dividing that value by 100.  For example, if you want to take 50.123% of a number, you could just enter in <code>50.123 [ENTER] % [ENTER] *</code></td></tr>
-<tr><td>sqrt</td><td><strong>SQUARE ROOT:</strong> Perform a <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> of the top stack item (<code>line1</code>)</td></tr>
-<tr><td>round [n]</td><td><strong>ROUND:</strong> Round <code>line1</code> to <code>[n]</code> decimal places.  If <code>[n]</code> is not given, round to the nearest integer (zero decimal places).  <strong>Example 1:</strong> <code>3.14159</code> <code>round</code> would round to <code>3</code>.  <strong>Example 2:</strong> <code>3.14159</code> <code>round 4</code> would round to <code>3.1416</code></td></tr>
-<tr><td>aa [keep]</td><td><strong>ADD ALL:</strong> Add all stack items together and return the result to the stack.  If the optional <code>keep</code> parameter is sent, the elements added will be retained on the stack and the total will be added to the top of the stack.  The entire <code>keep</code> command is not necessary, anything that starts with <code>k</code> will work</td></tr>
-<tr><td>mod</td><td><strong>MODULUS:</strong> <a href="en.wikipedia.org/wiki/Modular_arithmetic">Modulus</a> is the remainder after a division.  This command will perform a division of the top two stack items and return the remainder only back to the stack</td></tr>
-<tr><td>avg [keep]</td><td><strong>AVERAGE:</strong> Calculate the average of all of the numbers on the stack.  The stack will be replaced with the result.  If <code>keep</code> is provided, the stack will be retained and the average will be added on top. <code>average</code> or <code>mean</code> can also be used</td></tr>
-<tr><td>sd [keep]</td><td><strong>STANDARD DEVIATION:</strong> Calculate the <a href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> of the items in the stack.  The stack items will be replaced by the result. If <code>keep</code> is provided, the numbers on the stack will not be removed and the standard deviation will simply be added to the top of the stack on <code>line1</code></td></tr>
-<tr><td>copy [#] <br> dup [#]</td><td><strong>COPY:</strong> With no number provided, copy will duplicate the top stack item / <code>line1</code> and place it on the stack.  If the optional line number is given, the value at the line will be duplicated to the top of the stack</td></tr>
-<tr><td>log</td><td><strong>LOGARITHM BASE e:</strong> Calculates the <a href="https://en.wikipedia.org/wiki/Natural_logarithm">natural logarithm (base e)</a></td></tr>
-<tr><td>log10</td><td><strong>LOGARITHM BASE 10:</strong> Calculates the <a href="https://en.wikipedia.org/wiki/Common_logarithm">base10 logarithm</a></td></tr>
-<tr><td>int</td><td><strong>INTEGER:</strong> Converts the top stack item (<code>line1</code>) to it's integer value.  This will discard the decimal portion regardless of it's value.  For example: <code>4.34</code> will result in <code>4</code>.  <code>4.999</code> will also result in <code>4</code>. If rounding is desired, execute the <code>round</code> command prior to <code>int</code></td></tr>
-<tr><td>abs</td><td><strong>ABSOLUTE VALUE:</strong> Takes the <a href="https://en.wikipedia.org/wiki/Absolute_value#:%7E:text=In%20mathematics%2C%20the%20absolute%20value,and%20%7C0%7C%20%3D%200">absolute value</a> of line 1.  The returns the positive value of the number.  Not the most useful command, but could be useful with a user defined function...</td></tr>
-<tr><td>Min</td><td><strong>MINIMUM VALUE:</strong> Copies the small value in the current stack to <code>line1</code></td></tr>
-<tr><td>Max</td><td><strong>MAXIMUM VALUE:</strong> Copies the largest value in the current stack to <code>line1</code></td></tr>
-<tr><td>rand [low] [high]</td><td><strong>RANDOM NUMBER GENERATION:</strong> Generate a random integer number between the provided <code>[l]ow</code> and <code>[h]igh</code> numbers inclusive to both.  If no numbers are provided, then the random number will be between 1 and 100 inclusive</td></tr>
-<tr><td>dice XdY</td><td><strong>DICE ROLL:</strong> Roll a Y sided die X times and add the results to the stack.  Default is 1d6. While not a normal calculator function, it's fun!</td></tr>
+<tr><td>u [#]<br> undo [#]</td><td><em>UNDO</em><br>By default, undo the last operation.  However, if an undo stack line number is given, as displayed with the <code>list undo</code> command, undo will restore the stack back to that point.  Please keep in mind that if you restore back to a previous undo state, later undo states will be discarded.  You can't go back. Typically, however, <code>u</code> undo is used to simply undo the previous action</td></tr>
+<tr><td>f <br> flip</td><td><strong>FLIP SIGN</strong><br>Flip the sign on the top stack item (<code>line1</code>). This is effectively multiplying <code>line1</code> by -1</td></tr>
+<tr><td>c <br> clear</td><td><strong>CLEAR</strong><br>Clear the current stack and the screen.  Memory data is retained and you can undo the clear with the undo <code>u</code> command</td></tr>
+<tr><td>cl <br> clean</td><td><strong>CLEAN SCREEN</strong><br>Clear the current screen, but keep the stack.  After cleaning, the stack will be displayed at the top of the screen.  Used to remove the clutter</td></tr>
+<tr><td>d [#] <br> del [#] <br> drop [#]</td><td><strong>DELETE</strong><br>Delete the number on the top of the stack (<code>line1</code>) or, optionally, deletes the line number provided</td></tr>
+<tr><td>s [#] [#] <br> swap [#] [#]</td><td><strong>SWAP LINES</strong><br>Without an argument, swap the top two stack items (<code>line1 &amp; line2</code>).  You can swap any two line numbers in your stack by providing the two line numbers</td></tr>
+<tr><td>%</td><td><strong>PERCENT</strong><br>Assumes <code>line1</code> contains a percent.  This converts that into a number by simply dividing that value by 100.  For example, if you want to take 50.123% of a number, you could just enter in <code>50.123 [ENTER] % [ENTER] *</code></td></tr>
+<tr><td>sqrt</td><td><strong>SQUARE ROOT</strong><br>Perform a <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> of the top stack item (<code>line1</code>)</td></tr>
+<tr><td>round [n]</td><td><strong>ROUND</strong><br>Round <code>line1</code> to <code>[n]</code> decimal places.  If <code>[n]</code> is not given, round to the nearest integer (zero decimal places).  <strong>Example 1:</strong> <code>3.14159</code> <code>round</code> would round to <code>3</code>.  <strong>Example 2:</strong> <code>3.14159</code> <code>round 4</code> would round to <code>3.1416</code></td></tr>
+<tr><td>aa [keep]</td><td><strong>ADD ALL</strong><br>Add all stack items together and replace the numbers on the stack with the result.  If the optional <code>keep</code> parameter is sent, the elements added will be retained on the stack and the total will be added to the top of the stack.  The entire <code>keep</code> command is not necessary, anything that starts with <code>k</code> will work</td></tr>
+<tr><td>mod</td><td><strong>MODULUS</strong><br><a href="en.wikipedia.org/wiki/Modular_arithmetic">Modulus</a> is the remainder after a division.  This command will perform a division of the top two stack items and return the remainder only back to the stack</td></tr>
+<tr><td>avg [keep]</td><td><strong>AVERAGE</strong><br>Calculate the average of all of the numbers on the stack.  The stack will be replaced with the result.  If <code>keep</code> is provided, the stack will be retained and the average will be added on top. <code>average</code> or <code>mean</code> can also be used</td></tr>
+<tr><td>sd [keep]</td><td><strong>STANDARD DEVIATION</strong><br>Calculate the <a href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> of the items in the stack.  The stack items will be replaced by the result. If <code>keep</code> is provided, the numbers on the stack will not be removed and the standard deviation will simply be added to the top of the stack on <code>line1</code></td></tr>
+<tr><td>copy [#] <br> dup [#]</td><td><strong>COPY</strong><br>With no number provided, copy will duplicate the top stack item / <code>line1</code> and place it on the stack.  If the optional line number is given, the value at the line will be duplicated to the top of the stack</td></tr>
+<tr><td>log</td><td><strong>LOGARITHM BASE e</strong><br>Calculates the <a href="https://en.wikipedia.org/wiki/Natural_logarithm">natural logarithm (base e)</a></td></tr>
+<tr><td>log10</td><td><strong>LOGARITHM BASE 10</strong><br>Calculates the <a href="https://en.wikipedia.org/wiki/Common_logarithm">base10 logarithm</a></td></tr>
+<tr><td>int</td><td><strong>INTEGER</strong><br>Converts the top stack item (<code>line1</code>) to it's integer value.  This will discard the decimal portion regardless of it's value.  For example: <code>4.34</code> will result in <code>4</code>.  <code>4.999</code> will also result in <code>4</code>. If rounding is desired, execute the <code>round</code> command prior to <code>int</code></td></tr>
+<tr><td>abs</td><td><strong>ABSOLUTE VALUE</strong><br>Takes the <a href="https://en.wikipedia.org/wiki/Absolute_value#:~:text=In%20mathematics%2C%20the%20absolute%20value,and%20%7C0%7C%20%3D%200">absolute value</a> of line 1.  The returns the positive value of the number.  Not the most useful command, but could be useful with a user defined function...</td></tr>
+<tr><td>Min</td><td><strong>MINIMUM VALUE</strong><br>Copies the small value in the current stack to <code>line1</code></td></tr>
+<tr><td>Max</td><td><strong>MAXIMUM VALUE</strong><br>Copies the largest value in the current stack to <code>line1</code></td></tr>
+<tr><td>rand [low] [high]</td><td><strong>RANDOM NUMBER GENERATION</strong><br>Generate a random integer number between the provided <code>[l]ow</code> and <code>[h]igh</code> numbers inclusive to both.  If no numbers are provided, then the random number will be between 1 and 100 inclusive</td></tr>
+<tr><td>dice XdY</td><td><strong>DICE ROLL</strong><br>Roll a Y sided die X times and add the results to the stack.  Default is 1d6. While not a normal calculator function, it's fun!</td></tr>
 </tbody></table>
 </div>
                     </main>
@@ -171,9 +179,11 @@
                             <a rel="prev" href="../Chapters/Operands.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+
                             <a rel="next" href="../Chapters/Conversions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -183,6 +193,7 @@
                     <a rel="prev" href="../Chapters/Operands.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+
                     <a rel="next" href="../Chapters/Conversions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -190,16 +201,24 @@
 
         </div>
 
+
+
+
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
+
+
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+
+
     </body>
 </html>

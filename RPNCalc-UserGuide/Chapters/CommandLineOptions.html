@@ -4,7 +4,10 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Command Line Options - RPNCalc User Guide</title>
+
+
         <!-- Custom HTML head -->
+        
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The RPNCalc User Guide">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,15 +19,18 @@
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -83,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -110,6 +116,7 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -123,6 +130,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -137,10 +145,9 @@
                         <img align="right" width="150" src="../Images/CmdLine.png">
 <h1 id="command-line-options"><a class="header" href="#command-line-options">Command Line Options</a></h1>
 <p>Currently there are several command line options, and all are optional.  Normally, one would simply run the program and you would enter in numbers, operands, and commands.</p>
-<p>However, there are several options that can be set when the program is executed.  If you always want to run RPNCalc with a specific command line option, you should create an alias in your shell to do so.  Then ever time you run rpncalc, it would run with those options.</p>
-<p>You can set the number of memory slots, decimal alignment, debug mode, and others via these options.  The below table lists all of the allowed command line options and their functions.</p>
+<p>These options will either start RPNCalc in a certain &quot;mode&quot; such as <code>Debug</code> or <code>No Color</code> or will provide information and exist such as <code>Version</code> or <code>Help</code>.</p>
 <div class="table-wrapper"><table><thead><tr><th>Option</th><th>Name</th><th>Description</th></tr></thead><tbody>
-<tr><td>-D</td><td><code>DEBUG MODE</code></td><td>Runs the program in debug mode.  This will display quite a bit of information in RED as you use the program.  This is mostly used by the developer and clutters everythign up, but you may find it useful if you are trying to debug something.  I could certainly add a lot more if needed, but it's useful today.  You can also toggle debug mode on/off by entering in the command <code>debug</code> while within the program - you don't have to restart RPNCalc</td></tr>
+<tr><td>-D</td><td><code>DEBUG MODE</code></td><td>Runs the program in debug mode.  This will display quite a bit of information in RED as you use the program.  This is mostly used by the developer and clutters everything up, but you may find it useful if you are trying to debug something.  I could certainly add a lot more if needed, but it's useful today.  You can also toggle debug mode on/off by entering in the command <code>debug</code> while within the program - you don't have to restart RPNCalc</td></tr>
 <tr><td>-l <code>name</code></td><td><code>LOAD STACK</code></td><td>Load a saved stack.  This essentially will &quot;name&quot; your session and store the stack upon exit in the Java preferences system.  You can load the stack with the <code>-l name</code> command line option, or from within the program by using the <code>load name</code> command.  Please note the name field is whatever you want to call the instance but avoid spaces in the name.  I'm not aware of a limit to the number of saved stacks You can have.  If the name to load does not exist, the stack will be created and saved when you exit.</td></tr>
 <tr><td>-z</td><td><code>DISABLE COLOR</code></td><td>Disable colorized output.  Useful if your current terminal doesn't support ANSI color sequences</td></tr>
 <tr><td>-v</td><td><code>VERSION</code></td><td>This will display the current program version, but will also check GitHub for the leatest release.  It is possible, especially if you are using RPNCalc as a Snap, to have a later version than the latest GitHub release.</td></tr>
@@ -154,9 +161,11 @@
                             <a rel="prev" href="../Chapters/HighLevelUsage.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+
                             <a rel="next" href="../Chapters/Operands.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -166,6 +175,7 @@
                     <a rel="prev" href="../Chapters/HighLevelUsage.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+
                     <a rel="next" href="../Chapters/Operands.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -173,16 +183,24 @@
 
         </div>
 
+
+
+
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
+
+
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+
+
     </body>
 </html>

@@ -4,7 +4,10 @@
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
         <title>Memory Commands - RPNCalc User Guide</title>
+
+
         <!-- Custom HTML head -->
+        
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="The RPNCalc User Guide">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,15 +19,18 @@
         <link rel="stylesheet" href="../css/general.css">
         <link rel="stylesheet" href="../css/chrome.css">
         <link rel="stylesheet" href="../css/print.css" media="print">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         <link rel="stylesheet" href="../fonts/fonts.css">
+
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../highlight.css">
         <link rel="stylesheet" href="../tomorrow-night.css">
         <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
+
     </head>
     <body>
         <!-- Provide site root to javascript -->
@@ -83,7 +89,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -110,6 +116,7 @@
                         <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+
                     </div>
                 </div>
 
@@ -123,6 +130,7 @@
                         </ul>
                     </div>
                 </div>
+
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -136,17 +144,17 @@
                     <main>
                         <img align="right" width="125" src="../Images/Memory.png">
 <h1 id="memory-commands"><a class="header" href="#memory-commands">Memory Commands</a></h1>
-<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (numbers 0 - 9).  This amount can be increased with the <code>set memslots</code> command.  If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions.  You can change it as will, but if you decrease the number of slots, anything held in the &quot;no longer there&quot; slots will be discarded.</p>
-<p>For example, say you <code>set memslots 20</code> and store values in all of them.  If you later <code>set memslots 10</code>, the values in the upper 10 slots will be gone.</p>
-<p>The operational command <code>reset</code> will set the number of memory slots back to the default of 10.</p>
-<p>The basic need to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It's saved in the Java preferences system as discussed earlier.</p>
+<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (<code>slot0</code> - <code>slot9</code>).  This amount can be increased with the <code>set memslots</code> command.  If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions.  You can change it as will, but if you decrease the number of slots, anything held in the &quot;no longer there&quot; slots will be discarded.</p>
+<p>For example, say you <code>set memslots 20</code> and store values in all of them.  If you later <code>set memslots 10</code>, the values in the upper 10 slots will be discarded.</p>
+<p>The operational command <code>reset</code> will reset all of the persistant settings back to their defaults including the number of memory slots.</p>
+<p>The normal usage to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It's saved in the Java preferences system as discussed earlier.</p>
 <div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
-<tr><td>mem [slot] add</td><td>Add the top stack item / <code>line1</code> into the memory slot provided.  By default, there are 10 slots; 0 through 9.  If you do not provide a slot number it will default to slot 0.  Example:  <code>mem add</code>   will add the contents of <code>line1</code> memory slot0</td></tr>
-<tr><td>mem [slot] copy<br>mem [slot] recall</td><td>Copies the contents of memory slot provided back onto the stack.  Defaults to Slot0 if no slot number is provided</td></tr>
-<tr><td>mem [slot] clr</td><td>Clear the contents of the memory slot provided.  Defaults to Slot0 if no slot is provided.  Example: <code>mem 2 clr</code>  The command <code>clear</code> can also be used instead of <code>clr</code></td></tr>
-<tr><td>mem clearall</td><td>Clears the contents of all memory slots.  There is no need to include a SlotNumber as they will all be erased.  Note <code>mem clrall</code> will also work</td></tr>
-<tr><td>mem copyall</td><td>Copy all items from the memory slots onto the stack.  These will be ordered via memory slot number. i.e. Memory slot 0 will be at the top of the stack / <code>line1</code>. <code>recallall</code> will also work</td></tr>
-<tr><td>mem addall</td><td>Add all items in the stack to a memory slot.  The order will be the same as the stack with memory slot0 being the top of the stack.  The command will fail if there are more stack items than there are memory slots - which default to 10.  It may simply be easier to save the stack with a name using the load <code>-l</code> command.  Also, any values currently in a needed memory slot will be silently overwritten</td></tr>
+<tr><td>mem [slot] add</td><td><code>mem X add</code><br>Will add the top stack item (<code>line1</code>) into the memory slot X.  By default, there are 10 slots; 0 through 9.  If you do not provide a slot number it will default to <code>slot0</code><br>Example:  <code>mem add</code>   will add the contents of <code>line1</code> into memory <code>slot0</code></td></tr>
+<tr><td>mem [slot] copy<br>mem [slot] recall</td><td><code>mem X copy</code><br>Copies the contents of memory slot provided back onto the stack.  Defaults to <code>slot0</code> if no slot number is provided</td></tr>
+<tr><td>mem [slot] clr</td><td><code>mem X clr</code><br>Clear the contents of the memory slot provided.  Defaults to Slot0 if no slot is provided.  Example: <code>mem 2 clr</code>  The command <code>clear</code> can also be used instead of <code>clr</code></td></tr>
+<tr><td>mem clearall</td><td><code>mem clearall</code><br>Clears the contents of all memory slots.  There is no need to include a SlotNumber as they will all be erased.  Note <code>mem clrall</code> will also work</td></tr>
+<tr><td>mem copyall</td><td><code>mem copyall</code><br>Copy all items from the memory slots onto the stack.  These will be ordered via memory slot number. i.e. Memory slot 0 will be at the top of the stack / <code>line1</code>. <code>recallall</code> will also work</td></tr>
+<tr><td>mem addall</td><td><code>mem addall</code><br>Add all items in the stack to a memory slot.  The order will be the same as the stack with memory slot0 being the top of the stack.  The command will fail if there are more stack items than there are memory slots - which default to 10.  It may simply be easier to save the stack with a name using the load <code>-l</code> command.  Also, any values currently in a needed memory slot will be silently overwritten</td></tr>
 </tbody></table>
 </div>
                     </main>
@@ -156,9 +164,11 @@
                             <a rel="prev" href="../Chapters/TrigFunctions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
+
                             <a rel="next" href="../Chapters/Constants.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
+
                         <div style="clear: both"></div>
                     </nav>
                 </div>
@@ -168,6 +178,7 @@
                     <a rel="prev" href="../Chapters/TrigFunctions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
+
                     <a rel="next" href="../Chapters/Constants.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -175,16 +186,24 @@
 
         </div>
 
+
+
+
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
+
+
         <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
         <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
+
+
     </body>
 </html>
