@@ -503,12 +503,12 @@
 <p>After the JDK is installed, you'll need to install the Apache Maven build tool.  Then download/clone of the source code from Github along with my <a href="https://github.com/frossm/library">library package</a>.  This library package contains many methods that I use across my applications.</p>
 <p>To install the library, execute the following from the top level library directory (the one with the <code>pom.xml</code> file in it):</p>
 <p><code>mvn install</code></p>
-<p>That should install the library into the Maven cache on your computer.</p>
-<p>Secondly, you'll need to build the executable RPNCalc jar file.  From the top level directory of RPNCalc, execute:</p>
+<p>That should install the library into the Maven cache on your computer.  You can remove the library directory.</p>
+<p>Secondly, you'll need to build the executable RPNCalc jar file.  Download, or clone, the RPNCalc source code from the link provided above.  Unzip it to a directory and from the top level directory of RPNCalc, execute:</p>
 <p><code>mvn package</code></p>
 <p>Assuming all goes well, you'll have a new shiny <code>rpncalc.jar</code> file in the <code>target</code> directory.</p>
-<p>Automated testing in RPNCalc (using JUnit5) is fairly extensive (although testing can always be more extensive) and should catch most issues with the code.  The hope is I find them before it's released, but pay attention to the Maven output and you'll see if there are issues.</p>
-<p>I'll discuss this more in the Snap chapter, but if you are on a Linux system that supports snaps, I would encourage that you leverage it. Not only are Snap applications &quot;sandboxed&quot; so it's secure, all of the dependencies are bundled in so you don't even need to have java installed on the machine. It is also automatically updated so you'll always have the latest which you can force this with <code>sudo snap refresh</code>.</p>
+<p>Automated testing in RPNCalc (using JUnit5) is fairly complete (although testing can always be more extensive) and should catch most issues with the code.  The hope is I find them before it's released, but pay attention to the Maven output and you'll see if there are issues.</p>
+<p>I'll discuss this more in the Snap chapter, but if you are on a Linux system that supports snaps, I would encourage that you leverage it. Not only are Snap applications &quot;sandboxed&quot; so it's more secure, all of the dependencies are bundled in so you don't even need to have java installed on the machine. It is also automatically updated so you'll always have the latest.  Although this can also be forced with <code>sudo snap refresh</code>.</p>
 <p>My preference is to use the Snap installation which is what I do on my Ubuntu machines.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="snap"><a class="header" href="#snap">SNAP</a></h1>
 <p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io//rpncalc/badge.svg" alt="rpncalc" /></a></p>
