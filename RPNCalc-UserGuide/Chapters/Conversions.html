@@ -150,7 +150,7 @@
 <p>The <code>frac [base]</code> command takes the item on the top of the stack (<code>line1</code>) and displays the fractional equivalent.  <code>[base]</code> sets the precision of the calculation. If a <code>base</code> is not provided, RPNCalc will use 1/64 as the default.</p>
 <p><strong>For example</strong>, if you had <code>1.1234</code> on the stack, <code>frac</code> would show you <code>1.1234 is approximately 1 1/8</code>  So base was given so it would have used a base of 64 (which means maximum granularity would be 1/64) and auto reduced the result which is why you get the <code>1 1/8</code>. </p>
 <p>if <code>frac 2</code> woulc have been entered (which means 1/2 is maximum granularity), you get <code>1.1234 is approximately 1 0/1</code> or just one.  <em>Need to look into that display oddity</em>.|</p>
-<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th><div style="width:90px">Command</div></th><th>Description</th></tr></thead><tbody>
 <tr><td>frac [base]</td><td>Display a fractional estimate of the last stack item (<code>line1</code>) with the maximum granularity of 1/[base]. See the above description for more detail</td></tr>
 <tr><td>in2mm<br>2mm</td><td>Converts the value in <code>line1</code> from inches to millimeters</td></tr>
 <tr><td>mm2in<br>2in</td><td>Converts the value in <code>line1</code> from millimeters to inches</td></tr>

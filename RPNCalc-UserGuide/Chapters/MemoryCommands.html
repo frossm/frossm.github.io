@@ -147,7 +147,7 @@
 <p>For example, say you <code>set memslots 20</code> and store values in all of them.  If you later <code>set memslots 10</code>, the values in the upper 10 slots will be discarded.</p>
 <p>The operational command <code>reset</code> will reset all of the persistant settings back to their defaults including the number of memory slots.</p>
 <p>The normal usage to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It's saved in the Java preferences system as discussed earlier.</p>
-<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper"><table><thead><tr><th><div style="width:135px">Command</div></th><th>Description</th></tr></thead><tbody>
 <tr><td>mem [slot] add</td><td><code>mem X add</code><br>Will add the top stack item (<code>line1</code>) into the memory slot X.  By default, there are 10 slots; 0 through 9.  If you do not provide a slot number it will default to <code>slot0</code><br>Example:  <code>mem add</code>   will add the contents of <code>line1</code> into memory <code>slot0</code></td></tr>
 <tr><td>mem [slot] copy<br>mem [slot] recall</td><td><code>mem X copy</code><br>Copies the contents of memory slot provided back onto the stack.  Defaults to <code>slot0</code> if no slot number is provided</td></tr>
 <tr><td>mem [slot] clr</td><td><code>mem X clr</code><br>Clear the contents of the memory slot provided.  Defaults to Slot0 if no slot is provided.  Example: <code>mem 2 clr</code>  The command <code>clear</code> can also be used instead of <code>clr</code></td></tr>

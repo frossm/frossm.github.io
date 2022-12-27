@@ -145,12 +145,13 @@
 <h1 id="trigonometry-functions"><a class="header" href="#trigonometry-functions">Trigonometry Functions</a></h1>
 <p>RPNCalc does not consider itself a scientific calculator (at least not currently).  However, it's certainly beyond a very basic calculator.  The trigonometry commands listed here are very basic, but do fill a need if you need to do a few basic calculations.</p>
 <p>Lastly, I'm happy to add more capabilities if there is a desire (and an offer to help test).</p>
-<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Description</th></tr></thead><tbody>
-<tr><td>sin [rad]<br>cos [rad]<br>tan [rad]</td><td>Calculate the <a href="https://en.wikipedia.org/wiki/Trigonometry">trigonometry</a> function requested.  Angles are input as degrees by default unless the optional <code>rad</code> parameter is given in which case the angles will be in <a href="https://en.wikipedia.org/wiki/Radian">radians</a>.<br><br><strong>Example:</strong> <code>tan</code> will calculate the tangent using <code>line1</code> as the angle in degrees.  Use <code>tan rad</code> if <code>line1</code> contains the angle in radians</td></tr>
-<tr><td>asin [rad]<br>acos [rad]<br>atan [rad]</td><td>Calculate the arc <a href="https://en.wikipedia.org/wiki/Trigonometry">trigonometry</a> function.  Like the above, the result is returned in degrees unless <code>rad</code> parameter is provided</td></tr>
-<tr><td>hypot<br>hypotenuse</td><td>Assumes the top two stack items are the right triangle' legs and this function returns the hypotenuse using the <a href="https://en.wikipedia.org/wiki/Pythagorean_theorem">Pythagorean theorem</a>.  Specifically, it returns SQRT( (<code>line1</code>^2 + <code>line2</code>^2 ))</td></tr>
-</tbody></table>
-</div>
+<p>|<div style="width:90px">Command</div>|Description|
+|<div style="width:90px">Command</div>|Description|
+|-------|-----------|
+|sin [rad]<br>cos [rad]<br>tan [rad]|Calculate the <a href="https://en.wikipedia.org/wiki/Trigonometry">trigonometry</a> function requested.  Angles are input as degrees by default unless the optional <code>rad</code> parameter is given in which case the angles will be in <a href="https://en.wikipedia.org/wiki/Radian">radians</a>.<br><br><strong>Example:</strong> <code>tan</code> will calculate the tangent using <code>line1</code> as the angle in degrees.  Use <code>tan rad</code> if <code>line1</code> contains the angle in radians|
+|asin [rad]<br>acos [rad]<br>atan [rad]|Calculate the arc <a href="https://en.wikipedia.org/wiki/Trigonometry">trigonometry</a> function.  Like the above, the result is returned in degrees unless <code>rad</code> parameter is provided|
+|hypot<br>hypotenuse| Assumes the top two stack items are the right triangle' legs and this function returns the hypotenuse using the <a href="https://en.wikipedia.org/wiki/Pythagorean_theorem">Pythagorean theorem</a>.  Specifically, it returns SQRT( (<code>line1</code>^2 + <code>line2</code>^2 ))|</p>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
