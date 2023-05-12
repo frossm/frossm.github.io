@@ -150,6 +150,7 @@
 <div class="table-wrapper"><table><thead><tr><th><div style="width:100px">Command</div></th><th>Description</th></tr></thead><tbody>
 <tr><td>debug</td><td>Toggle debug mode which will display additional information on what's happening internally in the program.  Same as the <code>-D</code> command line switch.  Probably not the useful for a normal user</td></tr>
 <tr><td>h <br> ?</td><td><code>h</code> or <code>?</code> will display the in-program help page</td></tr>
+<tr><td>export <code>FILE</code></td><td><code>Export</code> will simply export the current stack values into the file specified. The format is very simple with one number per line. The output will be ordered as on the screen with the top of the stack item at the end of the file and the last stack item at the top. If the file exists, it will be overwritten.</td></tr>
 <tr><td>import <code>FILE</code></td><td>With <code>import</code> RPNCalc will replace the current stack with one loaded from a file.  The file format is simple, just one number per line.  Do not include any comments or alphanumeric/special characters.  Just one number per line with the last number being <code>line1</code> - just like the display in RPNCalc</td></tr>
 <tr><td>list stacks</td><td>List the current saved stacks on the system, including the one currently in use</td></tr>
 <tr><td>list mem</td><td>Display the contents of the memory slots</td></tr>
