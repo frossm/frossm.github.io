@@ -147,13 +147,13 @@
                         <img align="right" width="20%" src="../Images/Operands.png">
 <h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
 <p>Operands are the standard symbols used for basic mathematics on numbers.  The following is the list of operands supported by RPNCalc.  These are also supported by the NumOps shortcut described below.</p>
-<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operand the order of the items in the stack is important.  It's fairly intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
+<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operands, the order of the items in the stack is important.  It's fairly intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">Operand</th><th style="text-align: center">Math</th><th>Description</th></tr></thead><tbody>
-<tr><td style="text-align: center">+</td><td style="text-align: center"><code>Addition</code></td><td>Add <code>line2</code> and <code>line</code></td></tr>
+<tr><td style="text-align: center">+</td><td style="text-align: center"><code>Addition</code></td><td>Add <code>line1</code> and <code>line2</code></td></tr>
 <tr><td style="text-align: center">-</td><td style="text-align: center"><code>Subtraction</code></td><td>Subtract <code>line1</code> from <code>line2</code></td></tr>
 <tr><td style="text-align: center">*</td><td style="text-align: center"><code>Multiplication</code></td><td>Multiply<code>line1</code> and <code>line2</code></td></tr>
 <tr><td style="text-align: center">/</td><td style="text-align: center"><code>Division</code></td><td>Divide <code>line2</code> by <code>line1</code></td></tr>
-<tr><td style="text-align: center">^</td><td style="text-align: center"><code>Exponent</code></td><td>Take <code>line2</code> to the power of <code>line1</code></td></tr>
+<tr><td style="text-align: center">^</td><td style="text-align: center"><code>Exponent</code></td><td>Take <code>line2</code> to the power of <code>line1</code> Note that the exponent must be an integer. If it is not, the fractional component will be dropped prior to the calculation</td></tr>
 </tbody></table>
 </div>
 <p>Below are two very simple examples that show the order is important</p>
@@ -162,7 +162,7 @@
 <tr><td style="text-align: center"><code>line1</code></td><td style="text-align: center">2</td></tr>
 </tbody></table>
 </div>
-<p>Example: Minus <code>-</code>  will execute 3 - 2 and will yield <code>1</code></p>
+<p>Example: The minus <code>-</code> command will execute 3 - 2 and will yield <code>1</code></p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">Line Num</th><th style="text-align: center">Stack</th></tr></thead><tbody>
 <tr><td style="text-align: center"><code>line2</code></td><td style="text-align: center">2</td></tr>
 <tr><td style="text-align: center"><code>line1</code></td><td style="text-align: center">3</td></tr>
@@ -193,7 +193,7 @@
 <li><code>SQRT</code></li>
 </ul>
 <p>By the way, if you were wondering the answer is 32,768.</p>
-<p><em><strong>Please note that you can not use this NumOps shortcut with a fractional number entry</strong></em></p>
+<p><em><strong>Please note that you can not use this NumOps shortcut with a fractional number entry or a scientific notation entry</strong></em></p>
 
                     </main>
 

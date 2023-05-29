@@ -150,15 +150,15 @@
 <p>I've included the ones I use the most, but I'm happy to include others if you'd find something else useful.</p>
 <h2 id="fractional-display"><a class="header" href="#fractional-display">Fractional Display</a></h2>
 <p>The RPNCalc stack only contains decimal numbers.  Therefore, we can't directly store fractional values on the stack.  If a fraction is entered, it is converted to a decimal.  There could be a loss of precision when this is done.  For example, there is no exact fractional equivalent for <code>PI</code> much like there is no exact decimal equivalent for <code>1/3</code>.  However, the difference is usually so small that it's acceptable.</p>
-<p>The <code>frac [base]</code> command takes the item on the top of the stack (<code>line1</code>) and displays the fractional equivalent.  <code>[base]</code> sets the precision of the calculation. If a <code>base</code> is not provided, RPNCalc will use 1/64 as the default.</p>
-<p><strong>For example</strong>, if you had <code>1.1234</code> on the stack, <code>frac</code> would show you <code>1.1234 is approximately 1 1/8</code>  So base was given so it would have used a base of 64 (which means maximum granularity would be 1/64) and auto reduced the result which is why you get the <code>1 1/8</code>. </p>
-<p>if <code>frac 2</code> woulc have been entered (which means 1/2 is maximum granularity), you get <code>1.1234 is approximately 1 0/1</code> or just one.  <em>Need to look into that display oddity</em>.|</p>
+<p>The <code>frac [base]</code> command takes the item on the top of the stack (<code>line1</code>) and displays the approximate fractional equivalent.  <code>[base]</code> sets the precision of the calculation. If a <code>base</code> is not provided, RPNCalc will use <code>64</code> (1/64) as the default.</p>
+<p><strong>For example</strong>, if you had <code>1.1234</code> on the stack, <code>frac</code> would show you <code>1.1234 is approximately 1 1/8</code>  No base was given so it would have used a base of 64 (which means maximum granularity would be 1/64) and auto reduced the result which is why you get the <code>1 1/8</code>. </p>
+<p>if <code>frac 5</code> would have been entered (which means 1/5 is maximum granularity), you get <code>1.1234 is approximately 1 1/5</code>.</p>
 <div class="table-wrapper"><table><thead><tr><th><div style="width:90px">Command</div></th><th>Description</th></tr></thead><tbody>
 <tr><td>frac [base]</td><td>Display a fractional estimate of the last stack item (<code>line1</code>) with the maximum granularity of 1/[base]. See the above description for more detail</td></tr>
-<tr><td>in2mm<br>2mm</td><td>Converts the value in <code>line1</code> from inches to millimeters</td></tr>
-<tr><td>mm2in<br>2in</td><td>Converts the value in <code>line1</code> from millimeters to inches</td></tr>
-<tr><td>deg2rad<br>2rad</td><td>Convert <code>line1</code> from degrees into <a href="https://en.wikipedia.org/wiki/Radian">radians</a></td></tr>
-<tr><td>rad2deg<br>2deg</td><td>Convert <code>line1</code> from radians into degrees</td></tr>
+<tr><td>in2mm</td><td>Converts the value in <code>line1</code> from inches to millimeters</td></tr>
+<tr><td>mm2in</td><td>Converts the value in <code>line1</code> from millimeters to inches</td></tr>
+<tr><td>deg2rad</td><td>Convert <code>line1</code> from degrees into <a href="https://en.wikipedia.org/wiki/Radian">radians</a></td></tr>
+<tr><td>rad2deg</td><td>Convert <code>line1</code> from radians into degrees</td></tr>
 <tr><td>gram2oz<br>grams2oz</td><td>Convert <code>line1</code> from grams into ounces using the constant of 0.035274 ounces / gram</td></tr>
 <tr><td>oz2gram<br>oz2grams</td><td>Convert <code>line1</code> from ounces into grams using the constant of 28.349523125 grams / ounce</td></tr>
 <tr><td>kg2lbs<br>kgs2lbs</td><td>convert <code>line1</code> from kilograms to US pounds using the constant of 2.2046226218 lbs/kg</td></tr>
