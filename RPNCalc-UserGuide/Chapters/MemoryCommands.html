@@ -175,7 +175,7 @@
                     <main>
                         <img align="right" width="125" src="../Images/Memory.png">
 <h1 id="memory-commands"><a class="header" href="#memory-commands">Memory Commands</a></h1>
-<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (<code>slot0</code> - <code>slot9</code>).  This amount can be increased with the <code>set memslots</code> command.  If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions.  You can change it as will, but if you decrease the number of slots, anything held in the &quot;no longer there&quot; slots will be discarded.</p>
+<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (<code>slot0</code> - <code>slot9</code>).  This amount can be increased with the <code>set memslots</code> command.  If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions.  You can change it as will, but if you decrease the number of slots, anything held in the "no longer there" slots will be discarded.</p>
 <p>For example, say you <code>set memslots 20</code> and store values in all of them.  If you later <code>set memslots 10</code>, the values in the upper 10 slots will be discarded.</p>
 <p>The operational command <code>reset</code> will reset all of the persistant settings back to their defaults including the number of memory slots.</p>
 <p>The normal usage to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It's saved in the Java preferences system as discussed earlier.</p>
