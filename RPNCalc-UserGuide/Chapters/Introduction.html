@@ -175,29 +175,50 @@
                     <main>
                         <p align="center"> <img width="1024" src ="https://github.com/frossm/rpncalc/raw/master/graphics/ReadmeHeader.jpg"> </p> 
 <h1 id="introduction"><a class="header" href="#introduction">INTRODUCTION</a></h1>
-<p>RPNCalc is the command-line based Reverse Polish Notation (RPN) calculator.  RPN calculators make it very simple to do complex calculations, especially if there are parentheses involved.  In essence, you enter your numbers first, then the operator.</p>
-<p>So, to add 2 and 3 to get 5, you would first add the number 2 to the stack:  <code>2 [Enter]</code>.  Then you would add 5 to the stack (pushing the 2 to the second position:  <code>3 [Enter]</code>.  Now, to add them you would enter: <code>+ [Enter]</code> and RPNCalc would remove the 2 and 3 from the stack, add them, and push 5 back onto the stack.</p>
-<p>The following example can be tricky to get your head around in a traditional calculator but is quite easy with RPN.  The chapter <code>What is an RPN Calculator</code> will go through solving this step by step.</p>
+<p>RPNCalc is the command-line based <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation (RPN) calculator</a>.<br />
+RPN calculators make it very simple to do complex calculations, especially if there are
+parentheses involved.  In essence, you enter your numbers first, then the operator.</p>
+<p>So, to add 2 and 3 to get 5, you would first add the number 2 to the stack:  <code>2 [Enter]</code>.  Then
+you would add 3 to the stack (pushing the 2 to the second position):  <code>3 [Enter]</code>.  Now, to add
+them you would enter: <code>+ [Enter]</code> and RPNCalc would remove the 2 and 3 from the stack, add them, and push 5 back onto the stack.</p>
+<p>The following example can be tricky to get your head around in a traditional calculator but is quite easy with RPN.  The chapter <code>What is an RPN Calculator</code>
+will go through solving this step by step.  <em><strong>(Spoiler warning: just start in the middle and work your way out.)</strong></em></p>
 <p><code>x = SQRT(((((5+3) * 8)/2) * (2+1)) ^ 2)</code></p>
-<p>RPN is based on a Last In First Out (LIFO) stack framework which sounds complicated, but makes intuitive sense when you use it.  You can think of it as a stack of plates.  When you put one on the top of the stack, everyone other one shifts down by one. On a RPN calculator, there is no equal sign, but there is an enter key to put a value onto the stack.  The chapter on <code>Stacks</code> talks more about how this works with RPNCalc.</p>
-<p>If you have not heard of reverse Polish notation, or just have a passion for various calculator notations (and seriously, who doesn't?), you can read more about RPN on <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a> or a (very) quick summary in the <code>What is an RPN Calculator</code> chapter.</p>
+<p>RPN is based on a Last In First Out (LIFO) stack framework which sounds complicated, but makes intuitive sense when you use it.<br />
+You can think of it as a stack of plates.  When you put one on the top of the stack, everyone other one shifts down by one. On an RPN calculator,
+there is no equal sign, but there is an enter key to put a value onto the stack.  The chapter on <code>Stacks</code> talks more about how this works with RPNCalc.</p>
+<p>This guide also has chapters on the various functions provided by the calculator and how to use them.  If you find something that is unclear, or
+could benefit from an example or two, please let me know.  Contact information is below.</p>
+<p>If you have not heard of reverse Polish notation, or just have a passion for various calculator notations (and seriously, who doesn't?), you can read more about RPN on
+<a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a> or a (very) quick summary in the <code>What is an RPN Calculator</code> chapter.</p>
 <h2 id="my-brief-history-of-rpncalc"><a class="header" href="#my-brief-history-of-rpncalc">My Brief History of RPNCalc</a></h2>
 <img align="right" width="150" src ="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-200x200.jpg">
-<p>I studied Engineering in college and used the HP15C calculator (yes, I'm old.) I grew to love RPN and over the years I've used various RPN calculators.  However, I failed to find a simple command line version that I liked.  Therefore, I decided to write one back in 2011.</p>
-<p>One key goal was to make it extensible so I could easily add new features, constants, and capabilities.  A second goal was to allow it to run everywhere I needed it to run, which is mostly Windows and Linux.  Therefore it's written in Java, it should run just about anywhere Java is supported.  And, while this calculator doesn't have <em><strong>every</strong></em> function a complex scientific calculator would have, it has the basics covered.</p>
-<p>Lastly, I didn't want to have to have a big uninstall/install task to upgrade to a new version.  With RPNCalc, it's just one JAR file.  You just run it (<code>java -jar rpncalc.jar</code>).  Nothing to install or uninstall.  If you want to remove it, just delete the <code>rpncalc.jar</code> file.</p>
+<p>I studied engineering in <a href="https://purdue.edu/">college</a> and used the <a href="https://hpcalcs.com/product/hp-15c-collectors-edition">HP 15C</a> calculator (I think that might date
+me...) I grew to love RPN and over the years I've used various GUI RPN
+calculators.  However, I failed to find a simple command line version that I liked.  Therefore, I decided to write one back in 2011.</p>
+<p>One key goal was to make it extensible, so I could easily add new features, constants, and
+capabilities.  A second goal was to allow it to run everywhere I needed it to run, which is
+mostly Windows and Linux.  Therefore, it's written in Java, it should run just about anywhere
+Java is supported.  And, while this calculator doesn't have <em><strong>every</strong></em> function a complex
+scientific calculator would have, it has the basics well covered (along with a few oddball
+functions - I'm looking at you <code>dice</code>)</p>
+<p>Lastly, I didn't want to have a big uninstall/install task to upgrade to a new version.  With RPNCalc, it's just one JAR file.  You just run it
+(<code>java -jar rpncalc.jar</code>).  Nothing to install or uninstall.  If you want to remove it, just delete the <code>rpncalc.jar</code> file. You can now also use the SNAP version
+on supported operating systems which means you don't even need to install Java as it's built into the SNAP package.</p>
 <h2 id="contact-options--links"><a class="header" href="#contact-options--links">Contact Options &amp; Links</a></h2>
 <p>The home page for RPNCalc is located on <a href="https://github.com/frossm/rpncalc">GitHub</a>.  It's open source with a <strong>very</strong> open usage license.</p>
 <ul>
-<li>Report issues or enhancement requests, please post at RPNCalc's <a href="https://github.com/frossm/rpncalc/issues">issues page</a></li>
+<li>Report issues or enhancement requests, please post at the RPNCalc <a href="https://github.com/frossm/rpncalc/issues">issues page</a></li>
 <li>For RPNCalc discussions, you can post on the <a href="https://github.com/frossm/rpncalc/discussions">Discussion page</a></li>
 <li>The RPNCalc <a href="https://snapcraft.io/rpncalc">Snap Store Page</a></li>
 <li>You can also reach me directly at <code>rpncalc@fross.org</code></li>
 <li>Checkout my other open source programs on <a href="https://github.com/frossm">GitHub</a></li>
 </ul>
-<h2 id="the-current-help-page-from-rpncalc"><a class="header" href="#the-current-help-page-from-rpncalc">The Current Help Page from RPNCalc</a></h2>
+<h2 id="the-in-line-help-from-rpncalc"><a class="header" href="#the-in-line-help-from-rpncalc">The In-Line Help from RPNCalc</a></h2>
 <p>From within the program, entering <code>h</code>, <code>help</code> or <code>?</code> will show the program help screen. The help can also be viewed by starting RPNCalc with the <code>-h</code> or <code>-?</code> command line switch (i.e. <code>rpncalc -h</code>)</p>
-<p>The current RPNCalc help screen:<br></p>
+<p><strong>Please note I do not update this screenshot with every release so it may be a bit dated.<br />
+See the actual program for the up-to-date help screen.</strong></p>
+<p>The (mostly) current RPNCalc help screen:<br></p>
 <img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot1.jpg">
 <img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot2.jpg">
                     </main>
