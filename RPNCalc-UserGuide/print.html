@@ -25,17 +25,18 @@
         <link rel="stylesheet" href="fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
 
-        <!-- Provide site root to javascript -->
+        <!-- Provide site root and default themes to javascript -->
         <script>
-            var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+            const path_to_root = "";
+            const default_light_theme = "ayu";
+            const default_dark_theme = "ayu";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
@@ -45,8 +46,8 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
                     localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
@@ -60,7 +61,8 @@
 
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script>
-            var theme;
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
             try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             const html = document.documentElement;
@@ -73,8 +75,8 @@
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
-            var sidebar = null;
-            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -110,6 +112,7 @@
                             <i class="fa fa-paint-brush"></i>
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
@@ -440,17 +443,20 @@ numbers and scientific notation.</p>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><p>f<img align="right" width="175" src="Chapters/../Images/CalcCommands.png"></p>
 <h1 id="calculator-commands"><a class="header" href="#calculator-commands">Calculator Commands</a></h1>
-<p>We've discussed numbers, fractional, scientific notation, and decimal, as well as operands that perform basic mathematical functions.  This chapter starts discussing commands which are the heart and soul of RPNCalc.</p>
-<p>Calculator Commands are the basic commands that operations on the numbers you've placed on the stack.  Most are fairly simple and intuitive, but there are a few that are a bit odd.  I'm looking at you <code>dice</code>.</p>
-<p>These commands, like the others you'll read about later, are executed by typing the command name, and any needed arguments into RPNCalc.  Often there are several different names and abbreviations for the same command.  This is just to make it easier to remember.  Brackets, <code>[]</code> around an option denotes it is optional.</p>
+<p>We've discussed numbers, fractional, scientific notation, and decimal, as well as operands that perform basic mathematical functions. This chapter starts discussing commands
+which are the heart and soul of RPNCalc.</p>
+<p>Calculator Commands are the basic commands that operations on the numbers you've placed on the stack. Most are fairly simple and intuitive, but there are a few that are a bit
+odd. I'm looking at you <code>dice</code>.</p>
+<p>These commands, like the others you'll read about later, are executed by typing the command name, and any needed arguments into RPNCalc. Often there are several different
+names and abbreviations for the same command. This is just to make it easier to remember. Brackets, <code>[]</code> around an option denotes it is optional.</p>
 <div class="table-wrapper"><table><thead><tr><th><div style="width:110px">Command</div></th><th>Description</th></tr></thead><tbody>
 <tr><td>aa [keep]<br>addall [keep]</td><td><strong>ADD ALL</strong><br>Add all stack items together and replace the numbers on the stack with the result.  If the optional <code>keep</code> parameter is sent, the elements added will be retained on the stack and the total will be added to the top of the stack.  The entire <code>keep</code> command is not necessary, anything that starts with <code>k</code> will work</td></tr>
 <tr><td>abs</td><td><strong>ABSOLUTE VALUE</strong><br>Takes the <a href="https://en.wikipedia.org/wiki/Absolute_value#:~:text=In%20mathematics%2C%20the%20absolute%20value,and%20%7C0%7C%20%3D%200">absolute value</a> of line 1.  The returns the positive value of the number.  Not the most useful command on it's own as you can always <code>f</code> flip the sign.  However it could be useful as part of a User Defined Function</td></tr>
 <tr><td>avg [keep]<br>mean [keep]</td><td><strong>AVERAGE / MEAN</strong><br>Calculate the <a href="https://en.wikipedia.org/wiki/Average">average</a> of all of the numbers on the stack.  The stack will be replaced with the result.  If <code>keep</code> is provided, the stack will be retained and the average will be added on top. <code>average</code> or <code>mean</code> can also be used</td></tr>
 <tr><td>c <br> clear</td><td><strong>CLEAR</strong><br>Clear the current stack and the screen.  Memory data is retained and you can undo the clear with the undo <code>u</code> command</td></tr>
 <tr><td>cl <br> clean</td><td><strong>CLEAN SCREEN</strong><br>Clear the current screen, but keep the stack.  After cleaning, the stack will be displayed at the top of the screen.  Used to remove the clutter</td></tr>
-<tr><td>copy [#] <br> dup [#]</td><td><strong>COPY</strong><br>With no number provided, copy will duplicate the top stack item / <code>line1</code> and place it on the stack.  If the optional line number is given, the value at that line will be duplicated to the top of the stack</td></tr>
-<tr><td>d<br>d [#]<br>d [#-#]<br>delete [#-#]</td><td><strong>DELETE</strong><br>If <code>d</code> is given without any parameters, it will delete <code>line1</code>.  If a line number is given after the <code>d</code>, that line number will be deleted.  A range can be given as well, such as <code>d 1-3</code> and RPNCalc will delete those lines and everything in between.  <code>del</code> can also be used</td></tr>
+<tr><td>copy [#] <br> dup [#]</td><td><strong>COPY</strong><br>With no number provided, copy will duplicate the top stack item / <code>line1</code> and place it on the stack.  If the optional line number is given, the value at that line will be duplicated to the top of the stack. A negative number may also be provided which will be a relative reference.  For example, if <code>-1</code> is provided, the <code>line2</code> value will be copied.  This is very useful when the command is used during the creation of a User Defined Function and the amount of numbers on the stack is unknown</td></tr>
+<tr><td>d<br>d [#]<br>d [#-#]<br>delete [#-#]</td><td><strong>DELETE</strong><br>If <code>d</code> is given without any parameters, it will delete <code>line1</code>.  If a line number is given after the <code>d</code>, that line number will be deleted.  A range can be given as well, such as <code>d 1-3</code> and RPNCalc will delete those lines and everything in between.  A negative number can also be provided which is a relative reference.  <code>-1</code> will delete the value one behind the current top of the stack value. Very useful for user defined functions where the stack may be unknown. <code>del</code> may also be used</td></tr>
 <tr><td>dice XdY<br>roll XdY</td><td><strong>DICE ROLL</strong><br>Roll a Y sided die X times and add the results to the stack.  Default is 1d6 which roll a six sided dice one time. This is a more specific version of <code>random</code>. While not a normal calculator function, it's fun! (Especially if you're an old school gamer)</td></tr>
 <tr><td>fact <br>factorial</td><td><strong>FACTORIAL</strong><br>Takes the factorial of <code>line1</code>. The factorial target number must be an integer, so if there is a decimal component, it will be dropped (not rounded) as with the <code>int</code> command</td></tr>
 <tr><td>f <br> flip</td><td><strong>FLIP SIGN</strong><br>Flip the sign on the top stack item (<code>line1</code>). This is effectively multiplying <code>line1</code> by <code>-1</code></td></tr>
@@ -529,15 +535,17 @@ to the top of the stack (<code>line1</code>)</p>
 <tr><td>eulersconst<br>eulersconstant</td><td><strong>EULER'S CONSTANT</strong><br><a href="https://en.wikipedia.org/wiki/Euler%27s_constant#:~:text=The%20numerical%20value%20of%20Euler&#x27;s,Is%20Euler&#x27;s%20constant%20irrational%3F">Euler's constant</a> (sometimes called the Euler–Mascheroni constant) is a mathematical constant, usually denoted by the lowercase Greek letter gamma (γ), defined as the limiting difference between the harmonic series and the natural logarithm. Euler's Constant is represented in RPNCalc to 36 decimal places <code>0.57721566490153286060651209008240243</code></td></tr>
 <tr><td>sol</td><td><strong>SPEED OF LIGHT</strong><br>Inserts the <a href="https://en.wikipedia.org/wiki/Speed_of_light">speed of light</a>, in meters per second, onto the stack. RPNCalc uses <code>299,792,458 m/s</code> as the speed of light</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/UDF.png">
+</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/UDF.png" alt="">
 <h1 id="user-defined-functions"><a class="header" href="#user-defined-functions">User Defined Functions</a></h1>
 <p>RPNCalc can record your commands and save them as a user defined function.  In essence, you are creating a new command that can be run.</p>
 <p>When recording a new function, start by adding data to your stack that would emulate when you would run your function.  The only data that will be part of your recording will be data &amp; commands entered <em><strong>after</strong></em> recording has been turned on.  When you are ready, enter the <code>record on</code> command.  A red <code>[Recording]</code> alert will appear in the status line. Anything you add during this period will be recorded with the exception of the commands listed below.  Enter your commands, numbers, etc. until you are done.</p>
 <p>When recording is complete, enter <code>record off</code> to complete your recording.  You'll be prompted for a function name.  Your new command will be this name so choose a name without spaces and that is easy to type when you wish to execute the function in the future.  You should also not choose a name of an existing command as your function will not be able to be called.  If you do not provide a name, i.e, just hit enter, the recording will be discarded.</p>
-<p>Then you can run your function whever you like on the stack currently available.  To run the function, simply type the name of your function as a standard command. To see a list of the saved functions, execute <code>list func</code> and it will display the name and the steps you recorded.</p>
+<p>Then you can run your function whenever you like on the stack currently available.  To run the function, simply type the name of your function as a standard command. To
+see a list of the saved functions, execute <code>list func</code> and it will display the name and the steps you recorded.</p>
 <p>User defined functions can be deleted with the <code>func del NAME</code> command or you can delete all of the functions with <code>func delall</code></p>
-<p>Functions are global and can work across any stack.  They are saved in the preferences system and will be reloaded when RPNCalc starts.  They are saved immediatly after you give a new recording a name and press enter.</p>
-<p>When you execute a function, the steps of that function are executed one after the other.  Therefore when you execute <code>undo</code> you will undo back through your function step by step. You do not <code>undo</code> the entire function in one command.  Of course you can always run <code>undo NUM</code> where <code>NUM</code> is the steps to undo.</p>
+<p>Functions are global and can work across any stack.  They are saved in the preferences system and will be reloaded when RPNCalc starts.  They are saved immediately after you give a new recording a name and press enter.</p>
+<p>When you execute a function, the steps of that function are executed one after the other.  Therefore when you execute <code>undo</code> you will undo back through your function step
+by step. You do not <code>undo</code> the entire function in one command.  Of course, you can always run <code>undo NUM</code> where <code>NUM</code> is the steps to undo.</p>
 <p>The following commands can be entered during a recording, but are not recorded.</p>
 <ul>
 <li>list</li>
@@ -554,9 +562,11 @@ to the top of the stack (<code>line1</code>)</p>
 <tr><td>record off<br>rec off</td><td>Turn off recording.  The user will be prompted to enter in a name for this function and that name will be used to run it in the future.  If you do not enter in a name the recording is canceled and  nothing will be saved</td></tr>
 <tr><td>func del <code>NAME</code></td><td>Delete a saved function.  The name must match the one given when saved.  A list of functions can be viewed with <code>list func</code>.  Undo will not recover a deleted function</td></tr>
 <tr><td>func delall</td><td>Delete all saved user defined functions. Please note that undo will not recover deleted functions</td></tr>
+<tr><td>func export</td><td>Export all User Defined Functions to a file for backup or future import</td></tr>
+<tr><td>func import</td><td>Import a previously exported set of functions. Please note that importing will append the imported functions to the currently defined list.  If an imported function has the same name as an existing one, the existing function will be overwritten</td></tr>
 </tbody></table>
 </div>
-<h3 id="example"><a class="header" href="#example">Example</a></h3>
+<h3 id="example-1"><a class="header" href="#example-1">Example 1</a></h3>
 <p>Here is a full real world example.  Lets say you'd like to make a user defined function to take the cube of number.  Here are the steps you'd take to do that.</p>
 <div class="table-wrapper"><table><thead><tr><th style="text-align: center">Number</th><th style="text-align: center">Command</th><th style="text-align: left">Description</th></tr></thead><tbody>
 <tr><td style="text-align: center">1</td><td style="text-align: center"><code>c</code></td><td style="text-align: left">Clear the stack.  Not really needed, but let's start off tidy</td></tr>
@@ -568,7 +578,27 @@ to the top of the stack (<code>line1</code>)</p>
 <tr><td style="text-align: center">7</td><td style="text-align: center"><code>list func</code></td><td style="text-align: left">Show the user defined functions including the <code>cube</code> command you just made</td></tr>
 </tbody></table>
 </div>
-<p>From now on, just type <code>cube</code> and <code>line1</code> will be cubed! Go You!</p>
+<p>From now on, just type <code>cube</code> and <code>line1</code> will be cubed! Go You!  You can always list your defined functions with <code>list func</code></p>
+<h3 id="example-2"><a class="header" href="#example-2">Example 2</a></h3>
+<p>Another real world but slightly more complex example.  Say you wish to know the percentage different between two numbers.  Let's create a function called <code>diffpercent</code> The
+logic is to find the smallest number on the stack and then the largest.  Divide them.  Flip the sign and add one to it.  Then convert it to a percent.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Number</th><th style="text-align: center">Command</th><th style="text-align: left">Description</th></tr></thead><tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center"><code>c</code></td><td style="text-align: left">Clear the stack.  Not really needed, but let's start off tidy</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center"><code>10</code></td><td style="text-align: left">Setting up two numbers before we record the function</td></tr>
+<tr><td style="text-align: center">3</td><td style="text-align: center"><code>1</code></td><td style="text-align: left">Setting up two numbers before we record the function</td></tr>
+<tr><td style="text-align: center">4</td><td style="text-align: center"><code>record on</code></td><td style="text-align: left">Start recording.  From now on anything you do (mostly) will be recorded</td></tr>
+<tr><td style="text-align: center">5</td><td style="text-align: center"><code>min</code></td><td style="text-align: left">Copy the smallest number in the stack to the top</td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center"><code>max</code></td><td style="text-align: left">Copy the largest number in the stack to the top</td></tr>
+<tr><td style="text-align: center">7</td><td style="text-align: center"><code>/</code></td><td style="text-align: left">Divide them</td></tr>
+<tr><td style="text-align: center">8</td><td style="text-align: center"><code>f</code></td><td style="text-align: left">Flip the sign</td></tr>
+<tr><td style="text-align: center">9</td><td style="text-align: center"><code>1</code></td><td style="text-align: left">Add the number one to the stack</td></tr>
+<tr><td style="text-align: center">10</td><td style="text-align: center"><code>+</code></td><td style="text-align: left">Add the numbers together (effectively subtracting the division results from 1</td></tr>
+<tr><td style="text-align: center">11</td><td style="text-align: center"><code>to%</code></td><td style="text-align: left">Convert to a percent (multiply  by 100)</td></tr>
+<tr><td style="text-align: center">12</td><td style="text-align: center"><code>record off</code></td><td style="text-align: left">Save the function with the name <code>diffpercent</code></td></tr>
+</tbody></table>
+</div>
+<p>In the example above, the result it 90%.  There is a 90% different between 10 and 1. Going forward, you can use the command <code>diffpercent</code> anytime you need to find the
+percentage different between the lowest and highest number on the stack.</p>
 <div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/OperationalCmds.png">
 <h1 id="operational-commands"><a class="header" href="#operational-commands">Operational Commands</a></h1>
 <p>Operational commands are commands that do not directly impact your stack numbers. These tend to be display commands or those the interact with the the setting of RPNCalc directly.</p>
