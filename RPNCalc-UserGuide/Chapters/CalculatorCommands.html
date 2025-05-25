@@ -41,6 +41,17 @@
         <script src="../toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -118,7 +129,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -158,7 +169,7 @@
                         <p>f<img align="right" width="175" src="../Images/CalcCommands.png"></p>
 <h1 id="calculator-commands"><a class="header" href="#calculator-commands">Calculator Commands</a></h1>
 <p>We've discussed numbers, fractional, scientific notation, and decimal, as well as operands that perform basic mathematical functions. This chapter starts discussing commands
-which are the heart and soul of RPNCalc.</p>
+which are the heart of RPNCalc.</p>
 <p>Calculator Commands are the basic commands that operations on the numbers you've placed on the stack. Most are fairly simple and intuitive, but there are a few that are a bit
 odd. I'm looking at you <code>dice</code>.</p>
 <p>These commands, like the others you'll read about later, are executed by typing the command name, and any needed arguments into RPNCalc. Often there are several different
@@ -170,7 +181,8 @@ names and abbreviations for the same command. This is just to make it easier to 
 <tr><td>c <br> clear</td><td><strong>CLEAR</strong><br>Clear the current stack and the screen.  Memory data is retained and you can undo the clear with the undo <code>u</code> command</td></tr>
 <tr><td>cl <br> clean</td><td><strong>CLEAN SCREEN</strong><br>Clear the current screen, but keep the stack.  After cleaning, the stack will be displayed at the top of the screen.  Used to remove the clutter</td></tr>
 <tr><td>copy [#] <br> dup [#]</td><td><strong>COPY</strong><br>With no number provided, copy will duplicate the top stack item / <code>line1</code> and place it on the stack.  If the optional line number is given, the value at that line will be duplicated to the top of the stack. A negative number may also be provided which will be a relative reference.  For example, if <code>-1</code> is provided, the <code>line2</code> value will be copied.  This is very useful when the command is used during the creation of a User Defined Function and the amount of numbers on the stack is unknown</td></tr>
-<tr><td>d<br>d [#]<br>d [#-#]<br>delete [#-#]</td><td><strong>DELETE</strong><br>If <code>d</code> is given without any parameters, it will delete <code>line1</code>.  If a line number is given after the <code>d</code>, that line number will be deleted.  A range can be given as well, such as <code>d 1-3</code> and RPNCalc will delete those lines and everything in between.  A negative number can also be provided which is a relative reference.  <code>-1</code> will delete the value one behind the current top of the stack value. Very useful for user defined functions where the stack may be unknown. <code>del</code> may also be used</td></tr>
+<tr><td>d<br>d [#]<br>d [#-#]<br>del<br>delete</td><td><strong>DELETE</strong><br>If <code>d</code> is given without any parameters, it will delete <code>line1</code>.  If a line number is given after the <code>d</code>, that line number will be deleted.  A range can be given as well, such as <code>d 1-3</code> and RPNCalc will delete those lines and everything in between.  A negative number can also be provided which is a relative reference.  <code>-1</code> will delete the value one behind the current top of the stack value. Very useful for user defined functions where the stack may be unknown. <code>del</code> and <code>delete</code> may also be used</td></tr>
+<tr><td>down</td><td><strong>DOWN</strong><br>Rotates the stack down on the screen. The top of the stack item (<code>line1</code>) will go to the end of the stack and everything else will shift down. This is the reverse of <code>up</code></td></tr>
 <tr><td>dice XdY<br>roll XdY</td><td><strong>DICE ROLL</strong><br>Roll a Y sided die X times and add the results to the stack.  Default is 1d6 which roll a six sided dice one time. This is a more specific version of <code>random</code>. While not a normal calculator function, it's fun! (Especially if you're an old school gamer)</td></tr>
 <tr><td>fact <br>factorial</td><td><strong>FACTORIAL</strong><br>Takes the factorial of <code>line1</code>. The factorial target number must be an integer, so if there is a decimal component, it will be dropped (not rounded) as with the <code>int</code> command</td></tr>
 <tr><td>f <br> flip</td><td><strong>FLIP SIGN</strong><br>Flip the sign on the top stack item (<code>line1</code>). This is effectively multiplying <code>line1</code> by <code>-1</code></td></tr>
@@ -181,7 +193,7 @@ names and abbreviations for the same command. This is just to make it easier to 
 <tr><td>max</td><td><strong>MAXIMUM VALUE</strong><br>Copies the largest value in the top of the stack (<code>line1</code>)</td></tr>
 <tr><td>median [keep]</td><td><strong>MEDIAN</strong><br>Replaces the current stack with the <a href="https://en.wikipedia.org/wiki/Median">median</a> value. For an odd number of stack items, the "middle" value will be used.  With an even number of items there is no "middle" value so the two center most values will be averaged. If the <code>keep</code> flag is used, the median value will be added on top of the stack retaining the current stack values</td></tr>
 <tr><td>min</td><td><strong>MINIMUM VALUE</strong><br>Copies the smallest value of the stack items to the top of the stack (<code>line1</code>)</td></tr>
-<tr><td>mod<br>modulus</td><td><strong>MODULUS / REMAINDER</strong><br><a href="en.wikipedia.org/wiki/Modular_arithmetic">Modulus</a> is the remainder after a division.  This command will perform a division of the top two stack items (removing them from the stack) and return the remainder back to the stack. <br>Please note that RPNCalc now uses the BigDecimal <a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#:~:text=1.5-,remainder,-public%C2%A0BigDecimal%C2%A0remainder(BigDecimal%C2%A0divisor)">Remainder method</a>. This makes the point that remainder is different than modulus. The remainder is given by <code>subtract(this.divideToIntegralValue(divisor).multiply(divisor))</code> Note that this is not the modulo operation as the result can be negative</td></tr>
+<tr><td>mod<br>modulus</td><td><strong>MODULUS / REMAINDER</strong><br><a href="https://en.wikipedia.org/wiki/Modular_arithmetic">Modulus</a> is the remainder after a division.  This command will perform a division of the top two stack items (removing them from the stack) and return the remainder back to the stack. <br>Please note that RPNCalc now uses the BigDecimal <a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#:~:text=1.5-,remainder,-public%C2%A0BigDecimal%C2%A0remainder(BigDecimal%C2%A0divisor)">Remainder method</a>. This makes the point that remainder is different than modulus. The remainder is given by <code>subtract(this.divideToIntegralValue(divisor).multiply(divisor))</code> Note that this is not the modulo operation as the result can be negative</td></tr>
 <tr><td>rand [low] [high]</td><td><strong>RANDOM NUMBER GENERATION</strong><br>Generate a random integer number between the provided <code>[l]ow</code> and <code>[h]igh</code> numbers inclusive to both.  If no numbers are provided, then the random number will be between 1 and 100 inclusive</td></tr>
 <tr><td>round [n]</td><td><strong>ROUND</strong><br>Round <code>line1</code> to <code>[n]</code> decimal places.  If <code>[n]</code> is not given, round to the nearest integer (zero decimal places).  <strong>Example 1:</strong> <code>3.14159</code> <code>round</code> would round to <code>3</code>.  <strong>Example 2:</strong> <code>3.14159</code> <code>round 4</code> would round to <code>3.1416</code></td></tr>
 <tr><td>s [#] [#] <br> swap [#] [#]</td><td><strong>SWAP LINES</strong><br>Without an argument, swap the top two stack items (<code>line1 &amp; line2</code>).  You can swap any two line numbers in your stack by providing the two line numbers</td></tr>
@@ -189,6 +201,7 @@ names and abbreviations for the same command. This is just to make it easier to 
 <tr><td>sort a|d</td><td><strong>SORT</strong><br>Sort the stack in an ascending or descending way.  An <code>a</code> or <code>d</code> is required.  You can provide <code>ascending</code> or <code>descending</code> if you like, but only the first letter is looked at (just like <code>keep</code> in other commands.) Note that this might look reversed at first since the top of the stack is <code>line1</code> which is the bottom of the display.  If you get it wrong just <code>undo</code> and sort the other way</td></tr>
 <tr><td>sqrt</td><td><strong>SQUARE ROOT</strong><br>Perform a <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> of the top stack item (<code>line1</code>) replacing it with the result</td></tr>
 <tr><td>u [#]<br> undo [#]</td><td><strong>UNDO</strong><br>By default, undo the last operation.  However, if an undo stack line number is given, as displayed with the <code>list undo</code> command, undo will restore the stack back to that point.  Please keep in mind that if you restore back to a previous undo state, later undo states will be discarded.  You can't go back. Typically, however, <code>u</code> undo is used to simply undo the previous action</td></tr>
+<tr><td>up</td><td><strong>UP</strong><br>Rotates the stack up on the screen. The top of the stack item (<code>line1</code>) will be pushed back and the last item will move to the top of the stack (<code>line1</code>). This is the reverse of <code>down</code></td></tr>
 </tbody></table>
 </div>
                     </main>
