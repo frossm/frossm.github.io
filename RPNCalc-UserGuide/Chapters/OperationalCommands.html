@@ -177,7 +177,8 @@
                     <main>
                         <img align="right" width="125" src="../Images/OperationalCmds.png">
 <h1 id="operational-commands"><a class="header" href="#operational-commands">Operational Commands</a></h1>
-<p>Operational commands are commands that do not directly impact your stack numbers. These tend to be display commands or those the interact with the the setting of RPNCalc directly.</p>
+<p>Operational commands are commands that do not directly impact your stack numbers. These tend to be display commands or those the interact with the the setting of RPNCalc
+directly.</p>
 <div class="table-wrapper"><table><thead><tr><th><div style="width:100px">Command</div></th><th>Description</th></tr></thead><tbody>
 <tr><td>debug</td><td>Toggle debug mode which will display additional information on what's happening internally in the program.  Same as the <code>-D</code> command line switch.  Probably not the useful for a normal user</td></tr>
 <tr><td>h <br> ?</td><td><code>h</code> or <code>?</code> will display the in-program help page</td></tr>
@@ -188,6 +189,7 @@
 <tr><td>list mem</td><td>Display the contents of the memory slots</td></tr>
 <tr><td>list undo</td><td>Displays all of the saved stacks and their contents used for undo operations.  Basically what your stack will look like when you perform an undo.  These are not saved between RPNCalc executions</td></tr>
 <tr><td>list func</td><td>Show a list of the defined User Defined Functions (UDF) and the steps within each one</td></tr>
+<tr><td>list history<br>list hist</td><td>List the history of user entered commands</td></tr>
 <tr><td>load <code>NAME</code></td><td>Load the named stack.  You can <code>load</code> a stack name even if it doesn't exist, and it will be created. This is how a new stack is created and is similar to using the <code>-l name</code> command line switch. Exiting the program or loading another stack will save the current stack before switching</td></tr>
 <tr><td>rev<br>reverse</td><td><code>rev</code> or <code>reverse</code> will reverse the order of all of the items on the stack</td></tr>
 <tr><td>ss</td><td>Swap the current stack with the secondary. The primary and secondary stacks are described in the Stacks section.  Executing <code>ss</code> again will swap them back.  The secondary stack it just a place to do a bit of other work then you can swap back.  They are in no way connected.  The secondary stack is also saved upon exit</td></tr>
