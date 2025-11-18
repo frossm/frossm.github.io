@@ -13,21 +13,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-9dfbd86b.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" id="highlight-css" href="highlight.css">
-        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
-        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -37,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "searchindex.js";
+            window.path_to_searchindex_js = "searchindex-fd24ac37.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc.js"></script>
+        <script src="toc-39bc639e.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -54,7 +53,7 @@
             </div>
         </div>
     </div>
-    <div id="body-container">
+    <div id="mdbook-body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
             try {
@@ -83,12 +82,12 @@
             html.classList.add("js");
         </script>
 
-        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
 
         <!-- Hide / unhide sidebar before it is displayed -->
         <script>
             let sidebar = null;
-            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
             if (document.body.clientWidth >= 1080) {
                 try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
@@ -103,39 +102,39 @@
             }
         </script>
 
-        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
             <!-- populated by js -->
             <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
             <noscript>
                 <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
             </noscript>
-            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
             </div>
         </nav>
 
-        <div id="page-wrapper" class="page-wrapper">
+        <div id="mdbook-page-wrapper" class="page-wrapper">
 
             <div class="page">
-                <div id="menu-bar-hover-placeholder"></div>
-                <div id="menu-bar" class="menu-bar sticky">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
-                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                            <i class="fa fa-bars"></i>
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
                         </label>
-                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                            <i class="fa fa-paint-brush"></i>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
                         </button>
-                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
                         </button>
                     </div>
 
@@ -143,51 +142,58 @@
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
                         </a>
 
                     </div>
                 </div>
 
-                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
                         <div class="search-wrapper">
-                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
                             <div class="spinner-wrapper">
-                                <i class="fa fa-spinner fa-spin"></i>
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
                             </div>
                         </div>
                     </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
                         </ul>
                     </div>
                 </div>
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script>
-                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
                         link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
                     });
                 </script>
 
-                <div id="content" class="content">
+                <div id="mdbook-content" class="content">
                     <main>
-                        <p align="center"> <img width="1024" src ="https://github.com/frossm/rpncalc/raw/master/graphics/ReadmeHeader.jpg"> </p>
-<p align="center"> <img width="25%" src="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-512x512.jpg"> </p> 
+                        <h1 id="cover"><a href="#cover" class="header">Cover</a></h1>
+<p align="center"> <img width="1024" src="https://github.com/frossm/rpncalc/raw/master/graphics/ReadmeHeader.jpg"> </p>
+
+<p align="center"> <img width="25%" src="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-512x512.jpg"> </p>
+ 
 <h1 align="center">A User Guide for the RPNCalc Calculator</h1>
+
 <p align="center"> Copyright 2011- 2024 by Michael Fross<br>
 This document, along RPNCalc, is licensed under the <a href="https://opensource.org/license/mit/">MIT License</a></p>
+
 <h1 align="center"> 
 	<a href="https://github.com/frossm/rpncalc">The RPNCalc Github Homepage</a>
 </h1>
-<div style="break-before: page; page-break-before: always;"></div><p align="center"> <img width="1024" src ="https://github.com/frossm/rpncalc/raw/master/graphics/ReadmeHeader.jpg"> </p> 
+
+<div style="break-before: page; page-break-before: always;"></div>
+<p align="center"> <img width="1024" src="https://github.com/frossm/rpncalc/raw/master/graphics/ReadmeHeader.jpg"> </p>
+ 
 <h1 id="introduction"><a class="header" href="#introduction">INTRODUCTION</a></h1>
-<p>RPNCalc is the command-line based <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation (RPN) calculator</a>.<br />
-RPN calculators make it very simple to do complex calculations, especially if there are
+<p>RPNCalc is the command-line based <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation (RPN) calculator</a>.<br>RPN calculators make it very simple to do complex calculations, especially if there are
 parentheses involved.  In essence, you enter your numbers first, then the operator.</p>
 <p>So, to add 2 and 3 to get 5, you would first add the number 2 to the stack:  <code>2 [Enter]</code>.  Then
 you would add 3 to the stack (pushing the 2 to the second position):  <code>3 [Enter]</code>.  Now, to add
@@ -195,29 +201,28 @@ them you would enter: <code>+ [Enter]</code> and RPNCalc would remove the 2 and 
 <p>The following example can be tricky to get your head around in a traditional calculator but is quite easy with RPN.  The chapter <code>What is an RPN Calculator</code>
 will go through solving this step by step.  <em><strong>(Spoiler warning: just start in the middle and work your way out.)</strong></em></p>
 <p><code>x = SQRT(((((5+3) * 8)/2) * (2+1)) ^ 2)</code></p>
-<p>RPN is based on a Last In First Out (LIFO) stack framework which sounds complicated, but makes intuitive sense when you use it.<br />
-You can think of it as a stack of plates.  When you put one on the top of the stack, everyone other one shifts down by one. On an RPN calculator,
+<p>RPN is based on a Last In First Out (LIFO) stack framework which sounds complicated, but makes intuitive sense when you use it.<br>You can think of it as a stack of plates.  When you put one on the top of the stack, everyone other one shifts down by one. On an RPN calculator,
 there is no equal sign, but there is an enter key to put a value onto the stack.  The chapter on <code>Stacks</code> talks more about how this works with RPNCalc.</p>
 <p>This guide also has chapters on the various functions provided by the calculator and how to use them.  If you find something that is unclear, or
 could benefit from an example or two, please let me know.  Contact information is below.</p>
-<p>If you have not heard of reverse Polish notation, or just have a passion for various calculator notations (and seriously, who doesn't?), you can read more about RPN on
+<p>If you have not heard of reverse Polish notation, or just have a passion for various calculator notations (and seriously, who doesn’t?), you can read more about RPN on
 <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a> or a (very) quick summary in the <code>What is an RPN Calculator</code> chapter.</p>
 <h2 id="my-brief-history-of-rpncalc"><a class="header" href="#my-brief-history-of-rpncalc">My Brief History of RPNCalc</a></h2>
-<img align="right" width="150" src ="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-200x200.jpg">
+<img align="right" width="150" src="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-200x200.jpg">
 <p>I studied engineering in <a href="https://purdue.edu/">college</a> and used the <a href="https://hpcalcs.com/product/hp-15c-collectors-edition">HP 15C</a> calculator (I think that might date
-me...) I grew to love RPN and over the years I've used various GUI RPN
+me…) I grew to love RPN and over the years I’ve used various GUI RPN
 calculators.  However, I failed to find a simple command line version that I liked.  Therefore, I decided to write one back in 2011.</p>
 <p>One key goal was to make it extensible, so I could easily add new features, constants, and
 capabilities.  A second goal was to allow it to run everywhere I needed it to run, which is
-mostly Windows and Linux.  Therefore, it's written in Java, it should run just about anywhere
-Java is supported.  And, while this calculator doesn't have <em><strong>every</strong></em> function a complex
+mostly Windows and Linux.  Therefore, it’s written in Java, it should run just about anywhere
+Java is supported.  And, while this calculator doesn’t have <em><strong>every</strong></em> function a complex
 scientific calculator would have, it has the basics well covered (along with a few oddball
-functions - I'm looking at you <code>dice</code>)</p>
-<p>Lastly, I didn't want to have a big uninstall/install task to upgrade to a new version.  With RPNCalc, it's just one JAR file.  You just run it
+functions - I’m looking at you <code>dice</code>)</p>
+<p>Lastly, I didn’t want to have a big uninstall/install task to upgrade to a new version.  With RPNCalc, it’s just one JAR file.  You just run it
 (<code>java -jar rpncalc.jar</code>).  Nothing to install or uninstall.  If you want to remove it, just delete the <code>rpncalc.jar</code> file. You can now also use the SNAP version
-on supported operating systems which means you don't even need to install Java as it's built into the SNAP package.</p>
+on supported operating systems which means you don’t even need to install Java as it’s built into the SNAP package.</p>
 <h2 id="contact-options--links"><a class="header" href="#contact-options--links">Contact Options &amp; Links</a></h2>
-<p>The home page for RPNCalc is located on <a href="https://github.com/frossm/rpncalc">GitHub</a>.  It's open source with a <strong>very</strong> open usage license.</p>
+<p>The home page for RPNCalc is located on <a href="https://github.com/frossm/rpncalc">GitHub</a>.  It’s open source with a <strong>very</strong> open usage license.</p>
 <ul>
 <li>Report issues or enhancement requests, please post at the RPNCalc <a href="https://github.com/frossm/rpncalc/issues">issues page</a></li>
 <li>For RPNCalc discussions, you can post on the <a href="https://github.com/frossm/rpncalc/discussions">Discussion page</a></li>
@@ -227,25 +232,35 @@ on supported operating systems which means you don't even need to install Java a
 </ul>
 <h2 id="the-in-line-help-from-rpncalc"><a class="header" href="#the-in-line-help-from-rpncalc">The In-Line Help from RPNCalc</a></h2>
 <p>From within the program, entering <code>h</code>, <code>help</code> or <code>?</code> will show the program help screen. The help can also be viewed by starting RPNCalc with the <code>-h</code> or <code>-?</code> command line switch (i.e. <code>rpncalc -h</code>)</p>
-<p><strong>Please note I do not update this screenshot with every release so it may be a bit dated.<br />
-See the actual program for the up-to-date help screen.</strong></p>
+<p><strong>Please note I do not update this screenshot with every release so it may be a bit dated.<br>See the actual program for the up-to-date help screen.</strong></p>
 <p>The (mostly) current RPNCalc help screen:<br></p>
 <img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot1.jpg">
-<img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot2.jpg"><div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Chapters/../Images/WhatIsRPN.jpg">
+<img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot2.jpg"><div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Images/WhatIsRPN.jpg">
 <h1 id="what-is-an-rpn-calculator"><a class="header" href="#what-is-an-rpn-calculator">What is an RPN Calculator?</a></h1>
 <p>For me, the way I thought about using RPN back in the early 1990s was to approach it with <code>start on the inside and work your way out</code>.  Just look at the inner most calculation, and start working yourself back out.  It also helps if you also understand the order of operations for the operands.</p>
 <h3 id="order-of-operations---pema"><a class="header" href="#order-of-operations---pema">Order of Operations - <em>PEMA</em></a></h3>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Order</th><th style="text-align: center">Abbr</th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Order</th><th style="text-align: center">Abbr</th><th>Description</th></tr>
+</thead>
+<tbody>
 <tr><td style="text-align: center">#1</td><td style="text-align: center">P</td><td>Parentheses First</td></tr>
 <tr><td style="text-align: center">#2</td><td style="text-align: center">E</td><td>Exponents - Powers and Square Roots, etc.</td></tr>
 <tr><td style="text-align: center">#3</td><td style="text-align: center">M</td><td>Multiplication and Division (left-to-right)</td></tr>
 <tr><td style="text-align: center">#4</td><td style="text-align: center">A</td><td>Addition and Subtraction (left-to-right)</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <h3 id="walkthrough-of-the-example-from-the-introduction-page"><a class="header" href="#walkthrough-of-the-example-from-the-introduction-page">Walkthrough of the Example from the Introduction Page</a></h3>
 <p><code>x = SQRT( ((((5+3) * 8)/2) * (2+1)) ^ 2 )</code></p>
-<p>This can be tricky with a traditional calculator.  However, with a RPN Calculator, to solve for x you would start on the inner calculation and work outwards.  Looking at the equation, <code>5 + 3</code> is about the lowest so lets start there. The approach will be work back up until you get to a peer of the same "level".  Then do the <code>2+1</code>. We'll walk through each step and explain what's happening.  Go ahead and start RPNCalc and follow along - it's much easier to do it and see the stack rather than just reading it here.</p>
-<div class="table-wrapper"><table><thead><tr><th>Command</th><th>Explanation</th></tr></thead><tbody>
+<p>This can be tricky with a traditional calculator.  However, with a RPN Calculator, to solve for x you would start on the inner calculation and work outwards.  Looking at the equation, <code>5 + 3</code> is about the lowest so lets start there. The approach will be work back up until you get to a peer of the same “level”.  Then do the <code>2+1</code>. We’ll walk through each step and explain what’s happening.  Go ahead and start RPNCalc and follow along - it’s much easier to do it and see the stack rather than just reading it here.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Command</th><th>Explanation</th></tr>
+</thead>
+<tbody>
 <tr><td><code>c [Enter]</code></td><td>Clear the stack if there is anything on it.  Not really needed, but lets start off clean</td></tr>
 <tr><td><code>5 [Enter]</code></td><td>The top of the stack (<code>line1</code>) contains a 5</td></tr>
 <tr><td><code>3 [Enter]</code></td><td>3 has been added to the top of the stack (<code>line1</code>) pushing 5 to <code>line2</code></td></tr>
@@ -261,14 +276,15 @@ See the actual program for the up-to-date help screen.</strong></p>
 <tr><td><code>2 [Enter]</code></td><td>Add 2 to the stack</td></tr>
 <tr><td><code>^ [Enter]</code></td><td>Take <code>line2</code> to the power of <code>line1</code> resulting in 9,216</td></tr>
 <tr><td><code>SQRT [Enter]</code></td><td>Takes the square root of <code>line1</code> pushing the result to the stack</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
-<p>The result is 96 which ends up on the top (<code>line1</code>) of an otherwise empty stack.  I'll talk more about stacks and how RPNCalc uses them in future chapters.</p>
+<p>The result is 96 which ends up on the top (<code>line1</code>) of an otherwise empty stack.  I’ll talk more about stacks and how RPNCalc uses them in future chapters.</p>
 <p><em>By the way, this can also be dramatically shortened using the <code>NumOps</code> shortcut - see the <code>Operands</code> chapter for more information.</em></p>
 <h3 id="traditional-rpn-notation-limitations-in-rpncalc"><a class="header" href="#traditional-rpn-notation-limitations-in-rpncalc">Traditional RPN Notation Limitations in RPNCalc</a></h3>
-<p>Please note that RPNCalc doesn't implement every RPN convention and there are a few as of yet unimplemented items.</p>
-<p>For example, this won't work in RPNCalc:</p>
-<p><code>10 + 10 + 10</code> can't be solved by entering <code>10 [Enter] 10 [Enter] 10 [Enter] ++ [Enter]</code> as RPNCalc only allows one operand per command entry.  You'll need an <code>[Enter]</code> between the last two <code>+</code> signs.  Using the <code>NumOp</code> shortcut, this is an efficient way to solve that equation:</p>
+<p>Please note that RPNCalc doesn’t implement every RPN convention and there are a few as of yet unimplemented items.</p>
+<p>For example, this won’t work in RPNCalc:</p>
+<p><code>10 + 10 + 10</code> can’t be solved by entering <code>10 [Enter] 10 [Enter] 10 [Enter] ++ [Enter]</code> as RPNCalc only allows one operand per command entry.  You’ll need an <code>[Enter]</code> between the last two <code>+</code> signs.  Using the <code>NumOp</code> shortcut, this is an efficient way to solve that equation:</p>
 <p><code>10 [Enter] 10+ [Enter] 10+ [Enter]</code></p>
 <hr>
 <h2 id="wikipedia"><a class="header" href="#wikipedia">Wikipedia:</a></h2>
@@ -277,18 +293,18 @@ See the actual program for the up-to-date help screen.</strong></p>
 <p>In reverse Polish notation, the operators follow their operands; for instance, to add 3 and 4 together, one would write <code>3 4 +</code> rather than <code>3 + 4</code>. If there are multiple operations, operators are given immediately after their final operands (often an operator takes two operands, in which case the operator is written after the second operand); so the expression written <code>3 − 4 + 5</code> in conventional notation would be written <code>3 4 − 5 +</code> in reverse Polish notation: 4 is first subtracted from 3, then 5 is added to it. An advantage of reverse Polish notation is that it removes the need for parentheses that are required by infix notation. While <code>3 − 4 × 5</code> can also be written <code>3 − (4 × 5)</code>, that means something quite different from <code>(3 − 4) × 5</code>. In reverse Polish notation, the former could be written <code>3 4 5 × −</code>, which unambiguously means <code>3 (4 5 ×) −</code> which reduces to <code>3 20 −</code> (which can further be reduced to -17); the latter could be written <code>3 4 − 5 ×</code> (or <code>5 3 4 − ×</code>, if keeping similar formatting), which unambiguously means <code>(3 4 −) 5 ×</code>.</p>
 <h3 id="practical-implications"><a class="header" href="#practical-implications">Practical implications</a></h3>
 <p>In comparison, testing of reverse Polish notation with algebraic notation, reverse Polish has been found to lead to faster calculations, for two reasons. The first reason is that reverse Polish calculators do not need expressions to be parenthesized, so fewer operations need to be entered to perform typical calculations. Additionally, users of reverse Polish calculators made fewer mistakes than for other types of calculators. Later research clarified that the increased speed from reverse Polish notation may be attributed to the smaller number of keystrokes needed to enter this notation, rather than to a smaller cognitive load on its users. However, anecdotal evidence suggests that reverse Polish notation is more difficult for users to learn than algebraic notation.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/Install.png">
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/Install.png">
 <h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
 <p>There are two ways to install RPNCalc.  The first is simply download <code>rpncalc.jar</code> file from the latest release on <a href="https://github.com/frossm/rpncalc">GitHub</a>.  I have embedded all of the dependencies into this one file and it is directly executable.  You do not need to install anything.  Of course, you will need a java runtime (JRE) installed in your path.</p>
-<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>.  There are many advantages to using it as a snap and I'll get into that in the SNAP secion of this user guide.  My personal preference is to install it via Snap for teh following reasons:</p>
+<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>.  There are many advantages to using it as a snap and I’ll get into that in the SNAP secion of this user guide.  My personal preference is to install it via Snap for teh following reasons:</p>
 <ul>
-<li>No Java to worry about as it's built into the snap</li>
-<li>Protected as it runs in a sandbox and won't have access to other system objects</li>
+<li>No Java to worry about as it’s built into the snap</li>
+<li>Protected as it runs in a sandbox and won’t have access to other system objects</li>
 <li>No aliases needed to run it since <code>rpncalc</code> can be run directly from the command line.  An example alias with Bash is below.</li>
 <li>Its automagically kept up to date</li>
 <li>Additional information is available in the <code>SNAP</code> chapter</li>
 </ul>
-<p>Please note that I only have the ability to test it in Windows and Linux (Ubuntu). While I don't think there would be issues on other platforms, it's something to keep in mind. Snapcraft does compile them, however, without issue on the other platforms.</p>
+<p>Please note that I only have the ability to test it in Windows and Linux (Ubuntu). While I don’t think there would be issues on other platforms, it’s something to keep in mind. Snapcraft does compile them, however, without issue on the other platforms.</p>
 <h2 id="standard-usage"><a class="header" href="#standard-usage">Standard Usage</a></h2>
 <p>To run RPNCalc use the following command:</p>
 <p><code>java -jar /path/to/rpncalc.jar</code></p>
@@ -300,43 +316,49 @@ See the actual program for the up-to-date help screen.</strong></p>
 <p>However, RPNCalc does use the Java preferences to store the persistent stack contents, settings, and persistent memory slots.  This system is located in different places depending on the OS and these are listed in the <code>Stacks Chapter</code>.</p>
 <p>It is very small and removing it is not really necessary, but if you like to keep things exceptionally tidy, delete the <code>org/fross/rpn/</code> entry (and everything below it) in the preference system.</p>
 <h2 id="snap-installation"><a class="header" href="#snap-installation">Snap Installation</a></h2>
-<p>If you are on a Linux system and have Snap installed (it's comes default on most Ubuntu based distributions, but can be installed by most others if not already there), you can install RPNCalc as a snap.  It does not require any special snap permissions.  To install via snap use:</p>
+<p>If you are on a Linux system and have Snap installed (it’s comes default on most Ubuntu based distributions, but can be installed by most others if not already there), you can install RPNCalc as a snap.  It does not require any special snap permissions.  To install via snap use:</p>
 <p><code>sudo snap install rpncalc</code></p>
 <p>To run it after installation, simply execute:</p>
 <p><code>rpncalc</code></p>
 <h2 id="snap-uninstall"><a class="header" href="#snap-uninstall">Snap Uninstall</a></h2>
 <p>To uninstall, execute the following command:</p>
 <p><code>sudo snap remove rpncalc</code></p>
-<p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" /></a></p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/Plates.png">
+<p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store"></a></p>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/Plates.png">
 <h1 id="stacks"><a class="header" href="#stacks">Stacks</a></h1>
 <p>The entire concept of a RPN calculator is based on a stack, which can be thoughts of as numbers stacked on top of each other.  You add numbers to the stack and they are normally processed Last In First Out (LIFO).</p>
-<p>With RPNCalc, when you leave the program, the current (and secondary) stacks are saved.  If you didn't specify a named stack,  the <code>default</code> stack is loaded.  When you start the program you can specify which stack to load with the <code>-l</code> command.  You may also load / create a new stack inside of the program with the <code>load</code> command.  One use case is to create different aliases to open different stacks using the <code>-l</code> command.</p>
-<p>When you perform calculations or commands, they generally work from the top of the stack down.  In RPNCalc, the top of the stack is <code>line1</code> and it's actually at the bottom of the display.  When you perform calculations, you are working on your command line and the lines you are using are above the text entry area.  This might be a bit hard to visualize, but makes a lot of sense when you actually use the calculator.  Trust me.</p>
-<p>For example, if you want to take the square root of 25, you enter <code>25 [ENTER]</code> and it will be added to the top of the stack at <code>line1</code>.  Anything else on the stack is pushed "up" on the display. Then execute the command <code>SQRT [ENTER]</code>.  This will remove 25 from the stack on <code>line1</code>, perform the square root, then place the result <code>5</code> back onto the stack.  Some operations require more than one stack item.  The addition command <code>+</code>, for example, will take the last two numbers off the stack (<code>line1</code> and <code>line2</code>), add them together, and then place the result on the stack.</p>
+<p>With RPNCalc, when you leave the program, the current (and secondary) stacks are saved.  If you didn’t specify a named stack,  the <code>default</code> stack is loaded.  When you start the program you can specify which stack to load with the <code>-l</code> command.  You may also load / create a new stack inside of the program with the <code>load</code> command.  One use case is to create different aliases to open different stacks using the <code>-l</code> command.</p>
+<p>When you perform calculations or commands, they generally work from the top of the stack down.  In RPNCalc, the top of the stack is <code>line1</code> and it’s actually at the bottom of the display.  When you perform calculations, you are working on your command line and the lines you are using are above the text entry area.  This might be a bit hard to visualize, but makes a lot of sense when you actually use the calculator.  Trust me.</p>
+<p>For example, if you want to take the square root of 25, you enter <code>25 [ENTER]</code> and it will be added to the top of the stack at <code>line1</code>.  Anything else on the stack is pushed “up” on the display. Then execute the command <code>SQRT [ENTER]</code>.  This will remove 25 from the stack on <code>line1</code>, perform the square root, then place the result <code>5</code> back onto the stack.  Some operations require more than one stack item.  The addition command <code>+</code>, for example, will take the last two numbers off the stack (<code>line1</code> and <code>line2</code>), add them together, and then place the result on the stack.</p>
 <p>The order of the numbers on the stack is important for some of the operands.  This is detailed out in the <code>Operand chapter</code>.</p>
 <h2 id="stack-management"><a class="header" href="#stack-management">Stack Management</a></h2>
 <p>Saving and loading stacks is fundamental to RPNCalc.  You can have as many named stacks as you like.  They are stored in the Java Preferences system which is located in various places depending on the OS:</p>
-<div class="table-wrapper"><table><thead><tr><th>OS</th><th>Location</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>OS</th><th>Location</th></tr>
+</thead>
+<tbody>
 <tr><td>Windows</td><td>Stored in the current user hive of the registry at<code>(HKCU\Software\JavaSoft\Prefs\org\fross\rpn)</code></td></tr>
 <tr><td>Linux</td><td>Linux uses the .java directory in your home directory</td></tr>
-<tr><td>Mac</td><td>The preferences files are named <code>com.apple.java.util.prefs</code> are are stored in their home directory at <code>~/Library/Preferences</code>.  I don't have access to a Mac and can not confirm this location</td></tr>
-</tbody></table>
+<tr><td>Mac</td><td>The preferences files are named <code>com.apple.java.util.prefs</code> are are stored in their home directory at <code>~/Library/Preferences</code>.  I don’t have access to a Mac and can not confirm this location</td></tr>
+</tbody>
+</table>
 </div>
-<p>It is safe to delete these if you wish, but of course you'll lose any saved stacks, memory slots, persistent configurations, and user defined functions which are stored there.  The structure, not the data, will be recreated again when RPNCalc is restarted.</p>
-<p>Each stack you load (default or a named stack) actually has 2 internal stacks defined; a primary and secondary.  You can quickly swap stacks using the swap stack <code>ss</code> command.  For example, you are working on something and need to do a few calculations that you wish to keep separate from your main work.  You can swap stacks, do the work, then swap back.  They do not communicate in any way and are distinctly separate.  The primary and secondary stack data is saved and restored upon loading the stack.  The primary and secondary stacks have their own unique undo stacks as of version 4.5.  This was long standing issue that's now been resolved.</p>
+<p>It is safe to delete these if you wish, but of course you’ll lose any saved stacks, memory slots, persistent configurations, and user defined functions which are stored there.  The structure, not the data, will be recreated again when RPNCalc is restarted.</p>
+<p>Each stack you load (default or a named stack) actually has 2 internal stacks defined; a primary and secondary.  You can quickly swap stacks using the swap stack <code>ss</code> command.  For example, you are working on something and need to do a few calculations that you wish to keep separate from your main work.  You can swap stacks, do the work, then swap back.  They do not communicate in any way and are distinctly separate.  The primary and secondary stack data is saved and restored upon loading the stack.  The primary and secondary stacks have their own unique undo stacks as of version 4.5.  This was long standing issue that’s now been resolved.</p>
 <p>When you start up RPNCalc, you can load a named stack with the <code>-l name</code> command.  If the stack <code>name</code> exists, it will be loaded.  If it does not exist, the stack will be created and when you leave the program it will be saved under that name.  You can always view the current stack you are using in the lower right of the dashed bar. The <code>:1</code> or <code>:2</code> after the stack name will tell you if you are on the primary or secondary stack.</p>
 <p>As a side note, both stacks and memory slots are saved during shutdown.  While the data in a stack is specific to that stack, memory slots and user created functions are global.  The default stack items are restored at startup (or whatever stack you choose to load with <code>-l name</code>.)  Memory slots are also restored at startup.  <code>list mem</code> will show the values in current memory, and <code>list stacks</code> will show the existing stacks available to load.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/HighLevelUsage.png">
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/HighLevelUsage.png">
 <h1 id="high-level-usage"><a class="header" href="#high-level-usage">High Level Usage</a></h1>
 <p>RPNCalc is a command line application that must be run from a console / command prompt.  Executing it with a <code>-h</code> (or <code>-?</code>) switch, or starting the program and entering
 the <code>h</code> (or <code>help</code> or <code>?</code>) command will display the in-program help page.  This page lists all the commands and operands that can be used, but it is fairly terse  This can be also viewed at the bottom of the <code>Introduction Chapter</code> of this guide. This document is meant as a more comprehensive guide.</p>
 <p>There are various command line switches that can be used when starting the program as are detailed in the <code>Command Line Options Chapter</code>.  They generally exist so that aliases can be used to control several key parameters, most likely the <code>-l StackName</code> switch.</p>
-<p>Once inside the program, you'll be presented a prompt where numbers, operands, and commands may be entered.  Numbers will be added to the stack which you can think of as an upside down stack of plates.  The top stack item (represented by <code>line1</code> in the program) is on the bottom.  You can think of this stack of plates as a Last In First Out (LIFO) approach.</p>
+<p>Once inside the program, you’ll be presented a prompt where numbers, operands, and commands may be entered.  Numbers will be added to the stack which you can think of as an upside down stack of plates.  The top stack item (represented by <code>line1</code> in the program) is on the bottom.  You can think of this stack of plates as a Last In First Out (LIFO) approach.</p>
 <p>For example, you could enter <code>2 [ENTER]</code> it would be in the <code>line1</code> position and would be on the top of the stack.  If you then enter <code>3 [ENTER]</code> the <code>2</code> would move up go <code>line2</code> and the <code>3</code> would then be on <code>line1</code> and be on the top of the stack.  You can then enter an operand, such as <code>+</code> to perform the action on the items opn the top of the stack. To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack (<code>line1</code>).</p>
-<p>I've gone into this in more detail in the <code>What is an RPN Calculator Chapter</code> and elsewhere and it's fairly easy and intuitive.  Once you get the hang of it, you will regret having to use a standard calculator in the future. ;-)</p>
-<h4 id="why-is-the-stack-upside-down"><a class="header" href="#why-is-the-stack-upside-down">Why is the stack "upside down?"</a></h4>
-<p>One question I get with RPNCalc is why is the top of the stack on the bottom?  The reason is that it's simply more intuitive.  The command line is on the bottom.  You are usually dealing with the top of the stack so having <code>line1</code> directly above makes sense.  Also, for some operations, the order is important (think subtraction or division).  Having <code>line1</code> "underneath" <code>line2</code> is easy to understand as that's how we learned to do subtraction.  <code>line1</code> is subtracted from <code>line2</code>.</p>
+<p>I’ve gone into this in more detail in the <code>What is an RPN Calculator Chapter</code> and elsewhere and it’s fairly easy and intuitive.  Once you get the hang of it, you will regret having to use a standard calculator in the future. ;-)</p>
+<h4 id="why-is-the-stack-upside-down"><a class="header" href="#why-is-the-stack-upside-down">Why is the stack “upside down?”</a></h4>
+<p>One question I get with RPNCalc is why is the top of the stack on the bottom?  The reason is that it’s simply more intuitive.  The command line is on the bottom.  You are usually dealing with the top of the stack so having <code>line1</code> directly above makes sense.  Also, for some operations, the order is important (think subtraction or division).  Having <code>line1</code> “underneath” <code>line2</code> is easy to understand as that’s how we learned to do subtraction.  <code>line1</code> is subtracted from <code>line2</code>.</p>
 <h3 id="decimals--fractions"><a class="header" href="#decimals--fractions">Decimals &amp; Fractions</a></h3>
 <p>In RPNCalc, the stacks always store numbers as decimals.  You can, however, enter in fractions, and they will be instantly converted to a decimal equivalent and added to
 the stack.</p>
@@ -345,24 +367,24 @@ the stack.</p>
 <p>will add <code>1.3125</code> to the top of the stack (<code>line1</code>)</p>
 <p><code>14/8 [ENTER]</code></p>
 <p>will add <code>1.75</code> to the stack</p>
-<p>While you can never directly convert a decimal number on the stack back to a fraction, you can display an approximation of what the top of the stack (<code>line1</code>) value would be as a fraction.  You do have to decide on the smallest denominator that will be used (called the base.)  The default base is <code>64</code> which is the equivalent of <code>1/64</code> and will be used if no base is specified.  Use the <code>frac [base]</code> command to display the approximate fractional equivalent.  RPNCalc will simplify the fraction as much as it can so if <code>line1</code> is <code>0.5</code>, the command <code>frac 4</code> won't convert and display <code>2/4</code>.  The result would be <code>1/2</code>.  Also note that <code>frac [based]</code> is a display command and will not actually change the stack in any way.</p>
+<p>While you can never directly convert a decimal number on the stack back to a fraction, you can display an approximation of what the top of the stack (<code>line1</code>) value would be as a fraction.  You do have to decide on the smallest denominator that will be used (called the base.)  The default base is <code>64</code> which is the equivalent of <code>1/64</code> and will be used if no base is specified.  Use the <code>frac [base]</code> command to display the approximate fractional equivalent.  RPNCalc will simplify the fraction as much as it can so if <code>line1</code> is <code>0.5</code>, the command <code>frac 4</code> won’t convert and display <code>2/4</code>.  The result would be <code>1/2</code>.  Also note that <code>frac [based]</code> is a display command and will not actually change the stack in any way.</p>
 <p><strong>Example:</strong>
 <code>12.3456 [Enter]</code>
 <code>frac [Enter]</code></p>
 <p>No base was entered, so use <code>64</code>. It will display <code>12 11/32</code>  RPNCalc converted it to <code>12 22/64</code> and then reduced it.</p>
 <p><code>1 3/64 [Enter]</code>
 <code>frac 16 [Enter]</code></p>
-<p>will display <code>1 1/16</code> as that's as close as it could get with a granularity of 1/16.</p>
+<p>will display <code>1 1/16</code> as that’s as close as it could get with a granularity of 1/16.</p>
 <p><code>1 3/64 [ENTER]</code>
 <code>frac 100000</code></p>
 <p>will display <code>1 293/6250</code>.  This is a closer approximation than using base 16. This also shows why this is an approximate.</p>
 <h3 id="scientific-notation"><a class="header" href="#scientific-notation">Scientific Notation</a></h3>
-<p>As of version 5, scientific notation is supported.  You can enter in values with the format <code>1.2345E18</code> and it will be saved as a value in the stack. There are a few areas where it's not 100% supported (i.e. NumOps at the time of this writing) but just about everything will work with it.</p>
+<p>As of version 5, scientific notation is supported.  You can enter in values with the format <code>1.2345E18</code> and it will be saved as a value in the stack. There are a few areas where it’s not 100% supported (i.e. NumOps at the time of this writing) but just about everything will work with it.</p>
 <h3 id="percent-entry"><a class="header" href="#percent-entry">Percent Entry</a></h3>
 <p>As of version 5.4.0, a number, followed by a <code>%</code> can be entered.  This will be divided by 100 prior to being added onto the stack.  This will work with both negative
 numbers and scientific notation.</p>
 <h2 id="operands-numbers-and-commands"><a class="header" href="#operands-numbers-and-commands">Operands, Numbers, and Commands</a></h2>
-<p>Numbers, whether decimal or fractions, can be entered on the command line, and they get added to the stack.  That's fairly self-explanatory.</p>
+<p>Numbers, whether decimal or fractions, can be entered on the command line, and they get added to the stack.  That’s fairly self-explanatory.</p>
 <p>Operands perform basic match functions on those numbers.</p>
 <p>Commands do the more exciting things.  You can add the speed of light constant to the stack (<code>sol</code>) or PI (<code>pi</code>), take the sine of the number, add it to a memory slot, and then save that sequence of commands as a user defined function.  Most of the rest of this guide will be talking about the various RPNCalc commands.</p>
 <p>Lastly, as of <code>v4.6.0</code>, the arrow keys can be used within RPNCalc.  Up/Down will move you through your historical entries, and Left/Right will move you within the current command line.  This is probably what you would have expected it to do as it behaves similar to common consoles.</p>
@@ -373,53 +395,80 @@ numbers and scientific notation.</p>
 <li>The upper range of a double in Java is <code>1.7976931348623157 x 10^308</code></li>
 <li>The lower range of a double in Java is <code>4.9 x 10^-324</code></li>
 </ul>
-<p>I will attempt to point out in this guide when a command is using <code>Double</code> and therefore has a limit on precision. Double is, however, huge and shouldn't pose an issue for most use cases.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/CmdLine.png">
+<p>I will attempt to point out in this guide when a command is using <code>Double</code> and therefore has a limit on precision. Double is, however, huge and shouldn’t pose an issue for most use cases.</p>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/CmdLine.png">
 <h1 id="command-line-options"><a class="header" href="#command-line-options">Command Line Options</a></h1>
 <p>Currently there are several command line options, and all are optional.  Normally, one would simply run the program and you would enter in numbers, operands, and commands.</p>
-<p>These options will either start RPNCalc in a certain "mode" such as <code>Debug</code> or <code>No Color</code> or will provide information and exist such as <code>Version</code> or <code>Help</code>.</p>
-<div class="table-wrapper"><table><thead><tr><th><div style="width:90px">Option</div></th><th>Name</th><th>Description</th></tr></thead><tbody>
-<tr><td>-D <br> --debug</td><td><code>DEBUG MODE</code></td><td>Runs the program in debug mode.  This will display quite a bit of information in RED as you use the program.  This is mostly used by the developer and clutters everything up, but you may find it useful if you are trying to debug something.  I could certainly add a lot more if needed, but it's useful today.  You can also toggle debug mode on/off by entering in the command <code>debug</code> while within the program - you don't have to restart RPNCalc</td></tr>
-<tr><td>-l <code>name</code> <br> --load <code>name</code></td><td><code>LOAD STACK</code></td><td>Load a saved stack.  This essentially will "name" your session and store the stack upon exit in the Java preferences system.  You can load the stack with the <code>-l name</code> command line option, or from within the program by using the <code>load name</code> command.  Please note the name field is whatever you want to call the instance but avoid spaces in the name.  I'm not aware of a limit to the number of saved stacks You can have.  If the name to load does not exist, the stack will be created and saved when you exit.</td></tr>
-<tr><td>-z <br> --no-color</td><td><code>DISABLE COLOR</code></td><td>Disable colorized output.  Useful if your current terminal doesn't support ANSI color sequences</td></tr>
-<tr><td>-L <br> --license</td><td><code>DISPLAY LICENSE</code></td><td>Display the RPNCalc usage license.  Currently, RPNCalc uses the <a href="https://opensource.org/licenses/MIT">The MIT License</a></td></tr>
-<tr><td>-v <br> --version</td><td><code>VERSION</code></td><td>This will display the current program version, but will also check GitHub for the leatest release. It is possible, especially if you are using RPNCalc as a Snap, to have a later version than the latest GitHub release.</td></tr>
-<tr><td>-h <br> -? <br> --help</td><td><code>HELP</code></td><td>Display the program help page and exit.  This is the same as the <code>h</code> or <code>help</code> command within RPNCalc</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="20%" src="Chapters/../Images/Operands.png">
+<p>These options will either start RPNCalc in a certain “mode” such as <code>Debug</code> or <code>No Color</code> or will provide information and exist such as <code>Version</code> or <code>Help</code>.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>
+<div style="width:90px">Option</div>
+</th><th>Name</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>-D <br> –debug</td><td><code>DEBUG MODE</code></td><td>Runs the program in debug mode.  This will display quite a bit of information in RED as you use the program.  This is mostly used by the developer and clutters everything up, but you may find it useful if you are trying to debug something.  I could certainly add a lot more if needed, but it’s useful today.  You can also toggle debug mode on/off by entering in the command <code>debug</code> while within the program - you don’t have to restart RPNCalc</td></tr>
+<tr><td>-l <code>name</code> <br> –load <code>name</code></td><td><code>LOAD STACK</code></td><td>Load a saved stack.  This essentially will “name” your session and store the stack upon exit in the Java preferences system.  You can load the stack with the <code>-l name</code> command line option, or from within the program by using the <code>load name</code> command.  Please note the name field is whatever you want to call the instance but avoid spaces in the name.  I’m not aware of a limit to the number of saved stacks You can have.  If the name to load does not exist, the stack will be created and saved when you exit.</td></tr>
+<tr><td>-z <br> –no-color</td><td><code>DISABLE COLOR</code></td><td>Disable colorized output.  Useful if your current terminal doesn’t support ANSI color sequences</td></tr>
+<tr><td>-L <br> –license</td><td><code>DISPLAY LICENSE</code></td><td>Display the RPNCalc usage license.  Currently, RPNCalc uses the <a href="https://opensource.org/licenses/MIT">The MIT License</a></td></tr>
+<tr><td>-v <br> –version</td><td><code>VERSION</code></td><td>This will display the current program version, but will also check GitHub for the leatest release. It is possible, especially if you are using RPNCalc as a Snap, to have a later version than the latest GitHub release.</td></tr>
+<tr><td>-h <br> -? <br> –help</td><td><code>HELP</code></td><td>Display the program help page and exit.  This is the same as the <code>h</code> or <code>help</code> command within RPNCalc</td></tr>
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="20%" src="Images/Operands.png">
 <h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
 <p>Operands are the standard symbols used for basic mathematics on numbers.  The following is the list of operands supported by RPNCalc.  These are also supported by the NumOps shortcut described below.</p>
-<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operands, the order of the items in the stack is important.  It's fairly intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Operand</th><th style="text-align: center">Math</th><th>Description</th></tr></thead><tbody>
+<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operands, the order of the items in the stack is important.  It’s fairly intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Operand</th><th style="text-align: center">Math</th><th>Description</th></tr>
+</thead>
+<tbody>
 <tr><td style="text-align: center">+</td><td style="text-align: center"><code>Addition</code></td><td>Add <code>line1</code> and <code>line2</code></td></tr>
 <tr><td style="text-align: center">-</td><td style="text-align: center"><code>Subtraction</code></td><td>Subtract <code>line1</code> from <code>line2</code></td></tr>
 <tr><td style="text-align: center">*</td><td style="text-align: center"><code>Multiplication</code></td><td>Multiply<code>line1</code> and <code>line2</code></td></tr>
 <tr><td style="text-align: center">/</td><td style="text-align: center"><code>Division</code></td><td>Divide <code>line2</code> by <code>line1</code></td></tr>
 <tr><td style="text-align: center">^</td><td style="text-align: center"><code>Exponent</code></td><td>Take <code>line2</code> to the power of <code>line1</code> Note that the exponent must be an integer. If it is not, the fractional component will be dropped prior to the calculation</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <p>Below are two very simple examples that show the order is important</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Line Num</th><th style="text-align: center">Stack</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Line Num</th><th style="text-align: center">Stack</th></tr>
+</thead>
+<tbody>
 <tr><td style="text-align: center"><code>line2</code></td><td style="text-align: center">3</td></tr>
 <tr><td style="text-align: center"><code>line1</code></td><td style="text-align: center">2</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <p>Example: The minus <code>-</code> command will execute 3 - 2 and will yield <code>1</code></p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Line Num</th><th style="text-align: center">Stack</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Line Num</th><th style="text-align: center">Stack</th></tr>
+</thead>
+<tbody>
 <tr><td style="text-align: center"><code>line2</code></td><td style="text-align: center">2</td></tr>
 <tr><td style="text-align: center"><code>line1</code></td><td style="text-align: center">3</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <p>Example: Minus <code>-</code> will execute 2 - 3 and will yield <code>-1</code></p>
 <br>
 <hr>
 <br>
-<p><code>Hint:</code> We'll discuss commands in later chapters, but the <code>swap</code> command <code>s</code> will swap the top two items in the stack (<code>line1</code> and <code>line2</code>).  Swap will also swap any two line numbers provided.  See the <code>Calculator Commands Chapter</code> for more information.</p>
+<p><code>Hint:</code> We’ll discuss commands in later chapters, but the <code>swap</code> command <code>s</code> will swap the top two items in the stack (<code>line1</code> and <code>line2</code>).  Swap will also swap any two line numbers provided.  See the <code>Calculator Commands Chapter</code> for more information.</p>
 <h2 id="the-numops-shortcut"><a class="header" href="#the-numops-shortcut">The NumOps Shortcut</a></h2>
 <p>RPNCalc has an important shortcut that can speed up your calculations.  You can append one of the above operands at the end of an entered number and the program will, behind the scenes, place the number on top of the stack (<code>line1</code>) and then execute the operand.  The operand must directly follow the number without a space between. For example:</p>
 <p><code>2 [ENTER]</code></p>
 <p><code>3+ [ENTER]</code></p>
-<p>When the second enter is pressed,  the two stack items will be removed, added together, and the result, <code>5</code>, will be added back.  It's the same as entering this the following  three commands:</p>
+<p>When the second enter is pressed,  the two stack items will be removed, added together, and the result, <code>5</code>, will be added back.  It’s the same as entering this the following  three commands:</p>
 <p><code>2 [ENTER]</code></p>
 <p><code>3 [ENTER]</code></p>
 <p><code>+ [ENTER]</code></p>
@@ -436,82 +485,108 @@ numbers and scientific notation.</p>
 </ul>
 <p>By the way, if you were wondering the answer is 32,768.</p>
 <p><em><strong>Please note that you can not use this NumOps shortcut with a fractional number entry or a scientific notation entry</strong></em></p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/Configure.png">
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/Configure.png">
 <h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
 <p>There are a few, although not many, configuration options available in RPNCalc.  These are settings which control various aspects of the program and are persistent between executions.  When these are changed, they are saved in the Java Preferences system.</p>
 <p>There are currently three configuration options that can be changed the commands to do so are listed below.  They are:</p>
 <h4 id="program-width"><a class="header" href="#program-width">Program Width</a></h4>
 <p>Program Width controls the amount of characters the base program uses.  This can be changed and is especially useful if using a terminal with a small number of characters per line.</p>
 <h4 id="memory-slots"><a class="header" href="#memory-slots">Memory Slots</a></h4>
-<p>By default there are 10 memory slots numbers 0 through 9.  This is probably more than most people would need, but if you save a lot of values, or have a User Defined Function that needs to store a lot of numbers, it can be changed.  Each memory slot is simply an additional array element, so I don't think there is much of a memory impact, but I suppose if you have thousands it would increase memory usage.</p>
+<p>By default there are 10 memory slots numbers 0 through 9.  This is probably more than most people would need, but if you save a lot of values, or have a User Defined Function that needs to store a lot of numbers, it can be changed.  Each memory slot is simply an additional array element, so I don’t think there is much of a memory impact, but I suppose if you have thousands it would increase memory usage.</p>
 <h4 id="display-alignment"><a class="header" href="#display-alignment">Display Alignment</a></h4>
 <p>By default, the numbers displayed on the stack are left aligned.  There are times when it is prefered to be right aligned (for example if you are working with money and always want two decimal places), or decimal aligned which is nice to easily see the integer from the decimal.  Play around with it and see which one you like for difference circumstances.</p>
 <h4 id="reset"><a class="header" href="#reset">Reset</a></h4>
-<p>Ok, this isn't really a configuration option, but the command can be used to reset everything back to the defaults.  At the time of this writing, the defaults are:</p>
+<p>Ok, this isn’t really a configuration option, but the command can be used to reset everything back to the defaults.  At the time of this writing, the defaults are:</p>
 <ul>
 <li>Program Width:  <code>80</code>  Current minimum width is <code>46</code> characters</li>
 <li>Memory Slots: <code>10</code>  Numbered <code>0</code> through <code>9</code></li>
 <li>Display Alignment: <code>l(eft)</code></li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th><div style="width:110px">Command</div></th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>
+<div style="width:110px">Command</div>
+</th><th>Description</th></tr>
+</thead>
+<tbody>
 <tr><td>reset</td><td>This command resets the configuration setting that are set with the <code>set</code> command back to their default values</td></tr>
 <tr><td>set</td><td>Display the current values of the configurable persistent settings</td></tr>
 <tr><td>set width <code>NUM</code></td><td>Sets the width of the program.  If you are using a small display, and the calculator wraps, this can be used to make the width smaller (or larger).  Please note that there is a minimum width that must be used. This setting is persistent across RPNCalc executions</td></tr>
 <tr><td>set mem <code>NUM</code></td><td>Set the number of memory slots available to RPNCalc to <code>NUM</code>.  If you need more, or less, it can be changed with this command.  The setting is persistent across RPNCalc executions.  <code>set memslots</code> or <code>set memoryslots</code> may also be used.  See the memory commands chapter for more information</td></tr>
-<tr><td>set align <code>l</code><br><br>set align <code>d</code><br><br>set align <code>r</code></td><td>Set the alignment of the stack when it's displayed<br><br><code>l</code> or left alignment aligns on the left of the number<br><code>r</code> or right alignment has the numbers aligned to the right<BR><code>d</code> or decimal aligns all of the decimal points together in a column<br><br>This setting is persistent across RPNCalc executions. <code>set alignment</code> may also be used</td></tr>
+<tr><td>set align <code>l</code><br><br>set align <code>d</code><br><br>set align <code>r</code></td><td>Set the alignment of the stack when it’s displayed<br><br><code>l</code> or left alignment aligns on the left of the number<br><code>r</code> or right alignment has the numbers aligned to the right<br><code>d</code> or decimal aligns all of the decimal points together in a column<br><br>This setting is persistent across RPNCalc executions. <code>set alignment</code> may also be used</td></tr>
 <tr><td>set browser FILE</td><td>Sets the full path to the web browser on your computer.<br>A browser is opened by several RPNCalc commands. In order for RPNCalc to know which browser to launch, the full path to the browser needs to be provided and is stored in the configuration preferences.  This command will set the browser file location.  If you wish to clear it, simply <code>set browser clear</code> and enter nothing at the prompt.  If you give it an executable file, it will be set to that. If the provided file is not executable, it will re-prompt for a valid one.  Also, if you run a commande (i.e. <code>hp</code> or <code>ug</code>) that use an external browser, and none is set, you will be prompted for the full path (which is the same as setting it here).<br><br>Please note that use should always use slashes <code>/</code> as a path separater instead of backslashes <code>\</code> on windows.  The <code>C:</code> syntax is fine on windows</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><p>f<img align="right" width="175" src="Chapters/../Images/CalcCommands.png"></p>
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div>
+<p>f<img align="right" width="175" src="Images/CalcCommands.png"></p>
 <h1 id="calculator-commands"><a class="header" href="#calculator-commands">Calculator Commands</a></h1>
-<p>We've discussed numbers, fractional, scientific notation, and decimal, as well as operands that perform basic mathematical functions. This chapter starts discussing commands
+<p>We’ve discussed numbers, fractional, scientific notation, and decimal, as well as operands that perform basic mathematical functions. This chapter starts discussing commands
 which are the heart of RPNCalc.</p>
-<p>Calculator Commands are the basic commands that operations on the numbers you've placed on the stack. Most are fairly simple and intuitive, but there are a few that are a bit
-odd. I'm looking at you <code>dice</code>.</p>
-<p>These commands, like the others you'll read about later, are executed by typing the command name, and any needed arguments into RPNCalc. Often there are several different
+<p>Calculator Commands are the basic commands that operations on the numbers you’ve placed on the stack. Most are fairly simple and intuitive, but there are a few that are a bit
+odd. I’m looking at you <code>dice</code>.</p>
+<p>These commands, like the others you’ll read about later, are executed by typing the command name, and any needed arguments into RPNCalc. Often there are several different
 names and abbreviations for the same command. This is just to make it easier to remember. Brackets, <code>[]</code> around an option denotes it is optional.</p>
-<div class="table-wrapper"><table><thead><tr><th><div style="width:110px">Command</div></th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>
+<div style="width:110px">Command</div>
+</th><th>Description</th></tr>
+</thead>
+<tbody>
 <tr><td>aa [keep]<br>addall [keep]</td><td><strong>ADD ALL</strong><br>Add all stack items together and replace the numbers on the stack with the result.  If the optional <code>keep</code> parameter is sent, the elements added will be retained on the stack and the total will be added to the top of the stack.  The entire <code>keep</code> command is not necessary, anything that starts with <code>k</code> will work</td></tr>
-<tr><td>abs</td><td><strong>ABSOLUTE VALUE</strong><br>Takes the <a href="https://en.wikipedia.org/wiki/Absolute_value#:~:text=In%20mathematics%2C%20the%20absolute%20value,and%20%7C0%7C%20%3D%200">absolute value</a> of line 1.  The returns the positive value of the number.  Not the most useful command on it's own as you can always <code>f</code> flip the sign.  However it could be useful as part of a User Defined Function</td></tr>
+<tr><td>abs</td><td><strong>ABSOLUTE VALUE</strong><br>Takes the <a href="https://en.wikipedia.org/wiki/Absolute_value#:~:text=In%20mathematics%2C%20the%20absolute%20value,and%20%7C0%7C%20%3D%200">absolute value</a> of line 1.  The returns the positive value of the number.  Not the most useful command on it’s own as you can always <code>f</code> flip the sign.  However it could be useful as part of a User Defined Function</td></tr>
 <tr><td>avg [keep]<br>mean [keep]</td><td><strong>AVERAGE / MEAN</strong><br>Calculate the <a href="https://en.wikipedia.org/wiki/Average">average</a> of all of the numbers on the stack.  The stack will be replaced with the result.  If <code>keep</code> is provided, the stack will be retained and the average will be added on top. <code>average</code> or <code>mean</code> can also be used</td></tr>
 <tr><td>c <br> clear</td><td><strong>CLEAR</strong><br>Clear the current stack and the screen.  Memory data is retained and you can undo the clear with the undo <code>u</code> command</td></tr>
 <tr><td>cl <br> clean</td><td><strong>CLEAN SCREEN</strong><br>Clear the current screen, but keep the stack.  After cleaning, the stack will be displayed at the top of the screen.  Used to remove the clutter</td></tr>
 <tr><td>copy [#] <br> dup [#]</td><td><strong>COPY</strong><br>With no number provided, copy will duplicate the top stack item / <code>line1</code> and place it on the stack.  If the optional line number is given, the value at that line will be duplicated to the top of the stack. A negative number may also be provided which will be a relative reference.  For example, if <code>-1</code> is provided, the <code>line2</code> value will be copied.  This is very useful when the command is used during the creation of a User Defined Function and the amount of numbers on the stack is unknown</td></tr>
 <tr><td>d<br>d [#]<br>d [#-#]<br>del<br>delete</td><td><strong>DELETE</strong><br>If <code>d</code> is given without any parameters, it will delete <code>line1</code>.  If a line number is given after the <code>d</code>, that line number will be deleted.  A range can be given as well, such as <code>d 1-3</code> and RPNCalc will delete those lines and everything in between.  A negative number can also be provided which is a relative reference.  <code>-1</code> will delete the value one behind the current top of the stack value. Very useful for user defined functions where the stack may be unknown. <code>del</code> and <code>delete</code> may also be used</td></tr>
 <tr><td>down</td><td><strong>DOWN</strong><br>Rotates the stack down on the screen. The top of the stack item (<code>line1</code>) will go to the end of the stack and everything else will shift down. This is the reverse of <code>up</code></td></tr>
-<tr><td>dice XdY<br>roll XdY</td><td><strong>DICE ROLL</strong><br>Roll a Y sided die X times and add the results to the stack.  Default is 1d6 which roll a six sided dice one time. This is a more specific version of <code>random</code>. While not a normal calculator function, it's fun! (Especially if you're an old school gamer). The random value is generated with Java's SecureRandom and should be secure</td></tr>
+<tr><td>dice XdY<br>roll XdY</td><td><strong>DICE ROLL</strong><br>Roll a Y sided die X times and add the results to the stack.  Default is 1d6 which roll a six sided dice one time. This is a more specific version of <code>random</code>. While not a normal calculator function, it’s fun! (Especially if you’re an old school gamer). The random value is generated with Java’s SecureRandom and should be secure</td></tr>
 <tr><td>echo MESSAGE</td><td><strong>ECHO</strong><br>Simply display the provided message prior to showing the stack. This was created to assist with use with User Defined Functions.  There is limited usefulness for normal calculator operations</td></tr>
 <tr><td>fact <br>factorial</td><td><strong>FACTORIAL</strong><br>Takes the factorial of <code>line1</code>. The factorial target number must be an integer, so if there is a decimal component, it will be dropped (not rounded) as with the <code>int</code> command</td></tr>
 <tr><td>f <br> flip</td><td><strong>FLIP SIGN</strong><br>Flip the sign on the top stack item (<code>line1</code>). This is effectively multiplying <code>line1</code> by <code>-1</code></td></tr>
-<tr><td>int</td><td><strong>INTEGER</strong><br>Converts the top stack item (<code>line1</code>) to it's integer value.  This will discard the decimal portion regardless of it's value.  For example: <code>4.34</code> will result in <code>4</code> and <code>4.999</code> will also result in <code>4</code>. If rounding is desired, execute the <code>round</code> command prior to <code>int</code> (or create a user defined function)</td></tr>
+<tr><td>int</td><td><strong>INTEGER</strong><br>Converts the top stack item (<code>line1</code>) to it’s integer value.  This will discard the decimal portion regardless of it’s value.  For example: <code>4.34</code> will result in <code>4</code> and <code>4.999</code> will also result in <code>4</code>. If rounding is desired, execute the <code>round</code> command prior to <code>int</code> (or create a user defined function)</td></tr>
 <tr><td>lr [add]<br>lr [x]</td><td><strong>SIMPLE LINEAR REGRESSION</strong><br><a href="https://www.graphpad.com/guides/the-ultimate-guide-to-linear-regression">Linear regression</a> is used to model the relationship between two variables and create a line that can be used to estimate other values using a line-of-best-fit method. This implementation is for simple linear regression, and will display the formula, slope, y-intercept as well as add the next expected value to the top of the stack.<br><br>If <code>add</code> (or just <code>a</code>) is entered, the next predicted value will be added to the top of the stack (<code>line1</code>). If a number is provided (<code>x</code>), the predicted <code>y</code> value will be displayed.  The <code>y</code> value is the result of the linear extrapolation at the <code>x</code> value. If both are added, the y value at the x location will be both calculated and added to the top of the stack (<code>line1</code>)<br><br>The values will be plotted from the bottom of the stack to the top (<code>line1</code>)(which is probably want you want).  If you need it the other way around, simply reverse the stack with the <code>reverse</code> or <code>rev</code> command prior to executing <code>lr</code></td></tr>
 <tr><td>log</td><td><strong>LOGARITHM BASE e</strong><br>Calculates the <a href="https://en.wikipedia.org/wiki/Natural_logarithm">natural logarithm (base e)</a>. Please note that these are calculated as a <code>double</code> and therefore do not have unlimited precision</td></tr>
 <tr><td>log10</td><td><strong>LOGARITHM BASE 10</strong><br>Calculates the <a href="https://en.wikipedia.org/wiki/Common_logarithm">base10 logarithm</a>. Please note that these are calculated as a <code>double</code> and therefore do not have unlimited precision</td></tr>
 <tr><td>max</td><td><strong>MAXIMUM VALUE</strong><br>Copies the largest value in the top of the stack (<code>line1</code>)</td></tr>
-<tr><td>median [keep]</td><td><strong>MEDIAN</strong><br>Replaces the current stack with the <a href="https://en.wikipedia.org/wiki/Median">median</a> value. For an odd number of stack items, the "middle" value will be used.  With an even number of items there is no "middle" value so the two center most values will be averaged. If the <code>keep</code> flag is used, the median value will be added on top of the stack retaining the current stack values</td></tr>
+<tr><td>median [keep]</td><td><strong>MEDIAN</strong><br>Replaces the current stack with the <a href="https://en.wikipedia.org/wiki/Median">median</a> value. For an odd number of stack items, the “middle” value will be used.  With an even number of items there is no “middle” value so the two center most values will be averaged. If the <code>keep</code> flag is used, the median value will be added on top of the stack retaining the current stack values</td></tr>
 <tr><td>min</td><td><strong>MINIMUM VALUE</strong><br>Copies the smallest value of the stack items to the top of the stack (<code>line1</code>)</td></tr>
 <tr><td>mod<br>modulus</td><td><strong>MODULUS / REMAINDER</strong><br><a href="https://en.wikipedia.org/wiki/Modular_arithmetic">Modulus</a> is the remainder after a division.  This command will perform a division of the top two stack items (removing them from the stack) and return the remainder back to the stack. <br>Please note that RPNCalc now uses the BigDecimal <a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#:~:text=1.5-,remainder,-public%C2%A0BigDecimal%C2%A0remainder(BigDecimal%C2%A0divisor)">Remainder method</a>. This makes the point that remainder is different than modulus. The remainder is given by <code>subtract(this.divideToIntegralValue(divisor).multiply(divisor))</code> Note that this is not the modulo operation as the result can be negative</td></tr>
-<tr><td>rand [low] [high]</td><td><strong>RANDOM NUMBER GENERATION</strong><br>Generate a random integer number between the provided <code>[l]ow</code> and <code>[h]igh</code> numbers inclusive to both.  If no numbers are provided, then the random number will be between 1 and 100 inclusive. The random value is generated with Java's SecureRandom and should be secure</td></tr>
+<tr><td>rand [low] [high]</td><td><strong>RANDOM NUMBER GENERATION</strong><br>Generate a random integer number between the provided <code>[l]ow</code> and <code>[h]igh</code> numbers inclusive to both.  If no numbers are provided, then the random number will be between 1 and 100 inclusive. The random value is generated with Java’s SecureRandom and should be secure</td></tr>
 <tr><td>repeat [num]<br>rep [num]</td><td><strong>REPEAT</strong><br>Repeat the last command <code>num</code> times. If no number is given RPNCalc defaults to 1. There are some commands that are not placed in the command history list. You can view the command history with <code>list hist</code> or <code>list history</code></td></tr>
 <tr><td>round [n]</td><td><strong>ROUND</strong><br>Round <code>line1</code> to <code>[n]</code> decimal places.  If <code>[n]</code> is not given, round to the nearest integer (zero decimal places).  <strong>Example 1:</strong> <code>3.14159</code> <code>round</code> would round to <code>3</code>.  <strong>Example 2:</strong> <code>3.14159</code> <code>round 4</code> would round to <code>3.1416</code></td></tr>
 <tr><td>s [#] [#] <br> swap [#] [#]</td><td><strong>SWAP LINES</strong><br>Without an argument, swap the top two stack items (<code>line1 &amp; line2</code>).  You can swap any two line numbers in your stack by providing the two line numbers</td></tr>
 <tr><td>sd [keep]</td><td><strong>STANDARD DEVIATION</strong><br>Calculate the <a href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> of the items in the stack.  The stack items will be replaced by the result. If <code>keep</code> is provided, the numbers on the stack will not be removed and the standard deviation will simply be added to the top of the stack on <code>line1</code></td></tr>
 <tr><td>sort a|d</td><td><strong>SORT</strong><br>Sort the stack in an ascending or descending way.  An <code>a</code> or <code>d</code> is required.  You can provide <code>ascending</code> or <code>descending</code> if you like, but only the first letter is looked at (just like <code>keep</code> in other commands.) Note that this might look reversed at first since the top of the stack is <code>line1</code> which is the bottom of the display.  If you get it wrong just <code>undo</code> and sort the other way</td></tr>
 <tr><td>sqrt</td><td><strong>SQUARE ROOT</strong><br>Perform a <a href="https://en.wikipedia.org/wiki/Square_root">square root</a> of the top stack item (<code>line1</code>) replacing it with the result</td></tr>
-<tr><td>u [#]<br> undo [#]</td><td><strong>UNDO</strong><br>By default, undo the last operation.  However, if an undo stack line number is given, as displayed with the <code>list undo</code> command, undo will restore the stack back to that point.  Please keep in mind that if you restore back to a previous undo state, later undo states will be discarded.  You can't go back. Typically, however, <code>u</code> undo is used to simply undo the previous action</td></tr>
+<tr><td>u [#]<br> undo [#]</td><td><strong>UNDO</strong><br>By default, undo the last operation.  However, if an undo stack line number is given, as displayed with the <code>list undo</code> command, undo will restore the stack back to that point.  Please keep in mind that if you restore back to a previous undo state, later undo states will be discarded.  You can’t go back. Typically, however, <code>u</code> undo is used to simply undo the previous action</td></tr>
 <tr><td>up</td><td><strong>UP</strong><br>Rotates the stack up on the screen. The top of the stack item (<code>line1</code>) will be pushed back and the last item will move to the top of the stack (<code>line1</code>). This is the reverse of <code>down</code></td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/Conversion.png">
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/Conversion.png">
 <h1 id="conversions"><a class="header" href="#conversions">Conversions</a></h1>
 <p>The conversion commands will simply convert from one unit to another.  As an example, I frequently use RPNCalc to convert from inches to millimeters or back.</p>
-<p>I've included the ones I use the most, but I'm happy to include others if you'd find something else useful.</p>
+<p>I’ve included the ones I use the most, but I’m happy to include others if you’d find something else useful.</p>
 <h2 id="fractional-display"><a class="header" href="#fractional-display">Fractional Display</a></h2>
-<p>The RPNCalc stack only contains decimal numbers.  Therefore, we can't directly store fractional values on the stack.  If a fraction is entered, it is converted to a decimal.  There could be a loss of precision when this is done.  For example, there is no exact fractional equivalent for <code>PI</code> much like there is no exact decimal equivalent for <code>1/3</code>.  However, the difference is usually so small that it's acceptable.</p>
+<p>The RPNCalc stack only contains decimal numbers.  Therefore, we can’t directly store fractional values on the stack.  If a fraction is entered, it is converted to a decimal.  There could be a loss of precision when this is done.  For example, there is no exact fractional equivalent for <code>PI</code> much like there is no exact decimal equivalent for <code>1/3</code>.  However, the difference is usually so small that it’s acceptable.</p>
 <p>The <code>frac [base]</code> command takes the item on the top of the stack (<code>line1</code>) and displays the approximate fractional equivalent.  <code>[base]</code> sets the precision of the calculation. If a <code>base</code> is not provided, RPNCalc will use <code>64</code> (1/64) as the default.</p>
 <p><strong>For example</strong>, if you had <code>1.1234</code> on the stack, <code>frac</code> would show you <code>1.1234 is approximately 1 1/8</code>  No base was given so it would have used a base of 64 (which means maximum granularity would be 1/64) and auto reduced the result which is why you get the <code>1 1/8</code>.</p>
 <p>if <code>frac 5</code> would have been entered (which means 1/5 is maximum granularity), you get <code>1.1234 is approximately 1 1/5</code>.</p>
-<div class="table-wrapper"><table><thead><tr><th><div style="width:90px">Command</div></th><th>Description</th></tr></thead><tbody>
-<tr><td>to%</td><td>Converts <code>line1</code> from a "number" to a percent.  For example, <code>0.4455</code> becomes <code>44.55%</code>. This is simply done by multiplying the number by 100</td></tr>
-<tr><td>from%</td><td>Converts <code>line1</code> from a percent to a "number".  For example, <code>93.124%</code> becomes <code>.93124</code>. This is simply done by multiplying the number by 0.01</td></tr>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>
+<div style="width:90px">Command</div>
+</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>to%</td><td>Converts <code>line1</code> from a “number” to a percent.  For example, <code>0.4455</code> becomes <code>44.55%</code>. This is simply done by multiplying the number by 100</td></tr>
+<tr><td>from%</td><td>Converts <code>line1</code> from a percent to a “number”.  For example, <code>93.124%</code> becomes <code>.93124</code>. This is simply done by multiplying the number by 0.01</td></tr>
 <tr><td>frac [base]</td><td>Display a fractional estimate of the last stack item (<code>line1</code>) with the maximum granularity of 1/[base]. See the above description for more detail</td></tr>
 <tr><td>in2mm</td><td>Converts the value in <code>line1</code> from inches to millimeters</td></tr>
 <tr><td>mm2in</td><td>Converts the value in <code>line1</code> from millimeters to inches</td></tr>
@@ -523,47 +598,74 @@ names and abbreviations for the same command. This is just to make it easier to 
 <tr><td>oz2gram</td><td>Convert <code>line1</code> from ounces into grams using the constant of 28.349523125 grams / ounce</td></tr>
 <tr><td>kg2lb</td><td>convert <code>line1</code> from kilograms to US pounds using the constant of 2.2046226218 lbs/kg</td></tr>
 <tr><td>lb2kg</td><td>convert <code>line1</code> from US pounds using the constant of 0.45359237 kg/lbs</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/Trig.png">
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/Trig.png">
 <h1 id="trigonometry-functions"><a class="header" href="#trigonometry-functions">Trigonometry Functions</a></h1>
-<p>RPNCalc does not consider itself a fully fledged scientific calculator (at least not currently).  However, it's certainly beyond a very basic calculator.  The trigonometry commands listed here are basic, but do fill a need if you need to do a few basic calculations.</p>
-<p>Lastly, I'm happy to add more capabilities if there is a desire (and an offer to help test).</p>
-<div class="table-wrapper"><table><thead><tr><th><div style="width:90px">Command</div></th><th>Description</th></tr></thead><tbody>
+<p>RPNCalc does not consider itself a fully fledged scientific calculator (at least not currently).  However, it’s certainly beyond a very basic calculator.  The trigonometry commands listed here are basic, but do fill a need if you need to do a few basic calculations.</p>
+<p>Lastly, I’m happy to add more capabilities if there is a desire (and an offer to help test).</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>
+<div style="width:90px">Command</div>
+</th><th>Description</th></tr>
+</thead>
+<tbody>
 <tr><td>sin [rad]<br>cos [rad]<br>tan [rad]</td><td>Calculate the <a href="https://en.wikipedia.org/wiki/Trigonometry">trigonometry</a> function requested.  Angles are input as degrees by default unless the optional <code>rad</code> parameter is given in which case the angles will be in <a href="https://en.wikipedia.org/wiki/Radian">radians</a>.<br><br><strong>Example:</strong> <code>tan</code> will calculate the tangent using <code>line1</code> as the angle in degrees.  Use <code>tan rad</code> if <code>line1</code> contains the angle in radians</td></tr>
 <tr><td>asin [rad]<br>acos [rad]<br>atan [rad]</td><td>Calculate the arc <a href="https://en.wikipedia.org/wiki/Trigonometry">trigonometry</a> function.  Like the above, the result is returned in degrees unless <code>rad</code> parameter is provided</td></tr>
-<tr><td>hypot<br>hypotenuse</td><td>Assumes the top two stack items are the right triangle' legs and this function returns the hypotenuse using the <a href="https://en.wikipedia.org/wiki/Pythagorean_theorem">Pythagorean theorem</a>.  Specifically, it returns SQRT( (<code>line1</code>^2 + <code>line2</code>^2 )).  The hypotenuse will replace the values of the two legs on the stack</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/Memory.png">
+<tr><td>hypot<br>hypotenuse</td><td>Assumes the top two stack items are the right triangle’ legs and this function returns the hypotenuse using the <a href="https://en.wikipedia.org/wiki/Pythagorean_theorem">Pythagorean theorem</a>.  Specifically, it returns SQRT( (<code>line1</code>^2 + <code>line2</code>^2 )).  The hypotenuse will replace the values of the two legs on the stack</td></tr>
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/Memory.png">
 <h1 id="memory-commands"><a class="header" href="#memory-commands">Memory Commands</a></h1>
-<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (<code>slot0</code> - <code>slot9</code>).  This amount can be increased with the <code>set memslots</code> command.  If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions.  You can change it as will, but if you decrease the number of slots, anything held in the "no longer there" slots will be discarded.</p>
+<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (<code>slot0</code> - <code>slot9</code>).  This amount can be increased with the <code>set memslots</code> command.  If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions.  You can change it as will, but if you decrease the number of slots, anything held in the “no longer there” slots will be discarded.</p>
 <p>For example, say you <code>set memslots 20</code> and store values in all of them.  If you later <code>set memslots 10</code>, the values in the upper 10 slots will be discarded.</p>
 <p>The operational command <code>reset</code> will reset all of the persistant settings back to their defaults including the number of memory slots.</p>
-<p>The normal usage to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It's saved in the Java preferences system as discussed earlier.</p>
-<div class="table-wrapper"><table><thead><tr><th><div style="width:135px">Command</div></th><th>Description</th></tr></thead><tbody>
+<p>The normal usage to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It’s saved in the Java preferences system as discussed earlier.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>
+<div style="width:135px">Command</div>
+</th><th>Description</th></tr>
+</thead>
+<tbody>
 <tr><td>mem [slot] add</td><td><code>mem X add</code><br>Will add the top stack item (<code>line1</code>) into the memory slot X.  By default, there are 10 slots; 0 through 9.  If you do not provide a slot number it will default to <code>slot0</code><br>Example:  <code>mem add</code>   will add the contents of <code>line1</code> into memory <code>slot0</code></td></tr>
 <tr><td>mem [slot] copy<br>mem [slot] recall</td><td><code>mem X copy</code><br>Copies the contents of memory slot provided back onto the stack.  Defaults to <code>slot0</code> if no slot number is provided</td></tr>
 <tr><td>mem [slot] clr</td><td><code>mem X clr</code><br>Clear the contents of the memory slot provided.  Defaults to Slot0 if no slot is provided.  Example: <code>mem 2 clr</code>  The command <code>clear</code> can also be used instead of <code>clr</code></td></tr>
 <tr><td>mem clearall</td><td><code>mem clearall</code><br>Clears the contents of all memory slots.  There is no need to include a SlotNumber as they will all be erased.  Note <code>mem clrall</code> will also work</td></tr>
 <tr><td>mem copyall</td><td><code>mem copyall</code><br>Copy all items from the memory slots onto the stack.  These will be ordered via memory slot number. i.e. Memory slot 0 will be at the top of the stack / <code>line1</code>. <code>recallall</code> will also work</td></tr>
 <tr><td>mem addall</td><td><code>mem addall</code><br>Add all items in the stack to a memory slot.  The order will be the same as the stack with memory slot0 being the top of the stack.  The command will fail if there are more stack items than there are memory slots - which default to 10.  It may simply be easier to save the stack with a name using the load <code>-l</code> command.  Also, any values currently in a needed memory slot will be silently overwritten</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img alt="Page Icon" align="right" width="125" src="Chapters/../Images/Constants.png">
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><img alt="Page Icon" align="right" width="125" src="Images/Constants.png">
 <h1 id="constants"><a class="header" href="#constants">Constants</a></h1>
-<p>These commands simply take a defined constant and add that number to the top of the stack (<code>line1</code>).  There are currently not that many constants defined, but if there is a desire to add additional ones please me know.  It's quick and easy.</p>
+<p>These commands simply take a defined constant and add that number to the top of the stack (<code>line1</code>).  There are currently not that many constants defined, but if there is a desire to add additional ones please me know.  It’s quick and easy.</p>
 <p>To use a constant, simply run the command and the value of the requested constant will be added
 to the top of the stack (<code>line1</code>)</p>
-<div class="table-wrapper"><table><thead><tr><th>Constant</th><th>Description</th></tr></thead><tbody>
-<tr><td>pi</td><td><strong>PI - ARCHIMEDES' CONSTANT</strong><br><a href="https://en.wikipedia.org/wiki/Pi">Archimedes' constant, or PI</a>, is the name given to the ratio of the circumference of a circle to the diameter. <code>PI</code> inserts the value of PI onto the stack.  In RPNCalc, Pi is calculated to 50 decimal places <code>3.14159265358979323846264338327950288419716939937510</code></td></tr>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Constant</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>pi</td><td><strong>PI - ARCHIMEDES’ CONSTANT</strong><br><a href="https://en.wikipedia.org/wiki/Pi">Archimedes’ constant, or PI</a>, is the name given to the ratio of the circumference of a circle to the diameter. <code>PI</code> inserts the value of PI onto the stack.  In RPNCalc, Pi is calculated to 50 decimal places <code>3.14159265358979323846264338327950288419716939937510</code></td></tr>
 <tr><td>phi</td><td><strong>PHI - THE GOLDEN RATIO</strong><br>If the stack is empty, <code>phi</code> will simply insert the <a href="https://en.wikipedia.org/wiki/Golden_ratio">PHI</a>, also known as the Golden Ratio, onto the top of the stack (<code>line1</code>). In RPNCalc, Phi is defined as <code>1.618033989</code><br>However, if there is an item on the stack, it will also display the possible long and short section values</td></tr>
-<tr><td>eulersnum<br>eulersnumber</td><td><strong>EULER'S NUMBER</strong><br>Euler's number is also known as the exponential growth constant. It is the base for natural logarithms and is found in many areas of mathematics. The command <code>euler</code> inserts <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler's number (e)</a> onto the stack.  e is calculated to 50 deciaml places <code>2.71828182845904523536028747135266249775724709369995</code></td></tr>
-<tr><td>eulersconst<br>eulersconstant</td><td><strong>EULER'S CONSTANT</strong><br><a href="https://en.wikipedia.org/wiki/Euler%27s_constant#:~:text=The%20numerical%20value%20of%20Euler&#x27;s,Is%20Euler&#x27;s%20constant%20irrational%3F">Euler's constant</a> (sometimes called the Euler–Mascheroni constant) is a mathematical constant, usually denoted by the lowercase Greek letter gamma (γ), defined as the limiting difference between the harmonic series and the natural logarithm. Euler's Constant is represented in RPNCalc to 36 decimal places <code>0.57721566490153286060651209008240243</code></td></tr>
+<tr><td>eulersnum<br>eulersnumber</td><td><strong>EULER’S NUMBER</strong><br>Euler’s number is also known as the exponential growth constant. It is the base for natural logarithms and is found in many areas of mathematics. The command <code>euler</code> inserts <a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler’s number (e)</a> onto the stack.  e is calculated to 50 deciaml places <code>2.71828182845904523536028747135266249775724709369995</code></td></tr>
+<tr><td>eulersconst<br>eulersconstant</td><td><strong>EULER’S CONSTANT</strong><br><a href="https://en.wikipedia.org/wiki/Euler%27s_constant#:~:text=The%20numerical%20value%20of%20Euler&#39;s,Is%20Euler&#39;s%20constant%20irrational%3F">Euler’s constant</a> (sometimes called the Euler–Mascheroni constant) is a mathematical constant, usually denoted by the lowercase Greek letter gamma (γ), defined as the limiting difference between the harmonic series and the natural logarithm. Euler’s Constant is represented in RPNCalc to 36 decimal places <code>0.57721566490153286060651209008240243</code></td></tr>
 <tr><td>sol</td><td><strong>SPEED OF LIGHT</strong><br>Inserts the <a href="https://en.wikipedia.org/wiki/Speed_of_light">speed of light</a>, in meters per second, onto the stack. RPNCalc uses <code>299,792,458 m/s</code> as the speed of light</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/UDF.png" alt="">
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/UDF.png" alt="">
 <h1 id="user-defined-functions"><a class="header" href="#user-defined-functions">User Defined Functions</a></h1>
 <p>RPNCalc can record your commands and save them as a user defined function.  In essence, you are creating a new command that can be run.</p>
 <p>When recording a new function, start by adding data to your stack that would emulate when you would run your function.  The only data that will be part of your recording will be data &amp; commands entered <em><strong>after</strong></em> recording has been turned on.  When you are ready, enter the <code>record on</code> command.  A red <code>[Recording]</code> alert will appear in the status line. Anything you add during this period will be recorded with the exception of the commands listed below.  Enter your commands, numbers, etc. until you are done.</p>
-<p>When recording is complete, enter <code>record off</code> to complete your recording.  You'll be prompted for a function name.  Your new command will be this name so choose a name without spaces and that is easy to type when you wish to execute the function in the future.  You should also not choose a name of an existing command as your function will not be able to be called.  If you do not provide a name, i.e, just hit enter, the recording will be discarded.</p>
+<p>When recording is complete, enter <code>record off</code> to complete your recording.  You’ll be prompted for a function name.  Your new command will be this name so choose a name without spaces and that is easy to type when you wish to execute the function in the future.  You should also not choose a name of an existing command as your function will not be able to be called.  If you do not provide a name, i.e, just hit enter, the recording will be discarded.</p>
 <p>Then you can run your function whenever you like on the stack currently available.  To run the function, simply type the name of your function as a standard command. To
 see a list of the saved functions, execute <code>list func</code> and it will display the name and the steps you recorded.</p>
 <p>User defined functions can be deleted with the <code>func del NAME</code> command or you can delete all of the functions with <code>func delall</code></p>
@@ -581,33 +683,52 @@ by step. You do not <code>undo</code> the entire function in one command.  Of co
 <li>set, reset</li>
 <li>cx, x, quit, exit</li>
 </ul>
-<div class="table-wrapper"><table><thead><tr><th><div style="width:110px">Command</div></th><th>Description</th></tr></thead><tbody>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>
+<div style="width:110px">Command</div>
+</th><th>Description</th></tr>
+</thead>
+<tbody>
 <tr><td>record on<br>rec on</td><td>Turn on recording.  Most commands and numbers entered after record is enabled will be saved.  There are some that are excluded from being recorded as detailed above</td></tr>
 <tr><td>record off<br>rec off</td><td>Turn off recording.  The user will be prompted to enter in a name for this function and that name will be used to run it in the future.  If you do not enter in a name the recording is canceled and  nothing will be saved</td></tr>
 <tr><td>func del <code>NAME</code></td><td>Delete a saved function.  The name must match the one given when saved.  A list of functions can be viewed with <code>list func</code>.  Undo will not recover a deleted function</td></tr>
 <tr><td>func delall</td><td>Delete all saved user defined functions. Please note that undo will not recover deleted functions</td></tr>
 <tr><td>func export</td><td>Export all User Defined Functions to a file for backup or future import</td></tr>
 <tr><td>func import</td><td>Import a previously exported set of functions. Please note that importing will append the imported functions to the currently defined list.  If an imported function has the same name as an existing one, the existing function will be overwritten</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <h3 id="example-1"><a class="header" href="#example-1">Example 1</a></h3>
-<p>Here is a full real world example.  Lets say you'd like to make a user defined function to take the cube of number.  Here are the steps you'd take to do that.</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Number</th><th style="text-align: center">Command</th><th style="text-align: left">Description</th></tr></thead><tbody>
-<tr><td style="text-align: center">1</td><td style="text-align: center"><code>c</code></td><td style="text-align: left">Clear the stack.  Not really needed, but let's start off tidy</td></tr>
-<tr><td style="text-align: center">2</td><td style="text-align: center"><code>3 [Enter]</code></td><td style="text-align: left">Add the number 3 to the stack.  This can be any number really as it's not part of the recording</td></tr>
+<p>Here is a full real world example.  Lets say you’d like to make a user defined function to take the cube of number.  Here are the steps you’d take to do that.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Number</th><th style="text-align: center">Command</th><th style="text-align: left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center"><code>c</code></td><td style="text-align: left">Clear the stack.  Not really needed, but let’s start off tidy</td></tr>
+<tr><td style="text-align: center">2</td><td style="text-align: center"><code>3 [Enter]</code></td><td style="text-align: left">Add the number 3 to the stack.  This can be any number really as it’s not part of the recording</td></tr>
 <tr><td style="text-align: center">3</td><td style="text-align: center"><code>record on</code></td><td style="text-align: left">Start recording.  From now on anything you do (mostly) will be recorded</td></tr>
 <tr><td style="text-align: center">4</td><td style="text-align: center"><code>3</code></td><td style="text-align: left">Add 3 to the stack</td></tr>
 <tr><td style="text-align: center">5</td><td style="text-align: center"><code>^</code></td><td style="text-align: left">Take <code>line1</code> value to the power of 3</td></tr>
-<tr><td style="text-align: center">6</td><td style="text-align: center"><code>record off</code></td><td style="text-align: left">Stop recording and give the function the name "cube"</td></tr>
+<tr><td style="text-align: center">6</td><td style="text-align: center"><code>record off</code></td><td style="text-align: left">Stop recording and give the function the name “cube”</td></tr>
 <tr><td style="text-align: center">7</td><td style="text-align: center"><code>list func</code></td><td style="text-align: left">Show the user defined functions including the <code>cube</code> command you just made</td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <p>From now on, just type <code>cube</code> and <code>line1</code> will be cubed! Go You!  You can always list your defined functions with <code>list func</code></p>
 <h3 id="example-2"><a class="header" href="#example-2">Example 2</a></h3>
-<p>Another real world but slightly more complex example.  Say you wish to know the percentage different between two numbers.  Let's create a function called <code>diffpercent</code> The
+<p>Another real world but slightly more complex example.  Say you wish to know the percentage different between two numbers.  Let’s create a function called <code>diffpercent</code> The
 logic is to find the smallest number on the stack and then the largest.  Divide them.  Flip the sign and add one to it.  Then convert it to a percent.</p>
-<div class="table-wrapper"><table><thead><tr><th style="text-align: center">Number</th><th style="text-align: center">Command</th><th style="text-align: left">Description</th></tr></thead><tbody>
-<tr><td style="text-align: center">1</td><td style="text-align: center"><code>c</code></td><td style="text-align: left">Clear the stack.  Not really needed, but let's start off tidy</td></tr>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th style="text-align: center">Number</th><th style="text-align: center">Command</th><th style="text-align: left">Description</th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: center">1</td><td style="text-align: center"><code>c</code></td><td style="text-align: left">Clear the stack.  Not really needed, but let’s start off tidy</td></tr>
 <tr><td style="text-align: center">2</td><td style="text-align: center"><code>10</code></td><td style="text-align: left">Setting up two numbers before we record the function</td></tr>
 <tr><td style="text-align: center">3</td><td style="text-align: center"><code>1</code></td><td style="text-align: left">Setting up two numbers before we record the function</td></tr>
 <tr><td style="text-align: center">4</td><td style="text-align: center"><code>record on</code></td><td style="text-align: left">Start recording.  From now on anything you do (mostly) will be recorded</td></tr>
@@ -619,92 +740,104 @@ logic is to find the smallest number on the stack and then the largest.  Divide 
 <tr><td style="text-align: center">10</td><td style="text-align: center"><code>+</code></td><td style="text-align: left">Add the numbers together (effectively subtracting the division results from 1</td></tr>
 <tr><td style="text-align: center">11</td><td style="text-align: center"><code>to%</code></td><td style="text-align: left">Convert to a percent (multiply  by 100)</td></tr>
 <tr><td style="text-align: center">12</td><td style="text-align: center"><code>record off</code></td><td style="text-align: left">Save the function with the name <code>diffpercent</code></td></tr>
-</tbody></table>
+</tbody>
+</table>
 </div>
 <p>In the example above, the result it 90%.  There is a 90% different between 10 and 1. Going forward, you can use the command <code>diffpercent</code> anytime you need to find the
 percentage different between the lowest and highest number on the stack.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/OperationalCmds.png">
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/OperationalCmds.png">
 <h1 id="operational-commands"><a class="header" href="#operational-commands">Operational Commands</a></h1>
 <p>Operational commands are commands that do not directly impact your stack numbers. These tend to be display commands or those the interact with the the setting of RPNCalc
 directly.</p>
-<div class="table-wrapper"><table><thead><tr><th><div style="width:100px">Command</div></th><th>Description</th></tr></thead><tbody>
-<tr><td>debug</td><td>Toggle debug mode which will display additional information on what's happening internally in the program.  Same as the <code>-D</code> command line switch.  Probably not the useful for a normal user</td></tr>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>
+<div style="width:100px">Command</div>
+</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>debug</td><td>Toggle debug mode which will display additional information on what’s happening internally in the program.  Same as the <code>-D</code> command line switch.  Probably not the useful for a normal user</td></tr>
 <tr><td>h <br> ?</td><td><code>h</code> or <code>?</code> will display the in-program help page</td></tr>
 <tr><td>export <code>FILE</code></td><td><code>Export</code> will simply export the current stack values into the file specified. The format is very simple with one number per line. The output will be ordered as on the screen with the top of the stack item at the end of the file and the last stack item at the top. If the file exists, it will be overwritten. <br> <br>NOTE: Please ensure the backslash (<code>/</code>) is used as a directory separator, even on Windows. Backslashes (<code>\</code>) are <strong>NOT</strong> suported and are removed when the command is entered</td></tr>
-<tr><td>hp<br>homepage</td><td>Open a brower to the <a href="https://github.com/frossm/rpncalc">RPNCalc homepage</a>. Note that RPNCalc will need to know the full path to your browser. If it was set previously with <code>set browser</code> you are set.  If not, it will prompt you and store the information for future use. You can clear or reset your browser path with the <code>set browser</code> command.  See the Configuration chapter for additional information.<br><br>NOTE: The capability to launch a system web browser does not exist with a SNAP installation.  This is because the snap runs in a 'sandbox' and doesn't, by default, have access to files on your system. You will receive an error that the provided browser is not valid</td></tr>
+<tr><td>hp<br>homepage</td><td>Open a brower to the <a href="https://github.com/frossm/rpncalc">RPNCalc homepage</a>. Note that RPNCalc will need to know the full path to your browser. If it was set previously with <code>set browser</code> you are set.  If not, it will prompt you and store the information for future use. You can clear or reset your browser path with the <code>set browser</code> command.  See the Configuration chapter for additional information.<br><br>NOTE: The capability to launch a system web browser does not exist with a SNAP installation.  This is because the snap runs in a ‘sandbox’ and doesn’t, by default, have access to files on your system. You will receive an error that the provided browser is not valid</td></tr>
 <tr><td>import <code>FILE</code></td><td>With <code>import</code> RPNCalc will replace the current stack with one loaded from a file.  The file format is simple, just one number per line.  Do not include any comments or alphanumeric/special characters.  Just one number per line with the last number being <code>line1</code> - just like the display in RPNCalc</td></tr>
 <tr><td>list stacks</td><td>List the current saved stacks on the system, including the one currently in use</td></tr>
 <tr><td>list mem</td><td>Display the contents of the memory slots</td></tr>
 <tr><td>list undo</td><td>Displays all of the saved stacks and their contents used for undo operations.  Basically what your stack will look like when you perform an undo.  These are not saved between RPNCalc executions</td></tr>
 <tr><td>list func</td><td>Show a list of the defined User Defined Functions (UDF) and the steps within each one</td></tr>
 <tr><td>list command<br>list commands<br>list cmd<br>list cmds</td><td>List the history of user entered commands</td></tr>
-<tr><td>load <code>NAME</code></td><td>Load the named stack.  You can <code>load</code> a stack name even if it doesn't exist, and it will be created. This is how a new stack is created and is similar to using the <code>-l name</code> command line switch. Exiting the program or loading another stack will save the current stack before switching</td></tr>
+<tr><td>load <code>NAME</code></td><td>Load the named stack.  You can <code>load</code> a stack name even if it doesn’t exist, and it will be created. This is how a new stack is created and is similar to using the <code>-l name</code> command line switch. Exiting the program or loading another stack will save the current stack before switching</td></tr>
 <tr><td>rev<br>reverse</td><td><code>rev</code> or <code>reverse</code> will reverse the order of all of the items on the stack</td></tr>
 <tr><td>ss</td><td>Swap the current stack with the secondary. The primary and secondary stacks are described in the Stacks section.  Executing <code>ss</code> again will swap them back.  The secondary stack it just a place to do a bit of other work then you can swap back.  They are in no way connected.  The secondary stack is also saved upon exit</td></tr>
-<tr><td>ug<br>userguide</td><td>Open a browser pointing to the user guide located at <a href="https://frossm.github.io/RPNCalc-UserGuide/">RPNCalc User Guide</a>. Note that RPNCalc will need to know the full path to your browser. If it was set previously with <code>set browser</code> you are set.  If not, it will prompt you and store the information for future use. You can clear or reset your browser path with the <code>set browser</code> command.  See the Configuration chapter for additional information.  <br><br>NOTE: The capability to launch a system web browser does not exist with a SNAP installation.  This is because the snap runs in a 'sandbox' and doesn't, by default, have access to files on your system. You will receive an error that the provided browser is not valid</td></tr>
+<tr><td>ug<br>userguide</td><td>Open a browser pointing to the user guide located at <a href="https://frossm.github.io/RPNCalc-UserGuide/">RPNCalc User Guide</a>. Note that RPNCalc will need to know the full path to your browser. If it was set previously with <code>set browser</code> you are set.  If not, it will prompt you and store the information for future use. You can clear or reset your browser path with the <code>set browser</code> command.  See the Configuration chapter for additional information.  <br><br>NOTE: The capability to launch a system web browser does not exist with a SNAP installation.  This is because the snap runs in a ‘sandbox’ and doesn’t, by default, have access to files on your system. You will receive an error that the provided browser is not valid</td></tr>
 <tr><td>license</td><td>Display the license text for RPNCalc.  Currently, RPNCalc uses the <a href="https://opensource.org/licenses/MIT">The MIT License</a></td></tr>
 <tr><td>ver</td><td>Display the current version number and copyright as well as the latest GitHub release.  This is equivalent to the <code>-v</code> command line option.  Users of Snap installations will automatically be up to date.</td></tr>
 <tr><td>cx<br>clearexit</td><td><code>cx</code> or <code>clearexit</code> will clear the stack and then exit the program</td></tr>
 <tr><td>x<br>exit<br>quit<br>ctrl-c</td><td>Exit the program.  The primary stack, secondary stack, and memory slots will be saved upon exit</td></tr>
-</tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Chapters/../Images/Build.png">
+</tbody>
+</table>
+</div>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/Build.png">
 <h1 id="building-rpncalc-from-the-source"><a class="header" href="#building-rpncalc-from-the-source">Building RPNCalc from the Source</a></h1>
-<p>RPNCalc is written in Java and uses <a href="https://maven.apache.org/what-is-maven.html">Maven</a> as it's build tool. To build, you'll need to have the Java Development Kit (JDK) installed on your system.  Make sure you get the JDK and not the Java Runtime Environment (JRE) which most people would have on their machines.  The JRE allows you to run Java applications, but not build them. At the time of this writing, you'll need Java 11 or newer.</p>
-<p>After the JDK is installed, you'll need to install the Apache Maven build tool.  Then download/clone of the source code from Github along with my <a href="https://github.com/frossm/library">library package</a>.  This library package contains many methods that I use across my applications.</p>
+<p>RPNCalc is written in Java and uses <a href="https://maven.apache.org/what-is-maven.html">Maven</a> as it’s build tool. To build, you’ll need to have the Java Development Kit (JDK) installed on your system.  Make sure you get the JDK and not the Java Runtime Environment (JRE) which most people would have on their machines.  The JRE allows you to run Java applications, but not build them. At the time of this writing, you’ll need Java 11 or newer.</p>
+<p>After the JDK is installed, you’ll need to install the Apache Maven build tool.  Then download/clone of the source code from Github along with my <a href="https://github.com/frossm/library">library package</a>.  This library package contains many methods that I use across my applications.</p>
 <p>To install the library, execute the following from the top level library directory (the one with the <code>pom.xml</code> file in it):</p>
 <p><code>mvn install</code></p>
 <p>That should install the library into the Maven cache on your computer.  You can remove the library directory.</p>
-<p>Secondly, you'll need to build the executable RPNCalc jar file.  Download, or clone, the RPNCalc source code from the link provided above.  Unzip it to a directory and from the top level directory of RPNCalc, execute:</p>
+<p>Secondly, you’ll need to build the executable RPNCalc jar file.  Download, or clone, the RPNCalc source code from the link provided above.  Unzip it to a directory and from the top level directory of RPNCalc, execute:</p>
 <p><code>mvn package</code></p>
-<p>Assuming all goes well, you'll have a new shiny <code>rpncalc.jar</code> file in the <code>target</code> directory.</p>
-<p>Automated testing in RPNCalc (using JUnit5) is fairly complete (although testing can always be more extensive) and should catch most issues with the code.  The hope is I find them before it's released, but pay attention to the Maven output and you'll see if there are issues.</p>
-<p>I'll discuss this more in the Snap chapter, but if you are on a Linux system that supports snaps, I would encourage that you leverage it. Not only are Snap applications "sandboxed" so it's more secure, all of the dependencies are bundled in so you don't even need to have java installed on the machine. It is also automatically updated so you'll always have the latest.  Although this can also be forced with <code>sudo snap refresh</code>.</p>
+<p>Assuming all goes well, you’ll have a new shiny <code>rpncalc.jar</code> file in the <code>target</code> directory.</p>
+<p>Automated testing in RPNCalc (using JUnit5) is fairly complete (although testing can always be more extensive) and should catch most issues with the code.  The hope is I find them before it’s released, but pay attention to the Maven output and you’ll see if there are issues.</p>
+<p>I’ll discuss this more in the Snap chapter, but if you are on a Linux system that supports snaps, I would encourage that you leverage it. Not only are Snap applications “sandboxed” so it’s more secure, all of the dependencies are bundled in so you don’t even need to have java installed on the machine. It is also automatically updated so you’ll always have the latest.  Although this can also be forced with <code>sudo snap refresh</code>.</p>
 <p>My preference is to use the Snap installation which is what I do on my Ubuntu machines.</p>
-<div style="break-before: page; page-break-before: always;"></div><img alt="Page Icon" align="right" width="150" src="Chapters/../Images/Snap.png">
+<div style="break-before: page; page-break-before: always;"></div><img alt="Page Icon" align="right" width="150" src="Images/Snap.png">
 <h1 id="snap"><a class="header" href="#snap">SNAP</a></h1>
-<p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io//rpncalc/badge.svg" alt="rpncalc" /></a></p>
+<p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io//rpncalc/badge.svg" alt="rpncalc"></a></p>
 <p>I would encourage anyone with a supported Linux platform to use the Snap package of RPNCalc.  You can learn more about Snap from the <a href="https://snapcraft.io">Snapcraft Homepage</a>.</p>
-<p>At a high level, a Snap is a fully contained container with your application and it's dependencies bundled in.  It runs in a <code>sandbox</code> so it can't interfere with other parts of your system until it's given access.  Snaps are automatically kept up to date and are easily removed leaving no trace on the system.  There is even a nice <a href="https://snapcraft.io/store">App Store</a> where you can find software.</p>
-<p>As an example, RPNCalc uses Java, but you don't have to have Java installed on your machine as it's bundled in with the Snap.</p>
-<p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store" /></a></p>
-<p>As a shameless plug, you can <a href="https://snapcraft.io/search?q=fross">Search for 'Fross'</a> to see all of my Snap packages, or visit my <a href="https://github.com/frossm">GitHub home</a> for my other open source software.</p>
-<p>While I'm a fan of Snaps, there are positives and negatives to using them.</p>
+<p>At a high level, a Snap is a fully contained container with your application and it’s dependencies bundled in.  It runs in a <code>sandbox</code> so it can’t interfere with other parts of your system until it’s given access.  Snaps are automatically kept up to date and are easily removed leaving no trace on the system.  There is even a nice <a href="https://snapcraft.io/store">App Store</a> where you can find software.</p>
+<p>As an example, RPNCalc uses Java, but you don’t have to have Java installed on your machine as it’s bundled in with the Snap.</p>
+<p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store"></a></p>
+<p>As a shameless plug, you can <a href="https://snapcraft.io/search?q=fross">Search for ‘Fross’</a> to see all of my Snap packages, or visit my <a href="https://github.com/frossm">GitHub home</a> for my other open source software.</p>
+<p>While I’m a fan of Snaps, there are positives and negatives to using them.</p>
 <h2 id="snap-the-good-and-the-bad"><a class="header" href="#snap-the-good-and-the-bad">Snap: The Good and the Bad</a></h2>
-<p><em><strong><p align="center">-- Thanks to the good folks at MakeUseOf.com for this! --</p></strong></em></p>
-<p><a href="https://www.makeuseof.com/everything-you-need-to-know-about-snap-and-snap-store/">MakeUseOf.com</a> has a good breakdown of everything that's good and bad about Snap.</p>
-<p>Ever since Canonical announced Snap, there's been a stir in the Linux community about whether Snap is the right approach to improve package distribution on Linux. This has given rise to two opposing camps: one in favor of Snap and the other critical of its approach in the long run.</p>
-<p>Here's a breakdown of everything that's good and bad about Snap.</p>
+<p><em><strong>
+<p align="center">– Thanks to the good folks at MakeUseOf.com for this! –</p>
+</strong></em></p>
+<p><a href="https://www.makeuseof.com/everything-you-need-to-know-about-snap-and-snap-store/">MakeUseOf.com</a> has a good breakdown of everything that’s good and bad about Snap.</p>
+<p>Ever since Canonical announced Snap, there’s been a stir in the Linux community about whether Snap is the right approach to improve package distribution on Linux. This has given rise to two opposing camps: one in favor of Snap and the other critical of its approach in the long run.</p>
+<p>Here’s a breakdown of everything that’s good and bad about Snap.</p>
 <h3 id="advantages-of-using-snap"><a class="header" href="#advantages-of-using-snap">Advantages of Using Snap</a></h3>
 <ul>
 <li>Snaps come bundled with dependencies (libraries) that facilitate instant access to a program, as you no longer have to manually install the missing dependencies to make it work on your system.</li>
-<li>Each snap runs in its own containerized sandbox to avoid interference with other system packages. As a result, when you remove a snap, the system removes all of its data, including dependencies, without affecting other packages. Needless to say, this also offers a more secure environment since one package can't access the information of another.</li>
+<li>Each snap runs in its own containerized sandbox to avoid interference with other system packages. As a result, when you remove a snap, the system removes all of its data, including dependencies, without affecting other packages. Needless to say, this also offers a more secure environment since one package can’t access the information of another.</li>
 <li>Snap updates snaps automatically at set intervals. Hence, you always run the latest version of a program on your system.</li>
-<li>Snap makes it easier for developers to distribute their software directly to users, so they don't have to wait for their Linux distribution to roll them out.</li>
-<li>Adding to the previous point, another advantage of putting developers in charge of packaging and distributing their software is that they don't have to create distro-specific packages, as it comes bundled with the required dependencies.</li>
+<li>Snap makes it easier for developers to distribute their software directly to users, so they don’t have to wait for their Linux distribution to roll them out.</li>
+<li>Adding to the previous point, another advantage of putting developers in charge of packaging and distributing their software is that they don’t have to create distro-specific packages, as it comes bundled with the required dependencies.</li>
 </ul>
 <h3 id="disadvantages-of-snap"><a class="header" href="#disadvantages-of-snap">Disadvantages of Snap</a></h3>
 <ul>
-<li>Since snaps come bundled with dependencies, they're larger in size and occupy more disk space than their counterparts from other package managers.</li>
+<li>Since snaps come bundled with dependencies, they’re larger in size and occupy more disk space than their counterparts from other package managers.</li>
 <li>As a result of the bundled dependencies, snaps are distributed as compressed filesystem images and you need to mount them first before installing. Because of this, snaps are slower to run than traditional packages.</li>
 <li>Although Snap enables developers to distribute their snaps directly to users, the distribution pipeline requires them to set up an account with Canonical and host their snaps on it. This goes against the true nature of the open-source methodology because even though the software is still open source, the package management system is controlled by an entity.</li>
-<li>Another downside to allowing developers to distribute packages is that the packages don't go through stringent checks and reviews by the community and therefore carry the risk of containing malware---as seen a few years back.</li>
-<li>Due to the fact that Snap's back-end is still closed-source and controlled by Canonical, many major Linux distros aren't on board with the idea of putting Snap as the default package manager on their system.</li>
+<li>Another downside to allowing developers to distribute packages is that the packages don’t go through stringent checks and reviews by the community and therefore carry the risk of containing malware—as seen a few years back.</li>
+<li>Due to the fact that Snap’s back-end is still closed-source and controlled by Canonical, many major Linux distros aren’t on board with the idea of putting Snap as the default package manager on their system.</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Chapters/../Images/WrapUp.png">
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/WrapUp.png">
 <h1 id="wrapup"><a class="header" href="#wrapup">Wrapup</a></h1>
-<p>Well, if you've read this far you probably know more about RPNCalc than I do.  I needed a command line based RPN calculator and have been very happy with this one.  I've added features as I've needed them and use it daily for many years now.  Some time ago I decided to make the program, source, and documentation available so others could use it if they wished.  For those that have, I hope you found it useful.</p>
-<p>I'll continue to add new features as I think about them.  If you have suggestions, issues, or ideas, the links to reach out to me are on the Introduction page.</p>
-<p>Best wishes and happy reverse Polish notation calculating...</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Chapters/../Images/License.png">
+<p>Well, if you’ve read this far you probably know more about RPNCalc than I do.  I needed a command line based RPN calculator and have been very happy with this one.  I’ve added features as I’ve needed them and use it daily for many years now.  Some time ago I decided to make the program, source, and documentation available so others could use it if they wished.  For those that have, I hope you found it useful.</p>
+<p>I’ll continue to add new features as I think about them.  If you have suggestions, issues, or ideas, the links to reach out to me are on the Introduction page.</p>
+<p>Best wishes and happy reverse Polish notation calculating…</p>
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Images/License.png">
 <h1 id="licenses"><a class="header" href="#licenses">Licenses</a></h1>
 <p>RPNCalc is licensed under the MIT license as documented below.  However, it does make use of several libraries that may use a different license, so please ensure you comply with all of the licenses contained herein.</p>
 <h2 id="rpncalc-license"><a class="header" href="#rpncalc-license">RPNCalc License</a></h2>
 <p>The RPNCalc software as well as this User Guide are licensed via the MIT License.  You can read more about this license in the link below.</p>
 <p><a href="https://opensource.org/licenses/MIT">The MIT License</a></p>
 <p>Copyright (c) 2011-2025 Michael Fross</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <h2 id="jansi-libraryjcommander-libraryapache-maven"><a class="header" href="#jansi-libraryjcommander-libraryapache-maven">jAnsi Library<br>jCommander Library<br>Apache Maven</a></h2>
 <p>These software packages are licensed under the Apache Software License v2.0 as detailed below.</p>
 <p><a href="https://www.apache.org/licenses/LICENSE-2.0">The Apache License, Version 2.0</a></p>
@@ -715,16 +848,16 @@ http://www.apache.org/licenses/</p>
 <ol>
 <li>Definitions.</li>
 </ol>
-<p>"License" shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.</p>
-<p>"Licensor" shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.</p>
-<p>"Legal Entity" shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, "control" means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.</p>
-<p>"You" (or "Your") shall mean an individual or Legal Entity exercising permissions granted by this License.</p>
-<p>"Source" form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.</p>
-<p>"Object" form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.</p>
-<p>"Work" shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).</p>
-<p>"Derivative Works" shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.</p>
-<p>"Contribution" shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, "submitted" means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as "Not a Contribution."</p>
-<p>"Contributor" shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.</p>
+<p>“License” shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.</p>
+<p>“Licensor” shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.</p>
+<p>“Legal Entity” shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, “control” means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.</p>
+<p>“You” (or “Your”) shall mean an individual or Legal Entity exercising permissions granted by this License.</p>
+<p>“Source” form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.</p>
+<p>“Object” form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.</p>
+<p>“Work” shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).</p>
+<p>“Derivative Works” shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.</p>
+<p>“Contribution” shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, “submitted” means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as “Not a Contribution.”</p>
+<p>“Contributor” shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.</p>
 <ol start="2">
 <li>
 <p>Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.</p>
@@ -739,7 +872,7 @@ http://www.apache.org/licenses/</p>
 <p>You must give any other recipients of the Work or Derivative Works a copy of this License; and
 You must cause any modified files to carry prominent notices stating that You changed the files; and
 You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and
-If the Work includes a "NOTICE" text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.</p>
+If the Work includes a “NOTICE” text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.</p>
 <p>You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License.
 5. Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.</p>
 <ol start="6">
@@ -747,7 +880,7 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 <p>Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.</p>
 </li>
 <li>
-<p>Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.</p>
+<p>Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.</p>
 </li>
 <li>
 <p>Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.</p>
@@ -760,7 +893,7 @@ If the Work includes a "NOTICE" text file as part of its distribution, then any 
 <h2 id="junit5openjdk"><a class="header" href="#junit5openjdk">jUnit5<br>OpenJDK</a></h2>
 <p>The above packages aresubject to the <a href="https://github.com/junit-team/junit5/blob/main/LICENSE.md">Eclipse Public License - v2.0</a> as detailed below.</p>
 <p>Eclipse Public License - v 2.0
-THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (“AGREEMENT”). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.</p>
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (“AGREEMENT”). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT’S ACCEPTANCE OF THIS AGREEMENT.</p>
 <ol>
 <li>Definitions
 “Contribution” means:</li>
@@ -768,7 +901,7 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICE
 <p>a) in the case of the initial Contributor, the initial content Distributed under this Agreement, and
 b) in the case of each subsequent Contributor:
 i) changes to the Program, and
-ii) additions to the Program; where such changes and/or additions to the Program originate from and are Distributed by that particular Contributor. A Contribution “originates” from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor's behalf. Contributions do not include changes or additions to the Program that are not Modified Works.
+ii) additions to the Program; where such changes and/or additions to the Program originate from and are Distributed by that particular Contributor. A Contribution “originates” from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor’s behalf. Contributions do not include changes or additions to the Program that are not Modified Works.
 “Contributor” means any person or entity that Distributes the Program.</p>
 <p>“Licensed Patents” mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the Program.</p>
 <p>“Program” means the Contributions Distributed in accordance with this Agreement.</p>
@@ -783,9 +916,9 @@ ii) additions to the Program; where such changes and/or additions to the Program
 a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the Contribution of such Contributor, if any, and such Derivative Works.</li>
 </ol>
 <p>b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in Source Code or other form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.</p>
-<p>c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to Distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.</p>
+<p>c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to Distribute the Program, it is Recipient’s responsibility to acquire that license before distributing the Program.</p>
 <p>d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.</p>
-<p>e) Notwithstanding the terms of any Secondary License, no Contributor makes additional grants to any Recipient (other than those set forth in this Agreement) as a result of such Recipient's receipt of the Program under the terms of a Secondary License (if permitted under the terms of Section 3).</p>
+<p>e) Notwithstanding the terms of any Secondary License, no Contributor makes additional grants to any Recipient (other than those set forth in this Agreement) as a result of such Recipient’s receipt of the Program under the terms of a Secondary License (if permitted under the terms of Section 3).</p>
 <ol start="3">
 <li>Requirements
 3.1 If a Contributor Distributes the Program in any form, then:</li>
@@ -794,7 +927,7 @@ a) Subject to the terms of this Agreement, each Contributor hereby grants Recipi
 <p>b) the Contributor may Distribute the Program under a license different than this Agreement, provided that such license:</p>
 <p>i) effectively disclaims on behalf of all other Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
 ii) effectively excludes on behalf of all other Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;
-iii) does not attempt to limit or alter the recipients' rights in the Source Code under section 3.2; and
+iii) does not attempt to limit or alter the recipients’ rights in the Source Code under section 3.2; and
 iv) requires any subsequent distribution of the Program by any party to be under a license that satisfies the requirements of this section 3.
 3.2 When the Program is Distributed as Source Code:</p>
 <p>a) it must be made available under this Agreement, or if the Program (i) is combined with other material in a separate file or files made available under a Secondary License, and (ii) the initial Contributor attached to the Source Code the notice described in Exhibit A of this Agreement, then the Program may be made available under the terms of such Secondary Licenses, and
@@ -804,7 +937,7 @@ b) a copy of this Agreement must be included with each copy of the Program.
 <li>Commercial Distribution
 Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor (“Commercial Contributor”) hereby agrees to defend and indemnify every other Contributor (“Indemnified Contributor”) against any losses, damages and costs (collectively “Losses”) arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.</li>
 </ol>
-<p>For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor's responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.</p>
+<p>For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor’s responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.</p>
 <ol start="5">
 <li>
 <p>No Warranty
@@ -819,8 +952,8 @@ EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY 
 If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.</p>
 </li>
 </ol>
-<p>If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.</p>
-<p>All Recipient's rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Recipient's rights under this Agreement terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient's obligations under this Agreement and any licenses granted by Recipient relating to the Program shall continue and survive.</p>
+<p>If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient’s patent(s), then such Recipient’s rights granted under Section 2(b) shall terminate as of the date such litigation is filed.</p>
+<p>All Recipient’s rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Recipient’s rights under this Agreement terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient’s obligations under this Agreement and any licenses granted by Recipient relating to the Program shall continue and survive.</p>
 <p>Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the following manner. The Agreement Steward reserves the right to publish new versions (including revisions) of this Agreement from time to time. No one other than the Agreement Steward has the right to modify this Agreement. The Eclipse Foundation is the initial Agreement Steward. The Eclipse Foundation may assign the responsibility to serve as the Agreement Steward to a suitable separate entity. Each new version of the Agreement will be given a distinguishing version number. The Program (including Contributions) may always be Distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, Contributor may elect to Distribute the Program (including its Contributions) under the new version.</p>
 <p>Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved. Nothing in this Agreement is intended to be enforceable by any entity that is not a Contributor or Recipient. No third-party beneficiary rights are created under this Agreement.</p>
 <p>Exhibit A - Form of Secondary Licenses Notice
@@ -828,12 +961,12 @@ If any provision of this Agreement is invalid or unenforceable under applicable 
 <p>Simply including a copy of this Agreement, including this Exhibit A is not sufficient to license the Source Code under Secondary Licenses.</p>
 <p>If it is not possible or desirable to put the notice in a particular file, then You may include the notice in a location (such as a LICENSE file in a relevant directory) where a recipient would be likely to look for such a notice.</p>
 <p>You may add additional accurate notices of copyright ownership.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Chapters/../Images/Acknowledgment.png">
+<div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Images/Acknowledgment.png">
 <h1 id="acknowledgments"><a class="header" href="#acknowledgments">Acknowledgments</a></h1>
-<p>This is a simple user guide for a tiny piece of software.  But I have used other people's art and applications to create RPNCalc and I want to ensure I recognize them
+<p>This is a simple user guide for a tiny piece of software.  But I have used other people’s art and applications to create RPNCalc and I want to ensure I recognize them
 and give them thanks.</p>
 <h2 id="libraries"><a class="header" href="#libraries">Libraries</a></h2>
-<p>Extensive use of several libraries were used in RPNCalc.  I'd like to publicly thank the authors and give them credit for their hard work. The licenses for these libraries
+<p>Extensive use of several libraries were used in RPNCalc.  I’d like to publicly thank the authors and give them credit for their hard work. The licenses for these libraries
 is detailed in the <code>Licenses</code> chapter.</p>
 <ul>
 <li>
@@ -853,7 +986,7 @@ is detailed in the <code>Licenses</code> chapter.</p>
 </li>
 </ul>
 <h2 id="graphics"><a class="header" href="#graphics">Graphics</a></h2>
-<p>I'd like to give recognition and attribution to the authors of the icons used in this guide.</p>
+<p>I’d like to give recognition and attribution to the authors of the icons used in this guide.</p>
 <ul>
 <li>
 <p>Configure: <a href="https://www.flaticon.com/free-icons/easy-installation" title="easy installation icons">Easy installation icons created by Freepik - Flaticon</a></p>
@@ -899,9 +1032,12 @@ is detailed in the <code>Licenses</code> chapter.</p>
 <p>This book was generated using <a href="https://github.com/rust-lang/mdBook">mdBook</a>.  mdBook is a utility to create modern online books from Markdown
 files, and it is fantastic.  If you need to do something like this, mdBook is where you should look first in my humble opinion.</p>
 <h2 id="hp-15c-calculator"><a class="header" href="#hp-15c-calculator">HP 15C Calculator</a></h2>
-<p>And, lastly, probably the most important item in my personal RPN journey is my trusty HP 15C calculator.  I've had it since the late 1980's.  While I
-don't use it much anymore, instead relying on RPNCalc, it's still an important item to me and always in my desk drawer.  Thanks 15C!</p>
-<p><br><p align="center"> <img width="600" src ="../Images/HP15C.jpg"></p>
+<p>And, lastly, probably the most important item in my personal RPN journey is my trusty HP 15C calculator.  I’ve had it since the late 1980’s.  While I
+don’t use it much anymore, instead relying on RPNCalc, it’s still an important item to me and always in my desk drawer.  Thanks 15C!</p>
+<br>
+<div>
+    <img style="width:600px;text-align:right" src="Images/HP15C.jpg">
+</div>
 
                     </main>
 
@@ -920,6 +1056,11 @@ don't use it much anymore, instead relying on RPNCalc, it's still an important i
 
         </div>
 
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
 
 
 
@@ -928,13 +1069,13 @@ don't use it much anymore, instead relying on RPNCalc, it's still an important i
         </script>
 
 
-        <script src="elasticlunr.min.js"></script>
-        <script src="mark.min.js"></script>
-        <script src="searcher.js"></script>
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
 
-        <script src="clipboard.min.js"></script>
-        <script src="highlight.js"></script>
-        <script src="book.js"></script>
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
 
         <!-- Custom JS scripts -->
 
