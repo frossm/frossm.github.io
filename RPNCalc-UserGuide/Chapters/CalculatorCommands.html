@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "../searchindex-aed55ead.js";
+            window.path_to_searchindex_js = "../searchindex-e19529da.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-2c2308aa.js"></script>
@@ -174,7 +174,7 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <p>f<img align="right" width="175" src="../Images/CalcCommands.png"></p>
+                        <img align="right" width="175" src="../Images/CalcCommands.png">
 <h1 id="calculator-commands"><a class="header" href="#calculator-commands">Calculator Commands</a></h1>
 <p>We’ve discussed numbers, fractional, scientific notation, and decimal, as well as operands that perform basic mathematical functions. This chapter starts discussing commands
 which are the heart of RPNCalc.</p>
@@ -211,7 +211,7 @@ names and abbreviations for the same command. This is just to make it easier to 
 <tr><td>min</td><td><strong>MINIMUM VALUE</strong><br>Copies the smallest value of the stack items to the top of the stack (<code>line1</code>)</td></tr>
 <tr><td>mod<br>modulus</td><td><strong>MODULUS / REMAINDER</strong><br><a href="https://en.wikipedia.org/wiki/Modular_arithmetic">Modulus</a> is the remainder after a division.  This command will perform a division of the top two stack items (removing them from the stack) and return the remainder back to the stack. <br>Please note that RPNCalc now uses the BigDecimal <a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html#:~:text=1.5-,remainder,-public%C2%A0BigDecimal%C2%A0remainder(BigDecimal%C2%A0divisor)">Remainder method</a>. This makes the point that remainder is different than modulus. The remainder is given by <code>subtract(this.divideToIntegralValue(divisor).multiply(divisor))</code> Note that this is not the modulo operation as the result can be negative</td></tr>
 <tr><td>rand [low] [high]</td><td><strong>RANDOM NUMBER GENERATION</strong><br>Generate a random integer number between the provided <code>[l]ow</code> and <code>[h]igh</code> numbers inclusive to both.  If no numbers are provided, then the random number will be between 1 and 100 inclusive. The random value is generated with Java’s SecureRandom and should be secure</td></tr>
-<tr><td>repeat [num]<br>rep [num]</td><td><strong>REPEAT</strong><br>Repeat the last command <code>num</code> times. If no number is given RPNCalc defaults to 1. There are some commands that are not placed in the command history list. You can view the command history with <code>list hist</code> or <code>list history</code></td></tr>
+<tr><td>repeat [num]<br>rep [num]</td><td><strong>REPEAT</strong><br>Repeat the last command <code>num</code> times. If no number is given RPNCalc defaults to 1. There are some commands that are not placed in the command history list. You can view the command history with <code>list commands</code> or <code>list history</code></td></tr>
 <tr><td>round [n]</td><td><strong>ROUND</strong><br>Round <code>line1</code> to <code>[n]</code> decimal places.  If <code>[n]</code> is not given, round to the nearest integer (zero decimal places).  <strong>Example 1:</strong> <code>3.14159</code> <code>round</code> would round to <code>3</code>.  <strong>Example 2:</strong> <code>3.14159</code> <code>round 4</code> would round to <code>3.1416</code></td></tr>
 <tr><td>s [#] [#] <br> swap [#] [#]</td><td><strong>SWAP LINES</strong><br>Without an argument, swap the top two stack items (<code>line1 &amp; line2</code>).  You can swap any two line numbers in your stack by providing the two line numbers</td></tr>
 <tr><td>sd [keep]</td><td><strong>STANDARD DEVIATION</strong><br>Calculate the <a href="https://en.wikipedia.org/wiki/Standard_deviation">standard deviation</a> of the items in the stack.  The stack items will be replaced by the result. If <code>keep</code> is provided, the numbers on the stack will not be removed and the standard deviation will simply be added to the top of the stack on <code>line1</code></td></tr>
