@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "../searchindex-863f9a75.js";
+            window.path_to_searchindex_js = "../searchindex-80b0c864.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-2c2308aa.js"></script>
@@ -175,21 +175,24 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <img align="right" width="150" src="../Images/Build.png">
-<h1 id="building-rpncalc-from-the-source"><a class="header" href="#building-rpncalc-from-the-source">Building RPNCalc from the Source</a></h1>
+<h2 id="building-rpncalc"><a class="header" href="#building-rpncalc">Building RPNCalc</a></h2>
 <p>RPNCalc is written in Java and uses <a href="https://gradle.org/">Gradle</a> as it’s build tool. To build, you’ll need to have the Java Development Kit (JDK)
-installed on your system.  Make sure you get the JDK and not the Java Runtime Environment (JRE) which most people would have on their machines.  The JRE allows you to run
+installed on your system. Make sure you get the JDK and not the Java Runtime Environment (JRE) which many people would have on their machines. The JRE allows you to run
 Java applications, but not build them. At the time of this writing, you’ll need Java 21 or newer.</p>
-<p>To build using Gradle, simply run the Gradle wrapper, and it will install what’s needed.</p>
+<p>To build using Gradle, on the command line, simply change into the RPNCalc root directory and run the Gradle wrapper. It will install what’s needed.</p>
 <p><code>./gradlew shadowJar</code></p>
 <p>Assuming all goes well, you’ll have a new shiny <code>rpncalc.jar</code> file in the <code>build/libs</code> directory. You can put this file anywhere on your system that you like, and you’ll
-run it by executing <code>java -jar rpncalc.jar</code>  Of course you can alias this to make it easier (<code>alias rpncalc='java -jar /path/to/rpncalc.jar'</code>) but this will depend on your
-OS or shell.</p>
-<p>Automated testing in RPNCalc (using <a href="https://junit.org/">JUnit</a>) is fairly complete (although testing can always be more extensive) and should catch most issues with the code.  The hope is I
-find them before it’s released, but pay attention to the Gradle output, and you’ll see if there are issues.</p>
+run it by executing</p>
+<p><code>java -jar rpncalc.jar</code></p>
+<p>Of course, you can alias this to make it easier (<code>alias rpncalc='java -jar /path/to/rpncalc.jar'</code>) but this will depend on your
+OS and shell.</p>
+<p>Automated testing in RPNCalc (using <a href="https://junit.org/">JUnit</a>) is fairly complete (although testing can always be more extensive) and should catch most issues with the code.
+The hope is I find them before it’s released, but pay attention to the Gradle output, and you’ll see if there are issues.</p>
+<h2 id="snaps"><a class="header" href="#snaps">Snaps</a></h2>
 <p>I’ll discuss this more in the Snap chapter, but if you are on a Linux system that supports snaps, I would encourage that you leverage it. Not only are Snap applications
 “sandboxed” so it’s more secure, but all the dependencies are bundled in so you don’t even need to have java installed on the machine. It is also automatically updated so
-you’ll always have the latest.  Although this can also be forced with <code>sudo snap refresh</code>.</p>
-<p>My preference is to use the Snap installation which is what I do on my Ubuntu machines.</p>
+you’ll always have the latest. Although this can also be forced with <code>sudo snap refresh</code>.</p>
+<p>My preference is to use the Snap installation which is what I do on my Ubuntu machines, but there are machine architectures where I can no longer update the SNAPS.</p>
 <p><br><br></p>
 <img src="../Images/Gradle.svg" style="display: block; margin: auto; width: 30%;">
 

@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "../searchindex-863f9a75.js";
+            window.path_to_searchindex_js = "../searchindex-80b0c864.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-2c2308aa.js"></script>
@@ -175,16 +175,21 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <img align="right" width="150" src="../Images/UDF.png" alt="">
-<h1 id="user-defined-functions"><a class="header" href="#user-defined-functions">User Defined Functions</a></h1>
-<p>RPNCalc can record your commands and save them as a user defined function.  In essence, you are creating a new command that can be run.</p>
-<p>When recording a new function, start by adding data to your stack that would emulate when you would run your function.  The only data that will be part of your recording will be data &amp; commands entered <em><strong>after</strong></em> recording has been turned on.  When you are ready, enter the <code>record on</code> command.  A red <code>[Recording]</code> alert will appear in the status line. Anything you add during this period will be recorded with the exception of the commands listed below.  Enter your commands, numbers, etc. until you are done.</p>
-<p>When recording is complete, enter <code>record off</code> to complete your recording.  You’ll be prompted for a function name.  Your new command will be this name so choose a name without spaces and that is easy to type when you wish to execute the function in the future.  You should also not choose a name of an existing command as your function will not be able to be called.  If you do not provide a name, i.e, just hit enter, the recording will be discarded.</p>
-<p>Then you can run your function whenever you like on the stack currently available.  To run the function, simply type the name of your function as a standard command. To
+<h2 id="user-defined-functions-udfs"><a class="header" href="#user-defined-functions-udfs">User Defined Functions (UDFs)</a></h2>
+<p>RPNCalc can record your commands and save them as a user defined function. In essence, you are creating a new command that can be run.</p>
+<p>When recording a new function, start by adding data to your stack that would emulate when you would run your function. The only data that will be part of your recording will
+be data &amp; commands entered <em><strong>after</strong></em> recording has been turned on. When you are ready, enter the <code>record on</code> command. A red <code>[Recording]</code> alert will appear in the status
+line. Anything you add during this period will be recorded with the exception of the commands listed below. Enter your commands, numbers, etc. until you are done.</p>
+<p>When recording is complete, enter <code>record off</code> to complete your recording. You’ll be prompted for a function name. Your new command will be this name so choose a name without
+spaces and that is easy to type when you wish to execute the function in the future. You should also not choose a name of an existing command as your function will not be able
+to be called. If you do not provide a name, i.e, just hit enter, the recording will be discarded.</p>
+<p>Then you can run your function whenever you like on the stack currently available. To run the function, simply type the name of your function as a standard command. To
 see a list of the saved functions, execute <code>list func</code> and it will display the name and the steps you recorded.</p>
 <p>User defined functions can be deleted with the <code>func del NAME</code> command or you can delete all of the functions with <code>func delall</code></p>
-<p>Functions are global and can work across any stack.  They are saved in the preferences system and will be reloaded when RPNCalc starts.  They are saved immediately after you give a new recording a name and press enter.</p>
-<p>When you execute a function, the steps of that function are executed one after the other.  Therefore when you execute <code>undo</code> you will undo back through your function step
-by step. You do not <code>undo</code> the entire function in one command.  Of course, you can always run <code>undo NUM</code> where <code>NUM</code> is the steps to undo.</p>
+<p>Functions are global and can work across any stack. They are saved in the preferences system and will be reloaded when RPNCalc starts. They are saved immediately after you
+give a new recording a name and press enter.</p>
+<p>When you execute a function, the steps of that function are executed one after the other. Therefore when you execute <code>undo</code> you will undo back through your function step
+by step. You do not <code>undo</code> the entire function in one command. Of course, you can always run <code>undo NUM</code> where <code>NUM</code> is the steps to undo.</p>
 <p>The following commands can be entered during a recording, but are not recorded.</p>
 <ul>
 <li>list</li>
@@ -196,6 +201,7 @@ by step. You do not <code>undo</code> the entire function in one command.  Of co
 <li>set, reset</li>
 <li>cx, x, quit, exit</li>
 </ul>
+<h2 id="udf-commands"><a class="header" href="#udf-commands">UDF Commands</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -213,8 +219,9 @@ by step. You do not <code>undo</code> the entire function in one command.  Of co
 </tbody>
 </table>
 </div>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <h3 id="example-1"><a class="header" href="#example-1">Example 1</a></h3>
-<p>Here is a full real world example.  Lets say you’d like to make a user defined function to take the cube of number.  Here are the steps you’d take to do that.</p>
+<p>Here is a full real world example. Lets say you’d like to make a user defined function to take the cube of number. Here are the steps you’d take to do that.</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -233,8 +240,8 @@ by step. You do not <code>undo</code> the entire function in one command.  Of co
 </div>
 <p>From now on, just type <code>cube</code> and <code>line1</code> will be cubed! Go You!  You can always list your defined functions with <code>list func</code></p>
 <h3 id="example-2"><a class="header" href="#example-2">Example 2</a></h3>
-<p>Another real world but slightly more complex example.  Say you wish to know the percentage different between two numbers.  Let’s create a function called <code>diffpercent</code> The
-logic is to find the smallest number on the stack and then the largest.  Divide them.  Flip the sign and add one to it.  Then convert it to a percent.</p>
+<p>Another real world but slightly more complex example. Say you wish to know the percentage different between two numbers. Let’s create a function called <code>diffpercent</code> The
+logic is to find the smallest number on the stack and then the largest. Divide them. Flip the sign and add one to it. Then convert it to a percent.</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -256,7 +263,7 @@ logic is to find the smallest number on the stack and then the largest.  Divide 
 </tbody>
 </table>
 </div>
-<p>In the example above, the result it 90%.  There is a 90% different between 10 and 1. Going forward, you can use the command <code>diffpercent</code> anytime you need to find the
+<p>In the example above, the result it 90%. There is a 90% different between 10 and 1. Going forward, you can use the command <code>diffpercent</code> anytime you need to find the
 percentage different between the lowest and highest number on the stack.</p>
 
                     </main>

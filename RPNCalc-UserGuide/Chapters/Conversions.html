@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "../searchindex-863f9a75.js";
+            window.path_to_searchindex_js = "../searchindex-80b0c864.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-2c2308aa.js"></script>
@@ -175,7 +175,7 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <img align="right" width="125" src="../Images/Conversion.png">
-<h1 id="fractional-display"><a class="header" href="#fractional-display">Fractional Display</a></h1>
+<h2 id="fractional-display"><a class="header" href="#fractional-display">Fractional Display</a></h2>
 <p>The RPNCalc stack only contains decimal numbers (<a href="https://www.geeksforgeeks.org/java/bigdecimal-class-java/">BigDecimal</a><sup><strong><em>[1]</em></strong></sup> format for you Java developers.)
 Therefore, we can’t directly store fractional values on the stack. If a
 fraction is entered, it is converted to a decimal. There could be a loss of precision when this is done. For example, there is no exact fractional equivalent for <code>PI</code> much
@@ -189,7 +189,7 @@ maximum granularity would be 1/64) and auto reduced the result which is why you 
 <p>Please note that while fractional display <em>is</em> a conversion, it does not change the stack. It only displays the fractional equivilents. Therefore, it does not require the
 <code>convert</code>
 command. It instead simply uses the <code>frac</code> command.</p>
-<h1 id="unit-conversions"><a class="header" href="#unit-conversions">Unit Conversions</a></h1>
+<h2 id="unit-conversions"><a class="header" href="#unit-conversions">Unit Conversions</a></h2>
 <p>The conversion command will simply convert from one unit to another. As an example, I frequently use RPNCalc to convert from inches to millimeters or back. The conversion
 module requires an amount, normally pulled from the stack, as well as a <strong>“from”</strong> unit and a <strong>“to”</strong> unit. The supported units are listed below. You an only convert units
 within the same categories. For example, you can’t convert <code>grams</code> to <code>miles</code> (obviously). The converter will take the last item off of the stack (<code>line1</code>) and replace it
@@ -211,7 +211,7 @@ See the User Defined Function chapter for additional information on recording, s
 <p>I’ve included a fairly comprehensive list of common units, but I’m happy to include others if anyone has other ideas.  [just let me know]
 (mailto://rpncalc@fross.org).</p>
 <p><strong>Note:</strong> All conversions are exact by definition except angle conversions. Unit abbreviations are case-insensitive.</p>
-<h3 id="examples-of-usage"><a class="header" href="#examples-of-usage">Examples of Usage: <br></a></h3>
+<p><strong>Examples of Usage:</strong> <br></p>
 <ul>
 <li>convert in mm</li>
 <li>con f c</li>

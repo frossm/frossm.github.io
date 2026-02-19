@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "../searchindex-863f9a75.js";
+            window.path_to_searchindex_js = "../searchindex-80b0c864.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-2c2308aa.js"></script>
@@ -175,22 +175,29 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <img align="right" width="150" src="../Images/Configure.png">
-<h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
-<p>There are a few, although not many, configuration options available in RPNCalc.  These are settings which control various aspects of the program and are persistent between executions.  When these are changed, they are saved in the Java Preferences system.</p>
-<p>There are currently three configuration options that can be changed the commands to do so are listed below.  They are:</p>
-<h4 id="program-width"><a class="header" href="#program-width">Program Width</a></h4>
-<p>Program Width controls the amount of characters the base program uses.  This can be changed and is especially useful if using a terminal with a small number of characters per line.</p>
-<h4 id="memory-slots"><a class="header" href="#memory-slots">Memory Slots</a></h4>
-<p>By default there are 10 memory slots numbers 0 through 9.  This is probably more than most people would need, but if you save a lot of values, or have a User Defined Function that needs to store a lot of numbers, it can be changed.  Each memory slot is simply an additional array element, so I don’t think there is much of a memory impact, but I suppose if you have thousands it would increase memory usage.</p>
-<h4 id="display-alignment"><a class="header" href="#display-alignment">Display Alignment</a></h4>
-<p>By default, the numbers displayed on the stack are left aligned.  There are times when it is prefered to be right aligned (for example if you are working with money and always want two decimal places), or decimal aligned which is nice to easily see the integer from the decimal.  Play around with it and see which one you like for difference circumstances.</p>
-<h4 id="reset"><a class="header" href="#reset">Reset</a></h4>
-<p>Ok, this isn’t really a configuration option, but the command can be used to reset everything back to the defaults.  At the time of this writing, the defaults are:</p>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<p>There are a few, although not many, configuration options available in RPNCalc. These are settings which control various aspects of the program and are persistent between
+executions. When these are changed, they are saved in the Java Preferences system.</p>
+<p>There are currently three configuration options that can be changed the commands to do so are listed below. They are:</p>
+<h3 id="program-width"><a class="header" href="#program-width">Program Width</a></h3>
+<p>Program Width controls the amount of characters the base program uses. This can be changed and is especially useful if using a terminal with a small number of characters per
+line.</p>
+<h3 id="memory-slots"><a class="header" href="#memory-slots">Memory Slots</a></h3>
+<p>By default there are 10 memory slots numbers 0 through 9. This is probably more than most people would need, but if you save a lot of values, or have a User Defined Function
+that needs to store a lot of numbers, it can be changed. Each memory slot is simply an additional array element, so I don’t think there is much of a memory impact, but I
+suppose if you have thousands it would increase memory usage.</p>
+<h3 id="display-alignment"><a class="header" href="#display-alignment">Display Alignment</a></h3>
+<p>By default, the numbers displayed on the stack are left aligned. There are times when it is prefered to be right aligned (for example if you are working with money and always
+want two decimal places), or decimal aligned which is nice to easily see the integer from the decimal. Play around with it and see which one you like for difference
+circumstances.</p>
+<h3 id="reset"><a class="header" href="#reset">Reset</a></h3>
+<p>Ok, this isn’t really a configuration option, but the command can be used to reset everything back to the defaults. At the time of this writing, the defaults are:</p>
 <ul>
 <li>Program Width:  <code>80</code>  Current minimum width is <code>46</code> characters</li>
 <li>Memory Slots: <code>10</code>  Numbered <code>0</code> through <code>9</code></li>
 <li>Display Alignment: <code>l(eft)</code></li>
 </ul>
+<h2 id="command-line-options"><a class="header" href="#command-line-options">Command Line Options</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>

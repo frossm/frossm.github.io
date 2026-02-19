@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "searchindex-863f9a75.js";
+            window.path_to_searchindex_js = "searchindex-80b0c864.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-2c2308aa.js"></script>
@@ -182,8 +182,11 @@
  
 <h1 align="center">A User Guide for the RPNCalc Calculator</h1>
 
-<p align="center"> Copyright 2011- 2024 by Michael Fross<br>
-This document, along RPNCalc, is licensed under the <a href="https://opensource.org/license/mit/">MIT License</a></p>
+<p align="center">Copyright (c) 2011-2026 Michael Fross<br>
+<br>
+This document, along RPNCalc, is licensed under the <a href="https://opensource.org/license/mit/">MIT License</a>
+<br><br>
+<a href="mailto:rpncalc@fross.org">rpncalc@fross.org
 
 <h1 align="center"> 
 	<a href="https://github.com/frossm/rpncalc">The RPNCalc GitHub Homepage</a>
@@ -193,56 +196,62 @@ This document, along RPNCalc, is licensed under the <a href="https://opensource.
 <p align="center">
 <img alt="UsersLoveUs" width="100" src="https://sourceforge.net/cdn/syndication/badge_img/3303944/oss-users-love-us-white"><img alt="UsersLoveUs" width="100" src="https://sourceforge.net/cdn/syndication/badge_img/3303944/oss-rising-star-white">
 </p>
+</a></p>
 <div style="break-before: page; page-break-before: always;"></div>
+<h1 id="introduction-1"><a href="#introduction-1" class="header">Introduction</a></h1>
 <p align="center"> <img width="1024" src="https://github.com/frossm/rpncalc/raw/master/graphics/ReadmeHeader.jpg"> </p>
  
-<h1 id="introduction"><a class="header" href="#introduction">INTRODUCTION</a></h1>
+<h2 id="introduction"><a class="header" href="#introduction">Introduction</a></h2>
 <p>RPNCalc is the command-line based <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Reverse Polish Notation (RPN) calculator</a>.<br>RPN calculators make it very simple to do complex calculations, especially if there are
-parentheses involved.  In essence, you enter your numbers first, then the operator.</p>
-<p>So, to add 2 and 3 to get 5, you would first add the number 2 to the stack:  <code>2 [Enter]</code>.  Then
-you would add 3 to the stack (pushing the 2 to the second position):  <code>3 [Enter]</code>.  Now, to add
+parentheses involved. In essence, you enter your numbers first, then the operator.</p>
+<p>So, to add 2 and 3 to get 5, you would first add the number 2 to the stack:  <code>2 [Enter]</code>. Then
+you would add 3 to the stack (pushing the 2 to the second position):  <code>3 [Enter]</code>. Now, to add
 them you would enter: <code>+ [Enter]</code> and RPNCalc would remove the 2 and 3 from the stack, add them, and push 5 back onto the stack.</p>
-<p>The following example can be tricky to get your head around in a traditional calculator but is quite easy with RPN.  The chapter <code>What is an RPN Calculator</code>
+<p>The following example can be tricky to get your head around in a traditional calculator but is quite easy with RPN. The chapter <code>What is an RPN Calculator</code>
 will go through solving this step by step.  <em><strong>(Spoiler warning: just start in the middle and work your way out.)</strong></em></p>
 <p><code>x = SQRT(((((5+3) * 8)/2) * (2+1)) ^ 2)</code></p>
-<p>RPN is based on a Last In First Out (LIFO) stack framework which sounds complicated, but makes intuitive sense when you use it.<br>You can think of it as a stack of plates.  When you put one on the top of the stack, everyone other one shifts down by one. On an RPN calculator,
-there is no equal sign, but there is an enter key to put a value onto the stack.  The chapter on <code>Stacks</code> talks more about how this works with RPNCalc.</p>
-<p>This guide also has chapters on the various functions provided by the calculator and how to use them.  If you find something that is unclear, or
-could benefit from an example or two, please let me know.  Contact information is below.</p>
+<p>RPN is based on a Last In First Out (LIFO) stack framework which sounds complicated, but makes intuitive sense when you use it.<br>You can think of it as a stack of plates. When you put one on the top of the stack, everyone other one shifts down by one. On an RPN calculator,
+there is no equal sign, but there is an enter key to put a value onto the stack. The chapter on <code>Stacks</code> talks more about how this works with RPNCalc.</p>
+<p>This guide also has chapters on the various functions provided by the calculator and how to use them. If you find something that is unclear, or
+could benefit from an example or two, please let me know. Contact information is below.</p>
 <p>If you have not heard of reverse Polish notation, or just have a passion for various calculator notations (and seriously, who doesn’t?), you can read more about RPN on
-<a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a> or a (very) quick summary in the <code>What is an RPN Calculator</code> chapter.</p>
+<a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a> or a (very) quick summary in the <code>What is an RPN Calculator</code> chapter in this User Guide.</p>
 <h2 id="my-brief-history-of-rpncalc"><a class="header" href="#my-brief-history-of-rpncalc">My Brief History of RPNCalc</a></h2>
 <img align="right" width="150" src="https://github.com/frossm/rpncalc/raw/master/graphics/PostIt-200x200.jpg">
 <p>I studied engineering in <a href="https://purdue.edu/">college</a> and used the <a href="https://hpcalcs.com/product/hp-15c-collectors-edition">HP 15C</a> calculator (I think that might date
-me…) I grew to love RPN and over the years I’ve used various GUI RPN
-calculators.  However, I failed to find a simple command line version that I liked.  Therefore, I decided to write one back in 2011.</p>
+me…) I grew to love RPN and, over the years, I’ve used various GUI-based RPN
+calculators. However, I failed to find a simple command line version that I liked. Therefore, I decided to write one back in 2011.</p>
 <p>One key goal was to make it extensible, so I could easily add new features, constants, and
-capabilities.  A second goal was to allow it to run everywhere I needed it to run, which is
-mostly Windows and Linux.  Therefore, it’s written in Java, it should run just about anywhere
-Java is supported.  And, while this calculator doesn’t have <em><strong>every</strong></em> function a complex
+capabilities. A second goal was to allow it to run everywhere I needed it to run, which is
+mostly Windows and Linux. Therefore, it’s written in Java, it should run just about anywhere
+Java is supported. And, while this calculator doesn’t have <em><strong>every</strong></em> function a complex
 scientific calculator would have, it has the basics well covered (along with a few oddball
 functions - I’m looking at you <code>dice</code>)</p>
-<p>Lastly, I didn’t want to have a big uninstall/install task to upgrade to a new version.  With RPNCalc, it’s just one JAR file.  You just run it
-(<code>java -jar rpncalc.jar</code>).  Nothing to install or uninstall.  If you want to remove it, just delete the <code>rpncalc.jar</code> file. You can now also use the SNAP version
+<p>Lastly, I didn’t want to have a big uninstall/install task to upgrade to a new version. With RPNCalc, it’s just one JAR file. You just run it
+(<code>java -jar rpncalc.jar</code>). Nothing to install or uninstall. If you want to remove it, just delete the <code>rpncalc.jar</code> file. You can now also use the SNAP version
 on supported operating systems which means you don’t even need to install Java as it’s built into the SNAP package.</p>
 <h2 id="contact-options--links"><a class="header" href="#contact-options--links">Contact Options &amp; Links</a></h2>
-<p>The home page for RPNCalc is located on <a href="https://github.com/frossm/rpncalc">GitHub</a>.  It’s open source with a <strong>very</strong> open usage license.</p>
+<p>The home page for RPNCalc is located on <a href="https://github.com/frossm/rpncalc">GitHub</a>. It’s open source with the <strong>very</strong> open MIT usage license.</p>
 <ul>
 <li>Report issues or enhancement requests, please post at the RPNCalc <a href="https://github.com/frossm/rpncalc/issues">issues page</a></li>
 <li>For RPNCalc discussions, you can post on the <a href="https://github.com/frossm/rpncalc/discussions">Discussion page</a></li>
 <li>The RPNCalc <a href="https://snapcraft.io/rpncalc">Snap Store Page</a></li>
-<li>You can also reach me directly at <code>rpncalc@fross.org</code></li>
+<li>You can also reach me directly at <a href="mailto:rpncalc@fross.org">rpncalc@fross.org</a></li>
 <li>Checkout my other open source programs on <a href="https://github.com/frossm">GitHub</a></li>
 </ul>
 <h2 id="the-in-line-help-from-rpncalc"><a class="header" href="#the-in-line-help-from-rpncalc">The In-Line Help from RPNCalc</a></h2>
-<p>From within the program, entering <code>h</code>, <code>help</code> or <code>?</code> will show the program help screen. The help can also be viewed by starting RPNCalc with the <code>-h</code> or <code>-?</code> command line switch (i.e. <code>rpncalc -h</code>)</p>
+<p>From within the program, entering <code>h</code>, <code>help</code> or <code>?</code> will show the program help screen. The help can also be viewed by starting RPNCalc with the <code>-h</code> or <code>-?</code> command line
+switch (i.e. <code>rpncalc -h</code>)</p>
 <p><strong>Please note I do not update this screenshot with every release so it may be a bit dated.<br>See the actual program for the up-to-date help screen.</strong></p>
 <p>The (mostly) current RPNCalc help screen:<br></p>
 <img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot1.jpg">
-<img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot2.jpg"><div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Images/WhatIsRPN.jpg">
-<h1 id="what-is-an-rpn-calculator"><a class="header" href="#what-is-an-rpn-calculator">What is an RPN Calculator?</a></h1>
-<p>For me, the way I thought about using RPN back in the early 1990s was to approach it with <code>start on the inside and work your way out</code>.  Just look at the inner most calculation, and start working yourself back out.  It also helps if you also understand the order of operations for the operands.</p>
-<h3 id="order-of-operations---pema"><a class="header" href="#order-of-operations---pema">Order of Operations - <em>PEMA</em></a></h3>
+<img align="center" width="100%" src="https://github.com/frossm/rpncalc/raw/master/graphics/ScreenShot2.jpg"><div style="break-before: page; page-break-before: always;"></div>
+<h1 id="what-is-an-rpn-calculator-1"><a href="#what-is-an-rpn-calculator-1" class="header">What is an RPN Calculator</a></h1>
+<img align="right" width="175" src="Images/WhatIsRPN.jpg">
+<h2 id="what-is-an-rpn-calculator"><a class="header" href="#what-is-an-rpn-calculator">What is an RPN Calculator</a></h2>
+<p>For me, the way I thought about using RPN back in the early 1990s was to approach it with <code>start on the inside and work your way out</code>. Just look at the inner most calculation,
+and start working yourself back out. It also helps if you also understand the order of operations for the operands.</p>
+<h2 id="order-of-operations---pema"><a class="header" href="#order-of-operations---pema">Order of Operations - <em>PEMA</em></a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -256,9 +265,12 @@ on supported operating systems which means you don’t even need to install Java
 </tbody>
 </table>
 </div>
-<h3 id="walkthrough-of-the-example-from-the-introduction-page"><a class="header" href="#walkthrough-of-the-example-from-the-introduction-page">Walkthrough of the Example from the Introduction Page</a></h3>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p>This is a Walkthrough of the Example from the Introduction Page:</p>
 <p><code>x = SQRT( ((((5+3) * 8)/2) * (2+1)) ^ 2 )</code></p>
-<p>This can be tricky with a traditional calculator.  However, with a RPN Calculator, to solve for x you would start on the inner calculation and work outwards.  Looking at the equation, <code>5 + 3</code> is about the lowest so lets start there. The approach will be work back up until you get to a peer of the same “level”.  Then do the <code>2+1</code>. We’ll walk through each step and explain what’s happening.  Go ahead and start RPNCalc and follow along - it’s much easier to do it and see the stack rather than just reading it here.</p>
+<p>This can be tricky with a traditional calculator. However, with a RPN Calculator, to solve for x you would start on the inner calculation and work outwards. Looking at the
+equation, <code>5 + 3</code> is about the lowest so lets start there. The approach will be work back up until you get to a peer of the same “level”. Then do the <code>2+1</code>. We’ll walk through
+each step and explain what’s happening. Go ahead and start RPNCalc and follow along - it’s much easier to do it and see the stack rather than just reading it here.</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -283,44 +295,66 @@ on supported operating systems which means you don’t even need to install Java
 </tbody>
 </table>
 </div>
-<p>The result is 96 which ends up on the top (<code>line1</code>) of an otherwise empty stack.  I’ll talk more about stacks and how RPNCalc uses them in future chapters.</p>
-<p><em>By the way, this can also be dramatically shortened using the <code>NumOps</code> shortcut - see the <code>Operands</code> chapter for more information.</em></p>
-<h3 id="traditional-rpn-notation-limitations-in-rpncalc"><a class="header" href="#traditional-rpn-notation-limitations-in-rpncalc">Traditional RPN Notation Limitations in RPNCalc</a></h3>
+<p>The result is 96 which ends up on the top (<code>line1</code>) of an otherwise empty stack. I’ll talk more about stacks and how RPNCalc uses them in future chapters.</p>
+<p><em><strong>As a side note, this process can also be dramatically shortened using the <code>NumOps</code> shortcut - see the <code>Operands</code> chapter for more information</strong></em></p>
+<h2 id="traditional-rpn-notation-limitations-in-rpncalc"><a class="header" href="#traditional-rpn-notation-limitations-in-rpncalc">Traditional RPN Notation Limitations in RPNCalc</a></h2>
 <p>Please note that RPNCalc doesn’t implement every RPN convention and there are a few as of yet unimplemented items.</p>
 <p>For example, this won’t work in RPNCalc:</p>
-<p><code>10 + 10 + 10</code> can’t be solved by entering <code>10 [Enter] 10 [Enter] 10 [Enter] ++ [Enter]</code> as RPNCalc only allows one operand per command entry.  You’ll need an <code>[Enter]</code> between the last two <code>+</code> signs.  Using the <code>NumOp</code> shortcut, this is an efficient way to solve that equation:</p>
+<p><code>10 + 10 + 10</code> can’t be solved by entering <code>10 [Enter] 10 [Enter] 10 [Enter] ++ [Enter]</code> as RPNCalc only allows one operand per command entry. You’ll need an <code>[Enter]</code> between
+the last two <code>+</code> signs. Using the <code>NumOp</code> shortcut, this is an efficient way to solve that equation:</p>
 <p><code>10 [Enter] 10+ [Enter] 10+ [Enter]</code></p>
 <hr>
-<h2 id="wikipedia"><a class="header" href="#wikipedia">Wikipedia:</a></h2>
-<p>The following is directly from <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a>.  There is a lot more information there, but here are a few highlights.</p>
+<h2 id="rpn-on-wikipedia"><a class="header" href="#rpn-on-wikipedia">RPN on Wikipedia</a></h2>
+<p>The following is directly from <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a>. There is a lot more information there, but here are a few highlights.
+Please note this is not specific to RPNCalc, but just RPN Calculators in general.</p>
 <h3 id="explanation"><a class="header" href="#explanation">Explanation</a></h3>
-<p>In reverse Polish notation, the operators follow their operands; for instance, to add 3 and 4 together, one would write <code>3 4 +</code> rather than <code>3 + 4</code>. If there are multiple operations, operators are given immediately after their final operands (often an operator takes two operands, in which case the operator is written after the second operand); so the expression written <code>3 − 4 + 5</code> in conventional notation would be written <code>3 4 − 5 +</code> in reverse Polish notation: 4 is first subtracted from 3, then 5 is added to it. An advantage of reverse Polish notation is that it removes the need for parentheses that are required by infix notation. While <code>3 − 4 × 5</code> can also be written <code>3 − (4 × 5)</code>, that means something quite different from <code>(3 − 4) × 5</code>. In reverse Polish notation, the former could be written <code>3 4 5 × −</code>, which unambiguously means <code>3 (4 5 ×) −</code> which reduces to <code>3 20 −</code> (which can further be reduced to -17); the latter could be written <code>3 4 − 5 ×</code> (or <code>5 3 4 − ×</code>, if keeping similar formatting), which unambiguously means <code>(3 4 −) 5 ×</code>.</p>
+<p>In reverse Polish notation, the operators follow their operands; for instance, to add 3 and 4 together, one would write <code>3 4 +</code> rather than <code>3 + 4</code>. If there are multiple
+operations, operators are given immediately after their final operands (often an operator takes two operands, in which case the operator is written after the second operand);
+so the expression written <code>3 − 4 + 5</code> in conventional notation would be written <code>3 4 − 5 +</code> in reverse Polish notation: 4 is first subtracted from 3, then 5 is added to it. An
+advantage of reverse Polish notation is that it removes the need for parentheses that are required by infix notation. While <code>3 − 4 × 5</code> can also be written <code>3 − (4 × 5)</code>, that
+means something quite different from <code>(3 − 4) × 5</code>. In reverse Polish notation, the former could be written <code>3 4 5 × −</code>, which unambiguously means <code>3 (4 5 ×) −</code> which reduces
+to <code>3 20 −</code> (which can further be reduced to -17); the latter could be written <code>3 4 − 5 ×</code> (or <code>5 3 4 − ×</code>, if keeping similar formatting), which unambiguously means
+<code>(3 4 −) 5 ×</code>.</p>
 <h3 id="practical-implications"><a class="header" href="#practical-implications">Practical implications</a></h3>
-<p>In comparison, testing of reverse Polish notation with algebraic notation, reverse Polish has been found to lead to faster calculations, for two reasons. The first reason is that reverse Polish calculators do not need expressions to be parenthesized, so fewer operations need to be entered to perform typical calculations. Additionally, users of reverse Polish calculators made fewer mistakes than for other types of calculators. Later research clarified that the increased speed from reverse Polish notation may be attributed to the smaller number of keystrokes needed to enter this notation, rather than to a smaller cognitive load on its users. However, anecdotal evidence suggests that reverse Polish notation is more difficult for users to learn than algebraic notation.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/Install.png">
-<h1 id="installation"><a class="header" href="#installation">Installation</a></h1>
-<p>There are two ways to install RPNCalc.  The first is simply download <code>rpncalc.jar</code> file from the latest release on <a href="https://github.com/frossm/rpncalc">GitHub</a>.  I have embedded all of the dependencies into this one file and it is directly executable.  You do not need to install anything.  Of course, you will need a java runtime (JRE) installed in your path.</p>
-<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>.  There are many advantages to using it as a snap and I’ll get into that in the SNAP secion of this user guide.  My personal preference is to install it via Snap for teh following reasons:</p>
+<p>In comparison, testing of reverse Polish notation with algebraic notation, reverse Polish has been found to lead to faster calculations, for two reasons. The first reason is
+that reverse Polish calculators do not need expressions to be parenthesized, so fewer operations need to be entered to perform typical calculations. Additionally, users of
+reverse Polish calculators made fewer mistakes than for other types of calculators. Later research clarified that the increased speed from reverse Polish notation may be
+attributed to the smaller number of keystrokes needed to enter this notation, rather than to a smaller cognitive load on its users. However, anecdotal evidence suggests that
+reverse Polish notation is more difficult for users to learn than algebraic notation.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="installation-1"><a href="#installation-1" class="header">Installation</a></h1>
+<img align="right" width="150" src="Images/Install.png">
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>There are two ways to install RPNCalc. The first is simply download <code>rpncalc.jar</code> file from the latest release on <a href="https://github.com/frossm/rpncalc">GitHub</a>. I have embedded
+all of the dependencies into this one file and it is directly executable. You do not need to install anything. Of course, you will need a java runtime (JRE) installed in your
+path.</p>
+<p>The second is to run it as a <a href="https://en.wikipedia.org/wiki/Snap_(software)">Snap</a>. There are many advantages to using it as a snap and I’ll get into that in the SNAP
+section of this user guide. My personal preference is to install it via Snap for the following reasons:</p>
 <ul>
 <li>No Java to worry about as it’s built into the snap</li>
 <li>Protected as it runs in a sandbox and won’t have access to other system objects</li>
-<li>No aliases needed to run it since <code>rpncalc</code> can be run directly from the command line.  An example alias with Bash is below.</li>
+<li>No aliases needed to run it since <code>rpncalc</code> can be run directly from the command line. An example alias with Bash is below.</li>
 <li>Its automagically kept up to date</li>
 <li>Additional information is available in the <code>SNAP</code> chapter</li>
 </ul>
-<p>Please note that I only have the ability to test it in Windows and Linux (Ubuntu). While I don’t think there would be issues on other platforms, it’s something to keep in mind. Snapcraft does compile them, however, without issue on the other platforms.</p>
+<p>Please note that I only have the ability to test it in Windows and Linux (Ubuntu). While my goal is to have RPNCalc run on other SNAP supported platform, I’ve been having
+issues compiling these to work with Gradle - my automated build system. I have older versions that are accessible, the new builds are currently only supported on <strong>AMD64</strong>
+platforms (64-bit i386 based hardware platforms.)</p>
 <h2 id="standard-usage"><a class="header" href="#standard-usage">Standard Usage</a></h2>
 <p>To run RPNCalc use the following command:</p>
 <p><code>java -jar /path/to/rpncalc.jar</code></p>
-<p>This is much too long to type every time you need to run it, so I simply create an alias.  Here is example from the Bash shell:</p>
+<p>This is much too long to type every time you need to run it, so I simply create an alias. Here is example from the Bash shell:</p>
 <p><code>alias rpncalc='java -jar /path/to/rpncalc.jar</code></p>
 <p>Now, I just need to type <code>rpncalc</code> to run it.</p>
 <h2 id="standard-uninstall"><a class="header" href="#standard-uninstall">Standard Uninstall</a></h2>
-<p>If you wish to uninstall RPNCalc, just delete the file and, if you created an alias, remove that as well.  Easy and simple.</p>
-<p>However, RPNCalc does use the Java preferences to store the persistent stack contents, settings, and persistent memory slots.  This system is located in different places depending on the OS and these are listed in the <code>Stacks Chapter</code>.</p>
-<p>It is very small and removing it is not really necessary, but if you like to keep things exceptionally tidy, delete the <code>org/fross/rpn/</code> entry (and everything below it) in the preference system.</p>
+<p>If you wish to uninstall RPNCalc, simply delete the file and, if you created an alias, remove that as well. Easy and simple.</p>
+<p>However, RPNCalc does use the Java preferences to store the persistent stack contents, settings, and persistent memory slots. This system is located in different places
+depending on the OS and these are listed in the <code>Stacks Chapter</code>.</p>
+<p>It is very small and removing it is not really necessary, but if you like to keep things exceptionally tidy, delete the <code>org/fross/rpn/</code> entry (and everything below it) in the
+preference system.</p>
 <h2 id="snap-installation"><a class="header" href="#snap-installation">Snap Installation</a></h2>
-<p>If you are on a Linux system and have Snap installed (it’s comes default on most Ubuntu based distributions, but can be installed by most others if not already there), you can install RPNCalc as a snap.  It does not require any special snap permissions.  To install via snap use:</p>
+<p>If you are on a Linux system and have Snap installed (it’s comes default on most Ubuntu based distributions, but can be installed by most others if not already there), you can
+install RPNCalc as a snap. It does not require any special snap permissions. To install via snap use:</p>
 <p><code>sudo snap install rpncalc</code></p>
 <p>To run it after installation, simply execute:</p>
 <p><code>rpncalc</code></p>
@@ -328,15 +362,26 @@ on supported operating systems which means you don’t even need to install Java
 <p>To uninstall, execute the following command:</p>
 <p><code>sudo snap remove rpncalc</code></p>
 <p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store"></a></p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/Plates.png">
-<h1 id="stacks"><a class="header" href="#stacks">Stacks</a></h1>
-<p>The entire concept of a RPN calculator is based on a stack, which can be thoughts of as numbers stacked on top of each other.  You add numbers to the stack and they are normally processed Last In First Out (LIFO).</p>
-<p>With RPNCalc, when you leave the program, the current (and secondary) stacks are saved.  If you didn’t specify a named stack,  the <code>default</code> stack is loaded.  When you start the program you can specify which stack to load with the <code>-l</code> command.  You may also load / create a new stack inside of the program with the <code>load</code> command.  One use case is to create different aliases to open different stacks using the <code>-l</code> command.</p>
-<p>When you perform calculations or commands, they generally work from the top of the stack down.  In RPNCalc, the top of the stack is <code>line1</code> and it’s actually at the bottom of the display.  When you perform calculations, you are working on your command line and the lines you are using are above the text entry area.  This might be a bit hard to visualize, but makes a lot of sense when you actually use the calculator.  Trust me.</p>
-<p>For example, if you want to take the square root of 25, you enter <code>25 [ENTER]</code> and it will be added to the top of the stack at <code>line1</code>.  Anything else on the stack is pushed “up” on the display. Then execute the command <code>SQRT [ENTER]</code>.  This will remove 25 from the stack on <code>line1</code>, perform the square root, then place the result <code>5</code> back onto the stack.  Some operations require more than one stack item.  The addition command <code>+</code>, for example, will take the last two numbers off the stack (<code>line1</code> and <code>line2</code>), add them together, and then place the result on the stack.</p>
-<p>The order of the numbers on the stack is important for some of the operands.  This is detailed out in the <code>Operand chapter</code>.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="stacks-1"><a href="#stacks-1" class="header">Stacks</a></h1>
+<img align="right" width="150" src="Images/Plates.png">
+<h2 id="stacks"><a class="header" href="#stacks">Stacks</a></h2>
+<p>The entire concept of a RPN calculator is based on a stack, which can be thoughts of as numbers stacked on top of each other. You add numbers to the stack and they are
+normally processed Last In First Out (LIFO).</p>
+<p>With RPNCalc, when you leave the program, the current (and secondary) stacks are saved. If you didn’t specify a named stack, the <code>default</code> stack is loaded. When you start the
+program you can specify which stack to load with the <code>-l</code> command. You may also load / create a new stack inside of the program with the <code>load</code> command. One use case is to
+create different aliases to open different stacks using the <code>-l</code> command.</p>
+<p>When you perform calculations or commands, they generally work from the top of the stack down. In RPNCalc, the top of the stack is <code>line1</code> and it’s actually at the bottom of
+the display. When you perform calculations, you are working on your command line and the lines you are using are above the text entry area. This might be a bit hard to
+visualize, but makes a lot of sense when you actually use the calculator. Trust me.</p>
+<p>For example, if you want to take the square root of 25, you enter <code>25 [ENTER]</code> and it will be added to the top of the stack at <code>line1</code>. Anything else on the stack is pushed “
+up“ on the display. Then execute the command <code>SQRT [ENTER]</code>. This will remove 25 from the stack on <code>line1</code>, perform the square root, then place the result <code>5</code> back onto the
+stack. Some operations require more than one stack item. The addition command <code>+</code>, for example, will take the last two numbers off the stack (<code>line1</code> and <code>line2</code>), add them
+together, and then place the result on the stack.</p>
+<p>The order of the numbers on the stack is important for some of the operands. This is detailed out in the <code>Operand chapter</code>.</p>
 <h2 id="stack-management"><a class="header" href="#stack-management">Stack Management</a></h2>
-<p>Saving and loading stacks is fundamental to RPNCalc.  You can have as many named stacks as you like.  They are stored in the Java Preferences system which is located in various places depending on the OS:</p>
+<p>Saving and loading stacks is fundamental to RPNCalc. You can have as many named stacks as you like. They are stored in the Java Preferences system which is located in various
+places depending on the OS:</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -349,30 +394,53 @@ on supported operating systems which means you don’t even need to install Java
 </tbody>
 </table>
 </div>
-<p>It is safe to delete these if you wish, but of course you’ll lose any saved stacks, memory slots, persistent configurations, and user defined functions which are stored there.  The structure, not the data, will be recreated again when RPNCalc is restarted.</p>
-<p>Each stack you load (default or a named stack) actually has 2 internal stacks defined; a primary and secondary.  You can quickly swap stacks using the swap stack <code>ss</code> command.  For example, you are working on something and need to do a few calculations that you wish to keep separate from your main work.  You can swap stacks, do the work, then swap back.  They do not communicate in any way and are distinctly separate.  The primary and secondary stack data is saved and restored upon loading the stack.  The primary and secondary stacks have their own unique undo stacks as of version 4.5.  This was long standing issue that’s now been resolved.</p>
-<p>When you start up RPNCalc, you can load a named stack with the <code>-l name</code> command.  If the stack <code>name</code> exists, it will be loaded.  If it does not exist, the stack will be created and when you leave the program it will be saved under that name.  You can always view the current stack you are using in the lower right of the dashed bar. The <code>:1</code> or <code>:2</code> after the stack name will tell you if you are on the primary or secondary stack.</p>
-<p>As a side note, both stacks and memory slots are saved during shutdown.  While the data in a stack is specific to that stack, memory slots and user created functions are global.  The default stack items are restored at startup (or whatever stack you choose to load with <code>-l name</code>.)  Memory slots are also restored at startup.  <code>list mem</code> will show the values in current memory, and <code>list stacks</code> will show the existing stacks available to load.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/HighLevelUsage.png">
-<h1 id="high-level-usage"><a class="header" href="#high-level-usage">High Level Usage</a></h1>
-<p>RPNCalc is a command line application that must be run from a console / command prompt.  Executing it with a <code>-h</code> (or <code>-?</code>) switch, or starting the program and entering
-the <code>h</code> (or <code>help</code> or <code>?</code>) command will display the in-program help page.  This page lists all the commands and operands that can be used, but it is fairly terse  This can be also viewed at the bottom of the <code>Introduction Chapter</code> of this guide. This document is meant as a more comprehensive guide.</p>
-<p>There are various command line switches that can be used when starting the program as are detailed in the <code>Command Line Options Chapter</code>.  They generally exist so that aliases can be used to control several key parameters, most likely the <code>-l StackName</code> switch.</p>
-<p>Once inside the program, you’ll be presented a prompt where numbers, operands, and commands may be entered.  Numbers will be added to the stack which you can think of as an upside down stack of plates.  The top stack item (represented by <code>line1</code> in the program) is on the bottom.  You can think of this stack of plates as a Last In First Out (LIFO) approach.</p>
-<p>For example, you could enter <code>2 [ENTER]</code> it would be in the <code>line1</code> position and would be on the top of the stack.  If you then enter <code>3 [ENTER]</code> the <code>2</code> would move up go <code>line2</code> and the <code>3</code> would then be on <code>line1</code> and be on the top of the stack.  You can then enter an operand, such as <code>+</code> to perform the action on the items opn the top of the stack. To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack (<code>line1</code>).</p>
-<p>I’ve gone into this in more detail in the <code>What is an RPN Calculator Chapter</code> and elsewhere and it’s fairly easy and intuitive.  Once you get the hang of it, you will regret having to use a standard calculator in the future. ;-)</p>
-<h4 id="why-is-the-stack-upside-down"><a class="header" href="#why-is-the-stack-upside-down">Why is the stack “upside down?”</a></h4>
-<p>One question I get with RPNCalc is why is the top of the stack on the bottom?  The reason is that it’s simply more intuitive.  The command line is on the bottom.  You are usually dealing with the top of the stack so having <code>line1</code> directly above makes sense.  Also, for some operations, the order is important (think subtraction or division).  Having <code>line1</code> “underneath” <code>line2</code> is easy to understand as that’s how we learned to do subtraction.  <code>line1</code> is subtracted from <code>line2</code>.</p>
-<h3 id="decimals--fractions"><a class="header" href="#decimals--fractions">Decimals &amp; Fractions</a></h3>
-<p>In RPNCalc, the stacks always store numbers as decimals.  You can, however, enter in fractions, and they will be instantly converted to a decimal equivalent and added to
+<p>It is safe to delete these if you wish, but of course you’ll lose any saved stacks, memory slots, persistent configurations, and user defined functions which are stored there.
+The structure, not the data, will be recreated again when RPNCalc is restarted.</p>
+<p>Each stack you load (default or a named stack) actually has 2 internal stacks defined; a primary and secondary. You can quickly swap stacks using the swap stack <code>ss</code> command.
+For example, you are working on something and need to do a few calculations that you wish to keep separate from your main work. You can swap stacks, do the work, then swap
+back. They do not communicate in any way and are distinctly separate. The primary and secondary stack data is saved and restored upon loading the stack. The primary and
+secondary stacks have their own unique undo stacks as of version 4.5. This was long standing issue that’s now been resolved.</p>
+<p>When you start up RPNCalc, you can load a named stack with the <code>-l name</code> command. If the stack <code>name</code> exists, it will be loaded. If it does not exist, the stack will be
+created and when you leave the program it will be saved under that name. You can always view the current stack you are using in the lower right of the dashed bar. The <code>:1</code> or
+<code>:2</code> after the stack name will tell you if you are on the primary or secondary stack.</p>
+<p>As a side note, both stacks and memory slots are saved during shutdown. While the data in a stack is specific to that stack, memory slots and user created functions are
+global. The default stack items are restored at startup (or whatever stack you choose to load with <code>-l name</code>.)  Memory slots are also restored at startup.  <code>list mem</code> will
+show the values in current memory, and <code>list stacks</code> will show the existing stacks available to load.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="high-level-usage-1"><a href="#high-level-usage-1" class="header">High Level Usage</a></h1>
+<img align="right" width="125" src="Images/HighLevelUsage.png">
+<h2 id="high-level-usage"><a class="header" href="#high-level-usage">High Level Usage</a></h2>
+<p>RPNCalc is a command line application that must be run from a console / command prompt. Executing it with a <code>-h</code> (or <code>-?</code>) switch, or starting the program and entering
+the <code>h</code> (or <code>help</code> or <code>?</code>) command will display the in-program help page. This page lists all the commands and operands that can be used, but it is fairly terse This can be
+also viewed at the bottom of the <code>Introduction Chapter</code> of this guide. This document is meant as a more comprehensive guide.</p>
+<p>There are various command line switches that can be used when starting the program as are detailed in the <code>Command Line Options Chapter</code>. They generally exist so that aliases
+can be used to control several key parameters, most likely the <code>-l StackName</code> switch.</p>
+<p>Once inside the program, you’ll be presented a prompt where numbers, operands, and commands may be entered. Numbers will be added to the stack which you can think of as an
+upside down stack of plates. The top stack item (represented by <code>line1</code> in the program) is on the bottom. You can think of this stack of plates as a Last In First Out (LIFO)
+approach.</p>
+<p>For example, you could enter <code>2 [ENTER]</code> it would be in the <code>line1</code> position and would be on the top of the stack. If you then enter <code>3 [ENTER]</code> the <code>2</code> would move up go
+<code>line2</code> and the <code>3</code> would then be on <code>line1</code> and be on the top of the stack. You can then enter an operand, such as <code>+</code> to perform the action on the items opn the top of the
+stack. To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack (<code>line1</code>).</p>
+<p>I’ve gone into this in more detail in the <code>What is an RPN Calculator Chapter</code> and elsewhere and it’s fairly easy and intuitive. Once you get the hang of it, you will regret
+having to use a standard calculator in the future. ;-)</p>
+<h2 id="why-is-the-stack-upside-down"><a class="header" href="#why-is-the-stack-upside-down">Why is the stack “upside down?”</a></h2>
+<p>One question I get with RPNCalc is why is the top of the stack on the bottom? The reason is that it’s simply more intuitive. The command line is on the bottom. You are usually
+dealing with the top of the stack so having <code>line1</code> directly above makes sense. Also, for some operations, the order is important (think subtraction or division). Having
+<code>line1</code> “underneath” <code>line2</code> is easy to understand as that’s how we learned to do subtraction.  <code>line1</code> is subtracted from <code>line2</code>.</p>
+<h2 id="decimals--fractions"><a class="header" href="#decimals--fractions">Decimals &amp; Fractions</a></h2>
+<p>In RPNCalc, the stacks always store numbers as decimals. You can, however, enter in fractions, and they will be instantly converted to a decimal equivalent and added to
 the stack.</p>
-<p><strong>Example:</strong></p>
+<p><strong>Examples:</strong></p>
 <p><code>1 5/16 [ENTER]</code></p>
 <p>will add <code>1.3125</code> to the top of the stack (<code>line1</code>)</p>
 <p><code>14/8 [ENTER]</code></p>
 <p>will add <code>1.75</code> to the stack</p>
-<p>While you can never directly convert a decimal number on the stack back to a fraction, you can display an approximation of what the top of the stack (<code>line1</code>) value would be as a fraction.  You do have to decide on the smallest denominator that will be used (called the base.)  The default base is <code>64</code> which is the equivalent of <code>1/64</code> and will be used if no base is specified.  Use the <code>frac [base]</code> command to display the approximate fractional equivalent.  RPNCalc will simplify the fraction as much as it can so if <code>line1</code> is <code>0.5</code>, the command <code>frac 4</code> won’t convert and display <code>2/4</code>.  The result would be <code>1/2</code>.  Also note that <code>frac [based]</code> is a display command and will not actually change the stack in any way.</p>
-<p><strong>Example:</strong>
+<p>While you can never directly convert a decimal number on the stack back to a fraction, you can display an approximation of what the top of the stack (<code>line1</code>) value would be
+as a fraction. You do have to decide on the smallest denominator that will be used (called the base.)  The default base is <code>64</code> which is the equivalent of <code>1/64</code> and will be
+used if no base is specified. Use the <code>frac [base]</code> command to display the approximate fractional equivalent. RPNCalc will simplify the fraction as much as it can so if
+<code>line1</code> is <code>0.5</code>, the command <code>frac 4</code> won’t convert and display <code>2/4</code>. The result would be <code>1/2</code>. Also note that <code>frac [base]</code> is a display command and will not actually
+change the stack in any way.</p>
+<p><strong>Examples:</strong>
 <code>12.3456 [Enter]</code>
 <code>frac [Enter]</code></p>
 <p>No base was entered, so use <code>64</code>. It will display <code>12 11/32</code>  RPNCalc converted it to <code>12 22/64</code> and then reduced it.</p>
@@ -381,29 +449,38 @@ the stack.</p>
 <p>will display <code>1 1/16</code> as that’s as close as it could get with a granularity of 1/16.</p>
 <p><code>1 3/64 [ENTER]</code>
 <code>frac 100000</code></p>
-<p>will display <code>1 293/6250</code>.  This is a closer approximation than using base 16. This also shows why this is an approximate.</p>
-<h3 id="scientific-notation"><a class="header" href="#scientific-notation">Scientific Notation</a></h3>
-<p>As of version 5, scientific notation is supported.  You can enter in values with the format <code>1.2345E18</code> and it will be saved as a value in the stack. There are a few areas where it’s not 100% supported (i.e. NumOps at the time of this writing) but just about everything will work with it.</p>
-<h3 id="percent-entry"><a class="header" href="#percent-entry">Percent Entry</a></h3>
-<p>As of version 5.4.0, a number, followed by a <code>%</code> can be entered.  This will be divided by 100 prior to being added onto the stack.  This will work with both negative
+<p>will display <code>1 293/6250</code>. This is a closer approximation than using base 16. This also shows why this is an approximate.</p>
+<h2 id="scientific-notation"><a class="header" href="#scientific-notation">Scientific Notation</a></h2>
+<p>As of version 5, scientific notation is supported. You can enter in values with the format <code>1.2345E18</code> and it will be saved as a value in the stack. There are a few areas
+where it’s not 100% supported (i.e. NumOps at the time of this writing) but just about everything will work with it.</p>
+<h2 id="percent-entry"><a class="header" href="#percent-entry">Percent Entry</a></h2>
+<p>As of version 5.4.0, a number, followed by a <code>%</code> can be entered. This will be divided by 100 prior to being added onto the stack. This will work with both negative
 numbers and scientific notation.</p>
 <h2 id="operands-numbers-and-commands"><a class="header" href="#operands-numbers-and-commands">Operands, Numbers, and Commands</a></h2>
-<p>Numbers, whether decimal or fractions, can be entered on the command line, and they get added to the stack.  That’s fairly self-explanatory.</p>
+<p>Numbers, whether decimal or fractions, can be entered on the command line, and they get added to the stack. That’s fairly self-explanatory.</p>
 <p>Operands perform basic match functions on those numbers.</p>
-<p>Commands do the more exciting things.  You can add the speed of light constant to the stack (<code>sol</code>) or PI (<code>pi</code>), take the sine of the number, add it to a memory slot, and then save that sequence of commands as a user defined function.  Most of the rest of this guide will be talking about the various RPNCalc commands.</p>
-<p>Lastly, as of <code>v4.6.0</code>, the arrow keys can be used within RPNCalc.  Up/Down will move you through your historical entries, and Left/Right will move you within the current command line.  This is probably what you would have expected it to do as it behaves similar to common consoles.</p>
+<p>Commands do the more exciting things. You can add the speed of light constant to the stack (<code>sol</code>) or PI (<code>pi</code>), take the sine of the number, add it to a memory slot, and then
+save that sequence of commands as a user defined function. Most of the rest of this guide will be talking about the various RPNCalc commands.</p>
+<p>Lastly, as of <code>v4.6.0</code>, the arrow keys can be used within RPNCalc. Up/Down will move you through your historical entries, and Left/Right will move you within the current
+command line. This is probably what you would have expected it to do as it behaves similar to common consoles.</p>
 <h2 id="precision"><a class="header" href="#precision">Precision</a></h2>
-<p>The intent of RPNCalc is to have unlimited precision in the numbers and calculations.  RPNCalc leverages a Java technology called <code>BigDecimal</code> which limits precision only by the amount of memory in your machine.  This is most likely more than you will ever need.  However, the program does make use of several Java math methods which must be done via a Java <code>Double</code>.</p>
+<p>The intent of RPNCalc is to have unlimited precision in the numbers and calculations. RPNCalc leverages a Java technology called <code>BigDecimal</code> which limits precision only by
+the amount of memory in your machine. This is most likely more than you will ever need. However, the program does make use of several Java math methods which must be done via
+a Java <code>Double</code>.</p>
 <p>A <code>Double</code> has the following characteristics:</p>
 <ul>
 <li>The upper range of a double in Java is <code>1.7976931348623157 x 10^308</code></li>
 <li>The lower range of a double in Java is <code>4.9 x 10^-324</code></li>
 </ul>
-<p>I will attempt to point out in this guide when a command is using <code>Double</code> and therefore has a limit on precision. Double is, however, huge and shouldn’t pose an issue for most use cases.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/CmdLine.png">
-<h1 id="command-line-options"><a class="header" href="#command-line-options">Command Line Options</a></h1>
-<p>Currently there are several command line options, and all are optional.  Normally, one would simply run the program and you would enter in numbers, operands, and commands.</p>
+<p>I will attempt to point out in this guide when a command is using <code>Double</code> and therefore has a limit on precision. Double is, however, huge and shouldn’t pose an issue for
+most use cases.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="command-line-options-2"><a href="#command-line-options-2" class="header">Command Line Options</a></h1>
+<img align="right" width="150" src="Images/CmdLine.png">
+<h2 id="command-line-options"><a class="header" href="#command-line-options">Command Line Options</a></h2>
+<p>Currently, there are several command line options, and all are optional. Normally, one would simply run the program and you would enter in numbers, operands, and commands.</p>
 <p>These options will either start RPNCalc in a certain “mode” such as <code>Debug</code> or <code>No Color</code> or will provide information and exist such as <code>Version</code> or <code>Help</code>.</p>
+<h2 id="options-table"><a class="header" href="#options-table">Options Table</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -412,19 +489,24 @@ numbers and scientific notation.</p>
 </th><th>Name</th><th>Description</th></tr>
 </thead>
 <tbody>
-<tr><td>-D <br> –debug</td><td><code>DEBUG MODE</code></td><td>Runs the program in debug mode.  This will display quite a bit of information in RED as you use the program.  This is mostly used by the developer and clutters everything up, but you may find it useful if you are trying to debug something.  I could certainly add a lot more if needed, but it’s useful today.  You can also toggle debug mode on/off by entering in the command <code>debug</code> while within the program - you don’t have to restart RPNCalc</td></tr>
-<tr><td>-l <code>name</code> <br> –load <code>name</code></td><td><code>LOAD STACK</code></td><td>Load a saved stack.  This essentially will “name” your session and store the stack upon exit in the Java preferences system.  You can load the stack with the <code>-l name</code> command line option, or from within the program by using the <code>load name</code> command.  Please note the name field is whatever you want to call the instance but avoid spaces in the name.  I’m not aware of a limit to the number of saved stacks You can have.  If the name to load does not exist, the stack will be created and saved when you exit.</td></tr>
-<tr><td>-z <br> –no-color</td><td><code>DISABLE COLOR</code></td><td>Disable colorized output.  Useful if your current terminal doesn’t support ANSI color sequences</td></tr>
-<tr><td>-L <br> –license</td><td><code>DISPLAY LICENSE</code></td><td>Display the RPNCalc usage license.  Currently, RPNCalc uses the <a href="https://opensource.org/licenses/MIT">The MIT License</a></td></tr>
-<tr><td>-v <br> –version</td><td><code>VERSION</code></td><td>This will display the current program version, but will also check GitHub for the leatest release. It is possible, especially if you are using RPNCalc as a Snap, to have a later version than the latest GitHub release.</td></tr>
-<tr><td>-h <br> -? <br> –help</td><td><code>HELP</code></td><td>Display the program help page and exit.  This is the same as the <code>h</code> or <code>help</code> command within RPNCalc</td></tr>
+<tr><td>-D <br> –debug</td><td>Debug Mode</td><td>Runs the program in debug mode.  This will display quite a bit of information in RED as you use the program.  This is mostly used by the developer and clutters everything up, but you may find it useful if you are trying to debug something.  I could certainly add a lot more if needed, but it’s useful today.  You can also toggle debug mode on/off by entering in the command <code>debug</code> while within the program - you don’t have to restart RPNCalc</td></tr>
+<tr><td>-l <code>name</code> <br> –load <code>name</code></td><td>Load Stack</td><td>Load a saved stack.  This essentially will “name” your session and store the stack upon exit in the Java preferences system.  You can load the stack with the <code>-l name</code> command line option, or from within the program by using the <code>load name</code> command.  Please note the name field is whatever you want to call the instance but avoid spaces in the name.  I’m not aware of a limit to the number of saved stacks You can have.  If the name to load does not exist, the stack will be created and saved when you exit.</td></tr>
+<tr><td>-z <br> –no-color</td><td>Disable Color</td><td>Disable colorized output.  Useful if your current terminal doesn’t support ANSI color sequences</td></tr>
+<tr><td>-L <br> –license</td><td>Display License</td><td>Display the RPNCalc usage license.  Currently, RPNCalc uses the <a href="https://opensource.org/licenses/MIT">The MIT License</a></td></tr>
+<tr><td>-v <br> –version</td><td>Version</td><td>This will display the current program version, but will also check GitHub for the leatest release. It is possible, especially if you are using RPNCalc as a Snap, to have a later version than the latest GitHub release.</td></tr>
+<tr><td>-h <br> -? <br> –help</td><td>Help</td><td>Display the program help page and exit.  This is the same as the <code>h</code> or <code>help</code> command within RPNCalc</td></tr>
 </tbody>
 </table>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="20%" src="Images/Operands.png">
-<h1 id="operands"><a class="header" href="#operands">Operands</a></h1>
-<p>Operands are the standard symbols used for basic mathematics on numbers.  The following is the list of operands supported by RPNCalc.  These are also supported by the NumOps shortcut described below.</p>
-<p>With the exception of the addition (<code>+</code>) and multiplication (<code>*</code>) operands, the order of the items in the stack is important.  It’s fairly intuitive when you look at it in the calculator, but refer to the following table if needed.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="operands-1"><a href="#operands-1" class="header">Operands</a></h1>
+<img align="right" width="20%" src="Images/Operands.png">
+<h2 id="operands"><a class="header" href="#operands">Operands</a></h2>
+<p>Operands are the standard symbols used for basic mathematics on numbers. The following is the list of operands supported by RPNCalc. These are also supported by the NumOps
+shortcut described below.</p>
+<h2 id="math-functions"><a class="header" href="#math-functions">Math Functions</a></h2>
+<p>Except the addition (<code>+</code>) and multiplication (<code>*</code>) operands, the order of the items in the stack is important. It’s fairly intuitive when you look at it in the
+calculator, but refer to the following table if needed.</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -439,6 +521,7 @@ numbers and scientific notation.</p>
 </tbody>
 </table>
 </div>
+<h2 id="simple-examples"><a class="header" href="#simple-examples">Simple Examples</a></h2>
 <p>Below are two very simple examples that show the order is important</p>
 <div class="table-wrapper">
 <table>
@@ -467,12 +550,15 @@ numbers and scientific notation.</p>
 <br>
 <hr>
 <br>
-<p><code>Hint:</code> We’ll discuss commands in later chapters, but the <code>swap</code> command <code>s</code> will swap the top two items in the stack (<code>line1</code> and <code>line2</code>).  Swap will also swap any two line numbers provided.  See the <code>Calculator Commands Chapter</code> for more information.</p>
+<p><code>Pro-Tip:</code> We’ll discuss commands in later chapters, but the swap command <code>s</code> will swap the top two items in the stack (<code>line1</code> and <code>line2</code>). Swap will also swap any two
+line numbers provided - see the <code>Calculator Commands Chapter</code> for more information.</p>
 <h2 id="the-numops-shortcut"><a class="header" href="#the-numops-shortcut">The NumOps Shortcut</a></h2>
-<p>RPNCalc has an important shortcut that can speed up your calculations.  You can append one of the above operands at the end of an entered number and the program will, behind the scenes, place the number on top of the stack (<code>line1</code>) and then execute the operand.  The operand must directly follow the number without a space between. For example:</p>
+<p>RPNCalc has an important shortcut that can speed up your calculations. You can append one of the above operands at the end of an entered number and the program will, behind
+the scenes, place the number on top of the stack (<code>line1</code>) and then execute the operand. The operand must directly follow the number without a space between. For example:</p>
 <p><code>2 [ENTER]</code></p>
 <p><code>3+ [ENTER]</code></p>
-<p>When the second enter is pressed,  the two stack items will be removed, added together, and the result, <code>5</code>, will be added back.  It’s the same as entering this the following  three commands:</p>
+<p>When the second enter is pressed, the two stack items will be removed, added together, and the result, <code>5</code>, will be added back. It’s the same as entering this the following
+three commands:</p>
 <p><code>2 [ENTER]</code></p>
 <p><code>3 [ENTER]</code></p>
 <p><code>+ [ENTER]</code></p>
@@ -489,23 +575,32 @@ numbers and scientific notation.</p>
 </ul>
 <p>By the way, if you were wondering the answer is 32,768.</p>
 <p><em><strong>Please note that you can not use this NumOps shortcut with a fractional number entry or a scientific notation entry</strong></em></p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/Configure.png">
-<h1 id="configuration"><a class="header" href="#configuration">Configuration</a></h1>
-<p>There are a few, although not many, configuration options available in RPNCalc.  These are settings which control various aspects of the program and are persistent between executions.  When these are changed, they are saved in the Java Preferences system.</p>
-<p>There are currently three configuration options that can be changed the commands to do so are listed below.  They are:</p>
-<h4 id="program-width"><a class="header" href="#program-width">Program Width</a></h4>
-<p>Program Width controls the amount of characters the base program uses.  This can be changed and is especially useful if using a terminal with a small number of characters per line.</p>
-<h4 id="memory-slots"><a class="header" href="#memory-slots">Memory Slots</a></h4>
-<p>By default there are 10 memory slots numbers 0 through 9.  This is probably more than most people would need, but if you save a lot of values, or have a User Defined Function that needs to store a lot of numbers, it can be changed.  Each memory slot is simply an additional array element, so I don’t think there is much of a memory impact, but I suppose if you have thousands it would increase memory usage.</p>
-<h4 id="display-alignment"><a class="header" href="#display-alignment">Display Alignment</a></h4>
-<p>By default, the numbers displayed on the stack are left aligned.  There are times when it is prefered to be right aligned (for example if you are working with money and always want two decimal places), or decimal aligned which is nice to easily see the integer from the decimal.  Play around with it and see which one you like for difference circumstances.</p>
-<h4 id="reset"><a class="header" href="#reset">Reset</a></h4>
-<p>Ok, this isn’t really a configuration option, but the command can be used to reset everything back to the defaults.  At the time of this writing, the defaults are:</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="configuration-1"><a href="#configuration-1" class="header">Configuration</a></h1>
+<img align="right" width="150" src="Images/Configure.png">
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<p>There are a few, although not many, configuration options available in RPNCalc. These are settings which control various aspects of the program and are persistent between
+executions. When these are changed, they are saved in the Java Preferences system.</p>
+<p>There are currently three configuration options that can be changed the commands to do so are listed below. They are:</p>
+<h3 id="program-width"><a class="header" href="#program-width">Program Width</a></h3>
+<p>Program Width controls the amount of characters the base program uses. This can be changed and is especially useful if using a terminal with a small number of characters per
+line.</p>
+<h3 id="memory-slots"><a class="header" href="#memory-slots">Memory Slots</a></h3>
+<p>By default there are 10 memory slots numbers 0 through 9. This is probably more than most people would need, but if you save a lot of values, or have a User Defined Function
+that needs to store a lot of numbers, it can be changed. Each memory slot is simply an additional array element, so I don’t think there is much of a memory impact, but I
+suppose if you have thousands it would increase memory usage.</p>
+<h3 id="display-alignment"><a class="header" href="#display-alignment">Display Alignment</a></h3>
+<p>By default, the numbers displayed on the stack are left aligned. There are times when it is prefered to be right aligned (for example if you are working with money and always
+want two decimal places), or decimal aligned which is nice to easily see the integer from the decimal. Play around with it and see which one you like for difference
+circumstances.</p>
+<h3 id="reset"><a class="header" href="#reset">Reset</a></h3>
+<p>Ok, this isn’t really a configuration option, but the command can be used to reset everything back to the defaults. At the time of this writing, the defaults are:</p>
 <ul>
 <li>Program Width:  <code>80</code>  Current minimum width is <code>46</code> characters</li>
 <li>Memory Slots: <code>10</code>  Numbered <code>0</code> through <code>9</code></li>
 <li>Display Alignment: <code>l(eft)</code></li>
 </ul>
+<h2 id="command-line-options-1"><a class="header" href="#command-line-options-1">Command Line Options</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -523,14 +618,17 @@ numbers and scientific notation.</p>
 </tbody>
 </table>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Images/CalcCommands.png">
-<h1 id="calculator-commands"><a class="header" href="#calculator-commands">Calculator Commands</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="calculator-commands-1"><a href="#calculator-commands-1" class="header">Calculator Commands</a></h1>
+<img align="right" width="175" src="Images/CalcCommands.png">
+<h2 id="calculator-commands"><a class="header" href="#calculator-commands">Calculator Commands</a></h2>
 <p>We’ve discussed numbers, fractional, scientific notation, and decimal, as well as operands that perform basic mathematical functions. This chapter starts discussing commands
 which are the heart of RPNCalc.</p>
 <p>Calculator Commands are the basic commands that operations on the numbers you’ve placed on the stack. Most are fairly simple and intuitive, but there are a few that are a bit
 odd. I’m looking at you <code>dice</code>.</p>
 <p>These commands, like the others you’ll read about later, are executed by typing the command name, and any needed arguments into RPNCalc. Often there are several different
 names and abbreviations for the same command. This is just to make it easier to remember. Brackets, <code>[]</code> around an option denotes it is optional.</p>
+<h2 id="commands-table"><a class="header" href="#commands-table">Commands Table</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -571,8 +669,10 @@ names and abbreviations for the same command. This is just to make it easier to 
 </tbody>
 </table>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/Conversion.png">
-<h1 id="fractional-display"><a class="header" href="#fractional-display">Fractional Display</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="conversions"><a href="#conversions" class="header">Conversions</a></h1>
+<img align="right" width="125" src="Images/Conversion.png">
+<h2 id="fractional-display"><a class="header" href="#fractional-display">Fractional Display</a></h2>
 <p>The RPNCalc stack only contains decimal numbers (<a href="https://www.geeksforgeeks.org/java/bigdecimal-class-java/">BigDecimal</a><sup><strong><em>[1]</em></strong></sup> format for you Java developers.)
 Therefore, we can’t directly store fractional values on the stack. If a
 fraction is entered, it is converted to a decimal. There could be a loss of precision when this is done. For example, there is no exact fractional equivalent for <code>PI</code> much
@@ -586,7 +686,7 @@ maximum granularity would be 1/64) and auto reduced the result which is why you 
 <p>Please note that while fractional display <em>is</em> a conversion, it does not change the stack. It only displays the fractional equivilents. Therefore, it does not require the
 <code>convert</code>
 command. It instead simply uses the <code>frac</code> command.</p>
-<h1 id="unit-conversions"><a class="header" href="#unit-conversions">Unit Conversions</a></h1>
+<h2 id="unit-conversions"><a class="header" href="#unit-conversions">Unit Conversions</a></h2>
 <p>The conversion command will simply convert from one unit to another. As an example, I frequently use RPNCalc to convert from inches to millimeters or back. The conversion
 module requires an amount, normally pulled from the stack, as well as a <strong>“from”</strong> unit and a <strong>“to”</strong> unit. The supported units are listed below. You an only convert units
 within the same categories. For example, you can’t convert <code>grams</code> to <code>miles</code> (obviously). The converter will take the last item off of the stack (<code>line1</code>) and replace it
@@ -608,7 +708,7 @@ See the User Defined Function chapter for additional information on recording, s
 <p>I’ve included a fairly comprehensive list of common units, but I’m happy to include others if anyone has other ideas.  [just let me know]
 (mailto://rpncalc@fross.org).</p>
 <p><strong>Note:</strong> All conversions are exact by definition except angle conversions. Unit abbreviations are case-insensitive.</p>
-<h3 id="examples-of-usage"><a class="header" href="#examples-of-usage">Examples of Usage: <br></a></h3>
+<p><strong>Examples of Usage:</strong> <br></p>
 <ul>
 <li>convert in mm</li>
 <li>con f c</li>
@@ -670,10 +770,14 @@ large and
 very small floating point numbers with great precision but compensating with the time complexity a bit. A BigDecimal consists of a random precision integer unscaled value
 and a 32-bit integer scale. If greater than or equal to zero, the scale is the number of digits to the right of the decimal point. If less than zero, the unscaled value of
 the number is multiplied by 10^(-scale).</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/Trig.png">
-<h1 id="trigonometry-functions"><a class="header" href="#trigonometry-functions">Trigonometry Functions</a></h1>
-<p>RPNCalc does not consider itself a fully fledged scientific calculator (at least not currently).  However, it’s certainly beyond a very basic calculator.  The trigonometry commands listed here are basic, but do fill a need if you need to do a few basic calculations.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="trigonometry-functions-1"><a href="#trigonometry-functions-1" class="header">Trigonometry Functions</a></h1>
+<img align="right" width="125" src="Images/Trig.png">
+<h2 id="trigonometry-functions"><a class="header" href="#trigonometry-functions">Trigonometry Functions</a></h2>
+<p>RPNCalc does not consider itself a fully fledged scientific calculator (at least not currently). However, it’s certainly beyond a very basic calculator. The trigonometry
+commands listed here are basic, but do fill a need if you need to do a few basic calculations.</p>
 <p>Lastly, I’m happy to add more capabilities if there is a desire (and an offer to help test).</p>
+<h2 id="command-table"><a class="header" href="#command-table">Command Table</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -688,12 +792,18 @@ the number is multiplied by 10^(-scale).</p>
 </tbody>
 </table>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/Memory.png">
-<h1 id="memory-commands"><a class="header" href="#memory-commands">Memory Commands</a></h1>
-<p>The memory capabilities are fairly flexible.  By default, there are 10 memory slots you can use (<code>slot0</code> - <code>slot9</code>).  This amount can be increased with the <code>set memslots</code> command.  If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions.  You can change it as will, but if you decrease the number of slots, anything held in the “no longer there” slots will be discarded.</p>
-<p>For example, say you <code>set memslots 20</code> and store values in all of them.  If you later <code>set memslots 10</code>, the values in the upper 10 slots will be discarded.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="memory-commands-1"><a href="#memory-commands-1" class="header">Memory Commands</a></h1>
+<img align="right" width="125" src="Images/Memory.png">
+<h2 id="memory-commands"><a class="header" href="#memory-commands">Memory Commands</a></h2>
+<p>The memory capabilities are fairly flexible. By default, there are 10 memory slots you can use (<code>slot0</code> - <code>slot9</code>). This amount can be increased with the <code>set memslots</code>
+command. If you increase or decrease the number of memory slots, it is persistent across RPNCalc executions. You can change it as will, but if you decrease the number of
+slots, anything held in the “no longer there” slots will be discarded.</p>
+<p>For example, say you <code>set memslots 20</code> and store values in all of them. If you later <code>set memslots 10</code>, the values in the upper 10 slots will be discarded.</p>
 <p>The operational command <code>reset</code> will reset all of the persistant settings back to their defaults including the number of memory slots.</p>
-<p>The normal usage to is to save a value from the current <code>line1</code> into a memory slot and copy it back later.  The memory slots are saved between program executions so if you need it in a later session, it will be there.  It’s saved in the Java preferences system as discussed earlier.</p>
+<p>The normal usage to is to save a value from the current <code>line1</code> into a memory slot and copy it back later. The memory slots are saved between program executions so if you need
+it in a later session, it will be there. It’s saved in the Java preferences system as discussed earlier.</p>
+<h2 id="commands-table-1"><a class="header" href="#commands-table-1">Commands Table</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -711,11 +821,14 @@ the number is multiplied by 10^(-scale).</p>
 </tbody>
 </table>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><img alt="Page Icon" align="right" width="125" src="Images/Constants.png">
-<h1 id="constants"><a class="header" href="#constants">Constants</a></h1>
-<p>These commands simply take a defined constant and add that number to the top of the stack (<code>line1</code>).  There are currently not that many constants defined, but if there is a desire to add additional ones please me know.  It’s quick and easy.</p>
-<p>To use a constant, simply run the command and the value of the requested constant will be added
-to the top of the stack (<code>line1</code>)</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="constants-1"><a href="#constants-1" class="header">Constants</a></h1>
+<img alt="Page Icon" align="right" width="125" src="Images/Constants.png">
+<h2 id="constants"><a class="header" href="#constants">Constants</a></h2>
+<p>These commands simply take a defined constant and add that number to the top of the stack (<code>line1</code>). There are currently not that many constants defined, but if there is a
+desire to add additional ones please me know. It’s quick and easy.</p>
+<p>To use a constant, simply run the command and the value of the requested constant will be added to the top of the stack (<code>line1</code>)</p>
+<h2 id="constants-table"><a class="header" href="#constants-table">Constants Table</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -730,17 +843,26 @@ to the top of the stack (<code>line1</code>)</p>
 </tbody>
 </table>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/UDF.png" alt="">
-<h1 id="user-defined-functions"><a class="header" href="#user-defined-functions">User Defined Functions</a></h1>
-<p>RPNCalc can record your commands and save them as a user defined function.  In essence, you are creating a new command that can be run.</p>
-<p>When recording a new function, start by adding data to your stack that would emulate when you would run your function.  The only data that will be part of your recording will be data &amp; commands entered <em><strong>after</strong></em> recording has been turned on.  When you are ready, enter the <code>record on</code> command.  A red <code>[Recording]</code> alert will appear in the status line. Anything you add during this period will be recorded with the exception of the commands listed below.  Enter your commands, numbers, etc. until you are done.</p>
-<p>When recording is complete, enter <code>record off</code> to complete your recording.  You’ll be prompted for a function name.  Your new command will be this name so choose a name without spaces and that is easy to type when you wish to execute the function in the future.  You should also not choose a name of an existing command as your function will not be able to be called.  If you do not provide a name, i.e, just hit enter, the recording will be discarded.</p>
-<p>Then you can run your function whenever you like on the stack currently available.  To run the function, simply type the name of your function as a standard command. To
+<h2 id="new-constants"><a class="header" href="#new-constants">New Constants</a></h2>
+<p>Constants are easy to add and I’m happy to do so if they are universally used. Just contact me with your request at <a href="mailto:rpncalc@fross.org">rpncalc@fross.org</a></p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="user-defined-functions"><a href="#user-defined-functions" class="header">User Defined Functions</a></h1>
+<img align="right" width="150" src="Images/UDF.png" alt="">
+<h2 id="user-defined-functions-udfs"><a class="header" href="#user-defined-functions-udfs">User Defined Functions (UDFs)</a></h2>
+<p>RPNCalc can record your commands and save them as a user defined function. In essence, you are creating a new command that can be run.</p>
+<p>When recording a new function, start by adding data to your stack that would emulate when you would run your function. The only data that will be part of your recording will
+be data &amp; commands entered <em><strong>after</strong></em> recording has been turned on. When you are ready, enter the <code>record on</code> command. A red <code>[Recording]</code> alert will appear in the status
+line. Anything you add during this period will be recorded with the exception of the commands listed below. Enter your commands, numbers, etc. until you are done.</p>
+<p>When recording is complete, enter <code>record off</code> to complete your recording. You’ll be prompted for a function name. Your new command will be this name so choose a name without
+spaces and that is easy to type when you wish to execute the function in the future. You should also not choose a name of an existing command as your function will not be able
+to be called. If you do not provide a name, i.e, just hit enter, the recording will be discarded.</p>
+<p>Then you can run your function whenever you like on the stack currently available. To run the function, simply type the name of your function as a standard command. To
 see a list of the saved functions, execute <code>list func</code> and it will display the name and the steps you recorded.</p>
 <p>User defined functions can be deleted with the <code>func del NAME</code> command or you can delete all of the functions with <code>func delall</code></p>
-<p>Functions are global and can work across any stack.  They are saved in the preferences system and will be reloaded when RPNCalc starts.  They are saved immediately after you give a new recording a name and press enter.</p>
-<p>When you execute a function, the steps of that function are executed one after the other.  Therefore when you execute <code>undo</code> you will undo back through your function step
-by step. You do not <code>undo</code> the entire function in one command.  Of course, you can always run <code>undo NUM</code> where <code>NUM</code> is the steps to undo.</p>
+<p>Functions are global and can work across any stack. They are saved in the preferences system and will be reloaded when RPNCalc starts. They are saved immediately after you
+give a new recording a name and press enter.</p>
+<p>When you execute a function, the steps of that function are executed one after the other. Therefore when you execute <code>undo</code> you will undo back through your function step
+by step. You do not <code>undo</code> the entire function in one command. Of course, you can always run <code>undo NUM</code> where <code>NUM</code> is the steps to undo.</p>
 <p>The following commands can be entered during a recording, but are not recorded.</p>
 <ul>
 <li>list</li>
@@ -752,6 +874,7 @@ by step. You do not <code>undo</code> the entire function in one command.  Of co
 <li>set, reset</li>
 <li>cx, x, quit, exit</li>
 </ul>
+<h2 id="udf-commands"><a class="header" href="#udf-commands">UDF Commands</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -769,8 +892,9 @@ by step. You do not <code>undo</code> the entire function in one command.  Of co
 </tbody>
 </table>
 </div>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
 <h3 id="example-1"><a class="header" href="#example-1">Example 1</a></h3>
-<p>Here is a full real world example.  Lets say you’d like to make a user defined function to take the cube of number.  Here are the steps you’d take to do that.</p>
+<p>Here is a full real world example. Lets say you’d like to make a user defined function to take the cube of number. Here are the steps you’d take to do that.</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -789,8 +913,8 @@ by step. You do not <code>undo</code> the entire function in one command.  Of co
 </div>
 <p>From now on, just type <code>cube</code> and <code>line1</code> will be cubed! Go You!  You can always list your defined functions with <code>list func</code></p>
 <h3 id="example-2"><a class="header" href="#example-2">Example 2</a></h3>
-<p>Another real world but slightly more complex example.  Say you wish to know the percentage different between two numbers.  Let’s create a function called <code>diffpercent</code> The
-logic is to find the smallest number on the stack and then the largest.  Divide them.  Flip the sign and add one to it.  Then convert it to a percent.</p>
+<p>Another real world but slightly more complex example. Say you wish to know the percentage different between two numbers. Let’s create a function called <code>diffpercent</code> The
+logic is to find the smallest number on the stack and then the largest. Divide them. Flip the sign and add one to it. Then convert it to a percent.</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -812,12 +936,15 @@ logic is to find the smallest number on the stack and then the largest.  Divide 
 </tbody>
 </table>
 </div>
-<p>In the example above, the result it 90%.  There is a 90% different between 10 and 1. Going forward, you can use the command <code>diffpercent</code> anytime you need to find the
+<p>In the example above, the result it 90%. There is a 90% different between 10 and 1. Going forward, you can use the command <code>diffpercent</code> anytime you need to find the
 percentage different between the lowest and highest number on the stack.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/OperationalCmds.png">
-<h1 id="operational-commands"><a class="header" href="#operational-commands">Operational Commands</a></h1>
-<p>Operational commands are commands that do not directly impact your stack numbers. These tend to be display commands or those the interact with the the setting of RPNCalc
-directly.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="operational-commands-1"><a href="#operational-commands-1" class="header">Operational Commands</a></h1>
+<img align="right" width="125" src="Images/OperationalCmds.png">
+<h2 id="operational-commands"><a class="header" href="#operational-commands">Operational Commands</a></h2>
+<p>Operational commands are commands that do not directly impact your stack numbers. These commands help to “operate” RPNCalc. They tend to be display commands or
+those to interact with the setting of RPNCalc directly.</p>
+<h2 id="commands-table-2"><a class="header" href="#commands-table-2">Commands Table</a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -847,72 +974,105 @@ directly.</p>
 </tbody>
 </table>
 </div>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="150" src="Images/Build.png">
-<h1 id="building-rpncalc-from-the-source"><a class="header" href="#building-rpncalc-from-the-source">Building RPNCalc from the Source</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="building-rpncalc-1"><a href="#building-rpncalc-1" class="header">Building RPNCalc</a></h1>
+<img align="right" width="150" src="Images/Build.png">
+<h2 id="building-rpncalc"><a class="header" href="#building-rpncalc">Building RPNCalc</a></h2>
 <p>RPNCalc is written in Java and uses <a href="https://gradle.org/">Gradle</a> as it’s build tool. To build, you’ll need to have the Java Development Kit (JDK)
-installed on your system.  Make sure you get the JDK and not the Java Runtime Environment (JRE) which most people would have on their machines.  The JRE allows you to run
+installed on your system. Make sure you get the JDK and not the Java Runtime Environment (JRE) which many people would have on their machines. The JRE allows you to run
 Java applications, but not build them. At the time of this writing, you’ll need Java 21 or newer.</p>
-<p>To build using Gradle, simply run the Gradle wrapper, and it will install what’s needed.</p>
+<p>To build using Gradle, on the command line, simply change into the RPNCalc root directory and run the Gradle wrapper. It will install what’s needed.</p>
 <p><code>./gradlew shadowJar</code></p>
 <p>Assuming all goes well, you’ll have a new shiny <code>rpncalc.jar</code> file in the <code>build/libs</code> directory. You can put this file anywhere on your system that you like, and you’ll
-run it by executing <code>java -jar rpncalc.jar</code>  Of course you can alias this to make it easier (<code>alias rpncalc='java -jar /path/to/rpncalc.jar'</code>) but this will depend on your
-OS or shell.</p>
-<p>Automated testing in RPNCalc (using <a href="https://junit.org/">JUnit</a>) is fairly complete (although testing can always be more extensive) and should catch most issues with the code.  The hope is I
-find them before it’s released, but pay attention to the Gradle output, and you’ll see if there are issues.</p>
+run it by executing</p>
+<p><code>java -jar rpncalc.jar</code></p>
+<p>Of course, you can alias this to make it easier (<code>alias rpncalc='java -jar /path/to/rpncalc.jar'</code>) but this will depend on your
+OS and shell.</p>
+<p>Automated testing in RPNCalc (using <a href="https://junit.org/">JUnit</a>) is fairly complete (although testing can always be more extensive) and should catch most issues with the code.
+The hope is I find them before it’s released, but pay attention to the Gradle output, and you’ll see if there are issues.</p>
+<h2 id="snaps"><a class="header" href="#snaps">Snaps</a></h2>
 <p>I’ll discuss this more in the Snap chapter, but if you are on a Linux system that supports snaps, I would encourage that you leverage it. Not only are Snap applications
 “sandboxed” so it’s more secure, but all the dependencies are bundled in so you don’t even need to have java installed on the machine. It is also automatically updated so
-you’ll always have the latest.  Although this can also be forced with <code>sudo snap refresh</code>.</p>
-<p>My preference is to use the Snap installation which is what I do on my Ubuntu machines.</p>
+you’ll always have the latest. Although this can also be forced with <code>sudo snap refresh</code>.</p>
+<p>My preference is to use the Snap installation which is what I do on my Ubuntu machines, but there are machine architectures where I can no longer update the SNAPS.</p>
 <p><br><br></p>
 <img src="Images/Gradle.svg" style="display: block; margin: auto; width: 30%;">
-<div style="break-before: page; page-break-before: always;"></div><img alt="Page Icon" align="right" width="150" src="Images/Snap.png">
-<h1 id="snap"><a class="header" href="#snap">SNAP</a></h1>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="snap-usage-1"><a href="#snap-usage-1" class="header">Snap Usage</a></h1>
+<img alt="Page Icon" align="right" width="150" src="Images/Snap.png">
+<h2 id="snap-usage"><a class="header" href="#snap-usage">SNAP Usage</a></h2>
 <p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io//rpncalc/badge.svg" alt="rpncalc"></a></p>
-<p>I would encourage anyone with a supported Linux platform to use the Snap package of RPNCalc.  You can learn more about Snap from the <a href="https://snapcraft.io">Snapcraft Homepage</a>.</p>
-<p>At a high level, a Snap is a fully contained container with your application and it’s dependencies bundled in.  It runs in a <code>sandbox</code> so it can’t interfere with other parts of your system until it’s given access.  Snaps are automatically kept up to date and are easily removed leaving no trace on the system.  There is even a nice <a href="https://snapcraft.io/store">App Store</a> where you can find software.</p>
+<p>I would encourage anyone with a supported Linux platform to use the Snap package of RPNCalc. You can learn more about Snap from the <a href="https://snapcraft.io">Snapcraft Homepage</a>.</p>
+<p>At a high level, a Snap is a container with your application and it’s dependencies bundled in. It runs in a <code>sandbox</code> so it can’t interfere with other parts of your system
+unless it’s given access. Snaps are automatically kept up to date and are easily removed leaving no trace on the system. There is even a
+nice <a href="https://snapcraft.io/store">App Store</a> where you can find software.</p>
 <p>As an example, RPNCalc uses Java, but you don’t have to have Java installed on your machine as it’s bundled in with the Snap.</p>
 <p><a href="https://snapcraft.io/rpncalc"><img src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" alt="Get it from the Snap Store"></a></p>
-<p>As a shameless plug, you can <a href="https://snapcraft.io/search?q=fross">Search for ‘Fross’</a> to see all of my Snap packages, or visit my <a href="https://github.com/frossm">GitHub home</a> for my other open source software.</p>
+<p>As a shameless plug, you can <a href="https://snapcraft.io/search?q=fross">Search for ‘Fross’</a> to see all of my Snap packages, or visit my <a href="https://github.com/frossm">GitHub home</a> for
+my other open source software.</p>
 <p>While I’m a fan of Snaps, there are positives and negatives to using them.</p>
+<h2 id="important-snap-note"><a class="header" href="#important-snap-note">Important SNAP Note</a></h2>
+<p>My current build system, Gradle, has caused me issues building snaps automatically. Currently, I can do the architecture “amd64” manually, but I don’t
+have access to other hardware platforms. So, for the time being, the newer snaps won’t be directly accessible from the snap store. You can, of course, simply download the
+JAR file, but I’d like to get this working again at some point.</p>
 <h2 id="snap-the-good-and-the-bad"><a class="header" href="#snap-the-good-and-the-bad">Snap: The Good and the Bad</a></h2>
 <p><em><strong>
 <p align="center">– Thanks to the good folks at MakeUseOf.com for this! –</p>
 </strong></em></p>
 <p><a href="https://www.makeuseof.com/everything-you-need-to-know-about-snap-and-snap-store/">MakeUseOf.com</a> has a good breakdown of everything that’s good and bad about Snap.</p>
-<p>Ever since Canonical announced Snap, there’s been a stir in the Linux community about whether Snap is the right approach to improve package distribution on Linux. This has given rise to two opposing camps: one in favor of Snap and the other critical of its approach in the long run.</p>
+<p>Ever since Canonical announced Snap, there’s been a stir in the Linux community about whether Snap is the right approach to improve package distribution on Linux. This has
+given rise to two opposing camps: one in favor of Snap and the other critical of its approach in the long run.</p>
 <p>Here’s a breakdown of everything that’s good and bad about Snap.</p>
-<h3 id="advantages-of-using-snap"><a class="header" href="#advantages-of-using-snap">Advantages of Using Snap</a></h3>
+<p><strong>Advantages of Using Snap</strong></p>
 <ul>
-<li>Snaps come bundled with dependencies (libraries) that facilitate instant access to a program, as you no longer have to manually install the missing dependencies to make it work on your system.</li>
-<li>Each snap runs in its own containerized sandbox to avoid interference with other system packages. As a result, when you remove a snap, the system removes all of its data, including dependencies, without affecting other packages. Needless to say, this also offers a more secure environment since one package can’t access the information of another.</li>
+<li>Snaps come bundled with dependencies (libraries) that facilitate instant access to a program, as you no longer have to manually install the missing dependencies to make it
+work on your system.</li>
+<li>Each snap runs in its own containerized sandbox to avoid interference with other system packages. As a result, when you remove a snap, the system removes all of its data,
+including dependencies, without affecting other packages. Needless to say, this also offers a more secure environment since one package can’t access the information of
+another.</li>
 <li>Snap updates snaps automatically at set intervals. Hence, you always run the latest version of a program on your system.</li>
 <li>Snap makes it easier for developers to distribute their software directly to users, so they don’t have to wait for their Linux distribution to roll them out.</li>
-<li>Adding to the previous point, another advantage of putting developers in charge of packaging and distributing their software is that they don’t have to create distro-specific packages, as it comes bundled with the required dependencies.</li>
+<li>Adding to the previous point, another advantage of putting developers in charge of packaging and distributing their software is that they don’t have to create
+distro-specific packages, as it comes bundled with the required dependencies.</li>
 </ul>
-<h3 id="disadvantages-of-snap"><a class="header" href="#disadvantages-of-snap">Disadvantages of Snap</a></h3>
+<p><strong>Disadvantages of Snap</strong></p>
 <ul>
 <li>Since snaps come bundled with dependencies, they’re larger in size and occupy more disk space than their counterparts from other package managers.</li>
-<li>As a result of the bundled dependencies, snaps are distributed as compressed filesystem images and you need to mount them first before installing. Because of this, snaps are slower to run than traditional packages.</li>
-<li>Although Snap enables developers to distribute their snaps directly to users, the distribution pipeline requires them to set up an account with Canonical and host their snaps on it. This goes against the true nature of the open-source methodology because even though the software is still open source, the package management system is controlled by an entity.</li>
-<li>Another downside to allowing developers to distribute packages is that the packages don’t go through stringent checks and reviews by the community and therefore carry the risk of containing malware—as seen a few years back.</li>
-<li>Due to the fact that Snap’s back-end is still closed-source and controlled by Canonical, many major Linux distros aren’t on board with the idea of putting Snap as the default package manager on their system.</li>
+<li>As a result of the bundled dependencies, snaps are distributed as compressed filesystem images and you need to mount them first before installing. Because of this, snaps are
+slower to run than traditional packages.</li>
+<li>Although Snap enables developers to distribute their snaps directly to users, the distribution pipeline requires them to set up an account with Canonical and host their
+snaps on it. This goes against the true nature of the open-source methodology because even though the software is still open source, the package management system is
+controlled by an entity.</li>
+<li>Another downside to allowing developers to distribute packages is that the packages don’t go through stringent checks and reviews by the community and therefore carry the
+risk of containing malware—as seen a few years back.</li>
+<li>Due to the fact that Snap’s back-end is still closed-source and controlled by Canonical, many major Linux distros aren’t on board with the idea of putting Snap as the
+default package manager on their system.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><img align="right" width="125" src="Images/WrapUp.png">
 <h1 id="wrapup"><a class="header" href="#wrapup">Wrapup</a></h1>
-<p>Well, if you’ve read this far you probably know more about RPNCalc than I do.  I needed a command line based RPN calculator and have been very happy with this one.  I’ve added features as I’ve needed them and use it daily for many years now.  Some time ago I decided to make the program, source, and documentation available so others could use it if they wished.  For those that have, I hope you found it useful.</p>
-<p>I’ll continue to add new features as I think about them.  If you have suggestions, issues, or ideas, the links to reach out to me are on the Introduction page.</p>
+<p>Well, if you’ve read this far you probably know more about RPNCalc than I do. I needed a command line based RPN calculator and have been very happy with this one. I’ve added
+features as I’ve needed them and use it daily for many years now. Some time ago I decided to make the program, source, and documentation available so others could use it if
+they wished. For those that have, I hope you found it useful.</p>
+<p>I’ll continue to add new features as I think about them. If you have suggestions, issues, or ideas, the links to reach out to me. Details are on the Introduction page.</p>
 <p>Best wishes and happy reverse Polish notation calculating…</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Images/License.png">
-<h1 id="licenses"><a class="header" href="#licenses">Licenses</a></h1>
-<p>RPNCalc is licensed under the MIT license as documented below.  However, it does make use of several libraries that may use a different license, so please ensure you comply with all of the licenses contained herein.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="licenses"><a href="#licenses" class="header">Licenses</a></h1>
+<img align="right" width="175" src="Images/License.png">
+<h2 id="licenses-introduction"><a class="header" href="#licenses-introduction">Licenses Introduction</a></h2>
+<p>RPNCalc is licensed under the MIT license as documented below. However, it does make use of several libraries that may use a different license, so please ensure you comply
+with all the licenses contained herein.</p>
 <h2 id="rpncalc-license"><a class="header" href="#rpncalc-license">RPNCalc License</a></h2>
-<p>The RPNCalc software as well as this User Guide are licensed via the MIT License.  You can read more about this license in the link below.</p>
+<p>The RPNCalc software as well as this User Guide are licensed via the MIT License. You can read more about this license in the link below.</p>
 <p><a href="https://opensource.org/licenses/MIT">The MIT License</a></p>
 <p>Copyright (c) 2011-2026 Michael Fross</p>
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software
+without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
-<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
-<h2 id="jcommander-librarygradle"><a class="header" href="#jcommander-librarygradle">jCommander Library<br>Gradle</a></h2>
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<h2 id="jcommander-library--gradle"><a class="header" href="#jcommander-library--gradle">jCommander Library &amp; Gradle</a></h2>
 <p>These software packages are licensed under the Apache Software License v2.0 as detailed below.</p>
 <p><a href="https://www.apache.org/licenses/LICENSE-2.0">The Apache License, Version 2.0</a></p>
 <p>Apache License
@@ -924,50 +1084,94 @@ http://www.apache.org/licenses/</p>
 </ol>
 <p>“License” shall mean the terms and conditions for use, reproduction, and distribution as defined by Sections 1 through 9 of this document.</p>
 <p>“Licensor” shall mean the copyright owner or entity authorized by the copyright owner that is granting the License.</p>
-<p>“Legal Entity” shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes of this definition, “control” means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.</p>
+<p>“Legal Entity” shall mean the union of the acting entity and all other entities that control, are controlled by, or are under common control with that entity. For the purposes
+of this definition, “control” means (i) the power, direct or indirect, to cause the direction or management of such entity, whether by contract or otherwise, or (ii) ownership
+of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such entity.</p>
 <p>“You” (or “Your”) shall mean an individual or Legal Entity exercising permissions granted by this License.</p>
 <p>“Source” form shall mean the preferred form for making modifications, including but not limited to software source code, documentation source, and configuration files.</p>
-<p>“Object” form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated documentation, and conversions to other media types.</p>
-<p>“Work” shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or attached to the work (an example is provided in the Appendix below).</p>
-<p>“Derivative Works” shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.</p>
-<p>“Contribution” shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright owner. For the purposes of this definition, “submitted” means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as “Not a Contribution.”</p>
-<p>“Contributor” shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Work.</p>
+<p>“Object” form shall mean any form resulting from mechanical transformation or translation of a Source form, including but not limited to compiled object code, generated
+documentation, and conversions to other media types.</p>
+<p>“Work” shall mean the work of authorship, whether in Source or Object form, made available under the License, as indicated by a copyright notice that is included in or
+attached to the work (an example is provided in the Appendix below).</p>
+<p>“Derivative Works” shall mean any work, whether in Source or Object form, that is based on (or derived from) the Work and for which the editorial revisions, annotations,
+elaborations, or other modifications represent, as a whole, an original work of authorship. For the purposes of this License, Derivative Works shall not include works that
+remain separable from, or merely link (or bind by name) to the interfaces of, the Work and Derivative Works thereof.</p>
+<p>“Contribution” shall mean any work of authorship, including the original version of the Work and any modifications or additions to that Work or Derivative Works thereof, that
+is intentionally submitted to Licensor for inclusion in the Work by the copyright owner or by an individual or Legal Entity authorized to submit on behalf of the copyright
+owner. For the purposes of this definition, “submitted” means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, including
+but not limited to communication on electronic mailing lists, source code control systems, and issue tracking systems that are managed by, or on behalf of, the Licensor for
+the purpose of discussing and improving the Work, but excluding communication that is conspicuously marked or otherwise designated in writing by the copyright owner as “Not a
+Contribution.”</p>
+<p>“Contributor” shall mean Licensor and any individual or Legal Entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the
+Work.</p>
 <ol start="2">
 <li>
-<p>Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such Derivative Works in Source or Object form.</p>
+<p>Grant of Copyright License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge,
+royalty-free, irrevocable copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, sublicense, and distribute the Work and such
+Derivative Works in Source or Object form.</p>
 </li>
 <li>
-<p>Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge, royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to You under this License for that Work shall terminate as of the date such litigation is filed.</p>
+<p>Grant of Patent License. Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, non-exclusive, no-charge,
+royalty-free, irrevocable (except as stated in this section) patent license to make, have made, use, offer to sell, sell, import, and otherwise transfer the Work, where
+such license applies only to those patent claims licensable by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their
+Contribution(s) with the Work to which such Contribution(s) was submitted. If You institute patent litigation against any entity (including a cross-claim or counterclaim in
+a lawsuit) alleging that the Work or a Contribution incorporated within the Work constitutes direct or contributory patent infringement, then any patent licenses granted to
+You under this License for that Work shall terminate as of the date such litigation is filed.</p>
 </li>
 <li>
-<p>Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form, provided that You meet the following conditions:</p>
+<p>Redistribution. You may reproduce and distribute copies of the Work or Derivative Works thereof in any medium, with or without modifications, and in Source or Object form,
+provided that You meet the following conditions:</p>
 </li>
 </ol>
 <p>You must give any other recipients of the Work or Derivative Works a copy of this License; and
 You must cause any modified files to carry prominent notices stating that You changed the files; and
-You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work, excluding those notices that do not pertain to any part of the Derivative Works; and
-If the Work includes a “NOTICE” text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such additional attribution notices cannot be construed as modifying the License.</p>
-<p>You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in this License.
-5. Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any separate license agreement you may have executed with Licensor regarding such Contributions.</p>
-<ol start="6">
+You must retain, in the Source form of any Derivative Works that You distribute, all copyright, patent, trademark, and attribution notices from the Source form of the Work,
+excluding those notices that do not pertain to any part of the Derivative Works; and
+If the Work includes a “NOTICE” text file as part of its distribution, then any Derivative Works that You distribute must include a readable copy of the attribution notices
+contained within such NOTICE file, excluding those notices that do not pertain to any part of the Derivative Works, in at least one of the following places: within a NOTICE
+text file distributed as part of the Derivative Works; within the Source form or documentation, if provided along with the Derivative Works; or, within a display generated by
+the Derivative Works, if and wherever such third-party notices normally appear. The contents of the NOTICE file are for informational purposes only and do not modify the
+License. You may add Your own attribution notices within Derivative Works that You distribute, alongside or as an addendum to the NOTICE text from the Work, provided that such
+additional attribution notices cannot be construed as modifying the License.</p>
+<p>You may add Your own copyright statement to Your modifications and may provide additional or different license terms and conditions for use, reproduction, or distribution of
+Your modifications, or for any such Derivative Works as a whole, provided Your use, reproduction, and distribution of the Work otherwise complies with the conditions stated in
+this License.</p>
+<ol start="5">
 <li>
-<p>Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.</p>
+<p>Submission of Contributions. Unless You explicitly state otherwise, any Contribution intentionally submitted for inclusion in the Work by You to the Licensor shall be under
+the terms and conditions of this License, without any additional terms or conditions. Notwithstanding the above, nothing herein shall supersede or modify the terms of any
+separate license agreement you may have executed with Licensor regarding such Contributions.</p>
 </li>
 <li>
-<p>Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any risks associated with Your exercise of permissions under this License.</p>
+<p>Trademarks. This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable
+and customary use in describing the origin of the Work and reproducing the content of the NOTICE file.</p>
 </li>
 <li>
-<p>Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility of such damages.</p>
+<p>Disclaimer of Warranty. Unless required by applicable law or agreed to in writing, Licensor provides the Work (and each Contributor provides its Contributions) on an “AS
+IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including, without limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT,
+MERCHANTABILITY, or FITNESS FOR A PARTICULAR PURPOSE. You are solely responsible for determining the appropriateness of using or redistributing the Work and assume any
+risks associated with Your exercise of permissions under this License.</p>
 </li>
 <li>
-<p>Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support, warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.</p>
+<p>Limitation of Liability. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise, unless required by applicable law (such as
+deliberate and grossly negligent acts) or agreed to in writing, shall any Contributor be liable to You for damages, including any direct, indirect, special, incidental, or
+consequential damages of any character arising as a result of this License or out of the use or inability to use the Work (including but not limited to damages for loss of
+goodwill, work stoppage, computer failure or malfunction, or any and all other commercial damages or losses), even if such Contributor has been advised of the possibility
+of such damages.</p>
+</li>
+<li>
+<p>Accepting Warranty or Additional Liability. While redistributing the Work or Derivative Works thereof, You may choose to offer, and charge a fee for, acceptance of support,
+warranty, indemnity, or other liability obligations and/or rights consistent with this License. However, in accepting such obligations, You may act only on Your own behalf
+and on Your sole responsibility, not on behalf of any other Contributor, and only if You agree to indemnify, defend, and hold each Contributor harmless for any liability
+incurred by, or claims asserted against, such Contributor by reason of your accepting any such warranty or additional liability.</p>
 </li>
 </ol>
 <p>END OF TERMS AND CONDITIONS</p>
-<h2 id="junit5openjdk"><a class="header" href="#junit5openjdk">jUnit5<br>OpenJDK</a></h2>
-<p>The above packages aresubject to the <a href="https://github.com/junit-team/junit5/blob/main/LICENSE.md">Eclipse Public License - v2.0</a> as detailed below.</p>
+<h2 id="junit5--openjdk"><a class="header" href="#junit5--openjdk">jUnit5 &amp; OpenJDK</a></h2>
+<p>The above packages are subject to the <a href="https://github.com/junit-team/junit5/blob/main/LICENSE.md">Eclipse Public License - v2.0</a> as detailed below.</p>
 <p>Eclipse Public License - v 2.0
-THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (“AGREEMENT”). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT’S ACCEPTANCE OF THIS AGREEMENT.</p>
+THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE (“AGREEMENT”). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT’S
+ACCEPTANCE OF THIS AGREEMENT.</p>
 <ol>
 <li>Definitions
 “Contribution” means:</li>
@@ -975,72 +1179,132 @@ THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICE
 <p>a) in the case of the initial Contributor, the initial content Distributed under this Agreement, and
 b) in the case of each subsequent Contributor:
 i) changes to the Program, and
-ii) additions to the Program; where such changes and/or additions to the Program originate from and are Distributed by that particular Contributor. A Contribution “originates” from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor’s behalf. Contributions do not include changes or additions to the Program that are not Modified Works.
+ii) additions to the Program; where such changes and/or additions to the Program originate from and are Distributed by that particular Contributor. A Contribution “originates”
+from a Contributor if it was added to the Program by such Contributor itself or anyone acting on such Contributor’s behalf. Contributions do not include changes or additions
+to the Program that are not Modified Works.
 “Contributor” means any person or entity that Distributes the Program.</p>
-<p>“Licensed Patents” mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the Program.</p>
+<p>“Licensed Patents” mean patent claims licensable by a Contributor which are necessarily infringed by the use or sale of its Contribution alone or when combined with the
+Program.</p>
 <p>“Program” means the Contributions Distributed in accordance with this Agreement.</p>
 <p>“Recipient” means anyone who receives the Program under this Agreement or any Secondary License (as applicable), including Contributors.</p>
-<p>“Derivative Works” shall mean any work, whether in Source Code or other form, that is based on (or derived from) the Program and for which the editorial revisions, annotations, elaborations, or other modifications represent, as a whole, an original work of authorship.</p>
-<p>“Modified Works” shall mean any work in Source Code or other form that results from an addition to, deletion from, or modification of the contents of the Program, including, for purposes of clarity any new file in Source Code form that contains any contents of the Program. Modified Works shall not include works that contain only declarations, interfaces, types, classes, structures, or files of the Program solely in each case in order to link to, bind by name, or subclass the Program or Modified Works thereof.</p>
+<p>“Derivative Works” shall mean any work, whether in Source Code or other form, that is based on (or derived from) the Program and for which the editorial revisions,
+annotations, elaborations, or other modifications represent, as a whole, an original work of authorship.</p>
+<p>“Modified Works” shall mean any work in Source Code or other form that results from an addition to, deletion from, or modification of the contents of the Program, including,
+for purposes of clarity any new file in Source Code form that contains any contents of the Program. Modified Works shall not include works that contain only declarations,
+interfaces, types, classes, structures, or files of the Program solely in each case in order to link to, bind by name, or subclass the Program or Modified Works thereof.</p>
 <p>“Distribute” means the acts of a) distributing or b) making available in any manner that enables the transfer of a copy.</p>
 <p>“Source Code” means the form of a Program preferred for making modifications, including but not limited to software source code, documentation source, and configuration files.</p>
-<p>“Secondary License” means either the GNU General Public License, Version 2.0, or any later versions of that license, including any exceptions or additional permissions as identified by the initial Contributor.</p>
+<p>“Secondary License” means either the GNU General Public License, Version 2.0, or any later versions of that license, including any exceptions or additional permissions as
+identified by the initial Contributor.</p>
 <ol start="2">
 <li>Grant of Rights
-a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the Contribution of such Contributor, if any, and such Derivative Works.</li>
+a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare
+Derivative Works of, publicly display, publicly perform, Distribute and sublicense the Contribution of such Contributor, if any, and such Derivative Works.</li>
 </ol>
-<p>b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in Source Code or other form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.</p>
-<p>c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to Distribute the Program, it is Recipient’s responsibility to acquire that license before distributing the Program.</p>
-<p>d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.</p>
-<p>e) Notwithstanding the terms of any Secondary License, no Contributor makes additional grants to any Recipient (other than those set forth in this Agreement) as a result of such Recipient’s receipt of the Program under the terms of a Secondary License (if permitted under the terms of Section 3).</p>
+<p>b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make,
+use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in Source Code or other form. This patent license shall apply to the
+combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be
+covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.</p>
+<p>c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the
+Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any
+other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby
+assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to
+Distribute the Program, it is Recipient’s responsibility to acquire that license before distributing the Program.</p>
+<p>d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this
+Agreement.</p>
+<p>e) Notwithstanding the terms of any Secondary License, no Contributor makes additional grants to any Recipient (other than those set forth in this Agreement) as a result of
+such Recipient’s receipt of the Program under the terms of a Secondary License (if permitted under the terms of Section 3).</p>
 <ol start="3">
 <li>Requirements
 3.1 If a Contributor Distributes the Program in any form, then:</li>
 </ol>
-<p>a) the Program must also be made available as Source Code, in accordance with section 3.2, and the Contributor must accompany the Program with a statement that the Source Code for the Program is available under this Agreement, and informs Recipients how to obtain it in a reasonable manner on or through a medium customarily used for software exchange; and</p>
+<p>a) the Program must also be made available as Source Code, in accordance with section 3.2, and the Contributor must accompany the Program with a statement that the Source Code
+for the Program is available under this Agreement, and informs Recipients how to obtain it in a reasonable manner on or through a medium customarily used for software
+exchange; and</p>
 <p>b) the Contributor may Distribute the Program under a license different than this Agreement, provided that such license:</p>
-<p>i) effectively disclaims on behalf of all other Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
-ii) effectively excludes on behalf of all other Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;
+<p>i) effectively disclaims on behalf of all other Contributors all warranties and conditions, express and implied, including warranties or conditions of title and
+non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
+ii) effectively excludes on behalf of all other Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost
+profits;
 iii) does not attempt to limit or alter the recipients’ rights in the Source Code under section 3.2; and
 iv) requires any subsequent distribution of the Program by any party to be under a license that satisfies the requirements of this section 3.
 3.2 When the Program is Distributed as Source Code:</p>
-<p>a) it must be made available under this Agreement, or if the Program (i) is combined with other material in a separate file or files made available under a Secondary License, and (ii) the initial Contributor attached to the Source Code the notice described in Exhibit A of this Agreement, then the Program may be made available under the terms of such Secondary Licenses, and
+<p>a) it must be made available under this Agreement, or if the Program (i) is combined with other material in a separate file or files made available under a Secondary License,
+and (ii) the initial Contributor attached to the Source Code the notice described in Exhibit A of this Agreement, then the Program may be made available under the terms of
+such Secondary Licenses, and
 b) a copy of this Agreement must be included with each copy of the Program.
-3.3 Contributors may not remove or alter any copyright, patent, trademark, attribution notices, disclaimers of warranty, or limitations of liability (“notices”) contained within the Program from any copy of the Program which they Distribute, provided that Contributors may add their own appropriate notices.</p>
+3.3 Contributors may not remove or alter any copyright, patent, trademark, attribution notices, disclaimers of warranty, or limitations of liability (“notices”) contained
+within the Program from any copy of the Program which they Distribute, provided that Contributors may add their own appropriate notices.</p>
 <ol start="4">
 <li>Commercial Distribution
-Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor (“Commercial Contributor”) hereby agrees to defend and indemnify every other Contributor (“Indemnified Contributor”) against any losses, damages and costs (collectively “Losses”) arising from claims, lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The Indemnified Contributor may participate in any such claim at its own expense.</li>
+Commercial distributors of software may accept certain responsibilities with respect to end users, business partners and the like. While this license is intended to
+facilitate the commercial use of the Program, the Contributor who includes the Program in a commercial product offering should do so in a manner which does not create
+potential liability for other Contributors. Therefore, if a Contributor includes the Program in a commercial product offering, such Contributor (“Commercial Contributor”)
+hereby agrees to defend and indemnify every other Contributor (“Indemnified Contributor”) against any losses, damages and costs (collectively “Losses”) arising from claims,
+lawsuits and other legal actions brought by a third party against the Indemnified Contributor to the extent caused by the acts or omissions of such Commercial Contributor
+in connection with its distribution of the Program in a commercial product offering. The obligations in this section do not apply to any claims or Losses relating to any
+actual or alleged intellectual property infringement. In order to qualify, an Indemnified Contributor must: a) promptly notify the Commercial Contributor in writing of such
+claim, and b) allow the Commercial Contributor to control, and cooperate with the Commercial Contributor in, the defense and any related settlement negotiations. The
+Indemnified Contributor may participate in any such claim at its own expense.</li>
 </ol>
-<p>For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor’s responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.</p>
+<p>For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial
+Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor’s responsibility
+alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a
+court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.</p>
 <ol start="5">
 <li>
 <p>No Warranty
-EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.</p>
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN “AS IS” BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A
+PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its
+exercise of rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data,
+programs or equipment, and unavailability or interruption of operations.</p>
 </li>
 <li>
 <p>Disclaimer of Liability
-EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY
+RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
 </li>
 <li>
 <p>General
-If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.</p>
+If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of
+this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and
+enforceable.</p>
 </li>
 </ol>
-<p>If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient’s patent(s), then such Recipient’s rights granted under Section 2(b) shall terminate as of the date such litigation is filed.</p>
-<p>All Recipient’s rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Recipient’s rights under this Agreement terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient’s obligations under this Agreement and any licenses granted by Recipient relating to the Program shall continue and survive.</p>
-<p>Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the following manner. The Agreement Steward reserves the right to publish new versions (including revisions) of this Agreement from time to time. No one other than the Agreement Steward has the right to modify this Agreement. The Eclipse Foundation is the initial Agreement Steward. The Eclipse Foundation may assign the responsibility to serve as the Agreement Steward to a suitable separate entity. Each new version of the Agreement will be given a distinguishing version number. The Program (including Contributions) may always be Distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, Contributor may elect to Distribute the Program (including its Contributions) under the new version.</p>
-<p>Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved. Nothing in this Agreement is intended to be enforceable by any entity that is not a Contributor or Recipient. No third-party beneficiary rights are created under this Agreement.</p>
+<p>If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of
+the Program with other software or hardware) infringes such Recipient’s patent(s), then such Recipient’s rights granted under Section 2(b) shall terminate as of the date such
+litigation is filed.</p>
+<p>All Recipient’s rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure
+in a reasonable period of time after becoming aware of such noncompliance. If all Recipient’s rights under this Agreement terminate, Recipient agrees to cease use and
+distribution of the Program as soon as reasonably practicable. However, Recipient’s obligations under this Agreement and any licenses granted by Recipient relating to the
+Program shall continue and survive.</p>
+<p>Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the
+following manner. The Agreement Steward reserves the right to publish new versions (including revisions) of this Agreement from time to time. No one other than the Agreement
+Steward has the right to modify this Agreement. The Eclipse Foundation is the initial Agreement Steward. The Eclipse Foundation may assign the responsibility to serve as the
+Agreement Steward to a suitable separate entity. Each new version of the Agreement will be given a distinguishing version number. The Program (including Contributions) may
+always be Distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, Contributor may
+elect to Distribute the Program (including its Contributions) under the new version.</p>
+<p>Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement,
+whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved. Nothing in this Agreement is
+intended to be enforceable by any entity that is not a Contributor or Recipient. No third-party beneficiary rights are created under this Agreement.</p>
 <p>Exhibit A - Form of Secondary Licenses Notice
-“This Source Code may also be made available under the following Secondary Licenses when the conditions for such availability set forth in the Eclipse Public License, v. 2.0 are satisfied: {name license(s), version(s), and exceptions or additional permissions here}.”</p>
+“This Source Code may also be made available under the following Secondary Licenses when the conditions for such availability set forth in the Eclipse Public License, v. 2.0
+are satisfied: {name license(s), version(s), and exceptions or additional permissions here}.”</p>
 <p>Simply including a copy of this Agreement, including this Exhibit A is not sufficient to license the Source Code under Secondary Licenses.</p>
-<p>If it is not possible or desirable to put the notice in a particular file, then You may include the notice in a location (such as a LICENSE file in a relevant directory) where a recipient would be likely to look for such a notice.</p>
+<p>If it is not possible or desirable to put the notice in a particular file, then You may include the notice in a location (such as a LICENSE file in a relevant directory) where
+a recipient would be likely to look for such a notice.</p>
 <p>You may add additional accurate notices of copyright ownership.</p>
-<div style="break-before: page; page-break-before: always;"></div><img align="right" width="175" src="Images/Acknowledgment.png">
-<h1 id="acknowledgments"><a class="header" href="#acknowledgments">Acknowledgments</a></h1>
-<p>This is a simple user guide for a tiny piece of software.  But I have used other people’s art and applications to create RPNCalc and I want to ensure I recognize them
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="acknowledgements"><a href="#acknowledgements" class="header">Acknowledgements</a></h1>
+<img align="right" width="175" src="Images/Acknowledgment.png">
+<h2 id="acknowledgments"><a class="header" href="#acknowledgments">Acknowledgments</a></h2>
+<p>This is a simple user guide for a tiny piece of software. But I have used other people’s art and applications to create RPNCalc and I want to ensure I recognize them
 and give them thanks.</p>
 <h2 id="libraries"><a class="header" href="#libraries">Libraries</a></h2>
-<p>Extensive use of several libraries were used in RPNCalc.  I’d like to publicly thank the authors and give them credit for their hard work. The licenses for these libraries
+<p>Extensive use of several libraries were used in RPNCalc. I’d like to publicly thank the authors and give them credit for their hard work. The licenses for these libraries
 is detailed in the <code>Licenses</code> chapter.</p>
 <ul>
 <li>
@@ -1056,7 +1320,7 @@ is detailed in the <code>Licenses</code> chapter.</p>
 <p><a href="https://gradle.org/">Gradle</a> build tool is used extensively in RPNCalc</p>
 </li>
 <li>
-<p><a href="https://adoptium.net">OpenJDK</a> is the engine that runs Java on my systems.  You may be running another Java Development Kit (JDK) or Java Runtime Environment (JRE)</p>
+<p><a href="https://adoptium.net">OpenJDK</a> is the engine that runs Java on my systems. You may be running another Java Development Kit (JDK) or Java Runtime Environment (JRE)</p>
 </li>
 </ul>
 <h2 id="graphics"><a class="header" href="#graphics">Graphics</a></h2>
@@ -1103,11 +1367,11 @@ is detailed in the <code>Licenses</code> chapter.</p>
 </li>
 </ul>
 <h2 id="mdbook"><a class="header" href="#mdbook">mdBook</a></h2>
-<p>This book was generated using <a href="https://github.com/rust-lang/mdBook">mdBook</a>.  mdBook is a utility to create modern online books from Markdown
-files, and it is fantastic.  If you need to do something like this, mdBook is where you should look first in my humble opinion.</p>
+<p>This book was generated using <a href="https://github.com/rust-lang/mdBook">mdBook</a>. mdBook is a utility to create modern online books from Markdown
+files, and it is fantastic. If you need to do something like this, mdBook is where you should look first in my humble opinion.</p>
 <h2 id="hp-15c-calculator"><a class="header" href="#hp-15c-calculator">HP 15C Calculator</a></h2>
-<p>And, lastly, probably the most important item in my personal RPN journey is my trusty HP 15C calculator.  I’ve had it since the late 1980’s.  While I
-don’t use it much anymore, instead relying on RPNCalc, it’s still an important item to me and always in my desk drawer.  Thanks 15C!</p>
+<p>And, lastly, probably the most important item in my personal RPN journey is my trusty HP 15C calculator. I’ve had it since the late 1980’s. While I
+don’t use it much anymore, instead relying on RPNCalc, it’s still an important item to me and always in my desk drawer. Thanks 15C!</p>
 <br>
 <div>
     <img style="width:600px;text-align:right" src="Images/HP15C.jpg">

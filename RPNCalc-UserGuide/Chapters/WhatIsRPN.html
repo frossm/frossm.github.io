@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "../searchindex-863f9a75.js";
+            window.path_to_searchindex_js = "../searchindex-80b0c864.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-2c2308aa.js"></script>
@@ -175,9 +175,10 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <img align="right" width="175" src="../Images/WhatIsRPN.jpg">
-<h1 id="what-is-an-rpn-calculator"><a class="header" href="#what-is-an-rpn-calculator">What is an RPN Calculator?</a></h1>
-<p>For me, the way I thought about using RPN back in the early 1990s was to approach it with <code>start on the inside and work your way out</code>.  Just look at the inner most calculation, and start working yourself back out.  It also helps if you also understand the order of operations for the operands.</p>
-<h3 id="order-of-operations---pema"><a class="header" href="#order-of-operations---pema">Order of Operations - <em>PEMA</em></a></h3>
+<h2 id="what-is-an-rpn-calculator"><a class="header" href="#what-is-an-rpn-calculator">What is an RPN Calculator</a></h2>
+<p>For me, the way I thought about using RPN back in the early 1990s was to approach it with <code>start on the inside and work your way out</code>. Just look at the inner most calculation,
+and start working yourself back out. It also helps if you also understand the order of operations for the operands.</p>
+<h2 id="order-of-operations---pema"><a class="header" href="#order-of-operations---pema">Order of Operations - <em>PEMA</em></a></h2>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -191,9 +192,12 @@
 </tbody>
 </table>
 </div>
-<h3 id="walkthrough-of-the-example-from-the-introduction-page"><a class="header" href="#walkthrough-of-the-example-from-the-introduction-page">Walkthrough of the Example from the Introduction Page</a></h3>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<p>This is a Walkthrough of the Example from the Introduction Page:</p>
 <p><code>x = SQRT( ((((5+3) * 8)/2) * (2+1)) ^ 2 )</code></p>
-<p>This can be tricky with a traditional calculator.  However, with a RPN Calculator, to solve for x you would start on the inner calculation and work outwards.  Looking at the equation, <code>5 + 3</code> is about the lowest so lets start there. The approach will be work back up until you get to a peer of the same “level”.  Then do the <code>2+1</code>. We’ll walk through each step and explain what’s happening.  Go ahead and start RPNCalc and follow along - it’s much easier to do it and see the stack rather than just reading it here.</p>
+<p>This can be tricky with a traditional calculator. However, with a RPN Calculator, to solve for x you would start on the inner calculation and work outwards. Looking at the
+equation, <code>5 + 3</code> is about the lowest so lets start there. The approach will be work back up until you get to a peer of the same “level”. Then do the <code>2+1</code>. We’ll walk through
+each step and explain what’s happening. Go ahead and start RPNCalc and follow along - it’s much easier to do it and see the stack rather than just reading it here.</p>
 <div class="table-wrapper">
 <table>
 <thead>
@@ -218,20 +222,32 @@
 </tbody>
 </table>
 </div>
-<p>The result is 96 which ends up on the top (<code>line1</code>) of an otherwise empty stack.  I’ll talk more about stacks and how RPNCalc uses them in future chapters.</p>
-<p><em>By the way, this can also be dramatically shortened using the <code>NumOps</code> shortcut - see the <code>Operands</code> chapter for more information.</em></p>
-<h3 id="traditional-rpn-notation-limitations-in-rpncalc"><a class="header" href="#traditional-rpn-notation-limitations-in-rpncalc">Traditional RPN Notation Limitations in RPNCalc</a></h3>
+<p>The result is 96 which ends up on the top (<code>line1</code>) of an otherwise empty stack. I’ll talk more about stacks and how RPNCalc uses them in future chapters.</p>
+<p><em><strong>As a side note, this process can also be dramatically shortened using the <code>NumOps</code> shortcut - see the <code>Operands</code> chapter for more information</strong></em></p>
+<h2 id="traditional-rpn-notation-limitations-in-rpncalc"><a class="header" href="#traditional-rpn-notation-limitations-in-rpncalc">Traditional RPN Notation Limitations in RPNCalc</a></h2>
 <p>Please note that RPNCalc doesn’t implement every RPN convention and there are a few as of yet unimplemented items.</p>
 <p>For example, this won’t work in RPNCalc:</p>
-<p><code>10 + 10 + 10</code> can’t be solved by entering <code>10 [Enter] 10 [Enter] 10 [Enter] ++ [Enter]</code> as RPNCalc only allows one operand per command entry.  You’ll need an <code>[Enter]</code> between the last two <code>+</code> signs.  Using the <code>NumOp</code> shortcut, this is an efficient way to solve that equation:</p>
+<p><code>10 + 10 + 10</code> can’t be solved by entering <code>10 [Enter] 10 [Enter] 10 [Enter] ++ [Enter]</code> as RPNCalc only allows one operand per command entry. You’ll need an <code>[Enter]</code> between
+the last two <code>+</code> signs. Using the <code>NumOp</code> shortcut, this is an efficient way to solve that equation:</p>
 <p><code>10 [Enter] 10+ [Enter] 10+ [Enter]</code></p>
 <hr>
-<h2 id="wikipedia"><a class="header" href="#wikipedia">Wikipedia:</a></h2>
-<p>The following is directly from <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a>.  There is a lot more information there, but here are a few highlights.</p>
+<h2 id="rpn-on-wikipedia"><a class="header" href="#rpn-on-wikipedia">RPN on Wikipedia</a></h2>
+<p>The following is directly from <a href="https://en.wikipedia.org/wiki/Reverse_Polish_notation">Wikipedia</a>. There is a lot more information there, but here are a few highlights.
+Please note this is not specific to RPNCalc, but just RPN Calculators in general.</p>
 <h3 id="explanation"><a class="header" href="#explanation">Explanation</a></h3>
-<p>In reverse Polish notation, the operators follow their operands; for instance, to add 3 and 4 together, one would write <code>3 4 +</code> rather than <code>3 + 4</code>. If there are multiple operations, operators are given immediately after their final operands (often an operator takes two operands, in which case the operator is written after the second operand); so the expression written <code>3 − 4 + 5</code> in conventional notation would be written <code>3 4 − 5 +</code> in reverse Polish notation: 4 is first subtracted from 3, then 5 is added to it. An advantage of reverse Polish notation is that it removes the need for parentheses that are required by infix notation. While <code>3 − 4 × 5</code> can also be written <code>3 − (4 × 5)</code>, that means something quite different from <code>(3 − 4) × 5</code>. In reverse Polish notation, the former could be written <code>3 4 5 × −</code>, which unambiguously means <code>3 (4 5 ×) −</code> which reduces to <code>3 20 −</code> (which can further be reduced to -17); the latter could be written <code>3 4 − 5 ×</code> (or <code>5 3 4 − ×</code>, if keeping similar formatting), which unambiguously means <code>(3 4 −) 5 ×</code>.</p>
+<p>In reverse Polish notation, the operators follow their operands; for instance, to add 3 and 4 together, one would write <code>3 4 +</code> rather than <code>3 + 4</code>. If there are multiple
+operations, operators are given immediately after their final operands (often an operator takes two operands, in which case the operator is written after the second operand);
+so the expression written <code>3 − 4 + 5</code> in conventional notation would be written <code>3 4 − 5 +</code> in reverse Polish notation: 4 is first subtracted from 3, then 5 is added to it. An
+advantage of reverse Polish notation is that it removes the need for parentheses that are required by infix notation. While <code>3 − 4 × 5</code> can also be written <code>3 − (4 × 5)</code>, that
+means something quite different from <code>(3 − 4) × 5</code>. In reverse Polish notation, the former could be written <code>3 4 5 × −</code>, which unambiguously means <code>3 (4 5 ×) −</code> which reduces
+to <code>3 20 −</code> (which can further be reduced to -17); the latter could be written <code>3 4 − 5 ×</code> (or <code>5 3 4 − ×</code>, if keeping similar formatting), which unambiguously means
+<code>(3 4 −) 5 ×</code>.</p>
 <h3 id="practical-implications"><a class="header" href="#practical-implications">Practical implications</a></h3>
-<p>In comparison, testing of reverse Polish notation with algebraic notation, reverse Polish has been found to lead to faster calculations, for two reasons. The first reason is that reverse Polish calculators do not need expressions to be parenthesized, so fewer operations need to be entered to perform typical calculations. Additionally, users of reverse Polish calculators made fewer mistakes than for other types of calculators. Later research clarified that the increased speed from reverse Polish notation may be attributed to the smaller number of keystrokes needed to enter this notation, rather than to a smaller cognitive load on its users. However, anecdotal evidence suggests that reverse Polish notation is more difficult for users to learn than algebraic notation.</p>
+<p>In comparison, testing of reverse Polish notation with algebraic notation, reverse Polish has been found to lead to faster calculations, for two reasons. The first reason is
+that reverse Polish calculators do not need expressions to be parenthesized, so fewer operations need to be entered to perform typical calculations. Additionally, users of
+reverse Polish calculators made fewer mistakes than for other types of calculators. Later research clarified that the increased speed from reverse Polish notation may be
+attributed to the smaller number of keystrokes needed to enter this notation, rather than to a smaller cognitive load on its users. However, anecdotal evidence suggests that
+reverse Polish notation is more difficult for users to learn than algebraic notation.</p>
 
                     </main>
 

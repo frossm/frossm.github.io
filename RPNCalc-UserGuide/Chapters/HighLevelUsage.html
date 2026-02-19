@@ -35,7 +35,7 @@
             const path_to_root = "../";
             const default_light_theme = "ayu";
             const default_dark_theme = "ayu";
-            window.path_to_searchindex_js = "../searchindex-863f9a75.js";
+            window.path_to_searchindex_js = "../searchindex-80b0c864.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../toc-2c2308aa.js"></script>
@@ -175,25 +175,38 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <img align="right" width="125" src="../Images/HighLevelUsage.png">
-<h1 id="high-level-usage"><a class="header" href="#high-level-usage">High Level Usage</a></h1>
-<p>RPNCalc is a command line application that must be run from a console / command prompt.  Executing it with a <code>-h</code> (or <code>-?</code>) switch, or starting the program and entering
-the <code>h</code> (or <code>help</code> or <code>?</code>) command will display the in-program help page.  This page lists all the commands and operands that can be used, but it is fairly terse  This can be also viewed at the bottom of the <code>Introduction Chapter</code> of this guide. This document is meant as a more comprehensive guide.</p>
-<p>There are various command line switches that can be used when starting the program as are detailed in the <code>Command Line Options Chapter</code>.  They generally exist so that aliases can be used to control several key parameters, most likely the <code>-l StackName</code> switch.</p>
-<p>Once inside the program, you’ll be presented a prompt where numbers, operands, and commands may be entered.  Numbers will be added to the stack which you can think of as an upside down stack of plates.  The top stack item (represented by <code>line1</code> in the program) is on the bottom.  You can think of this stack of plates as a Last In First Out (LIFO) approach.</p>
-<p>For example, you could enter <code>2 [ENTER]</code> it would be in the <code>line1</code> position and would be on the top of the stack.  If you then enter <code>3 [ENTER]</code> the <code>2</code> would move up go <code>line2</code> and the <code>3</code> would then be on <code>line1</code> and be on the top of the stack.  You can then enter an operand, such as <code>+</code> to perform the action on the items opn the top of the stack. To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack (<code>line1</code>).</p>
-<p>I’ve gone into this in more detail in the <code>What is an RPN Calculator Chapter</code> and elsewhere and it’s fairly easy and intuitive.  Once you get the hang of it, you will regret having to use a standard calculator in the future. ;-)</p>
-<h4 id="why-is-the-stack-upside-down"><a class="header" href="#why-is-the-stack-upside-down">Why is the stack “upside down?”</a></h4>
-<p>One question I get with RPNCalc is why is the top of the stack on the bottom?  The reason is that it’s simply more intuitive.  The command line is on the bottom.  You are usually dealing with the top of the stack so having <code>line1</code> directly above makes sense.  Also, for some operations, the order is important (think subtraction or division).  Having <code>line1</code> “underneath” <code>line2</code> is easy to understand as that’s how we learned to do subtraction.  <code>line1</code> is subtracted from <code>line2</code>.</p>
-<h3 id="decimals--fractions"><a class="header" href="#decimals--fractions">Decimals &amp; Fractions</a></h3>
-<p>In RPNCalc, the stacks always store numbers as decimals.  You can, however, enter in fractions, and they will be instantly converted to a decimal equivalent and added to
+<h2 id="high-level-usage"><a class="header" href="#high-level-usage">High Level Usage</a></h2>
+<p>RPNCalc is a command line application that must be run from a console / command prompt. Executing it with a <code>-h</code> (or <code>-?</code>) switch, or starting the program and entering
+the <code>h</code> (or <code>help</code> or <code>?</code>) command will display the in-program help page. This page lists all the commands and operands that can be used, but it is fairly terse This can be
+also viewed at the bottom of the <code>Introduction Chapter</code> of this guide. This document is meant as a more comprehensive guide.</p>
+<p>There are various command line switches that can be used when starting the program as are detailed in the <code>Command Line Options Chapter</code>. They generally exist so that aliases
+can be used to control several key parameters, most likely the <code>-l StackName</code> switch.</p>
+<p>Once inside the program, you’ll be presented a prompt where numbers, operands, and commands may be entered. Numbers will be added to the stack which you can think of as an
+upside down stack of plates. The top stack item (represented by <code>line1</code> in the program) is on the bottom. You can think of this stack of plates as a Last In First Out (LIFO)
+approach.</p>
+<p>For example, you could enter <code>2 [ENTER]</code> it would be in the <code>line1</code> position and would be on the top of the stack. If you then enter <code>3 [ENTER]</code> the <code>2</code> would move up go
+<code>line2</code> and the <code>3</code> would then be on <code>line1</code> and be on the top of the stack. You can then enter an operand, such as <code>+</code> to perform the action on the items opn the top of the
+stack. To continue our example, pressing <code>+ [ENTER]</code> would take the top two items off of the stack, add them, and put the result back on top of the stack (<code>line1</code>).</p>
+<p>I’ve gone into this in more detail in the <code>What is an RPN Calculator Chapter</code> and elsewhere and it’s fairly easy and intuitive. Once you get the hang of it, you will regret
+having to use a standard calculator in the future. ;-)</p>
+<h2 id="why-is-the-stack-upside-down"><a class="header" href="#why-is-the-stack-upside-down">Why is the stack “upside down?”</a></h2>
+<p>One question I get with RPNCalc is why is the top of the stack on the bottom? The reason is that it’s simply more intuitive. The command line is on the bottom. You are usually
+dealing with the top of the stack so having <code>line1</code> directly above makes sense. Also, for some operations, the order is important (think subtraction or division). Having
+<code>line1</code> “underneath” <code>line2</code> is easy to understand as that’s how we learned to do subtraction.  <code>line1</code> is subtracted from <code>line2</code>.</p>
+<h2 id="decimals--fractions"><a class="header" href="#decimals--fractions">Decimals &amp; Fractions</a></h2>
+<p>In RPNCalc, the stacks always store numbers as decimals. You can, however, enter in fractions, and they will be instantly converted to a decimal equivalent and added to
 the stack.</p>
-<p><strong>Example:</strong></p>
+<p><strong>Examples:</strong></p>
 <p><code>1 5/16 [ENTER]</code></p>
 <p>will add <code>1.3125</code> to the top of the stack (<code>line1</code>)</p>
 <p><code>14/8 [ENTER]</code></p>
 <p>will add <code>1.75</code> to the stack</p>
-<p>While you can never directly convert a decimal number on the stack back to a fraction, you can display an approximation of what the top of the stack (<code>line1</code>) value would be as a fraction.  You do have to decide on the smallest denominator that will be used (called the base.)  The default base is <code>64</code> which is the equivalent of <code>1/64</code> and will be used if no base is specified.  Use the <code>frac [base]</code> command to display the approximate fractional equivalent.  RPNCalc will simplify the fraction as much as it can so if <code>line1</code> is <code>0.5</code>, the command <code>frac 4</code> won’t convert and display <code>2/4</code>.  The result would be <code>1/2</code>.  Also note that <code>frac [based]</code> is a display command and will not actually change the stack in any way.</p>
-<p><strong>Example:</strong>
+<p>While you can never directly convert a decimal number on the stack back to a fraction, you can display an approximation of what the top of the stack (<code>line1</code>) value would be
+as a fraction. You do have to decide on the smallest denominator that will be used (called the base.)  The default base is <code>64</code> which is the equivalent of <code>1/64</code> and will be
+used if no base is specified. Use the <code>frac [base]</code> command to display the approximate fractional equivalent. RPNCalc will simplify the fraction as much as it can so if
+<code>line1</code> is <code>0.5</code>, the command <code>frac 4</code> won’t convert and display <code>2/4</code>. The result would be <code>1/2</code>. Also note that <code>frac [base]</code> is a display command and will not actually
+change the stack in any way.</p>
+<p><strong>Examples:</strong>
 <code>12.3456 [Enter]</code>
 <code>frac [Enter]</code></p>
 <p>No base was entered, so use <code>64</code>. It will display <code>12 11/32</code>  RPNCalc converted it to <code>12 22/64</code> and then reduced it.</p>
@@ -202,25 +215,31 @@ the stack.</p>
 <p>will display <code>1 1/16</code> as that’s as close as it could get with a granularity of 1/16.</p>
 <p><code>1 3/64 [ENTER]</code>
 <code>frac 100000</code></p>
-<p>will display <code>1 293/6250</code>.  This is a closer approximation than using base 16. This also shows why this is an approximate.</p>
-<h3 id="scientific-notation"><a class="header" href="#scientific-notation">Scientific Notation</a></h3>
-<p>As of version 5, scientific notation is supported.  You can enter in values with the format <code>1.2345E18</code> and it will be saved as a value in the stack. There are a few areas where it’s not 100% supported (i.e. NumOps at the time of this writing) but just about everything will work with it.</p>
-<h3 id="percent-entry"><a class="header" href="#percent-entry">Percent Entry</a></h3>
-<p>As of version 5.4.0, a number, followed by a <code>%</code> can be entered.  This will be divided by 100 prior to being added onto the stack.  This will work with both negative
+<p>will display <code>1 293/6250</code>. This is a closer approximation than using base 16. This also shows why this is an approximate.</p>
+<h2 id="scientific-notation"><a class="header" href="#scientific-notation">Scientific Notation</a></h2>
+<p>As of version 5, scientific notation is supported. You can enter in values with the format <code>1.2345E18</code> and it will be saved as a value in the stack. There are a few areas
+where it’s not 100% supported (i.e. NumOps at the time of this writing) but just about everything will work with it.</p>
+<h2 id="percent-entry"><a class="header" href="#percent-entry">Percent Entry</a></h2>
+<p>As of version 5.4.0, a number, followed by a <code>%</code> can be entered. This will be divided by 100 prior to being added onto the stack. This will work with both negative
 numbers and scientific notation.</p>
 <h2 id="operands-numbers-and-commands"><a class="header" href="#operands-numbers-and-commands">Operands, Numbers, and Commands</a></h2>
-<p>Numbers, whether decimal or fractions, can be entered on the command line, and they get added to the stack.  That’s fairly self-explanatory.</p>
+<p>Numbers, whether decimal or fractions, can be entered on the command line, and they get added to the stack. That’s fairly self-explanatory.</p>
 <p>Operands perform basic match functions on those numbers.</p>
-<p>Commands do the more exciting things.  You can add the speed of light constant to the stack (<code>sol</code>) or PI (<code>pi</code>), take the sine of the number, add it to a memory slot, and then save that sequence of commands as a user defined function.  Most of the rest of this guide will be talking about the various RPNCalc commands.</p>
-<p>Lastly, as of <code>v4.6.0</code>, the arrow keys can be used within RPNCalc.  Up/Down will move you through your historical entries, and Left/Right will move you within the current command line.  This is probably what you would have expected it to do as it behaves similar to common consoles.</p>
+<p>Commands do the more exciting things. You can add the speed of light constant to the stack (<code>sol</code>) or PI (<code>pi</code>), take the sine of the number, add it to a memory slot, and then
+save that sequence of commands as a user defined function. Most of the rest of this guide will be talking about the various RPNCalc commands.</p>
+<p>Lastly, as of <code>v4.6.0</code>, the arrow keys can be used within RPNCalc. Up/Down will move you through your historical entries, and Left/Right will move you within the current
+command line. This is probably what you would have expected it to do as it behaves similar to common consoles.</p>
 <h2 id="precision"><a class="header" href="#precision">Precision</a></h2>
-<p>The intent of RPNCalc is to have unlimited precision in the numbers and calculations.  RPNCalc leverages a Java technology called <code>BigDecimal</code> which limits precision only by the amount of memory in your machine.  This is most likely more than you will ever need.  However, the program does make use of several Java math methods which must be done via a Java <code>Double</code>.</p>
+<p>The intent of RPNCalc is to have unlimited precision in the numbers and calculations. RPNCalc leverages a Java technology called <code>BigDecimal</code> which limits precision only by
+the amount of memory in your machine. This is most likely more than you will ever need. However, the program does make use of several Java math methods which must be done via
+a Java <code>Double</code>.</p>
 <p>A <code>Double</code> has the following characteristics:</p>
 <ul>
 <li>The upper range of a double in Java is <code>1.7976931348623157 x 10^308</code></li>
 <li>The lower range of a double in Java is <code>4.9 x 10^-324</code></li>
 </ul>
-<p>I will attempt to point out in this guide when a command is using <code>Double</code> and therefore has a limit on precision. Double is, however, huge and shouldn’t pose an issue for most use cases.</p>
+<p>I will attempt to point out in this guide when a command is using <code>Double</code> and therefore has a limit on precision. Double is, however, huge and shouldn’t pose an issue for
+most use cases.</p>
 
                     </main>
 
